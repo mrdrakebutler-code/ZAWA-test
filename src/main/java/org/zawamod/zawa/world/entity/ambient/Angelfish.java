@@ -7,7 +7,7 @@ import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.GroupEntity;
 import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 
-public class Angelfish extends ZawaAmbientFishEntity, SpeciesVariantsEntity, GroupEntity<Angelfish> {
+public class Angelfish extends ZawaAmbientFishEntity implements SpeciesVariantsEntity, GroupEntity<Angelfish> {
 
     private Angelfish groupLeader;
     private int groupSize;
@@ -20,11 +20,9 @@ public class Angelfish extends ZawaAmbientFishEntity, SpeciesVariantsEntity, Gro
 
     @Override public int getVariantByBiome(net.minecraft.world.level.LevelAccessor level) { return 0; }
 
-
     @Override public Angelfish getGroupLeader() { return groupLeader; }
     @Override public void setGroupLeader(Angelfish leader) { this.groupLeader = leader; }
     @Override public int getMaxGroupSize() { return 4; }
     @Override public int getGroupSize() { return groupSize; }
     @Override public void setGroupSize(int size) { this.groupSize = size; }
-
 }
