@@ -1,9 +1,6 @@
-name: NeoForge 1.21.1 Build
+name: NeoForge 1.21.1 Manual Build
 
 on:
-  push:
-    branches: [ neoforge-1.21.1-stage37 ]
-  pull_request:
   workflow_dispatch:
 
 jobs:
