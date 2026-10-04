@@ -2,15 +2,10 @@ package org.zawamod.zawa.world.entity;
 
 import java.util.List;
 
-/**
- * Stage 5 recovery manifest. This deliberately records the concrete entity
- * classes found in the original binary before their behavior is translated.
- */
+/** Stage 5 recovery manifest for concrete entity migration. */
 public final class ZawaEntityMigrationPlan {
     private ZawaEntityMigrationPlan() {}
-
     public record Entry(String id, String className, String superclass, List<String> interfaces) {}
-
     public static final List<Entry> ANIMALS = List.of(
         new Entry("african_lion", "AfricanLion", "ZawaLandEntity", List.of()),
         new Entry("african_wild_dog", "AfricanWildDog", "ZawaLandEntity", List.of()),
@@ -41,7 +36,7 @@ public final class ZawaEntityMigrationPlan {
         new Entry("spider_monkey", "SpiderMonkey", "ZawaLandEntity", List.of("SpeciesVariantsEntity", "ClimbingEntity")),
         new Entry("sumatran_orangutan", "SumatranOrangutan", "ZawaLandEntity", List.of("ClimbingEntity", "SittingEntity")),
         new Entry("tree_frog", "TreeFrog", "ZawaLandEntity", List.of("SpeciesVariantsEntity", "OviparousEntity", "JumpingEntity", "ClimbingEntity")),
-        new Entry("western_lowland_gorilla", "WesternLowlandGorilla", "ZawaLandEntity", List.of("ClimbingEntity", "SittingEntity"))
+        new Entry("western_lowland_gorilla", "WesternLowlandGorilla", "ZawaLandEntity", List.of("ClimbingEntity", "SittingEntity")),
         new Entry("african_lake_cichlid", "AfricanLakeCichlid", "ZawaAmbientFishEntity", List.of("SpeciesVariantsEntity", "GroupEntity")),
         new Entry("angelfish", "Angelfish", "ZawaAmbientFishEntity", List.of("SpeciesVariantsEntity", "GroupEntity")),
         new Entry("betta", "Betta", "ZawaAmbientFishEntity", List.of("SpeciesVariantsEntity")),
