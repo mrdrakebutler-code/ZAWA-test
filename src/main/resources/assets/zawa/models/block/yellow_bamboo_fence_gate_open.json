@@ -1,0 +1,7 @@
+{
+	"parent": "zawa:block/bamboo_fence_gate_open",
+	"textures": {
+		"0": "zawa:block/yellow_bamboo_stalk",
+		"particle": "zawa:block/yellow_bamboo_stalk"
+	}
+}

@@ -1,0 +1,120 @@
+{
+  "multipart": [
+    { "when": { "facing": "north", "level": "3|2|1|0", "food_type": "empty|fish|fruit|grain|insects|leaves|meat|veggie" },
+      "apply": { "model": "zawa:block/wall_bowl" }
+    },
+    { "when": { "facing": "south", "level": "3|2|1|0", "food_type": "empty|fish|fruit|grain|insects|leaves|meat|veggie" },
+      "apply": { "model": "zawa:block/wall_bowl", "y": 180 }
+    },
+    { "when": { "facing": "east", "level": "3|2|1|0", "food_type": "empty|fish|fruit|grain|insects|leaves|meat|veggie" },
+      "apply": { "model": "zawa:block/wall_bowl", "y": 90 }
+    },
+    { "when": { "facing": "west", "level": "3|2|1|0", "food_type": "empty|fish|fruit|grain|insects|leaves|meat|veggie" },
+      "apply": { "model": "zawa:block/wall_bowl", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "level": "3|2|1|0", "food_type": "fish" },
+      "apply": { "model": "zawa:block/wall_bowl_fish" }
+    },
+    { "when": { "facing": "south", "level": "3|2|1|0", "food_type": "fish" },
+      "apply": { "model": "zawa:block/wall_bowl_fish", "y": 180 }
+    },
+    { "when": { "facing": "east", "level": "3|2|1|0", "food_type": "fish" },
+      "apply": { "model": "zawa:block/wall_bowl_fish", "y": 90 }
+    },
+    { "when": { "facing": "west", "level": "3|2|1|0", "food_type": "fish" },
+      "apply": { "model": "zawa:block/wall_bowl_fish", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "level": "3|2|1|0", "food_type": "fruit" },
+      "apply": { "model": "zawa:block/wall_bowl_fruit" }
+    },
+    { "when": { "facing": "south", "level": "3|2|1|0", "food_type": "fruit" },
+      "apply": { "model": "zawa:block/wall_bowl_fruit", "y": 180 }
+    },
+    { "when": { "facing": "east", "level": "3|2|1|0", "food_type": "fruit" },
+      "apply": { "model": "zawa:block/wall_bowl_fruit", "y": 90 }
+    },
+    { "when": { "facing": "west", "level": "3|2|1|0", "food_type": "fruit" },
+      "apply": { "model": "zawa:block/wall_bowl_fruit", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "level": "3|2|1|0", "food_type": "grain" },
+      "apply": { "model": "zawa:block/wall_bowl_grain" }
+    },
+    { "when": { "facing": "south", "level": "3|2|1|0", "food_type": "grain" },
+      "apply": { "model": "zawa:block/wall_bowl_grain", "y": 180 }
+    },
+    { "when": { "facing": "east", "level": "3|2|1|0", "food_type": "grain" },
+      "apply": { "model": "zawa:block/wall_bowl_grain", "y": 90 }
+    },
+    { "when": { "facing": "west", "level": "3|2|1|0", "food_type": "grain" },
+      "apply": { "model": "zawa:block/wall_bowl_grain", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "level": "3|2|1|0", "food_type": "insects" },
+      "apply": { "model": "zawa:block/wall_bowl_insects" }
+    },
+    { "when": { "facing": "south", "level": "3|2|1|0", "food_type": "insects" },
+      "apply": { "model": "zawa:block/wall_bowl_insects", "y": 180 }
+    },
+    { "when": { "facing": "east", "level": "3|2|1|0", "food_type": "insects" },
+      "apply": { "model": "zawa:block/wall_bowl_insects", "y": 90 }
+    },
+    { "when": { "facing": "west", "level": "3|2|1|0", "food_type": "insects" },
+      "apply": { "model": "zawa:block/wall_bowl_insects", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "level": "3|2|1|0", "food_type": "leaves" },
+      "apply": { "model": "zawa:block/wall_bowl_leaves" }
+    },
+    { "when": { "facing": "south", "level": "3|2|1|0", "food_type": "leaves" },
+      "apply": { "model": "zawa:block/wall_bowl_leaves", "y": 180 }
+    },
+    { "when": { "facing": "east", "level": "3|2|1|0", "food_type": "leaves" },
+      "apply": { "model": "zawa:block/wall_bowl_leaves", "y": 90 }
+    },
+    { "when": { "facing": "west", "level": "3|2|1|0", "food_type": "leaves" },
+      "apply": { "model": "zawa:block/wall_bowl_leaves", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "level": "3|2|1|0", "food_type": "meat" },
+      "apply": { "model": "zawa:block/wall_bowl_meat" }
+    },
+    { "when": { "facing": "south", "level": "3|2|1|0", "food_type": "meat" },
+      "apply": { "model": "zawa:block/wall_bowl_meat", "y": 180 }
+    },
+    { "when": { "facing": "east", "level": "3|2|1|0", "food_type": "meat" },
+      "apply": { "model": "zawa:block/wall_bowl_meat", "y": 90 }
+    },
+    { "when": { "facing": "west", "level": "3|2|1|0", "food_type": "meat" },
+      "apply": { "model": "zawa:block/wall_bowl_meat", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "level": "3|2|1|0", "food_type": "veggie" },
+      "apply": { "model": "zawa:block/wall_bowl_veggie" }
+    },
+    { "when": { "facing": "south", "level": "3|2|1|0", "food_type": "veggie" },
+      "apply": { "model": "zawa:block/wall_bowl_veggie", "y": 180 }
+    },
+    { "when": { "facing": "east", "level": "3|2|1|0", "food_type": "veggie" },
+      "apply": { "model": "zawa:block/wall_bowl_veggie", "y": 90 }
+    },
+    { "when": { "facing": "west", "level": "3|2|1|0", "food_type": "veggie" },
+      "apply": { "model": "zawa:block/wall_bowl_veggie", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "level": "3|2|1", "food_type": "empty" },
+      "apply": { "model": "zawa:block/wall_bowl_water" }
+    },
+    { "when": { "facing": "east", "level": "3|2|1", "food_type": "empty" },
+      "apply": { "model": "zawa:block/wall_bowl_water", "y": 90 }
+    },
+    { "when": { "facing": "south", "level": "3|2|1", "food_type": "empty" },
+      "apply": { "model": "zawa:block/wall_bowl_water", "y": 180 }
+    },
+    { "when": { "facing": "west", "level": "3|2|1", "food_type": "empty" },
+      "apply": { "model": "zawa:block/wall_bowl_water", "y": 270 }
+    }
+  ]
+}

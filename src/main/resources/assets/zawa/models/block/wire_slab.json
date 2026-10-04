@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "zawa:block/wire_fence",
+    "top": "zawa:block/wire_fence",
+    "side": "zawa:block/wire_fence"
+  }
+}

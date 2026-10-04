@@ -1,0 +1,14 @@
+{
+  "variant": "grain",
+  "items": [
+    "minecraft:wheat",
+    "minecraft:wheat_seeds",
+    "minecraft:hay_block",
+    "minecraft:beetroot_seeds",
+    "minecraft:melon_seeds",
+    "minecraft:pumpkin_seeds",
+    "hotchicks:corn",
+    "hotchicks:millet",
+    "hotchicks:oats"
+  ]
+}

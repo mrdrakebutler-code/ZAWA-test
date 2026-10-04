@@ -1,0 +1,35 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:or",
+    "values": [
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#minecraft:is_jungle",
+          "#neoforge:is_dense"
+        ]
+      },
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#neoforge:is_swamp",
+          {
+            "type": "neoforge:not",
+            "value": "#neoforge:is_cold"
+          }
+        ]
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:common_chimpanzee",
+      "weight": 8,
+      "minCount": 4,
+      "maxCount": 5
+    }
+  ]
+}

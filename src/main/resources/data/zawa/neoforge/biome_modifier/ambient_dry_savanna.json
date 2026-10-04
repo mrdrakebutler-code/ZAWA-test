@@ -1,0 +1,22 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#neoforge:is_overworld",
+      "#minecraft:is_savanna",
+      {
+        "type": "neoforge:not",
+        "value": "#neoforge:is_wet"
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:butterfly",
+      "weight": 10,
+      "minCount": 1,
+      "maxCount": 4
+    }
+  ]
+}

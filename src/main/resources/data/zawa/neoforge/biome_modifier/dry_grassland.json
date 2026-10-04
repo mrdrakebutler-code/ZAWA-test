@@ -1,0 +1,42 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:or",
+    "values": [
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#neoforge:is_plains",
+          {
+            "type": "neoforge:not",
+            "value": "#neoforge:is_cold"
+          },
+          {
+            "type": "neoforge:not",
+            "value": "#neoforge:is_wet"
+          }
+        ]
+      },
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#minecraft:is_badlands",
+          {
+            "type": "neoforge:not",
+            "value": "#neoforge:is_sparse"
+          }
+        ]
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:black_footed_ferret",
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 2
+    }
+  ]
+}

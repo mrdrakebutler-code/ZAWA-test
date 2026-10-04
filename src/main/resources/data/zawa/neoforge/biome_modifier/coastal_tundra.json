@@ -1,0 +1,30 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#neoforge:is_overworld",
+      "#neoforge:is_snowy",
+      {
+        "type": "neoforge:not",
+        "value": "#minecraft:is_forest"
+      },
+      {
+        "type": "neoforge:not",
+        "value": "#minecraft:is_mountain"
+      },
+      {
+        "type": "neoforge:not",
+        "value": "#neoforge:is_wasteland"
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:emperor_penguin",
+      "weight": 15,
+      "minCount": 4,
+      "maxCount": 6
+    }
+  ]
+}

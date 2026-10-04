@@ -1,0 +1,3 @@
+package org.zawamod.zawa.world.block.entity;
+import net.minecraft.core.BlockPos; import net.minecraft.world.entity.player.Inventory; import net.minecraft.world.inventory.AbstractContainerMenu; import net.minecraft.world.level.block.state.BlockState; import org.zawamod.zawa.world.inventory.HydroponicsTableMenu;
+public class HydroponicsTableBlockEntity extends ZawaContainerBlockEntity { public HydroponicsTableBlockEntity(BlockPos p,BlockState s){super(ZawaBlockEntities.HYDROPONICS_TABLE.get(),p,s,3);} @Override protected AbstractContainerMenu createMenu(int id,Inventory inv){return new HydroponicsTableMenu(id,inv,this);} }

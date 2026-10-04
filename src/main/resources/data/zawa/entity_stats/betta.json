@@ -1,0 +1,19 @@
+{
+  "temperament": "territorial",
+  "size": "ambient",
+  "breeding_item": "zawa:termites",
+  "speed": "slow",
+  "variant_count": 16,
+  "captive_variants": [
+    "koi_plakat",
+    "blue_veiltail",
+    "purple_veiltail",
+    "black_dragon_plakat",
+    "pastel_plakat",
+    "red_veiltail",
+    "black_crowntail",
+    "white_veiltail",
+    "gold_plakat",
+    "green_plakat"
+  ]
+}

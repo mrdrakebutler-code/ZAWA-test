@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:cooked_beef",
+    "minecraft:cooked_chicken",
+    "minecraft:cooked_mutton",
+    "minecraft:cooked_porkchop",
+    "minecraft:cooked_rabbit",
+    "zawa:cooked_large_meat",
+    "zawa:cooked_medium_meat",
+    "zawa:cooked_small_meat",
+    "zawa:cooked_brown_rat"
+  ]
+}

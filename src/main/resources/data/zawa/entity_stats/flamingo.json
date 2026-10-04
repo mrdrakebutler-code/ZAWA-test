@@ -1,0 +1,19 @@
+{
+  "temperament": "neutral",
+  "kibble": "zawa:piscivore_kibble",
+  "size": "small",
+  "fertility": "high",
+  "breeding_item": "zawa:mussels",
+  "litter_size": 1,
+  "diet": "zawa:shellfish",
+  "speed": "medium",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:sprinkler",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ]
+  },
+  "variant_count": 6
+}

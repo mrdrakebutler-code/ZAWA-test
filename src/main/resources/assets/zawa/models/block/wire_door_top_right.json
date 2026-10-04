@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "top": "zawa:block/wire_door_top",
+    "bottom": "zawa:block/wire_door_bottom"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "zawa:block/dwarf_black_bamboo_bottom"
+  }
+}
+

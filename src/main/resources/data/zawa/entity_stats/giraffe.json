@@ -1,0 +1,30 @@
+{
+  "temperament": "neutral",
+  "kibble": "zawa:herbivore_kibble",
+  "size": "giant",
+  "fertility": "high",
+  "breeding_item": "minecraft:acacia_leaves",
+  "litter_size": 1,
+  "diet": "zawa:herbivore",
+  "speed": "medium",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:scratching_post",
+      "zawa:hay_browse",
+      "zawa:leaf_browse",
+      "zawa:sprinkler",
+      "zawa:salt_lick",
+      "zawa:pineapple_pinata",
+      "zawa:bamboo_feeder",
+      "zawa:black_bamboo_feeder",
+      "zawa:yellow_bamboo_feeder",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ],
+    "zawa:entities": [
+      "zawa:apple_ice_treat"
+    ]
+  },
+  "variant_count": 4
+}

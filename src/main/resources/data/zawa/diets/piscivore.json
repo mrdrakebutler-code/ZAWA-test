@@ -1,0 +1,17 @@
+{
+  "minecraft:cod": 3,
+  "minecraft:salmon": 3,
+  "minecraft:pufferfish": 2,
+  "minecraft:tropical_fish": 1,
+ 
+  "zawa:angelfish": 2,
+  "zawa:betta": 1,
+  "zawa:african_lake_cichlid": 1,
+  "zawa:clownfish": 1,
+  "zawa:corydoras": 1,
+  "zawa:gramma": 1,
+  "zawa:plecostomus": 1,
+  "zawa:clam": 3,
+  "zawa:shrimp": 2,
+  "zawa:mussels": 3
+}

@@ -1,0 +1,33 @@
+{
+  "temperament": "defensive",
+  "kibble": "zawa:omnivore_kibble",
+  "size": "medium",
+  "fertility": "high",
+  "breeding_item": "minecraft:melon",
+  "litter_size": 1,
+  "diet": "zawa:omnivore",
+  "speed": "medium",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:rope",
+      "zawa:climbing_vine",
+      "zawa:tire_swing",
+      "zawa:hay_browse",
+      "zawa:leaf_browse",
+      "zawa:puzzle_feeder",
+      "zawa:ball_pit",
+      "zawa:pineapple_pinata",
+      "zawa:bamboo_feeder",
+      "zawa:black_bamboo_feeder",
+      "zawa:yellow_bamboo_feeder",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ],
+    "zawa:entities": [
+      "zawa:scented_ball",
+      "zawa:apple_ice_treat"
+    ]
+  },
+  "variant_count": 3
+}

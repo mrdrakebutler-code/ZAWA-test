@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "zawa:item/eastern_tiger_swallowtail_butterfly"
+  }
+}

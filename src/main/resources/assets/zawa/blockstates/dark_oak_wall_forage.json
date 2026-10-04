@@ -1,0 +1,42 @@
+{
+  "multipart": [
+    { "when": { "facing": "north", "food_type": "empty|grain|leaves" },
+      "apply": { "model": "zawa:block/dark_oak_wall_forage" }
+    },
+    { "when": { "facing": "south", "food_type": "empty|grain|leaves"  },
+      "apply": { "model": "zawa:block/dark_oak_wall_forage", "y": 180 }
+    },
+    { "when": { "facing": "east", "food_type": "empty|grain|leaves"  },
+      "apply": { "model": "zawa:block/dark_oak_wall_forage", "y": 90 }
+    },
+    { "when": { "facing": "west", "food_type": "empty|grain|leaves"  },
+      "apply": { "model": "zawa:block/dark_oak_wall_forage", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "food_type": "leaves" },
+      "apply": { "model": "zawa:block/wall_forage_leaves" }
+    },
+    { "when": { "facing": "south", "food_type": "leaves"  },
+      "apply": { "model": "zawa:block/wall_forage_leaves", "y": 180 }
+    },
+    { "when": { "facing": "east", "food_type": "leaves"  },
+      "apply": { "model": "zawa:block/wall_forage_leaves", "y": 90 }
+    },
+    { "when": { "facing": "west", "food_type": "leaves"  },
+      "apply": { "model": "zawa:block/wall_forage_leaves", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "food_type": "grain" },
+      "apply": { "model": "zawa:block/wall_forage_hay" }
+    },
+    { "when": { "facing": "south", "food_type": "grain"  },
+      "apply": { "model": "zawa:block/wall_forage_hay", "y": 180 }
+    },
+    { "when": { "facing": "east", "food_type": "grain"  },
+      "apply": { "model": "zawa:block/wall_forage_hay", "y": 90 }
+    },
+    { "when": { "facing": "west", "food_type": "grain"  },
+      "apply": { "model": "zawa:block/wall_forage_hay", "y": 270 }
+    }
+  ]
+}

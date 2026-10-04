@@ -1,0 +1,7 @@
+{
+  "parent": "zawa:block/_water_plant",
+  "textures": {
+    "base": "zawa:block/water_hyacinth_base",
+    "roots": "zawa:block/water_hyacinth_roots"
+  }
+}

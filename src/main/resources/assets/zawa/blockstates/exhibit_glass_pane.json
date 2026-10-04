@@ -1,0 +1,42 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "zawa:block/exhibit_glass_pane"
+      }
+    },
+
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "zawa:block/exhibit_glass_pane",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "zawa:block/exhibit_glass_pane",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "zawa:block/exhibit_glass_pane",
+        "y": 270
+      }
+    }
+  ]
+}

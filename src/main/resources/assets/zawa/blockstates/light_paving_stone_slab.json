@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "zawa:block/light_paving_stone_slab"
+    },
+    "type=double": {
+      "model": "zawa:block/light_paving_stone"
+    },
+    "type=top": {
+      "model": "zawa:block/light_paving_stone_slab_top"
+    }
+  }
+}
+

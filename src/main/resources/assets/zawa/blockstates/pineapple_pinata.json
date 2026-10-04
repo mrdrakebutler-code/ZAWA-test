@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "zawa:block/pineapple_pinata"
+      },
+      {
+        "model": "zawa:block/pineapple_pinata",
+        "y": 90
+      },
+      {
+        "model": "zawa:block/pineapple_pinata",
+        "y": 180
+      },
+      {
+        "model": "zawa:block/pineapple_pinata",
+        "y": 270
+      }
+    ]
+  }
+}

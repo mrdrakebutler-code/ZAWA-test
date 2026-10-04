@@ -1,0 +1,6 @@
+{
+	"parent": "zawa:block/plushies/macaw_plush",
+	"textures": {
+		"0": "zawa:block/plush/red_macaw"
+	}
+}

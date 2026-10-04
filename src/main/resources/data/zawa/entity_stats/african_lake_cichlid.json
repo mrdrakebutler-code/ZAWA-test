@@ -1,0 +1,13 @@
+{
+  "temperament": "neutral",
+  "size": "ambient",
+  "breeding_item": "minecraft:wheat_seeds",
+  "speed": "medium",
+  "variant_count": 12,
+  "captive_variants": [
+    "red_blotch_zebra",
+    "yellow_peacock",
+    "german_red_peacock",
+    "blue_tiger_peacock"
+  ]
+}

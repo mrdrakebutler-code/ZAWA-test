@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "zawa:block/golden_barrel_cactus"
+  }
+}

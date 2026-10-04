@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "zawa:block/bug_box"
+    }
+  }
+}

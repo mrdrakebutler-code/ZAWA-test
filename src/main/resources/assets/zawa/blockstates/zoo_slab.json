@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "zawa:block/zoo_slab"
+    },
+    "type=double": {
+      "model": "zawa:block/zoo_bars"
+    },
+    "type=top": {
+      "model": "zawa:block/zoo_slab_top"
+    }
+  }
+}

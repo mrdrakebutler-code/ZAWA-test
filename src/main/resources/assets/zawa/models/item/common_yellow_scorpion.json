@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "zawa:item/common_yellow_scorpion"
+  }
+}

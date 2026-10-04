@@ -1,0 +1,24 @@
+{
+  "temperament": "neutral",
+  "kibble": "zawa:insectivore_kibble",
+  "size": "tiny",
+  "fertility": "medium",
+  "breeding_item": "zawa:leafcutter_ant",
+  "litter_size": {
+    "min": 4,
+    "max": 5
+  },
+  "diet": "zawa:insectivore",
+  "speed": "medium",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:heat_lamp",
+      "zawa:climbing_vine",
+      "zawa:sprinkler",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ]
+  },
+  "variant_count": 13
+}

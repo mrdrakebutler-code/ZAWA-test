@@ -1,0 +1,39 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:or",
+    "values": [
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#minecraft:is_savanna",
+          {
+            "type": "neoforge:not",
+            "value": "#neoforge:is_lush"
+          }
+        ]
+      },
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#neoforge:is_hot",
+          "#neoforge:is_sandy",
+          {
+            "type": "neoforge:not",
+            "value": "#neoforge:is_lush"
+          }
+        ]
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:african_lion",
+      "weight": 8,
+      "minCount": 3,
+      "maxCount": 6
+    }
+  ]
+}

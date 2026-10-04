@@ -1,0 +1,136 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north",
+        "left": "true|false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_top"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "left": "false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "left": "true|false",
+        "right": "false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_side"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "left": "true|false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_top",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "left": "false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "left": "true|false",
+        "right": "false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_side",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "left": "true|false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_top",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "left": "false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_side"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "left": "true|false",
+        "right": "false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_side",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "left": "true|false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_top",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "left": "false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "left": "true|false",
+        "right": "false"
+      },
+      "apply": {
+        "model": "zawa:block/tables/bamboo_picnic_table_side",
+        "y": 270
+      }
+    }
+  ]
+}

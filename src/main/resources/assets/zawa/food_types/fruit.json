@@ -1,0 +1,28 @@
+{
+  "variant": "fruit",
+  "items": [
+    "minecraft:apple",
+    "minecraft:melon_slice",
+    "minecraft:melon",
+    "minecraft:sweet_berries",
+    "zawa:prickly_pear",
+    "hotchicks:blueberries",
+    "hotchicks:citron",
+    "hotchicks:corn",
+    "hotchicks:fig",
+    "hotchicks:grapefruit",
+    "hotchicks:grapes",
+    "hotchicks:kiwi",
+    "hotchicks:lemon",
+    "hotchicks:lime",
+    "hotchicks:mandarin",
+    "hotchicks:mango",
+    "hotchicks:orange",
+    "hotchicks:papeda",
+    "hotchicks:peach",
+    "hotchicks:pomegranate",
+    "hotchicks:pomelo",
+    "hotchicks:strawberry",
+    "hotchicks:yuzu"
+  ]
+}

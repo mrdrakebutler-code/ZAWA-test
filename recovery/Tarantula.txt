@@ -1,0 +1,389 @@
+Compiled from "Tarantula.java"
+public class org.zawamod.zawa.world.entity.ambient.Tarantula extends org.zawamod.zawa.world.entity.ambient.ZawaAmbientLandEntity implements org.zawamod.zawa.world.entity.SpeciesVariantsEntity,org.zawamod.zawa.world.entity.VenomousEntity {
+  public static final java.util.List<net.minecraft.util.Tuple<java.lang.String, org.zawamod.zawa.config.ZawaSpawnCategory>> VARIANT_SPAWNS;
+
+  private int venomTimer;
+
+  public org.zawamod.zawa.world.entity.ambient.Tarantula(net.minecraft.world.entity.EntityType<? extends org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity>, net.minecraft.world.level.Level);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokespecial #29                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;)V
+       6: return
+
+  public static net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder registerTarantulaAttributes();
+    Code:
+       0: invokestatic  #41                 // Method m_21552_:()Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+       3: getstatic     #47                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22279_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+       6: ldc2_w        #48                 // double 0.10000000149011612d
+       9: invokevirtual #53                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      12: getstatic     #56                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22276_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      15: ldc2_w        #57                 // double 4.0d
+      18: invokevirtual #53                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      21: getstatic     #61                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22281_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      24: ldc2_w        #57                 // double 4.0d
+      27: invokevirtual #53                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      30: areturn
+
+  protected void m_8099_();
+    Code:
+       0: aload_0
+       1: invokespecial #65                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_8099_:()V
+       4: aload_0
+       5: getfield      #69                 // Field f_21345_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+       8: iconst_5
+       9: new           #71                 // class org/zawamod/zawa/world/entity/ai/goal/ZawaMeleeAttackGoal
+      12: dup
+      13: aload_0
+      14: dconst_1
+      15: ldc2_w        #72                 // double 2.0d
+      18: iconst_1
+      19: invokespecial #76                 // Method org/zawamod/zawa/world/entity/ai/goal/ZawaMeleeAttackGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;DDZ)V
+      22: invokevirtual #82                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      25: aload_0
+      26: getfield      #85                 // Field f_21346_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+      29: iconst_2
+      30: new           #87                 // class net/minecraft/world/entity/ai/goal/target/HurtByTargetGoal
+      33: dup
+      34: aload_0
+      35: iconst_0
+      36: anewarray     #89                 // class java/lang/Class
+      39: invokespecial #92                 // Method net/minecraft/world/entity/ai/goal/target/HurtByTargetGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;[Ljava/lang/Class;)V
+      42: invokevirtual #82                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      45: aload_0
+      46: getfield      #85                 // Field f_21346_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+      49: iconst_3
+      50: new           #94                 // class net/minecraft/world/entity/ai/goal/target/NearestAttackableTargetGoal
+      53: dup
+      54: aload_0
+      55: ldc           #96                 // class net/minecraft/world/entity/player/Player
+      57: bipush        10
+      59: iconst_1
+      60: iconst_1
+      61: aload_0
+      62: invokedynamic #115,  0            // InvokeDynamic #0:test:(Lorg/zawamod/zawa/world/entity/ambient/Tarantula;)Ljava/util/function/Predicate;
+      67: invokespecial #118                // Method net/minecraft/world/entity/ai/goal/target/NearestAttackableTargetGoal."<init>":(Lnet/minecraft/world/entity/Mob;Ljava/lang/Class;IZZLjava/util/function/Predicate;)V
+      70: invokevirtual #82                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      73: return
+
+  public net.minecraft.world.entity.AgeableMob m_142606_(net.minecraft.server.level.ServerLevel, net.minecraft.world.entity.AgeableMob);
+    Code:
+       0: getstatic     #127                // Field org/zawamod/zawa/world/entity/ZawaEntities.TARANTULA:Lnet/minecraftforge/registries/RegistryObject;
+       3: invokevirtual #133                // Method net/minecraftforge/registries/RegistryObject.get:()Ljava/lang/Object;
+       6: checkcast     #135                // class net/minecraft/world/entity/EntityType
+       9: aload_1
+      10: invokevirtual #139                // Method net/minecraft/world/entity/EntityType.m_20615_:(Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/entity/Entity;
+      13: checkcast     #141                // class net/minecraft/world/entity/AgeableMob
+      16: areturn
+
+  public void m_7380_(net.minecraft.nbt.CompoundTag);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #148                // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_7380_:(Lnet/minecraft/nbt/CompoundTag;)V
+       5: aload_1
+       6: ldc           #150                // String Milked
+       8: aload_0
+       9: getfield      #152                // Field venomTimer:I
+      12: invokevirtual #158                // Method net/minecraft/nbt/CompoundTag.m_128405_:(Ljava/lang/String;I)V
+      15: return
+
+  public void m_7378_(net.minecraft.nbt.CompoundTag);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #163                // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_7378_:(Lnet/minecraft/nbt/CompoundTag;)V
+       5: aload_0
+       6: aload_1
+       7: ldc           #150                // String Milked
+       9: invokevirtual #167                // Method net/minecraft/nbt/CompoundTag.m_128451_:(Ljava/lang/String;)I
+      12: putfield      #152                // Field venomTimer:I
+      15: return
+
+  public net.minecraft.world.InteractionResult m_6071_(net.minecraft.world.entity.player.Player, net.minecraft.world.InteractionHand);
+    Code:
+       0: aload_1
+       1: aload_2
+       2: invokevirtual #173                // Method net/minecraft/world/entity/player/Player.m_21120_:(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;
+       5: astore_3
+       6: aload_3
+       7: invokevirtual #179                // Method net/minecraft/world/item/ItemStack.m_41720_:()Lnet/minecraft/world/item/Item;
+      10: getstatic     #185                // Field net/minecraft/world/item/Items.f_42590_:Lnet/minecraft/world/item/Item;
+      13: if_acmpne     58
+      16: aload_0
+      17: invokevirtual #189                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+      20: getfield      #195                // Field net/minecraft/world/level/Level.f_46443_:Z
+      23: ifne          44
+      26: aload_0
+      27: invokevirtual #199                // Method readyToBeMilked:()Z
+      30: ifeq          44
+      33: aload_0
+      34: aload_1
+      35: aload_2
+      36: aload_3
+      37: invokevirtual #203                // Method milkVenom:(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)V
+      40: getstatic     #209                // Field net/minecraft/world/InteractionResult.SUCCESS:Lnet/minecraft/world/InteractionResult;
+      43: areturn
+      44: aload_0
+      45: invokevirtual #189                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+      48: getfield      #195                // Field net/minecraft/world/level/Level.f_46443_:Z
+      51: ifeq          58
+      54: getstatic     #212                // Field net/minecraft/world/InteractionResult.CONSUME:Lnet/minecraft/world/InteractionResult;
+      57: areturn
+      58: aload_0
+      59: aload_1
+      60: aload_2
+      61: invokespecial #214                // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_6071_:(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;
+      64: areturn
+
+  public void m_8107_();
+    Code:
+       0: aload_0
+       1: invokespecial #223                // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_8107_:()V
+       4: aload_0
+       5: getfield      #152                // Field venomTimer:I
+       8: ifle          21
+      11: aload_0
+      12: dup
+      13: getfield      #152                // Field venomTimer:I
+      16: iconst_1
+      17: isub
+      18: putfield      #152                // Field venomTimer:I
+      21: return
+
+  public boolean m_7327_(net.minecraft.world.entity.Entity);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #227                // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_7327_:(Lnet/minecraft/world/entity/Entity;)Z
+       5: ifeq          35
+       8: aload_1
+       9: instanceof    #229                // class net/minecraft/world/entity/LivingEntity
+      12: ifeq          33
+      15: aload_0
+      16: aload_0
+      17: invokevirtual #189                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+      20: invokevirtual #233                // Method net/minecraft/world/level/Level.m_46791_:()Lnet/minecraft/world/Difficulty;
+      23: aload_1
+      24: checkcast     #229                // class net/minecraft/world/entity/LivingEntity
+      27: bipush        40
+      29: iconst_0
+      30: invokevirtual #237                // Method addVenomEffect:(Lnet/minecraft/world/Difficulty;Lnet/minecraft/world/entity/LivingEntity;II)V
+      33: iconst_1
+      34: ireturn
+      35: iconst_0
+      36: ireturn
+
+  public int getVariantByBiome(net.minecraft.world.level.LevelAccessor);
+    Code:
+       0: aload_0
+       1: getfield      #244                // Field f_19796_:Lnet/minecraft/util/RandomSource;
+       4: aload_0
+       5: invokevirtual #248                // Method getWildVariants:()I
+       8: invokeinterface #254,  2          // InterfaceMethod net/minecraft/util/RandomSource.m_188503_:(I)I
+      13: ireturn
+
+  protected net.minecraft.resources.ResourceLocation m_7582_();
+    Code:
+       0: aload_0
+       1: invokevirtual #261                // Method getVariant:()I
+       4: tableswitch   { // 0 to 8
+                     0: 56
+                     1: 70
+                     2: 84
+                     3: 98
+                     4: 112
+                     5: 126
+                     6: 140
+                     7: 154
+                     8: 168
+               default: 182
+          }
+      56: new           #263                // class net/minecraft/resources/ResourceLocation
+      59: dup
+      60: ldc_w         #265                // String zawa
+      63: ldc_w         #267                // String entities/tarantula/mexican_red_knee
+      66: invokespecial #270                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      69: areturn
+      70: new           #263                // class net/minecraft/resources/ResourceLocation
+      73: dup
+      74: ldc_w         #265                // String zawa
+      77: ldc_w         #272                // String entities/tarantula/cobalt_blue
+      80: invokespecial #270                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      83: areturn
+      84: new           #263                // class net/minecraft/resources/ResourceLocation
+      87: dup
+      88: ldc_w         #265                // String zawa
+      91: ldc_w         #274                // String entities/tarantula/goliath_birdeater
+      94: invokespecial #270                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      97: areturn
+      98: new           #263                // class net/minecraft/resources/ResourceLocation
+     101: dup
+     102: ldc_w         #265                // String zawa
+     105: ldc_w         #276                // String entities/tarantula/chilean_rosehair
+     108: invokespecial #270                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     111: areturn
+     112: new           #263                // class net/minecraft/resources/ResourceLocation
+     115: dup
+     116: ldc_w         #265                // String zawa
+     119: ldc_w         #278                // String entities/tarantula/brazilian_black
+     122: invokespecial #270                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     125: areturn
+     126: new           #263                // class net/minecraft/resources/ResourceLocation
+     129: dup
+     130: ldc_w         #265                // String zawa
+     133: ldc_w         #280                // String entities/tarantula/king_baboon
+     136: invokespecial #270                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     139: areturn
+     140: new           #263                // class net/minecraft/resources/ResourceLocation
+     143: dup
+     144: ldc_w         #265                // String zawa
+     147: ldc_w         #282                // String entities/tarantula/western_desert
+     150: invokespecial #270                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     153: areturn
+     154: new           #263                // class net/minecraft/resources/ResourceLocation
+     157: dup
+     158: ldc_w         #265                // String zawa
+     161: ldc_w         #284                // String entities/tarantula/greenbottle_blue
+     164: invokespecial #270                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     167: areturn
+     168: new           #263                // class net/minecraft/resources/ResourceLocation
+     171: dup
+     172: ldc_w         #265                // String zawa
+     175: ldc_w         #286                // String entities/tarantula/antilles_pinktoe
+     178: invokespecial #270                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     181: areturn
+     182: aload_0
+     183: invokespecial #288                // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_7582_:()Lnet/minecraft/resources/ResourceLocation;
+     186: areturn
+
+  public boolean hasVenom();
+    Code:
+       0: aload_0
+       1: getfield      #152                // Field venomTimer:I
+       4: ifgt          11
+       7: iconst_1
+       8: goto          12
+      11: iconst_0
+      12: ireturn
+
+  public void setMilked(int);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: putfield      #152                // Field venomTimer:I
+       5: return
+
+  public boolean readyToBeMilked();
+    Code:
+       0: aload_0
+       1: invokevirtual #295                // Method m_6084_:()Z
+       4: ifeq          25
+       7: aload_0
+       8: invokevirtual #297                // Method hasVenom:()Z
+      11: ifeq          25
+      14: aload_0
+      15: invokevirtual #300                // Method m_6162_:()Z
+      18: ifne          25
+      21: iconst_1
+      22: goto          26
+      25: iconst_0
+      26: ireturn
+
+  private boolean lambda$registerGoals$0(net.minecraft.world.entity.LivingEntity);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #304                // Method m_20280_:(Lnet/minecraft/world/entity/Entity;)D
+       5: ldc2_w        #305                // double 8.0d
+       8: dcmpg
+       9: ifgt          16
+      12: iconst_1
+      13: goto          17
+      16: iconst_0
+      17: ireturn
+
+  static {};
+    Code:
+       0: new           #310                // class java/util/ArrayList
+       3: dup
+       4: bipush        9
+       6: anewarray     #312                // class net/minecraft/util/Tuple
+       9: dup
+      10: iconst_0
+      11: new           #312                // class net/minecraft/util/Tuple
+      14: dup
+      15: ldc_w         #314                // String mexican_red_knee
+      18: getstatic     #320                // Field org/zawamod/zawa/config/ZawaSpawnCategory.DRY_RAINFOREST:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      21: invokespecial #323                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      24: aastore
+      25: dup
+      26: iconst_1
+      27: new           #312                // class net/minecraft/util/Tuple
+      30: dup
+      31: ldc_w         #325                // String cobalt_blue
+      34: getstatic     #328                // Field org/zawamod/zawa/config/ZawaSpawnCategory.WET_RAINFOREST:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      37: invokespecial #323                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      40: aastore
+      41: dup
+      42: iconst_2
+      43: new           #312                // class net/minecraft/util/Tuple
+      46: dup
+      47: ldc_w         #330                // String goliath_birdeater
+      50: getstatic     #328                // Field org/zawamod/zawa/config/ZawaSpawnCategory.WET_RAINFOREST:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      53: invokespecial #323                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      56: aastore
+      57: dup
+      58: iconst_3
+      59: new           #312                // class net/minecraft/util/Tuple
+      62: dup
+      63: ldc_w         #332                // String chilean_rosehair
+      66: getstatic     #335                // Field org/zawamod/zawa/config/ZawaSpawnCategory.HOT_DESERT:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      69: invokespecial #323                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      72: aastore
+      73: dup
+      74: iconst_4
+      75: new           #312                // class net/minecraft/util/Tuple
+      78: dup
+      79: ldc_w         #337                // String brazilian_black
+      82: getstatic     #340                // Field org/zawamod/zawa/config/ZawaSpawnCategory.DRY_GRASSLAND:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      85: invokespecial #323                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      88: aastore
+      89: dup
+      90: iconst_5
+      91: new           #312                // class net/minecraft/util/Tuple
+      94: dup
+      95: ldc_w         #342                // String king_baboon
+      98: getstatic     #345                // Field org/zawamod/zawa/config/ZawaSpawnCategory.WET_SAVANNA:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+     101: invokespecial #323                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+     104: aastore
+     105: dup
+     106: bipush        6
+     108: new           #312                // class net/minecraft/util/Tuple
+     111: dup
+     112: ldc_w         #347                // String western_desert
+     115: getstatic     #335                // Field org/zawamod/zawa/config/ZawaSpawnCategory.HOT_DESERT:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+     118: invokespecial #323                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+     121: aastore
+     122: dup
+     123: bipush        7
+     125: new           #312                // class net/minecraft/util/Tuple
+     128: dup
+     129: ldc_w         #349                // String greenbottle_blue
+     132: getstatic     #335                // Field org/zawamod/zawa/config/ZawaSpawnCategory.HOT_DESERT:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+     135: invokespecial #323                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+     138: aastore
+     139: dup
+     140: bipush        8
+     142: new           #312                // class net/minecraft/util/Tuple
+     145: dup
+     146: ldc_w         #351                // String antilles_pinktoe
+     149: getstatic     #320                // Field org/zawamod/zawa/config/ZawaSpawnCategory.DRY_RAINFOREST:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+     152: invokespecial #323                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+     155: aastore
+     156: invokestatic  #357                // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+     159: invokespecial #360                // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+     162: putstatic     #362                // Field VARIANT_SPAWNS:Ljava/util/List;
+     165: return
+}

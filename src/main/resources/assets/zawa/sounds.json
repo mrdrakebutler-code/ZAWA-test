@@ -1,0 +1,689 @@
+{
+  "african_lion_ambient": {
+    "subtitle": "subtitle.zawa.african_lion_ambient",
+    "sounds": [
+      "zawa:africanlion_ambient"
+    ]
+  },
+  "african_lion_hurt": {
+    "subtitle": "subtitle.zawa.african_lion_hurt",
+    "sounds": [
+      "zawa:africanlion_attacked"
+    ]
+  },
+  "african_lion_attacking": {
+    "subtitle": "subtitle.zawa.african_lion_attacking",
+    "sounds": [
+      "zawa:africanlion_attacking"
+    ]
+  },
+  "african_lion_broadcast": {
+    "subtitle": "subtitle.zawa.african_lion_broadcast",
+    "sounds": [
+      "zawa:africanlion_broadcast"
+    ]
+  },
+  "african_wild_dog_ambient": {
+    "subtitle": "subtitle.zawa.african_wild_dog_ambient",
+    "sounds": [
+      {
+        "name": "zawa:africanwilddog_ambient",
+        "volume": 0.8
+      }
+    ]
+  },
+  "african_wild_dog_hurt": {
+    "subtitle": "subtitle.zawa.african_wild_dog_hurt",
+    "sounds": [
+      {
+        "name": "zawa:africanwilddog_attacked",
+        "volume": 1.0
+      }
+    ]
+  },
+  "african_wild_dog_attacking": {
+    "subtitle": "subtitle.zawa.african_wild_dog_attacking",
+    "sounds": [
+      {
+        "name": "zawa:africanwilddog_attacking",
+        "volume": 0.5
+      }
+    ]
+  },
+  "african_wild_dog_broadcast": {
+    "subtitle": "subtitle.zawa.african_wild_dog_broadcast",
+    "sounds": [
+      {
+        "name": "zawa:africanwilddog_broadcast",
+        "volume": 0.5
+      }
+    ]
+  },
+  "asian_elephant_ambient": {
+    "subtitle": "subtitle.zawa.asian_elephant_ambient",
+    "sounds": [
+      "zawa:asianelephant_ambient"
+    ]
+  },
+  "asian_elephant_hurt": {
+    "subtitle": "subtitle.zawa.asian_elephant_hurt",
+    "sounds": [
+      {
+        "name": "zawa:asianelephant_attacked",
+        "volume": 0.8
+      }
+    ]
+  },
+  "asian_elephant_attacking": {
+    "subtitle": "subtitle.zawa.asian_elephant_attacking",
+    "sounds": [
+      "zawa:asianelephant_attacking"
+    ]
+  },
+  "asian_elephant_broadcast": {
+    "subtitle": "subtitle.zawa.asian_elephant_broadcast",
+    "sounds": [
+      "zawa:asianelephant_broadcast"
+    ]
+  },
+  "asian_elephant_communicating": {
+    "subtitle": "subtitle.zawa.asian_elephant_communicating",
+    "sounds": [
+      "zawa:asianelephant_communicating"
+    ]
+  },
+  "bald_eagle_ambient": {
+    "subtitle": "subtitle.zawa.bald_eagle_ambient",
+    "sounds": [
+      {
+        "name": "zawa:baldeagle_ambient",
+        "volume": 0.8
+      }
+    ]
+  },
+  "bald_eagle_hurt": {
+    "subtitle": "subtitle.zawa.bald_eagle_hurt",
+    "sounds": [
+      {
+        "name": "zawa:baldeagle_attacked",
+        "volume": 0.8
+      }
+    ]
+  },
+  "bald_eagle_attacking": {
+    "subtitle": "subtitle.zawa.bald_eagle_attacking",
+    "sounds": [
+      {
+        "name": "zawa:baldeagle_attacking",
+        "volume": 0.8
+      }
+    ]
+  },
+  "bald_eagle_broadcast": {
+    "subtitle": "subtitle.zawa.bald_eagle_broadcast",
+    "sounds": [
+      "zawa:baldeagle_broadcast"
+    ]
+  },
+  "black_footed_ferret_ambient": {
+    "subtitle": "subtitle.zawa.black_footed_ferret_ambient",
+    "sounds": [
+      "zawa:blackfootedferret_ambient"
+    ]
+  },
+  "black_footed_ferret_hurt": {
+    "subtitle": "subtitle.zawa.black_footed_ferret_hurt",
+    "sounds": [
+      "zawa:blackfootedferret_attacked"
+    ]
+  },
+  "black_footed_ferret_attacking": {
+    "subtitle": "subtitle.zawa.black_footed_ferret_attacking",
+    "sounds": [
+      "zawa:blackfootedferret_attacking"
+    ]
+  },
+  "common_chimpanzee_ambient": {
+    "subtitle": "subtitle.zawa.common_chimpanzee_ambient",
+    "sounds": [
+      "zawa:chimpanzee_ambient"
+    ]
+  },
+  "common_chimpanzee_hurt": {
+    "subtitle": "subtitle.zawa.common_chimpanzee_hurt",
+    "sounds": [
+      "zawa:chimpanzee_attacked"
+    ]
+  },
+  "common_chimpanzee_attacking": {
+    "subtitle": "subtitle.zawa.common_chimpanzee_attacking",
+    "sounds": [
+      "zawa:chimpanzee_attacking"
+    ]
+  },
+  "coquerels_sifaka_ambient": {
+    "subtitle": "subtitle.zawa.coquerels_sifaka_ambient",
+    "sounds": [
+      "zawa:coquerelssifaka_ambient"
+    ]
+  },
+  "coquerels_sifaka_hurt": {
+    "subtitle": "subtitle.zawa.coquerels_sifaka_hurt",
+    "sounds": [
+      "zawa:coquerelssifaka_attacked"
+    ]
+  },
+  "emperor_penguin_ambient": {
+    "subtitle": "subtitle.zawa.emperor_penguin_ambient",
+    "sounds": [
+      {
+        "name": "zawa:emperorpenguin_ambient",
+        "volume": 0.2
+      }
+    ]
+  },
+  "emperor_penguin_hurt": {
+    "subtitle": "subtitle.zawa.emperor_penguin_hurt",
+    "sounds": [
+      {
+        "name": "zawa:emperorpenguin_attacked",
+        "volume": 0.5
+      }
+    ]
+  },
+  "emperor_penguin_communicating": {
+    "subtitle": "subtitle.zawa.emperor_penguin_communicating",
+    "sounds": [
+      "zawa:emperorpenguin_communicating"
+    ]
+  },
+  "flamingo_ambient": {
+    "subtitle": "subtitle.zawa.flamingo_ambient",
+    "sounds": [
+      {
+        "name": "zawa:flamingo_ambient",
+        "volume": 1.0
+      }
+    ]
+  },
+  "flamingo_hurt": {
+    "subtitle": "subtitle.zawa.flamingo_hurt",
+    "sounds": [
+      {
+        "name": "zawa:flamingo_attacked",
+        "volume": 1.0
+      }
+    ]
+  },
+  "flamingo_communicating": {
+    "subtitle": "subtitle.zawa.flamingo_communicating",
+    "sounds": [
+      {
+        "name": "zawa:flamingo_communicating",
+        "volume": 0.5
+      }
+    ]
+  },
+  "giant_anteater_ambient": {
+    "subtitle": "subtitle.zawa.giant_anteater_ambient",
+    "sounds": [
+      {
+        "name": "zawa:giantanteater_ambient",
+        "volume": 0.3
+      }
+    ]
+  },
+  "giant_panda_ambient": {
+    "subtitle": "subtitle.zawa.giant_panda_ambient",
+    "sounds": [
+      "zawa:giantpanda_ambient"
+    ]
+  },
+  "giant_panda_hurt": {
+    "subtitle": "subtitle.zawa.giant_panda_hurt",
+    "sounds": [
+      "zawa:giantpanda_attacked"
+    ]
+  },
+  "giant_panda_attacking": {
+    "subtitle": "subtitle.zawa.giant_panda_attacking",
+    "sounds": [
+      "zawa:giantpanda_attacking"
+    ]
+  },
+  "giraffe_ambient": {
+    "subtitle": "subtitle.zawa.giraffe_ambient",
+    "sounds": [
+      {
+        "name": "zawa:giraffe_ambient",
+        "volume": 0.5
+      }
+    ]
+  },
+  "giraffe_hurt": {
+    "subtitle": "subtitle.zawa.giraffe_hurt",
+    "sounds": [
+      {
+        "name": "zawa:giraffe_attacked",
+        "volume": 0.5
+      }
+    ]
+  },
+  "giraffe_broadcast": {
+    "subtitle": "subtitle.zawa.giraffe_broadcast",
+    "sounds": [
+      {
+        "name": "zawa:giraffe_broadcast",
+        "volume": 0.5
+      }
+    ]
+  },
+  "grevys_zebra_ambient": {
+    "subtitle": "subtitle.zawa.grevys_zebra_ambient",
+    "sounds": [
+      {
+        "name": "zawa:grevyszebra_ambient",
+        "volume": 0.8
+      }
+    ]
+  },
+  "grevys_zebra_hurt": {
+    "subtitle": "subtitle.zawa.grevys_zebra_hurt",
+    "sounds": [
+      {
+        "name": "zawa:grevyszebra_attacked",
+        "volume": 1.0
+      }
+    ]
+  },
+  "hornbill_ambient": {
+    "subtitle": "subtitle.zawa.hornbill_ambient",
+    "sounds": [
+      {
+        "name": "zawa:hornbill_ambient",
+        "volume": 1.0
+      }
+    ]
+  },
+  "hornbill_hurt": {
+    "subtitle": "subtitle.zawa.hornbill_hurt",
+    "sounds": [
+      {
+        "name": "zawa:hornbill_attacked",
+        "volume": 0.8
+      }
+    ]
+  },
+  "hornbill_communicating": {
+    "subtitle": "subtitle.zawa.hornbill_communicating",
+    "sounds": [
+      {
+        "name": "zawa:hornbill_communicating",
+        "volume": 0.8
+      }
+    ]
+  },
+  "indian_gharial_ambient": {
+    "subtitle": "subtitle.zawa.indian_gharial_ambient",
+    "sounds": [
+      {
+        "name": "zawa:indiangharial_ambient",
+        "volume": 1.0
+      }
+    ]
+  },
+  "indian_gharial_hurt": {
+    "subtitle": "subtitle.zawa.indian_gharial_hurt",
+    "sounds": [
+      {
+        "name": "zawa:indiangharial_attacked",
+        "volume": 1.0
+      }
+    ]
+  },
+  "indian_gharial_attacking": {
+    "subtitle": "subtitle.zawa.indian_gharial_attacking",
+    "sounds": [
+      {
+        "name": "zawa:indiangharial_attacking",
+        "volume": 1.0
+      }
+    ]
+  },
+  "kakapo_ambient": {
+    "subtitle": "subtitle.zawa.kakapo_ambient",
+    "sounds": [
+      "zawa:kakapo_ambient"
+    ]
+  },
+  "kakapo_hurt": {
+    "subtitle": "subtitle.zawa.kakapo_hurt",
+    "sounds": [
+      {
+        "name": "zawa:kakapo_attacked",
+        "volume": 0.8
+      }
+    ]
+  },
+  "kakapo_communicating": {
+    "subtitle": "subtitle.zawa.kakapo_communicating",
+    "sounds": [
+      "zawa:kakapo_communicating"
+    ]
+  },
+  "kangaroo_ambient": {
+    "subtitle": "subtitle.zawa.kangaroo_ambient",
+    "sounds": [
+      {
+        "name": "zawa:kangaroo_ambient",
+        "volume": 1.0
+      }
+    ]
+  },
+  "kangaroo_hurt": {
+    "subtitle": "subtitle.zawa.kangaroo_hurt",
+    "sounds": [
+      {
+        "name": "zawa:kangaroo_attacked",
+        "volume": 1.0
+      }
+    ]
+  },
+  "kangaroo_attacking": {
+    "subtitle": "subtitle.zawa.kangaroo_attacking",
+    "sounds": [
+      {
+        "name": "zawa:kangaroo_attacking",
+        "volume": 1.0
+      }
+    ]
+  },
+  "koala_ambient": {
+    "subtitle": "subtitle.zawa.koala_ambient",
+    "sounds": [
+      {
+        "name": "zawa:koala_ambient",
+        "volume": 0.8
+      }
+    ]
+  },
+  "koala_hurt": {
+    "subtitle": "subtitle.zawa.koala_attacked",
+    "sounds": [
+      {
+        "name": "zawa:koala_attacked",
+        "volume": 0.8
+      }
+    ]
+  },
+  "macaw_ambient": {
+    "subtitle": "subtitle.zawa.macaw_ambient",
+    "sounds": [
+      {
+        "name": "zawa:macaw_ambient",
+        "volume": 1.0
+      }
+    ]
+  },
+  "macaw_hurt": {
+    "subtitle": "subtitle.zawa.macaw_hurt",
+    "sounds": [
+      {
+        "name": "zawa:macaw_attacked",
+        "volume": 0.6
+      }
+    ]
+  },
+  "macaw_communicating": {
+    "subtitle": "subtitle.zawa.macaw_communicating",
+    "sounds": [
+      "zawa:macaw_communicating"
+    ]
+  },
+  "mandrill_ambient": {
+    "subtitle": "subtitle.zawa.mandrill_ambient",
+    "sounds": [
+      {
+        "name": "zawa:mandrill_ambient",
+        "volume": 1.0
+      }
+    ]
+  },
+  "mandrill_hurt": {
+    "subtitle": "subtitle.zawa.mandrill_hurt",
+    "sounds": [
+      {
+        "name": "zawa:mandrill_attacked",
+        "volume": 1.0
+      }
+    ]
+  },
+  "mandrill_attacking": {
+    "subtitle": "subtitle.zawa.mandrill_attacking",
+    "sounds": [
+      {
+        "name": "zawa:mandrill_attacking",
+        "volume": 1.0
+      }
+    ]
+  },
+  "motor_boat_going": {
+    "subtitle": "subtitle.zawa.motor_boat_going",
+    "sounds": [
+      {
+        "name": "zawa:motorboat_going",
+        "volume": 0.5
+      }
+    ]
+  },
+  "motor_boat_startup": {
+    "subtitle": "subtitle.zawa.motor_boat_startup",
+    "sounds": [
+      "zawa:motorboat_startup"
+    ]
+  },
+  "motor_boat_stopping": {
+    "subtitle": "subtitle.zawa.motor_boat_stopping",
+    "sounds": [
+      "zawa:motorboat_stopping"
+    ]
+  },
+  "orangutan_ambient": {
+    "subtitle": "subtitle.zawa.orangutan_ambient",
+    "sounds": [
+      "zawa:orangutan_ambient"
+    ]
+  },
+  "orangutan_hurt": {
+    "subtitle": "subtitle.zawa.orangutan_hurt",
+    "sounds": [
+      "zawa:orangutan_attacked"
+    ]
+  },
+  "orangutan_attacking": {
+    "subtitle": "subtitle.zawa.orangutan_attacking",
+    "sounds": [
+      "zawa:orangutan_attacking"
+    ]
+  },
+  "orangutan_communicating": {
+    "subtitle": "subtitle.zawa.orangutan_communicating",
+    "sounds": [
+      "zawa:orangutan_communicating"
+    ]
+  },
+  "orca_ambient": {
+    "subtitle": "subtitle.zawa.orca_ambient",
+    "sounds": [
+      {
+        "name": "zawa:orca_ambient",
+        "volume": 0.5
+      }
+    ]
+  },
+  "orca_hurt": {
+    "subtitle": "subtitle.zawa.orca_hurt",
+    "sounds": [
+      {
+        "name": "zawa:orca_attacked",
+        "volume": 0.5
+      }
+    ]
+  },
+  "orca_attacking": {
+    "subtitle": "subtitle.zawa.orca_attacking",
+    "sounds": [
+      {
+        "name": "zawa:orca_attacking",
+        "volume": 0.5
+      }
+    ]
+  },
+  "orca_broadcast": {
+    "subtitle": "subtitle.zawa.orca_broadcast",
+    "sounds": [
+      "zawa:orca_broadcast"
+    ]
+  },
+  "polar_bear_ambient": {
+    "subtitle": "subtitle.zawa.polar_bear_ambient",
+    "sounds": [
+      {
+        "name": "zawa:polarbear_ambient",
+        "volume": 0.8
+      }
+    ]
+  },
+  "polar_bear_hurt": {
+    "subtitle": "subtitle.zawa.polar_bear_hurt",
+    "sounds": [
+      "zawa:polarbear_attacked"
+    ]
+  },
+  "polar_bear_attacking": {
+    "subtitle": "subtitle.zawa.polar_bear_attacking",
+    "sounds": [
+      "zawa:polarbear_attacking"
+    ]
+  },
+  "red_panda_ambient": {
+    "subtitle": "subtitle.zawa.red_panda_ambient",
+    "sounds": [
+      "zawa:redpanda_ambient"
+    ]
+  },
+  "red_panda_hurt": {
+    "subtitle": "subtitle.zawa.red_panda_hurt",
+    "sounds": [
+      "zawa:redpanda_attacked"
+    ]
+  },
+  "ring_tailed_lemur_ambient": {
+    "subtitle": "subtitle.zawa.ring_tailed_lemur_ambient",
+    "sounds": [
+      "zawa:ringtailedlemur_ambient"
+    ]
+  },
+  "ring_tailed_lemur_hurt": {
+    "subtitle": "subtitle.zawa.ring_tailed_lemur_hurt",
+    "sounds": [
+      "zawa:ringtailedlemur_attacked"
+    ]
+  },
+  "sloth_hurt": {
+    "subtitle": "subtitle.zawa.sloth_hurt",
+    "sounds": [
+      {
+        "name": "zawa:sloth_attacked",
+        "volume": 0.7
+      }
+    ]
+  },
+  "snow_leopard_hurt": {
+    "subtitle": "subtitle.zawa.snow_leopard_hurt",
+    "sounds": [
+      "zawa:snowleopard_attacked"
+    ]
+  },
+  "snow_leopard_attacking": {
+    "subtitle": "subtitle.zawa.snow_leopard_attacking",
+    "sounds": [
+      "zawa:snowleopard_attacking"
+    ]
+  },
+  "spider_monkey_ambient": {
+    "subtitle": "subtitle.zawa.spider_monkey_ambient",
+    "sounds": [
+      {
+        "name": "zawa:spidermonkey_ambient",
+        "volume": 0.8
+      }
+    ]
+  },
+  "spider_monkey_hurt": {
+    "subtitle": "subtitle.zawa.spider_monkey_hurt",
+    "sounds": [
+      {
+        "name": "zawa:spidermonkey_attacked",
+        "volume": 0.8
+      }
+    ]
+  },
+  "spider_monkey_communicating": {
+    "subtitle": "subtitle.zawa.spider_monkey_communicating",
+    "sounds": [
+      "zawa:spidermonkey_communicating"
+    ]
+  },
+  "tree_frog_ambient": {
+    "subtitle": "subtitle.zawa.tree_frog_ambient",
+    "sounds": [
+      "zawa:treefrog_ambient"
+    ]
+  },
+  "tree_frog_hurt": {
+    "subtitle": "subtitle.zawa.tree_frog_hurt",
+    "sounds": [
+      {
+        "name": "zawa:treefrog_attacked",
+        "volume": 0.8
+      }
+    ]
+  },
+  "tree_frog_broadcast": {
+    "subtitle": "subtitle.zawa.tree_frog_broadcast",
+    "sounds": [
+      "zawa:treefrog_broadcast"
+    ]
+  },
+  "western_lowland_gorilla_ambient": {
+    "subtitle": "subtitle.zawa.western_lowland_gorilla_ambient",
+    "sounds": [
+      "zawa:gorilla_ambient"
+    ]
+  },
+  "western_lowland_gorilla_hurt": {
+    "subtitle": "subtitle.zawa.western_lowland_gorilla_hurt",
+    "sounds": [
+      "zawa:gorilla_attacked"
+    ]
+  },
+  "western_lowland_gorilla_attacking": {
+    "subtitle": "subtitle.zawa.western_lowland_gorilla_attacking",
+    "sounds": [
+      "zawa:gorilla_attacking"
+    ]
+  },
+  "zoo_cart_going": {
+    "subtitle": "subtitle.zawa.zoo_cart_going",
+    "sounds": [
+      "zawa:zoocart_going"
+    ]
+  },
+  "zoo_cart_startup": {
+    "subtitle": "subtitle.zawa.zoo_cart_startup",
+    "sounds": [
+      "zawa:zoocart_startup"
+    ]
+  }
+}

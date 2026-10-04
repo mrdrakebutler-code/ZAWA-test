@@ -1,0 +1,7 @@
+{
+  "parent": "zawa:block/_water_plant",
+  "textures": {
+    "base": "zawa:block/duckweed_2",
+    "roots": "zawa:block/duckweed_roots"
+  }
+}

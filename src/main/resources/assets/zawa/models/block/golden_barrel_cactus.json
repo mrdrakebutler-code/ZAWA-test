@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "zawa:block/golden_barrel_cactus"
+  }
+}

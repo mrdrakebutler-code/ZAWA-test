@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "zawa:block/prickly_pear_cactus_unripe_top"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "zawa:item/mexican_red_knee_tarantula"
+  }
+}

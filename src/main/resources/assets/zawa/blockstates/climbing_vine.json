@@ -1,0 +1,230 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "true", "type": 0
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_0"
+      }
+    },
+    {
+      "when": {
+        "down": "true", "type": 0
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_0",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": "true", "type": 0
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_0",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "east": "true", "type": 0
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_0",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": "true", "type": 0
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_0",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "west": "true", "type": 0
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_0",
+        "x": 270,
+        "y": 90
+      }
+    },
+
+
+    {
+      "when": {
+        "up": "true", "type": 1
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_1"
+      }
+    },
+    {
+      "when": {
+        "down": "true", "type": 1
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_1",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": "true", "type": 1
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_1",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "east": "true", "type": 1
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_1",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": "true", "type": 1
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_1",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "west": "true", "type": 1
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_1",
+        "x": 270,
+        "y": 90
+      }
+    },
+
+
+    {
+      "when": {
+        "up": "true", "type": 2
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_2"
+      }
+    },
+    {
+      "when": {
+        "down": "true", "type": 2
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_2",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": "true", "type": 2
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_2",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "east": "true", "type": 2
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_2",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": "true", "type": 2
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_2",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "west": "true", "type": 2
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_2",
+        "x": 270,
+        "y": 90
+      }
+    },
+
+
+    {
+      "when": {
+        "up": "true", "type": 3
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_3"
+      }
+    },
+    {
+      "when": {
+        "down": "true", "type": 3
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_3",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": "true", "type": 3
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_3",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "east": "true", "type": 3
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_3",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": "true", "type": 3
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_3",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "west": "true", "type": 3
+      },
+      "apply": {
+        "model": "zawa:block/climbing_vine_3",
+        "x": 270,
+        "y": 90
+      }
+    }
+  ]
+}

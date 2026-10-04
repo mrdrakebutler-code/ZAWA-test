@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "zawa:block/red_myrio_bottom"
+    },
+    "half=upper": {
+      "model": "zawa:block/red_myrio_top"
+    }
+  }
+}

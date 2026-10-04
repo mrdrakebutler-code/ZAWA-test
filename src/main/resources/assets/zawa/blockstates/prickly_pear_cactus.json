@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "half=lower,age=0": {
+      "model": "zawa:block/prickly_pear_cactus_bottom_age0"
+    },
+    "half=lower,age=1": {
+      "model": "zawa:block/prickly_pear_cactus_bottom_age1"
+    },
+    "half=upper,age=0": {
+      "model": "zawa:block/prickly_pear_cactus_top_age0"
+    },
+    "half=upper,age=1": {
+      "model": "zawa:block/prickly_pear_cactus_top_age1"
+    }
+  }
+}

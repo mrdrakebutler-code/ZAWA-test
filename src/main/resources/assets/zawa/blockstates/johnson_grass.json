@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "zawa:block/johnson_grass_bottom"
+    },
+    "half=upper": {
+      "model": "zawa:block/johnson_grass_top"
+    }
+  }
+}

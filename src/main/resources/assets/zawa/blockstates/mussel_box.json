@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zawa:block/mussel_box",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "zawa:block/mussel_box",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "zawa:block/mussel_box"
+    },
+    "facing=west": {
+      "model": "zawa:block/mussel_box",
+      "y": 90
+    }
+  }
+}

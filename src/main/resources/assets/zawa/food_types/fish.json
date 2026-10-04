@@ -1,0 +1,27 @@
+{
+  "variant": "fish",
+  "items": [
+    "minecraft:cod",
+    "minecraft:cooked_cod",
+    "minecraft:salmon",
+    "minecraft:cooked_salmon",
+    "minecraft:pufferfish",
+    "minecraft:tropical_fish",
+    "zawa:african_lake_cichlid",
+    "zawa:angelfish",
+    "zawa:betta",
+    "zawa:clownfish",
+    "zawa:corydoras",
+    "zawa:dottyback",
+    "zawa:gramma",
+    "zawa:plecostomus",
+    "zawa:clam",
+    "zawa:cooked_clam",
+    "zawa:shrimp",
+    "zawa:cooked_shrimp",
+    "zawa:mussels",
+    "zawa:cooked_mussels",
+    "zawa:crawfish",
+    "zawa:crab"
+  ]
+}

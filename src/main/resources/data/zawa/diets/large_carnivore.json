@@ -1,0 +1,9 @@
+{
+  "minecraft:beef": 7,
+  "minecraft:mutton": 4,
+  "minecraft:porkchop": 3,
+  "minecraft:chicken": 3,
+  
+  "zawa:large_meat": 7,
+  "zawa:medium_meat": 4
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "zawa:block/cobblestone_rock_hide",
+	"textures": {
+		"0": "zawa:block/river_stone"
+	}
+}

@@ -1,0 +1,29 @@
+{
+  "temperament": "aggressive",
+  "kibble": "zawa:carnivore_kibble",
+  "size": "large",
+  "fertility": "low",
+  "breeding_item": "minecraft:salmon",
+  "litter_size": {
+    "min": 1,
+    "max": 2
+  },
+  "diet": "zawa:large_carnivore",
+  "speed": "medium",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:sprinkler",
+      "zawa:scratching_post",
+      "zawa:snow_pit",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ],
+    "zawa:entities": [
+      "zawa:boomer_ball",
+      "zawa:scented_ball",
+      "zawa:beef_ice_treat"
+    ]
+  },
+  "variant_count": 3
+}

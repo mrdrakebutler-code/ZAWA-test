@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "bites=0": {
+      "model": "zawa:block/salt_lick"
+    },
+    "bites=1": {
+      "model": "zawa:block/salt_lick_slice1"
+    },
+    "bites=2": {
+      "model": "zawa:block/salt_lick_slice2"
+    },
+    "bites=3": {
+      "model": "zawa:block/salt_lick_slice3"
+    },
+    "bites=4": {
+      "model": "zawa:block/salt_lick_slice4"
+    }
+  }
+}

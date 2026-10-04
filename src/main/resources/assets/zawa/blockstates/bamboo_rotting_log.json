@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zawa:block/bamboo_rotting_log"
+    },
+    "facing=east": {
+      "model": "zawa:block/bamboo_rotting_log",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "zawa:block/bamboo_rotting_log",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "zawa:block/bamboo_rotting_log",
+      "y": 270
+    }
+  }
+}

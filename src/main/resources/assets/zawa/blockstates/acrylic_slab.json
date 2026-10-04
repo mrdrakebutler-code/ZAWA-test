@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "zawa:block/acrylic_slab"
+    },
+    "type=double": {
+      "model": "zawa:block/acrylic_bars"
+    },
+    "type=top": {
+      "model": "zawa:block/acrylic_slab_top"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zawa:block/hydroponics_table",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "zawa:block/hydroponics_table",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "zawa:block/hydroponics_table"
+    },
+    "facing=west": {
+      "model": "zawa:block/hydroponics_table",
+      "y": 90
+    }
+  }
+}

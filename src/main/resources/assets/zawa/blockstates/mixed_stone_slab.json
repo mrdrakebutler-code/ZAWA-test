@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "zawa:block/mixed_stone_slab"
+    },
+    "type=double": {
+      "model": "zawa:block/mixed_stone"
+    },
+    "type=top": {
+      "model": "zawa:block/mixed_stone_slab_top"
+    }
+  }
+}
+

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zawa:block/cobblestone_rock_hide"
+    },
+    "facing=east": {
+      "model": "zawa:block/cobblestone_rock_hide",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "zawa:block/cobblestone_rock_hide",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "zawa:block/cobblestone_rock_hide",
+      "y": 270
+    }
+  }
+}

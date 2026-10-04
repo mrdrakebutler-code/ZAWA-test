@@ -1,0 +1,7 @@
+{
+	"parent": "zawa:block/waste_bin",
+	"textures": {
+		"1": "block/gray_concrete",
+		"0": "block/acacia_planks"
+	}
+}

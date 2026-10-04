@@ -1,0 +1,33 @@
+{
+  "multipart": [
+    { "when": { "level": "3|2|1|0", "food_type": "empty|fish|fruit|grain|insects|leaves|meat|veggie" },
+      "apply": { "model": "zawa:block/food_bowl" }
+    },
+
+    { "when": { "level": "3|2|1|0", "food_type": "fish" },
+      "apply": { "model": "zawa:block/food_bowl_fish" }
+    },
+    { "when": { "level": "3|2|1|0", "food_type": "fruit" },
+      "apply": { "model": "zawa:block/food_bowl_fruit" }
+    },
+    { "when": { "level": "3|2|1|0", "food_type": "grain" },
+      "apply": { "model": "zawa:block/food_bowl_grain" }
+    },
+    { "when": { "level": "3|2|1|0", "food_type": "insects" },
+      "apply": { "model": "zawa:block/food_bowl_insects" }
+    },
+    { "when": { "level": "3|2|1|0", "food_type": "leaves" },
+      "apply": { "model": "zawa:block/food_bowl_leaves" }
+    },
+    { "when": { "level": "3|2|1|0", "food_type": "meat" },
+      "apply": { "model": "zawa:block/food_bowl_meat" }
+    },
+    { "when": { "level": "3|2|1|0", "food_type": "veggie" },
+      "apply": { "model": "zawa:block/food_bowl_veggie" }
+    },
+
+    { "when": { "level": "3|2|1", "food_type": "empty" },
+      "apply": { "model": "zawa:block/food_bowl_water" }
+    }
+  ]
+}

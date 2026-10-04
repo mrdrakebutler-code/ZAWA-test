@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "zawa:block/hornwort_bottom"
+    },
+    "half=upper": {
+      "model": "zawa:block/hornwort_top"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "zawa:block/dwarf_black_bamboo_bottom"
+    },
+    "half=upper": {
+      "model": "zawa:block/dwarf_black_bamboo_top"
+    }
+  }
+}
+

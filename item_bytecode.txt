@@ -1,0 +1,1809 @@
+==== CaptureNetItem
+Compiled from "CaptureNetItem.java"
+public class org.zawamod.zawa.world.item.CaptureNetItem extends net.minecraft.world.item.Item {
+  public org.zawamod.zawa.world.item.CaptureNetItem(net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #17                 // Method net/minecraft/world/item/Item."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: return
+
+  public boolean m_7579_(net.minecraft.world.item.ItemStack, net.minecraft.world.entity.LivingEntity, net.minecraft.world.entity.LivingEntity);
+    Code:
+       0: aload_3
+       1: instanceof    #25                 // class net/minecraft/world/entity/player/Player
+       4: ifeq          279
+       7: aload_3
+       8: checkcast     #25                 // class net/minecraft/world/entity/player/Player
+      11: astore        4
+      13: aload_2
+      14: invokestatic  #31                 // Method org/zawamod/zawa/resources/ZawaReference.canEntityBeCaptured:(Lnet/minecraft/world/entity/Entity;)Z
+      17: ifeq          279
+      20: aload_1
+      21: invokevirtual #37                 // Method net/minecraft/world/item/ItemStack.m_41782_:()Z
+      24: ifeq          52
+      27: aload_1
+      28: invokevirtual #41                 // Method net/minecraft/world/item/ItemStack.m_41783_:()Lnet/minecraft/nbt/CompoundTag;
+      31: ldc           #43                 // String id
+      33: invokevirtual #49                 // Method net/minecraft/nbt/CompoundTag.m_128441_:(Ljava/lang/String;)Z
+      36: ifeq          52
+      39: aload         4
+      41: ldc           #51                 // String chat.zawa.capture_net.full
+      43: invokestatic  #57                 // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+      46: iconst_1
+      47: invokevirtual #61                 // Method net/minecraft/world/entity/player/Player.m_5661_:(Lnet/minecraft/network/chat/Component;Z)V
+      50: iconst_1
+      51: ireturn
+      52: aload_2
+      53: instanceof    #63                 // class net/minecraft/world/entity/TamableAnimal
+      56: ifeq          96
+      59: aload_2
+      60: checkcast     #63                 // class net/minecraft/world/entity/TamableAnimal
+      63: astore        6
+      65: aload         6
+      67: invokevirtual #66                 // Method net/minecraft/world/entity/TamableAnimal.m_21824_:()Z
+      70: ifeq          92
+      73: aload         6
+      75: aload         4
+      77: invokevirtual #70                 // Method net/minecraft/world/entity/TamableAnimal.m_21830_:(Lnet/minecraft/world/entity/LivingEntity;)Z
+      80: ifne          92
+      83: aload         4
+      85: iconst_2
+      86: invokevirtual #74                 // Method net/minecraft/world/entity/player/Player.m_20310_:(I)Z
+      89: ifeq          96
+      92: iconst_1
+      93: goto          97
+      96: iconst_0
+      97: istore        5
+      99: iconst_0
+     100: istore        6
+     102: aload         4
+     104: invokevirtual #78                 // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+     107: getfield      #84                 // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+     110: ifeq          131
+     113: aload_2
+     114: instanceof    #63                 // class net/minecraft/world/entity/TamableAnimal
+     117: ifeq          125
+     120: iload         5
+     122: ifeq          233
+     125: iconst_1
+     126: istore        6
+     128: goto          233
+     131: aload_2
+     132: instanceof    #86                 // class org/zawamod/zawa/world/entity/animal/ZawaBaseEntity
+     135: ifeq          177
+     138: aload_2
+     139: checkcast     #86                 // class org/zawamod/zawa/world/entity/animal/ZawaBaseEntity
+     142: astore        7
+     144: aload         7
+     146: invokevirtual #90                 // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.getSpeciesSizeOrdinal:()I
+     149: iconst_4
+     150: if_icmpge     164
+     153: iload         5
+     155: ifeq          233
+     158: iconst_1
+     159: istore        6
+     161: goto          233
+     164: aload         4
+     166: ldc           #92                 // String chat.zawa.capture_net.too_big
+     168: invokestatic  #57                 // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+     171: iconst_1
+     172: invokevirtual #61                 // Method net/minecraft/world/entity/player/Player.m_5661_:(Lnet/minecraft/network/chat/Component;Z)V
+     175: iconst_1
+     176: ireturn
+     177: aload_2
+     178: instanceof    #94                 // class org/zawamod/zawa/world/entity/ambient/ZawaBaseAmbientEntity
+     181: ifeq          190
+     184: iconst_1
+     185: istore        6
+     187: goto          233
+     190: getstatic     #100                // Field net/minecraftforge/registries/ForgeRegistries.ENTITY_TYPES:Lnet/minecraftforge/registries/IForgeRegistry;
+     193: invokeinterface #106,  1          // InterfaceMethod net/minecraftforge/registries/IForgeRegistry.tags:()Lnet/minecraftforge/registries/tags/ITagManager;
+     198: getstatic     #112                // Field org/zawamod/zawa/tags/ZawaEntityTypeTags.CAPTURE_NET_WHITELIST:Lnet/minecraft/tags/TagKey;
+     201: invokeinterface #118,  2          // InterfaceMethod net/minecraftforge/registries/tags/ITagManager.getTag:(Lnet/minecraft/tags/TagKey;)Lnet/minecraftforge/registries/tags/ITag;
+     206: aload_2
+     207: invokevirtual #124                // Method net/minecraft/world/entity/LivingEntity.m_6095_:()Lnet/minecraft/world/entity/EntityType;
+     210: invokeinterface #130,  2          // InterfaceMethod net/minecraftforge/registries/tags/ITag.contains:(Ljava/lang/Object;)Z
+     215: ifeq          233
+     218: aload_2
+     219: instanceof    #63                 // class net/minecraft/world/entity/TamableAnimal
+     222: ifeq          230
+     225: iload         5
+     227: ifeq          233
+     230: iconst_1
+     231: istore        6
+     233: iload         6
+     235: ifeq          279
+     238: aload         4
+     240: invokevirtual #134                // Method net/minecraft/world/entity/player/Player.m_9236_:()Lnet/minecraft/world/level/Level;
+     243: getfield      #139                // Field net/minecraft/world/level/Level.f_46443_:Z
+     246: ifeq          251
+     249: iconst_1
+     250: ireturn
+     251: aload_0
+     252: aload_2
+     253: aload         4
+     255: invokevirtual #143                // Method caughtEntityItem:(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/item/ItemStack;
+     258: astore        7
+     260: aload         7
+     262: aload_1
+     263: invokevirtual #146                // Method net/minecraft/world/item/ItemStack.m_41773_:()I
+     266: invokevirtual #150                // Method net/minecraft/world/item/ItemStack.m_41721_:(I)V
+     269: aload         4
+     271: getstatic     #156                // Field net/minecraft/world/InteractionHand.MAIN_HAND:Lnet/minecraft/world/InteractionHand;
+     274: aload         7
+     276: invokevirtual #160                // Method net/minecraft/world/entity/player/Player.m_21008_:(Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)V
+     279: iconst_1
+     280: ireturn
+
+  private net.minecraft.world.item.ItemStack caughtEntityItem(net.minecraft.world.entity.LivingEntity, net.minecraft.world.entity.player.Player);
+    Code:
+       0: aload_1
+       1: invokevirtual #178                // Method net/minecraft/world/entity/LivingEntity.m_8127_:()V
+       4: aload_1
+       5: invokevirtual #181                // Method net/minecraft/world/entity/LivingEntity.m_20153_:()V
+       8: aload_1
+       9: invokevirtual #184                // Method net/minecraft/world/entity/LivingEntity.revive:()V
+      12: new           #45                 // class net/minecraft/nbt/CompoundTag
+      15: dup
+      16: invokespecial #186                // Method net/minecraft/nbt/CompoundTag."<init>":()V
+      19: astore_3
+      20: aload_1
+      21: aload_3
+      22: invokevirtual #190                // Method net/minecraft/world/entity/LivingEntity.m_20223_:(Lnet/minecraft/nbt/CompoundTag;)Z
+      25: pop
+      26: aload_3
+      27: ldc           #192                // String CapturedEntity
+      29: iconst_1
+      30: invokevirtual #196                // Method net/minecraft/nbt/CompoundTag.m_128379_:(Ljava/lang/String;Z)V
+      33: aload_1
+      34: invokevirtual #124                // Method net/minecraft/world/entity/LivingEntity.m_6095_:()Lnet/minecraft/world/entity/EntityType;
+      37: invokestatic  #202                // Method net/minecraft/world/entity/EntityType.m_20613_:(Lnet/minecraft/world/entity/EntityType;)Lnet/minecraft/resources/ResourceLocation;
+      40: astore        4
+      42: aload_3
+      43: ldc           #43                 // String id
+      45: aload         4
+      47: invokevirtual #208                // Method net/minecraft/resources/ResourceLocation.toString:()Ljava/lang/String;
+      50: invokevirtual #212                // Method net/minecraft/nbt/CompoundTag.m_128359_:(Ljava/lang/String;Ljava/lang/String;)V
+      53: aload_1
+      54: instanceof    #86                 // class org/zawamod/zawa/world/entity/animal/ZawaBaseEntity
+      57: ifeq          85
+      60: aload_1
+      61: checkcast     #86                 // class org/zawamod/zawa/world/entity/animal/ZawaBaseEntity
+      64: invokevirtual #213                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.m_21824_:()Z
+      67: ifeq          85
+      70: aload_3
+      71: ldc           #215                // String OwnerName
+      73: aload_2
+      74: invokevirtual #219                // Method net/minecraft/world/entity/player/Player.m_7755_:()Lnet/minecraft/network/chat/Component;
+      77: invokeinterface #222,  1          // InterfaceMethod net/minecraft/network/chat/Component.getString:()Ljava/lang/String;
+      82: invokevirtual #212                // Method net/minecraft/nbt/CompoundTag.m_128359_:(Ljava/lang/String;Ljava/lang/String;)V
+      85: aload_1
+==== SlingshotNetItem
+Compiled from "SlingshotNetItem.java"
+public class org.zawamod.zawa.world.item.SlingshotNetItem extends net.minecraft.world.item.ArrowItem {
+  public org.zawamod.zawa.world.item.SlingshotNetItem(net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #19                 // Method net/minecraft/world/item/ArrowItem."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: return
+
+  public org.zawamod.zawa.world.entity.projectile.SlingshotNet createSlingshotNet(net.minecraft.world.level.Level, net.minecraft.world.entity.LivingEntity);
+    Code:
+       0: new           #27                 // class org/zawamod/zawa/world/entity/projectile/SlingshotNet
+       3: dup
+       4: aload_1
+       5: aload_2
+       6: invokespecial #30                 // Method org/zawamod/zawa/world/entity/projectile/SlingshotNet."<init>":(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)V
+       9: areturn
+
+  public boolean isInfinite(net.minecraft.world.item.ItemStack, net.minecraft.world.item.ItemStack, net.minecraft.world.entity.player.Player);
+    Code:
+       0: iconst_0
+       1: ireturn
+
+  public net.minecraft.world.InteractionResult m_6225_(net.minecraft.world.item.context.UseOnContext);
+    Code:
+       0: aload_1
+       1: invokevirtual #49                 // Method net/minecraft/world/item/context/UseOnContext.m_43723_:()Lnet/minecraft/world/entity/player/Player;
+       4: astore_2
+       5: aload_2
+       6: ifnull        324
+       9: aload_1
+      10: invokevirtual #53                 // Method net/minecraft/world/item/context/UseOnContext.m_43725_:()Lnet/minecraft/world/level/Level;
+      13: astore_3
+      14: aload_1
+      15: invokevirtual #57                 // Method net/minecraft/world/item/context/UseOnContext.m_43722_:()Lnet/minecraft/world/item/ItemStack;
+      18: astore        4
+      20: aload         4
+      22: invokevirtual #63                 // Method net/minecraft/world/item/ItemStack.m_41782_:()Z
+      25: ifeq          49
+      28: aload         4
+      30: invokevirtual #63                 // Method net/minecraft/world/item/ItemStack.m_41782_:()Z
+      33: ifeq          63
+      36: aload         4
+      38: invokevirtual #67                 // Method net/minecraft/world/item/ItemStack.m_41783_:()Lnet/minecraft/nbt/CompoundTag;
+      41: ldc           #69                 // String id
+      43: invokevirtual #75                 // Method net/minecraft/nbt/CompoundTag.m_128441_:(Ljava/lang/String;)Z
+      46: ifne          63
+      49: aload_2
+      50: ldc           #81                 // String chat.zawa.capture_net.empty
+      52: invokestatic  #87                 // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+      55: iconst_1
+      56: invokevirtual #91                 // Method net/minecraft/world/entity/player/Player.m_5661_:(Lnet/minecraft/network/chat/Component;Z)V
+      59: getstatic     #97                 // Field net/minecraft/world/InteractionResult.PASS:Lnet/minecraft/world/InteractionResult;
+      62: areturn
+      63: aload_3
+      64: getfield      #101                // Field net/minecraft/world/level/Level.f_46443_:Z
+      67: ifne          316
+      70: new           #103                // class net/minecraft/core/BlockPos
+      73: dup
+      74: aload_1
+      75: invokevirtual #107                // Method net/minecraft/world/item/context/UseOnContext.m_8083_:()Lnet/minecraft/core/BlockPos;
+      78: invokespecial #110                // Method net/minecraft/core/BlockPos."<init>":(Lnet/minecraft/core/Vec3i;)V
+      81: aload_1
+      82: invokevirtual #114                // Method net/minecraft/world/item/context/UseOnContext.m_43719_:()Lnet/minecraft/core/Direction;
+      85: invokevirtual #118                // Method net/minecraft/core/BlockPos.m_121945_:(Lnet/minecraft/core/Direction;)Lnet/minecraft/core/BlockPos;
+      88: astore        5
+      90: aload         4
+      92: invokevirtual #67                 // Method net/minecraft/world/item/ItemStack.m_41783_:()Lnet/minecraft/nbt/CompoundTag;
+      95: astore        6
+      97: aload         6
+      99: ldc           #120                // String Passengers
+     101: invokevirtual #124                // Method net/minecraft/nbt/CompoundTag.m_128473_:(Ljava/lang/String;)V
+     104: aload         6
+     106: ldc           #126                // String Leash
+     108: invokevirtual #124                // Method net/minecraft/nbt/CompoundTag.m_128473_:(Ljava/lang/String;)V
+     111: aload         6
+     113: ldc           #128                // String OwnerName
+     115: invokevirtual #124                // Method net/minecraft/nbt/CompoundTag.m_128473_:(Ljava/lang/String;)V
+     118: aload         6
+     120: ldc           #130                // String DisplayName
+     122: invokevirtual #124                // Method net/minecraft/nbt/CompoundTag.m_128473_:(Ljava/lang/String;)V
+     125: aload         6
+     127: aload_3
+     128: invokedynamic #149,  0            // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+     133: invokestatic  #155                // Method net/minecraft/world/entity/EntityType.m_20645_:(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/Level;Ljava/util/function/Function;)Lnet/minecraft/world/entity/Entity;
+     136: checkcast     #157                // class net/minecraft/world/entity/LivingEntity
+     139: astore        7
+     141: aload         7
+     143: ifnull        316
+     146: aload         7
+     148: invokestatic  #163                // Method org/zawamod/zawa/resources/ZawaReference.canEntityBeCaptured:(Lnet/minecraft/world/entity/Entity;)Z
+     151: ifeq          316
+     154: aload         7
+     156: aload         5
+     158: invokevirtual #167                // Method net/minecraft/core/BlockPos.m_123341_:()I
+     161: i2d
+     162: ldc2_w        #168                // double 0.5d
+     165: dadd
+     166: aload         5
+     168: invokevirtual #172                // Method net/minecraft/core/BlockPos.m_123342_:()I
+     171: i2d
+     172: aload         5
+     174: invokevirtual #175                // Method net/minecraft/core/BlockPos.m_123343_:()I
+     177: i2d
+     178: ldc2_w        #168                // double 0.5d
+     181: dadd
+     182: aload_1
+     183: invokevirtual #179                // Method net/minecraft/world/item/context/UseOnContext.m_7074_:()F
+     186: fconst_0
+     187: invokevirtual #183                // Method net/minecraft/world/entity/LivingEntity.m_19890_:(DDDFF)V
+     190: aload         7
+     192: aload         6
+     194: ldc           #185                // String UUID
+     196: invokevirtual #189                // Method net/minecraft/nbt/CompoundTag.m_128342_:(Ljava/lang/String;)Ljava/util/UUID;
+     199: invokevirtual #193                // Method net/minecraft/world/entity/LivingEntity.m_20084_:(Ljava/util/UUID;)V
+     202: aload_3
+     203: aload         7
+     205: invokevirtual #196                // Method net/minecraft/world/level/Level.m_7967_:(Lnet/minecraft/world/entity/Entity;)Z
+     208: pop
+     209: aload         4
+     211: iconst_1
+     212: invokevirtual #200                // Method net/minecraft/world/item/ItemStack.m_41774_:(I)V
+     215: aload         4
+     217: invokevirtual #203                // Method net/minecraft/world/item/ItemStack.m_41613_:()I
+     220: iconst_1
+     221: if_icmpge     250
+     224: aload_2
+     225: invokevirtual #207                // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+     228: getfield      #212                // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+     231: ifeq          250
+     234: aload_2
+     235: aload_1
+     236: invokevirtual #216                // Method net/minecraft/world/item/context/UseOnContext.m_43724_:()Lnet/minecraft/world/InteractionHand;
+     239: new           #59                 // class net/minecraft/world/item/ItemStack
+     242: dup
+     243: aload_0
+     244: invokespecial #219                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+     247: invokevirtual #223                // Method net/minecraft/world/entity/player/Player.m_21008_:(Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)V
+     250: aload         6
+     252: ldc           #130                // String DisplayName
+     254: invokevirtual #75                 // Method net/minecraft/nbt/CompoundTag.m_128441_:(Ljava/lang/String;)Z
+     257: ifeq          273
+     260: aload         6
+     262: ldc           #130                // String DisplayName
+     264: invokevirtual #227                // Method net/minecraft/nbt/CompoundTag.m_128461_:(Ljava/lang/String;)Ljava/lang/String;
+     267: invokestatic  #230                // InterfaceMethod net/minecraft/network/chat/Component.m_237113_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+     270: goto          295
+     273: ldc           #232                // String entity
+     275: new           #234                // class net/minecraft/resources/ResourceLocation
+     278: dup
+     279: aload         6
+     281: ldc           #69                 // String id
+     283: invokevirtual #227                // Method net/minecraft/nbt/CompoundTag.m_128461_:(Ljava/lang/String;)Ljava/lang/String;
+     286: invokespecial #236                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;)V
+     289: invokestatic  #242                // Method net/minecraft/Util.m_137492_:(Ljava/lang/String;Lnet/minecraft/resources/ResourceLocation;)Ljava/lang/String;
+     292: invokestatic  #87                 // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+     295: astore        8
+     297: aload_2
+     298: ldc           #244                // String chat.zawa.capture_net.release
+     300: iconst_1
+     301: anewarray     #246                // class java/lang/Object
+     304: dup
+     305: iconst_0
+     306: aload         8
+     308: aastore
+     309: invokestatic  #250                // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+     312: iconst_1
+     313: invokevirtual #91                 // Method net/minecraft/world/entity/player/Player.m_5661_:(Lnet/minecraft/network/chat/Component;Z)V
+     316: aload_3
+     317: getfield      #101                // Field net/minecraft/world/level/Level.f_46443_:Z
+     320: invokestatic  #254                // Method net/minecraft/world/InteractionResult.m_19078_:(Z)Lnet/minecraft/world/InteractionResult;
+     323: areturn
+     324: getstatic     #257                // Field net/minecraft/world/InteractionResult.FAIL:Lnet/minecraft/world/InteractionResult;
+     327: areturn
+
+  public void m_7373_(net.minecraft.world.item.ItemStack, net.minecraft.world.level.Level, java.util.List<net.minecraft.network.chat.Component>, net.minecraft.world.item.TooltipFlag);
+    Code:
+       0: aload_1
+       1: invokevirtual #67                 // Method net/minecraft/world/item/ItemStack.m_41783_:()Lnet/minecraft/nbt/CompoundTag;
+       4: astore        5
+==== SeineNetItem
+Compiled from "SeineNetItem.java"
+public class org.zawamod.zawa.world.item.SeineNetItem extends net.minecraft.world.item.BlockItem {
+  public org.zawamod.zawa.world.item.SeineNetItem(net.minecraft.world.level.block.Block, net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokespecial #29                 // Method net/minecraft/world/item/BlockItem."<init>":(Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/item/Item$Properties;)V
+       6: return
+
+  public net.minecraft.world.InteractionResult m_6225_(net.minecraft.world.item.context.UseOnContext);
+    Code:
+       0: aload_1
+       1: invokevirtual #43                 // Method net/minecraft/world/item/context/UseOnContext.m_43723_:()Lnet/minecraft/world/entity/player/Player;
+       4: astore_2
+       5: aload_1
+       6: invokevirtual #47                 // Method net/minecraft/world/item/context/UseOnContext.m_43722_:()Lnet/minecraft/world/item/ItemStack;
+       9: astore_3
+      10: aload_3
+      11: ldc           #49                 // String CaptureBlockTag
+      13: invokevirtual #55                 // Method net/minecraft/world/item/ItemStack.m_41737_:(Ljava/lang/String;)Lnet/minecraft/nbt/CompoundTag;
+      16: astore        4
+      18: aload         4
+      20: ifnull        308
+      23: aload         4
+      25: ldc           #57                 // String Animal
+      27: invokevirtual #63                 // Method net/minecraft/nbt/CompoundTag.m_128441_:(Ljava/lang/String;)Z
+      30: ifeq          308
+      33: aload_2
+      34: ifnull        308
+      37: aload_1
+      38: invokevirtual #67                 // Method net/minecraft/world/item/context/UseOnContext.m_43725_:()Lnet/minecraft/world/level/Level;
+      41: astore        5
+      43: aload         5
+      45: getfield      #73                 // Field net/minecraft/world/level/Level.f_46443_:Z
+      48: ifne          299
+      51: aload         4
+      53: ldc           #57                 // String Animal
+      55: invokevirtual #76                 // Method net/minecraft/nbt/CompoundTag.m_128469_:(Ljava/lang/String;)Lnet/minecraft/nbt/CompoundTag;
+      58: astore        6
+      60: aload         6
+      62: ldc           #78                 // String Passengers
+      64: invokevirtual #82                 // Method net/minecraft/nbt/CompoundTag.m_128473_:(Ljava/lang/String;)V
+      67: aload         6
+      69: ldc           #84                 // String Leash
+      71: invokevirtual #82                 // Method net/minecraft/nbt/CompoundTag.m_128473_:(Ljava/lang/String;)V
+      74: aload         6
+      76: ldc           #86                 // String OwnerName
+      78: invokevirtual #82                 // Method net/minecraft/nbt/CompoundTag.m_128473_:(Ljava/lang/String;)V
+      81: aload         6
+      83: ldc           #88                 // String DisplayName
+      85: invokevirtual #82                 // Method net/minecraft/nbt/CompoundTag.m_128473_:(Ljava/lang/String;)V
+      88: new           #90                 // class net/minecraft/core/BlockPos
+      91: dup
+      92: aload_1
+      93: invokevirtual #94                 // Method net/minecraft/world/item/context/UseOnContext.m_8083_:()Lnet/minecraft/core/BlockPos;
+      96: invokespecial #97                 // Method net/minecraft/core/BlockPos."<init>":(Lnet/minecraft/core/Vec3i;)V
+      99: aload_1
+     100: invokevirtual #101                // Method net/minecraft/world/item/context/UseOnContext.m_43719_:()Lnet/minecraft/core/Direction;
+     103: invokevirtual #105                // Method net/minecraft/core/BlockPos.m_121945_:(Lnet/minecraft/core/Direction;)Lnet/minecraft/core/BlockPos;
+     106: astore        7
+     108: aload         6
+     110: aload         5
+     112: invokedynamic #124,  0            // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+     117: invokestatic  #130                // Method net/minecraft/world/entity/EntityType.m_20645_:(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/Level;Ljava/util/function/Function;)Lnet/minecraft/world/entity/Entity;
+     120: checkcast     #132                // class net/minecraft/world/entity/LivingEntity
+     123: astore        8
+     125: aload         8
+     127: ifnull        299
+     130: aload         8
+     132: invokestatic  #138                // Method org/zawamod/zawa/resources/ZawaReference.canEntityBeCaptured:(Lnet/minecraft/world/entity/Entity;)Z
+     135: ifeq          299
+     138: aload         8
+     140: aload         7
+     142: invokevirtual #142                // Method net/minecraft/core/BlockPos.m_123341_:()I
+     145: i2d
+     146: ldc2_w        #143                // double 0.5d
+     149: dadd
+     150: aload         7
+     152: invokevirtual #147                // Method net/minecraft/core/BlockPos.m_123342_:()I
+     155: i2d
+     156: aload         7
+     158: invokevirtual #150                // Method net/minecraft/core/BlockPos.m_123343_:()I
+     161: i2d
+     162: ldc2_w        #143                // double 0.5d
+     165: dadd
+     166: aload_1
+     167: invokevirtual #154                // Method net/minecraft/world/item/context/UseOnContext.m_7074_:()F
+     170: fconst_0
+     171: invokevirtual #158                // Method net/minecraft/world/entity/LivingEntity.m_19890_:(DDDFF)V
+     174: aload         8
+     176: aload         6
+     178: ldc           #160                // String UUID
+     180: invokevirtual #164                // Method net/minecraft/nbt/CompoundTag.m_128342_:(Ljava/lang/String;)Ljava/util/UUID;
+     183: invokevirtual #168                // Method net/minecraft/world/entity/LivingEntity.m_20084_:(Ljava/util/UUID;)V
+     186: aload         5
+     188: aload         8
+     190: invokevirtual #171                // Method net/minecraft/world/level/Level.m_7967_:(Lnet/minecraft/world/entity/Entity;)Z
+     193: pop
+     194: aload_3
+     195: iconst_1
+     196: invokevirtual #175                // Method net/minecraft/world/item/ItemStack.m_41774_:(I)V
+     199: aload_3
+     200: invokevirtual #178                // Method net/minecraft/world/item/ItemStack.m_41613_:()I
+     203: iconst_1
+     204: if_icmpge     233
+     207: aload_2
+     208: invokevirtual #184                // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+     211: getfield      #189                // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+     214: ifeq          233
+     217: aload_2
+     218: aload_1
+     219: invokevirtual #193                // Method net/minecraft/world/item/context/UseOnContext.m_43724_:()Lnet/minecraft/world/InteractionHand;
+     222: new           #51                 // class net/minecraft/world/item/ItemStack
+     225: dup
+     226: aload_0
+     227: invokespecial #196                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+     230: invokevirtual #200                // Method net/minecraft/world/entity/player/Player.m_21008_:(Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)V
+     233: aload         6
+     235: ldc           #88                 // String DisplayName
+     237: invokevirtual #63                 // Method net/minecraft/nbt/CompoundTag.m_128441_:(Ljava/lang/String;)Z
+     240: ifeq          256
+     243: aload         6
+     245: ldc           #88                 // String DisplayName
+     247: invokevirtual #204                // Method net/minecraft/nbt/CompoundTag.m_128461_:(Ljava/lang/String;)Ljava/lang/String;
+     250: invokestatic  #210                // InterfaceMethod net/minecraft/network/chat/Component.m_237113_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+     253: goto          278
+     256: ldc           #212                // String entity
+     258: new           #214                // class net/minecraft/resources/ResourceLocation
+     261: dup
+     262: aload         6
+     264: ldc           #216                // String id
+     266: invokevirtual #204                // Method net/minecraft/nbt/CompoundTag.m_128461_:(Ljava/lang/String;)Ljava/lang/String;
+     269: invokespecial #218                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;)V
+     272: invokestatic  #224                // Method net/minecraft/Util.m_137492_:(Ljava/lang/String;Lnet/minecraft/resources/ResourceLocation;)Ljava/lang/String;
+     275: invokestatic  #227                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+     278: astore        9
+     280: aload_2
+     281: ldc           #229                // String chat.zawa.capture_net.release
+     283: iconst_1
+     284: anewarray     #231                // class java/lang/Object
+     287: dup
+     288: iconst_0
+     289: aload         9
+     291: aastore
+     292: invokestatic  #235                // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+     295: iconst_1
+     296: invokevirtual #239                // Method net/minecraft/world/entity/player/Player.m_5661_:(Lnet/minecraft/network/chat/Component;Z)V
+     299: aload         5
+     301: getfield      #73                 // Field net/minecraft/world/level/Level.f_46443_:Z
+     304: invokestatic  #245                // Method net/minecraft/world/InteractionResult.m_19078_:(Z)Lnet/minecraft/world/InteractionResult;
+     307: areturn
+     308: aload_0
+     309: aload_1
+     310: invokespecial #247                // Method net/minecraft/world/item/BlockItem.m_6225_:(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;
+     313: areturn
+
+  public net.minecraft.world.InteractionResultHolder<net.minecraft.world.item.ItemStack> m_7203_(net.minecraft.world.level.Level, net.minecraft.world.entity.player.Player, net.minecraft.world.InteractionHand);
+    Code:
+       0: aload_2
+       1: aload_3
+       2: invokevirtual #271                // Method net/minecraft/world/entity/player/Player.m_21120_:(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;
+       5: astore        4
+       7: aload_1
+       8: aload_2
+       9: getstatic     #275                // Field net/minecraft/world/level/ClipContext$Fluid.SOURCE_ONLY:Lnet/minecraft/world/level/ClipContext$Fluid;
+      12: invokestatic  #279                // Method m_41435_:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/ClipContext$Fluid;)Lnet/minecraft/world/phys/BlockHitResult;
+      15: astore        5
+      17: aload         5
+      19: invokevirtual #283                // Method net/minecraft/world/phys/HitResult.m_6662_:()Lnet/minecraft/world/phys/HitResult$Type;
+      22: getstatic     #287                // Field net/minecraft/world/phys/HitResult$Type.BLOCK:Lnet/minecraft/world/phys/HitResult$Type;
+      25: if_acmpeq     34
+      28: aload         4
+      30: invokestatic  #293                // Method net/minecraft/world/InteractionResultHolder.m_19098_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      33: areturn
+      34: aload_1
+      35: instanceof    #295                // class net/minecraft/server/level/ServerLevel
+      38: ifne          47
+      41: aload         4
+      43: invokestatic  #298                // Method net/minecraft/world/InteractionResultHolder.m_19090_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+==== NetLauncherItem
+Compiled from "NetLauncherItem.java"
+public class org.zawamod.zawa.world.item.NetLauncherItem extends net.minecraft.world.item.ProjectileWeaponItem {
+  private boolean startSoundPlayed;
+
+  private boolean midLoadSoundPlayed;
+
+  public org.zawamod.zawa.world.item.NetLauncherItem(net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #27                 // Method net/minecraft/world/item/ProjectileWeaponItem."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: aload_0
+       6: iconst_0
+       7: putfield      #29                 // Field startSoundPlayed:Z
+      10: aload_0
+      11: iconst_0
+      12: putfield      #31                 // Field midLoadSoundPlayed:Z
+      15: return
+
+  public java.util.function.Predicate<net.minecraft.world.item.ItemStack> m_6437_();
+    Code:
+       0: invokedynamic #56,  0             // InvokeDynamic #0:test:()Ljava/util/function/Predicate;
+       5: areturn
+
+  public net.minecraft.world.InteractionResultHolder<net.minecraft.world.item.ItemStack> m_7203_(net.minecraft.world.level.Level, net.minecraft.world.entity.player.Player, net.minecraft.world.InteractionHand);
+    Code:
+       0: aload_2
+       1: aload_3
+       2: invokevirtual #65                 // Method net/minecraft/world/entity/player/Player.m_21120_:(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;
+       5: astore        4
+       7: aload         4
+       9: invokestatic  #68                 // Method isLoaded:(Lnet/minecraft/world/item/ItemStack;)Z
+      12: ifeq          38
+      15: aload_1
+      16: aload_2
+      17: aload_3
+      18: aload         4
+      20: ldc           #69                 // float 1.6f
+      22: fconst_1
+      23: invokestatic  #73                 // Method performShooting:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;FF)V
+      26: aload         4
+      28: iconst_0
+      29: invokestatic  #77                 // Method setLoaded:(Lnet/minecraft/world/item/ItemStack;Z)V
+      32: aload         4
+      34: invokestatic  #83                 // Method net/minecraft/world/InteractionResultHolder.m_19096_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      37: areturn
+      38: aload_2
+      39: aload         4
+      41: invokevirtual #89                 // Method net/minecraft/world/entity/player/Player.m_6298_:(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;
+      44: invokevirtual #93                 // Method net/minecraft/world/item/ItemStack.m_41619_:()Z
+      47: ifne          79
+      50: aload         4
+      52: invokestatic  #68                 // Method isLoaded:(Lnet/minecraft/world/item/ItemStack;)Z
+      55: ifne          73
+      58: aload_0
+      59: iconst_0
+      60: putfield      #29                 // Field startSoundPlayed:Z
+      63: aload_0
+      64: iconst_0
+      65: putfield      #31                 // Field midLoadSoundPlayed:Z
+      68: aload_2
+      69: aload_3
+      70: invokevirtual #97                 // Method net/minecraft/world/entity/player/Player.m_6672_:(Lnet/minecraft/world/InteractionHand;)V
+      73: aload         4
+      75: invokestatic  #83                 // Method net/minecraft/world/InteractionResultHolder.m_19096_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      78: areturn
+      79: aload         4
+      81: invokestatic  #100                // Method net/minecraft/world/InteractionResultHolder.m_19100_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      84: areturn
+
+  public void m_5551_(net.minecraft.world.item.ItemStack, net.minecraft.world.level.Level, net.minecraft.world.entity.LivingEntity, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #114                // Method m_8105_:(Lnet/minecraft/world/item/ItemStack;)I
+       5: iload         4
+       7: isub
+       8: istore        5
+      10: iload         5
+      12: i2f
+      13: aload_0
+      14: aload_1
+      15: invokevirtual #114                // Method m_8105_:(Lnet/minecraft/world/item/ItemStack;)I
+      18: i2f
+      19: fdiv
+      20: fstore        6
+      22: aload_3
+      23: instanceof    #61                 // class net/minecraft/world/entity/player/Player
+      26: ifeq          102
+      29: fload         6
+      31: fconst_1
+      32: fcmpl
+      33: iflt          102
+      36: aload_1
+      37: invokestatic  #68                 // Method isLoaded:(Lnet/minecraft/world/item/ItemStack;)Z
+      40: ifne          102
+      43: aload_3
+      44: checkcast     #61                 // class net/minecraft/world/entity/player/Player
+      47: aload_1
+      48: invokestatic  #118                // Method tryLoadProjectiles:(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)Z
+      51: ifeq          102
+      54: aload_1
+      55: iconst_1
+      56: invokestatic  #77                 // Method setLoaded:(Lnet/minecraft/world/item/ItemStack;Z)V
+      59: aload_2
+      60: aconst_null
+      61: aload_3
+      62: invokevirtual #124                // Method net/minecraft/world/entity/LivingEntity.m_20185_:()D
+      65: aload_3
+      66: invokevirtual #127                // Method net/minecraft/world/entity/LivingEntity.m_20186_:()D
+      69: aload_3
+      70: invokevirtual #130                // Method net/minecraft/world/entity/LivingEntity.m_20189_:()D
+      73: getstatic     #136                // Field net/minecraft/sounds/SoundEvents.f_11841_:Lnet/minecraft/sounds/SoundEvent;
+      76: getstatic     #142                // Field net/minecraft/sounds/SoundSource.PLAYERS:Lnet/minecraft/sounds/SoundSource;
+      79: fconst_1
+      80: fconst_1
+      81: aload_3
+      82: invokevirtual #146                // Method net/minecraft/world/entity/LivingEntity.m_217043_:()Lnet/minecraft/util/RandomSource;
+      85: invokeinterface #152,  1          // InterfaceMethod net/minecraft/util/RandomSource.m_188501_:()F
+      90: ldc           #153                // float 0.5f
+      92: fmul
+      93: fconst_1
+      94: fadd
+      95: fdiv
+      96: ldc           #154                // float 0.2f
+      98: fadd
+      99: invokevirtual #160                // Method net/minecraft/world/level/Level.m_6263_:(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V
+     102: return
+
+  private static boolean tryLoadProjectiles(net.minecraft.world.entity.player.Player, net.minecraft.world.item.ItemStack);
+    Code:
+       0: aload_0
+       1: invokevirtual #172                // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+       4: getfield      #177                // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+       7: istore_2
+       8: aload_0
+       9: aload_1
+      10: invokevirtual #89                 // Method net/minecraft/world/entity/player/Player.m_6298_:(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;
+      13: astore_3
+      14: aload_3
+      15: invokevirtual #93                 // Method net/minecraft/world/item/ItemStack.m_41619_:()Z
+      18: ifeq          42
+      21: iload_2
+      22: ifeq          42
+      25: new           #85                 // class net/minecraft/world/item/ItemStack
+      28: dup
+      29: getstatic     #183                // Field org/zawamod/zawa/world/item/ZawaItems.SLINGSHOT_NET:Lnet/minecraftforge/registries/RegistryObject;
+      32: invokevirtual #189                // Method net/minecraftforge/registries/RegistryObject.get:()Ljava/lang/Object;
+      35: checkcast     #191                // class net/minecraft/world/level/ItemLike
+      38: invokespecial #194                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+      41: astore_3
+      42: aload_0
+      43: aload_3
+      44: iload_2
+      45: invokestatic  #198                // Method loadProjectile:(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Z
+      48: ireturn
+
+  private static boolean loadProjectile(net.minecraft.world.entity.player.Player, net.minecraft.world.item.ItemStack, boolean);
+    Code:
+       0: aload_1
+       1: invokevirtual #93                 // Method net/minecraft/world/item/ItemStack.m_41619_:()Z
+       4: ifeq          9
+       7: iconst_0
+       8: ireturn
+       9: iload_2
+      10: ifeq          27
+      13: aload_1
+      14: invokevirtual #204                // Method net/minecraft/world/item/ItemStack.m_41720_:()Lnet/minecraft/world/item/Item;
+      17: instanceof    #206                // class org/zawamod/zawa/world/item/SlingshotNetItem
+      20: ifeq          27
+      23: iconst_1
+      24: goto          28
+      27: iconst_0
+      28: istore_3
+      29: iload_3
+      30: ifne          57
+      33: iload_2
+      34: ifne          57
+      37: aload_1
+      38: iconst_1
+==== TranquilizerDartItem
+Compiled from "TranquilizerDartItem.java"
+public class org.zawamod.zawa.world.item.TranquilizerDartItem extends net.minecraft.world.item.ArrowItem {
+  public org.zawamod.zawa.world.item.TranquilizerDartItem(net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #14                 // Method net/minecraft/world/item/ArrowItem."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: return
+
+  public org.zawamod.zawa.world.entity.projectile.TranquilizerDart createTranqDart(net.minecraft.world.level.Level, net.minecraft.world.entity.LivingEntity);
+    Code:
+       0: new           #22                 // class org/zawamod/zawa/world/entity/projectile/TranquilizerDart
+       3: dup
+       4: aload_1
+       5: aload_2
+       6: invokespecial #25                 // Method org/zawamod/zawa/world/entity/projectile/TranquilizerDart."<init>":(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)V
+       9: areturn
+
+  public boolean isInfinite(net.minecraft.world.item.ItemStack, net.minecraft.world.item.ItemStack, net.minecraft.world.entity.player.Player);
+    Code:
+       0: iconst_0
+       1: ireturn
+}
+==== TranquilizerGunItem
+Compiled from "TranquilizerGunItem.java"
+public class org.zawamod.zawa.world.item.TranquilizerGunItem extends net.minecraft.world.item.ProjectileWeaponItem {
+  private boolean startSoundPlayed;
+
+  private boolean midLoadSoundPlayed;
+
+  public org.zawamod.zawa.world.item.TranquilizerGunItem(net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #27                 // Method net/minecraft/world/item/ProjectileWeaponItem."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: aload_0
+       6: iconst_0
+       7: putfield      #29                 // Field startSoundPlayed:Z
+      10: aload_0
+      11: iconst_0
+      12: putfield      #31                 // Field midLoadSoundPlayed:Z
+      15: return
+
+  public java.util.function.Predicate<net.minecraft.world.item.ItemStack> m_6437_();
+    Code:
+       0: invokedynamic #56,  0             // InvokeDynamic #0:test:()Ljava/util/function/Predicate;
+       5: areturn
+
+  public net.minecraft.world.InteractionResultHolder<net.minecraft.world.item.ItemStack> m_7203_(net.minecraft.world.level.Level, net.minecraft.world.entity.player.Player, net.minecraft.world.InteractionHand);
+    Code:
+       0: aload_2
+       1: aload_3
+       2: invokevirtual #65                 // Method net/minecraft/world/entity/player/Player.m_21120_:(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;
+       5: astore        4
+       7: aload         4
+       9: invokestatic  #68                 // Method isLoaded:(Lnet/minecraft/world/item/ItemStack;)Z
+      12: ifeq          38
+      15: aload_1
+      16: aload_2
+      17: aload_3
+      18: aload         4
+      20: ldc           #69                 // float 3.15f
+      22: fconst_1
+      23: invokestatic  #73                 // Method performShooting:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;FF)V
+      26: aload         4
+      28: iconst_0
+      29: invokestatic  #77                 // Method setLoaded:(Lnet/minecraft/world/item/ItemStack;Z)V
+      32: aload         4
+      34: invokestatic  #83                 // Method net/minecraft/world/InteractionResultHolder.m_19096_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      37: areturn
+      38: aload_2
+      39: aload         4
+      41: invokevirtual #89                 // Method net/minecraft/world/entity/player/Player.m_6298_:(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;
+      44: invokevirtual #93                 // Method net/minecraft/world/item/ItemStack.m_41619_:()Z
+      47: ifne          79
+      50: aload         4
+      52: invokestatic  #68                 // Method isLoaded:(Lnet/minecraft/world/item/ItemStack;)Z
+      55: ifne          73
+      58: aload_0
+      59: iconst_0
+      60: putfield      #29                 // Field startSoundPlayed:Z
+      63: aload_0
+      64: iconst_0
+      65: putfield      #31                 // Field midLoadSoundPlayed:Z
+      68: aload_2
+      69: aload_3
+      70: invokevirtual #97                 // Method net/minecraft/world/entity/player/Player.m_6672_:(Lnet/minecraft/world/InteractionHand;)V
+      73: aload         4
+      75: invokestatic  #83                 // Method net/minecraft/world/InteractionResultHolder.m_19096_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      78: areturn
+      79: aload         4
+      81: invokestatic  #100                // Method net/minecraft/world/InteractionResultHolder.m_19100_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      84: areturn
+
+  public void m_5551_(net.minecraft.world.item.ItemStack, net.minecraft.world.level.Level, net.minecraft.world.entity.LivingEntity, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #114                // Method m_8105_:(Lnet/minecraft/world/item/ItemStack;)I
+       5: iload         4
+       7: isub
+       8: istore        5
+      10: iload         5
+      12: i2f
+      13: aload_0
+      14: aload_1
+      15: invokevirtual #114                // Method m_8105_:(Lnet/minecraft/world/item/ItemStack;)I
+      18: i2f
+      19: fdiv
+      20: fstore        6
+      22: aload_3
+      23: instanceof    #61                 // class net/minecraft/world/entity/player/Player
+      26: ifeq          102
+      29: fload         6
+      31: fconst_1
+      32: fcmpl
+      33: iflt          102
+      36: aload_1
+      37: invokestatic  #68                 // Method isLoaded:(Lnet/minecraft/world/item/ItemStack;)Z
+      40: ifne          102
+      43: aload_3
+      44: checkcast     #61                 // class net/minecraft/world/entity/player/Player
+      47: aload_1
+      48: invokestatic  #118                // Method tryLoadProjectiles:(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)Z
+      51: ifeq          102
+      54: aload_1
+      55: iconst_1
+      56: invokestatic  #77                 // Method setLoaded:(Lnet/minecraft/world/item/ItemStack;Z)V
+      59: aload_2
+      60: aconst_null
+      61: aload_3
+      62: invokevirtual #124                // Method net/minecraft/world/entity/LivingEntity.m_20185_:()D
+      65: aload_3
+      66: invokevirtual #127                // Method net/minecraft/world/entity/LivingEntity.m_20186_:()D
+      69: aload_3
+      70: invokevirtual #130                // Method net/minecraft/world/entity/LivingEntity.m_20189_:()D
+      73: getstatic     #136                // Field net/minecraft/sounds/SoundEvents.f_11841_:Lnet/minecraft/sounds/SoundEvent;
+      76: getstatic     #142                // Field net/minecraft/sounds/SoundSource.PLAYERS:Lnet/minecraft/sounds/SoundSource;
+      79: fconst_1
+      80: fconst_1
+      81: aload_3
+      82: invokevirtual #146                // Method net/minecraft/world/entity/LivingEntity.m_217043_:()Lnet/minecraft/util/RandomSource;
+      85: invokeinterface #152,  1          // InterfaceMethod net/minecraft/util/RandomSource.m_188501_:()F
+      90: ldc           #153                // float 0.5f
+      92: fmul
+      93: fconst_1
+      94: fadd
+      95: fdiv
+      96: ldc           #154                // float 0.2f
+      98: fadd
+      99: invokevirtual #160                // Method net/minecraft/world/level/Level.m_6263_:(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V
+     102: return
+
+  private static boolean tryLoadProjectiles(net.minecraft.world.entity.player.Player, net.minecraft.world.item.ItemStack);
+    Code:
+       0: aload_0
+       1: invokevirtual #172                // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+       4: getfield      #177                // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+       7: istore_2
+       8: aload_0
+       9: aload_1
+      10: invokevirtual #89                 // Method net/minecraft/world/entity/player/Player.m_6298_:(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;
+      13: astore_3
+      14: aload_3
+      15: invokevirtual #93                 // Method net/minecraft/world/item/ItemStack.m_41619_:()Z
+      18: ifeq          42
+      21: iload_2
+      22: ifeq          42
+      25: new           #85                 // class net/minecraft/world/item/ItemStack
+      28: dup
+      29: getstatic     #183                // Field org/zawamod/zawa/world/item/ZawaItems.TRANQUILIZER_DART:Lnet/minecraftforge/registries/RegistryObject;
+      32: invokevirtual #189                // Method net/minecraftforge/registries/RegistryObject.get:()Ljava/lang/Object;
+      35: checkcast     #191                // class net/minecraft/world/level/ItemLike
+      38: invokespecial #194                // Method net/minecraft/world/item/ItemStack."<init>":(Lnet/minecraft/world/level/ItemLike;)V
+      41: astore_3
+      42: aload_0
+      43: aload_3
+      44: iload_2
+      45: invokestatic  #198                // Method loadProjectile:(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Z
+      48: ireturn
+
+  private static boolean loadProjectile(net.minecraft.world.entity.player.Player, net.minecraft.world.item.ItemStack, boolean);
+    Code:
+       0: aload_1
+       1: invokevirtual #93                 // Method net/minecraft/world/item/ItemStack.m_41619_:()Z
+       4: ifeq          9
+       7: iconst_0
+       8: ireturn
+       9: iload_2
+      10: ifeq          27
+      13: aload_1
+      14: invokevirtual #204                // Method net/minecraft/world/item/ItemStack.m_41720_:()Lnet/minecraft/world/item/Item;
+      17: instanceof    #206                // class org/zawamod/zawa/world/item/TranquilizerDartItem
+      20: ifeq          27
+      23: iconst_1
+      24: goto          28
+      27: iconst_0
+      28: istore_3
+      29: iload_3
+      30: ifne          57
+      33: iload_2
+      34: ifne          57
+      37: aload_1
+      38: iconst_1
+==== ZawaBucketItem
+Compiled from "ZawaBucketItem.java"
+public class org.zawamod.zawa.world.item.ZawaBucketItem extends net.minecraft.world.item.MobBucketItem {
+  public org.zawamod.zawa.world.item.ZawaBucketItem(java.util.function.Supplier<? extends net.minecraft.world.entity.EntityType<?>>, java.util.function.Supplier<? extends net.minecraft.world.level.material.Fluid>, java.util.function.Supplier<? extends net.minecraft.sounds.SoundEvent>, net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: aload_3
+       4: aload         4
+       6: invokespecial #20                 // Method net/minecraft/world/item/MobBucketItem."<init>":(Ljava/util/function/Supplier;Ljava/util/function/Supplier;Ljava/util/function/Supplier;Lnet/minecraft/world/item/Item$Properties;)V
+       9: return
+
+  public void m_7373_(net.minecraft.world.item.ItemStack, net.minecraft.world.level.Level, java.util.List<net.minecraft.network.chat.Component>, net.minecraft.world.item.TooltipFlag);
+    Code:
+       0: aload_1
+       1: invokevirtual #41                 // Method net/minecraft/world/item/ItemStack.m_41783_:()Lnet/minecraft/nbt/CompoundTag;
+       4: astore        5
+       6: aload         5
+       8: ifnull        97
+      11: aload         5
+      13: ldc           #43                 // String BucketVariantTag
+      15: invokevirtual #49                 // Method net/minecraft/nbt/CompoundTag.m_128441_:(Ljava/lang/String;)Z
+      18: ifeq          97
+      21: getstatic     #55                 // Field net/minecraft/core/registries/BuiltInRegistries.f_256780_:Lnet/minecraft/core/DefaultedRegistry;
+      24: aload_0
+      25: invokevirtual #59                 // Method getFishType:()Lnet/minecraft/world/entity/EntityType;
+      28: invokeinterface #65,  2           // InterfaceMethod net/minecraft/core/DefaultedRegistry.m_7981_:(Ljava/lang/Object;)Lnet/minecraft/resources/ResourceLocation;
+      33: astore        6
+      35: aload         5
+      37: ldc           #43                 // String BucketVariantTag
+      39: invokevirtual #69                 // Method net/minecraft/nbt/CompoundTag.m_128451_:(Ljava/lang/String;)I
+      42: istore        7
+      44: aload_3
+      45: ldc           #71                 // String tooltip.zawa.spawn_egg.variant
+      47: iconst_2
+      48: anewarray     #73                 // class java/lang/Object
+      51: dup
+      52: iconst_0
+      53: iload         7
+      55: invokestatic  #79                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      58: aastore
+      59: dup
+      60: iconst_1
+      61: aload         6
+      63: invokevirtual #85                 // Method net/minecraft/resources/ResourceLocation.m_135827_:()Ljava/lang/String;
+      66: aload         6
+      68: invokevirtual #88                 // Method net/minecraft/resources/ResourceLocation.m_135815_:()Ljava/lang/String;
+      71: iload         7
+      73: invokedynamic #100,  0            // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+      78: invokestatic  #106                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+      81: aastore
+      82: invokestatic  #110                // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+      85: getstatic     #116                // Field net/minecraft/ChatFormatting.GRAY:Lnet/minecraft/ChatFormatting;
+      88: invokevirtual #122                // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+      91: invokeinterface #128,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      96: pop
+      97: return
+}
+==== ZawaEggItem
+Compiled from "ZawaEggItem.java"
+public class org.zawamod.zawa.world.item.ZawaEggItem extends net.minecraft.world.item.Item {
+  private final java.util.function.Supplier<? extends net.minecraft.world.entity.EntityType<?>> entityTypeSupplier;
+
+  public org.zawamod.zawa.world.item.ZawaEggItem(java.util.function.Supplier<? extends net.minecraft.world.entity.EntityType<?>>, net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_2
+       2: invokespecial #17                 // Method net/minecraft/world/item/Item."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: aload_0
+       6: aload_1
+       7: putfield      #19                 // Field entityTypeSupplier:Ljava/util/function/Supplier;
+      10: return
+
+  public net.minecraft.world.InteractionResultHolder<net.minecraft.world.item.ItemStack> m_7203_(net.minecraft.world.level.Level, net.minecraft.world.entity.player.Player, net.minecraft.world.InteractionHand);
+    Code:
+       0: aload_2
+       1: aload_3
+       2: invokevirtual #32                 // Method net/minecraft/world/entity/player/Player.m_21120_:(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;
+       5: astore        4
+       7: aload_1
+       8: aconst_null
+       9: aload_2
+      10: invokevirtual #36                 // Method net/minecraft/world/entity/player/Player.m_20185_:()D
+      13: aload_2
+      14: invokevirtual #39                 // Method net/minecraft/world/entity/player/Player.m_20186_:()D
+      17: aload_2
+      18: invokevirtual #42                 // Method net/minecraft/world/entity/player/Player.m_20189_:()D
+      21: getstatic     #48                 // Field net/minecraft/sounds/SoundEvents.f_11877_:Lnet/minecraft/sounds/SoundEvent;
+      24: getstatic     #54                 // Field net/minecraft/sounds/SoundSource.PLAYERS:Lnet/minecraft/sounds/SoundSource;
+      27: ldc           #55                 // float 0.5f
+      29: ldc           #56                 // float 0.4f
+      31: aload_2
+      32: invokevirtual #60                 // Method net/minecraft/world/entity/player/Player.m_217043_:()Lnet/minecraft/util/RandomSource;
+      35: invokeinterface #66,  1           // InterfaceMethod net/minecraft/util/RandomSource.m_188501_:()F
+      40: ldc           #56                 // float 0.4f
+      42: fmul
+      43: ldc           #67                 // float 0.8f
+      45: fadd
+      46: fdiv
+      47: invokevirtual #73                 // Method net/minecraft/world/level/Level.m_6263_:(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V
+      50: aload_1
+      51: getfield      #77                 // Field net/minecraft/world/level/Level.f_46443_:Z
+      54: ifne          104
+      57: new           #79                 // class org/zawamod/zawa/world/entity/projectile/ThrownEgg
+      60: dup
+      61: aload_0
+      62: getfield      #19                 // Field entityTypeSupplier:Ljava/util/function/Supplier;
+      65: aload_1
+      66: aload_2
+      67: invokespecial #82                 // Method org/zawamod/zawa/world/entity/projectile/ThrownEgg."<init>":(Ljava/util/function/Supplier;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)V
+      70: astore        5
+      72: aload         5
+      74: aload         4
+      76: invokevirtual #86                 // Method org/zawamod/zawa/world/entity/projectile/ThrownEgg.m_37446_:(Lnet/minecraft/world/item/ItemStack;)V
+      79: aload         5
+      81: aload_2
+      82: aload_2
+      83: invokevirtual #89                 // Method net/minecraft/world/entity/player/Player.m_146909_:()F
+      86: aload_2
+      87: invokevirtual #92                 // Method net/minecraft/world/entity/player/Player.m_146908_:()F
+      90: fconst_0
+      91: ldc           #93                 // float 1.5f
+      93: fconst_1
+      94: invokevirtual #97                 // Method org/zawamod/zawa/world/entity/projectile/ThrownEgg.m_37251_:(Lnet/minecraft/world/entity/Entity;FFFFF)V
+      97: aload_1
+      98: aload         5
+     100: invokevirtual #101                // Method net/minecraft/world/level/Level.m_7967_:(Lnet/minecraft/world/entity/Entity;)Z
+     103: pop
+     104: aload_2
+     105: getstatic     #109                // Field net/minecraft/stats/Stats.f_12982_:Lnet/minecraft/stats/StatType;
+     108: aload_0
+     109: invokevirtual #115                // Method net/minecraft/stats/StatType.m_12902_:(Ljava/lang/Object;)Lnet/minecraft/stats/Stat;
+     112: invokevirtual #119                // Method net/minecraft/world/entity/player/Player.m_36246_:(Lnet/minecraft/stats/Stat;)V
+     115: aload_2
+     116: invokevirtual #123                // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+     119: getfield      #128                // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+     122: ifne          131
+     125: aload         4
+     127: iconst_1
+     128: invokevirtual #132                // Method net/minecraft/world/item/ItemStack.m_41774_:(I)V
+     131: aload         4
+     133: aload_1
+     134: invokevirtual #136                // Method net/minecraft/world/level/Level.m_5776_:()Z
+     137: invokestatic  #142                // Method net/minecraft/world/InteractionResultHolder.m_19092_:(Ljava/lang/Object;Z)Lnet/minecraft/world/InteractionResultHolder;
+     140: areturn
+
+  public void m_7373_(net.minecraft.world.item.ItemStack, net.minecraft.world.level.Level, java.util.List<net.minecraft.network.chat.Component>, net.minecraft.world.item.TooltipFlag);
+    Code:
+       0: aload_1
+       1: invokevirtual #159                // Method net/minecraft/world/item/ItemStack.m_41782_:()Z
+       4: ifeq          50
+       7: aload_1
+       8: invokevirtual #163                // Method net/minecraft/world/item/ItemStack.m_41783_:()Lnet/minecraft/nbt/CompoundTag;
+      11: ldc           #165                // String HatchChance
+      13: invokevirtual #171                // Method net/minecraft/nbt/CompoundTag.m_128441_:(Ljava/lang/String;)Z
+      16: ifeq          50
+      19: aload_3
+      20: ldc           #173                // String tooltip.zawa.egg_hatch_chance
+      22: iconst_1
+      23: anewarray     #175                // class java/lang/Object
+      26: dup
+      27: iconst_0
+      28: aload_1
+      29: invokevirtual #163                // Method net/minecraft/world/item/ItemStack.m_41783_:()Lnet/minecraft/nbt/CompoundTag;
+      32: ldc           #165                // String HatchChance
+      34: invokevirtual #179                // Method net/minecraft/nbt/CompoundTag.m_128451_:(Ljava/lang/String;)I
+      37: invokestatic  #185                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      40: aastore
+      41: invokestatic  #191                // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+      44: invokeinterface #197,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      49: pop
+      50: return
+}
+==== ZawaAquaticEggItem
+Compiled from "ZawaAquaticEggItem.java"
+public class org.zawamod.zawa.world.item.ZawaAquaticEggItem extends net.minecraft.world.item.Item {
+  private final java.util.function.Supplier<? extends net.minecraft.world.entity.EntityType<?>> entityTypeSupplier;
+
+  public org.zawamod.zawa.world.item.ZawaAquaticEggItem(java.util.function.Supplier<? extends net.minecraft.world.entity.EntityType<?>>, net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_2
+       2: invokespecial #37                 // Method net/minecraft/world/item/Item."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: aload_0
+       6: aload_1
+       7: putfield      #39                 // Field entityTypeSupplier:Ljava/util/function/Supplier;
+      10: return
+
+  public net.minecraft.world.InteractionResultHolder<net.minecraft.world.item.ItemStack> m_7203_(net.minecraft.world.level.Level, net.minecraft.world.entity.player.Player, net.minecraft.world.InteractionHand);
+    Code:
+       0: aload_2
+       1: aload_3
+       2: invokevirtual #52                 // Method net/minecraft/world/entity/player/Player.m_21120_:(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;
+       5: astore        4
+       7: aload_1
+       8: aload_2
+       9: getstatic     #56                 // Field net/minecraft/world/level/ClipContext$Fluid.SOURCE_ONLY:Lnet/minecraft/world/level/ClipContext$Fluid;
+      12: invokestatic  #60                 // Method m_41435_:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/ClipContext$Fluid;)Lnet/minecraft/world/phys/BlockHitResult;
+      15: astore        5
+      17: aload         5
+      19: invokevirtual #64                 // Method net/minecraft/world/phys/HitResult.m_6662_:()Lnet/minecraft/world/phys/HitResult$Type;
+      22: getstatic     #68                 // Field net/minecraft/world/phys/HitResult$Type.BLOCK:Lnet/minecraft/world/phys/HitResult$Type;
+      25: if_acmpeq     34
+      28: aload         4
+      30: invokestatic  #74                 // Method net/minecraft/world/InteractionResultHolder.m_19098_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      33: areturn
+      34: aload_1
+      35: instanceof    #78                 // class net/minecraft/server/level/ServerLevel
+      38: ifne          47
+      41: aload         4
+      43: invokestatic  #81                 // Method net/minecraft/world/InteractionResultHolder.m_19090_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      46: areturn
+      47: aload         5
+      49: checkcast     #83                 // class net/minecraft/world/phys/BlockHitResult
+      52: astore        6
+      54: aload         6
+      56: invokevirtual #87                 // Method net/minecraft/world/phys/BlockHitResult.m_82425_:()Lnet/minecraft/core/BlockPos;
+      59: astore        7
+      61: aload_1
+      62: aload         7
+      64: invokevirtual #93                 // Method net/minecraft/world/level/Level.m_8055_:(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;
+      67: invokevirtual #99                 // Method net/minecraft/world/level/block/state/BlockState.m_60734_:()Lnet/minecraft/world/level/block/Block;
+      70: instanceof    #101                // class net/minecraft/world/level/block/LiquidBlock
+      73: ifne          82
+      76: aload         4
+      78: invokestatic  #74                 // Method net/minecraft/world/InteractionResultHolder.m_19098_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      81: areturn
+      82: aload_1
+      83: aload_2
+      84: aload         7
+      86: invokevirtual #107                // Method net/minecraft/world/level/Level.m_7966_:(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;)Z
+      89: ifeq          382
+      92: aload_2
+      93: aload         7
+      95: aload         6
+      97: invokevirtual #111                // Method net/minecraft/world/phys/BlockHitResult.m_82434_:()Lnet/minecraft/core/Direction;
+     100: aload         4
+     102: invokevirtual #115                // Method net/minecraft/world/entity/player/Player.m_36204_:(Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;Lnet/minecraft/world/item/ItemStack;)Z
+     105: ifeq          382
+     108: aload_2
+     109: invokevirtual #119                // Method net/minecraft/world/entity/player/Player.m_217043_:()Lnet/minecraft/util/RandomSource;
+     112: invokeinterface #125,  1          // InterfaceMethod net/minecraft/util/RandomSource.m_188499_:()Z
+     117: ifeq          345
+     120: aload         4
+     122: invokevirtual #128                // Method net/minecraft/world/item/ItemStack.m_41782_:()Z
+     125: ifeq          154
+     128: aload         4
+     130: invokevirtual #132                // Method net/minecraft/world/item/ItemStack.m_41783_:()Lnet/minecraft/nbt/CompoundTag;
+     133: astore        9
+     135: aload         9
+     137: aload_1
+     138: invokedynamic #151,  0            // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+     143: invokestatic  #157                // Method net/minecraft/world/entity/EntityType.m_20645_:(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/Level;Ljava/util/function/Function;)Lnet/minecraft/world/entity/Entity;
+     146: checkcast     #22                 // class org/zawamod/zawa/world/entity/animal/ZawaBaseEntity
+     149: astore        8
+     151: goto          293
+     154: aload_0
+     155: getfield      #39                 // Field entityTypeSupplier:Ljava/util/function/Supplier;
+     158: invokeinterface #163,  1          // InterfaceMethod java/util/function/Supplier.get:()Ljava/lang/Object;
+     163: checkcast     #153                // class net/minecraft/world/entity/EntityType
+     166: aload_1
+     167: invokevirtual #167                // Method net/minecraft/world/entity/EntityType.m_20615_:(Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/entity/Entity;
+     170: checkcast     #22                 // class org/zawamod/zawa/world/entity/animal/ZawaBaseEntity
+     173: astore        8
+     175: aload         8
+     177: iconst_1
+     178: invokevirtual #171                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.m_6863_:(Z)V
+     181: aload         8
+     183: aload         8
+     185: invokevirtual #175                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.getSpeciesFertility:()Lorg/zawamod/zawa/world/entity/stats/EntityFertilityCategory;
+     188: aload_2
+     189: invokevirtual #119                // Method net/minecraft/world/entity/player/Player.m_217043_:()Lnet/minecraft/util/RandomSource;
+     192: invokevirtual #181                // Method org/zawamod/zawa/world/entity/stats/EntityFertilityCategory.getRandomInRange:(Lnet/minecraft/util/RandomSource;)I
+     195: invokevirtual #185                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.setFertility:(I)V
+     198: aload         8
+     200: aload_2
+     201: invokevirtual #119                // Method net/minecraft/world/entity/player/Player.m_217043_:()Lnet/minecraft/util/RandomSource;
+     204: invokeinterface #125,  1          // InterfaceMethod net/minecraft/util/RandomSource.m_188499_:()Z
+     209: invokestatic  #189                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity$Gender.fromBool:(Z)Lorg/zawamod/zawa/world/entity/animal/ZawaBaseEntity$Gender;
+     212: invokevirtual #193                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.setGender:(Lorg/zawamod/zawa/world/entity/animal/ZawaBaseEntity$Gender;)V
+     215: aload_2
+     216: invokevirtual #119                // Method net/minecraft/world/entity/player/Player.m_217043_:()Lnet/minecraft/util/RandomSource;
+     219: aload         8
+     221: invokevirtual #197                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.getWildVariants:()I
+     224: invokeinterface #201,  2          // InterfaceMethod net/minecraft/util/RandomSource.m_188503_:(I)I
+     229: istore        9
+     231: aload         8
+     233: invokevirtual #204                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.getCaptiveVariants:()I
+     236: ifle          276
+     239: aload_2
+     240: invokevirtual #119                // Method net/minecraft/world/entity/player/Player.m_217043_:()Lnet/minecraft/util/RandomSource;
+     243: invokeinterface #208,  1          // InterfaceMethod net/minecraft/util/RandomSource.m_188501_:()F
+     248: ldc           #209                // float 0.05f
+     250: fcmpg
+     251: ifgt          276
+     254: aload_2
+     255: invokevirtual #119                // Method net/minecraft/world/entity/player/Player.m_217043_:()Lnet/minecraft/util/RandomSource;
+     258: aload         8
+     260: invokevirtual #204                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.getCaptiveVariants:()I
+     263: invokeinterface #201,  2          // InterfaceMethod net/minecraft/util/RandomSource.m_188503_:(I)I
+     268: aload         8
+     270: invokevirtual #197                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.getWildVariants:()I
+     273: iadd
+     274: istore        9
+     276: aload         8
+     278: iload         9
+     280: invokevirtual #212                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.setVariant:(I)V
+     283: aload         8
+     285: aload         8
+     287: invokevirtual #216                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.setupFavoriteFood:()Lnet/minecraft/world/item/Item;
+     290: invokevirtual #220                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.setFavoriteFood:(Lnet/minecraft/world/item/Item;)V
+     293: aload         8
+     295: ifnull        345
+     298: aload         8
+     300: aload         7
+     302: invokevirtual #223                // Method net/minecraft/core/BlockPos.m_123341_:()I
+     305: i2d
+     306: ldc2_w        #224                // double 0.5d
+     309: dadd
+     310: aload         7
+     312: invokevirtual #228                // Method net/minecraft/core/BlockPos.m_123342_:()I
+     315: i2d
+     316: aload         7
+     318: invokevirtual #231                // Method net/minecraft/core/BlockPos.m_123343_:()I
+     321: i2d
+     322: ldc2_w        #224                // double 0.5d
+     325: dadd
+     326: aload         6
+     328: invokevirtual #111                // Method net/minecraft/world/phys/BlockHitResult.m_82434_:()Lnet/minecraft/core/Direction;
+     331: invokevirtual #236                // Method net/minecraft/core/Direction.m_122435_:()F
+     334: fconst_0
+     335: invokevirtual #240                // Method org/zawamod/zawa/world/entity/animal/ZawaBaseEntity.m_7678_:(DDDFF)V
+     338: aload_1
+     339: aload         8
+     341: invokevirtual #244                // Method net/minecraft/world/level/Level.m_7967_:(Lnet/minecraft/world/entity/Entity;)Z
+     344: pop
+     345: aload_2
+     346: getstatic     #250                // Field net/minecraft/stats/Stats.f_12982_:Lnet/minecraft/stats/StatType;
+     349: aload_0
+     350: invokevirtual #256                // Method net/minecraft/stats/StatType.m_12902_:(Ljava/lang/Object;)Lnet/minecraft/stats/Stat;
+     353: invokevirtual #260                // Method net/minecraft/world/entity/player/Player.m_36246_:(Lnet/minecraft/stats/Stat;)V
+     356: aload_2
+     357: invokevirtual #264                // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+     360: getfield      #270                // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+     363: ifne          372
+     366: aload         4
+     368: iconst_1
+     369: invokevirtual #273                // Method net/minecraft/world/item/ItemStack.m_41774_:(I)V
+     372: aload         4
+     374: aload_1
+     375: invokevirtual #276                // Method net/minecraft/world/level/Level.m_5776_:()Z
+     378: invokestatic  #280                // Method net/minecraft/world/InteractionResultHolder.m_19092_:(Ljava/lang/Object;Z)Lnet/minecraft/world/InteractionResultHolder;
+     381: areturn
+     382: aload         4
+==== EnrichmentItem
+Compiled from "EnrichmentItem.java"
+public interface org.zawamod.zawa.world.item.EnrichmentItem<T extends net.minecraft.world.entity.Entity & org.zawamod.zawa.world.entity.item.EnrichmentEntity> extends net.minecraft.world.level.ItemLike {
+  public abstract net.minecraft.world.entity.EntityType<T> getType();
+
+  public default void use(T, org.zawamod.zawa.world.entity.animal.ZawaBaseEntity);
+    Code:
+       0: aload_1
+       1: checkcast     #16                 // class org/zawamod/zawa/world/entity/item/EnrichmentEntity
+       4: aload_2
+       5: invokeinterface #19,  2           // InterfaceMethod org/zawamod/zawa/world/entity/item/EnrichmentEntity.use:(Lorg/zawamod/zawa/world/entity/animal/ZawaBaseEntity;)V
+      10: return
+}
+==== IceTreatItem
+Compiled from "IceTreatItem.java"
+public class org.zawamod.zawa.world.item.IceTreatItem extends net.minecraft.world.item.Item implements org.zawamod.zawa.world.item.EnrichmentItem<org.zawamod.zawa.world.entity.item.IceTreat> {
+  private static final java.util.function.Predicate<net.minecraft.world.entity.Entity> PLACEMENT_TESTER;
+
+  private final java.util.function.Supplier<net.minecraft.world.entity.EntityType<org.zawamod.zawa.world.entity.item.IceTreat>> entityType;
+
+  public org.zawamod.zawa.world.item.IceTreatItem(java.util.function.Supplier<net.minecraft.world.entity.EntityType<org.zawamod.zawa.world.entity.item.IceTreat>>);
+    Code:
+       0: aload_0
+       1: new           #10                 // class net/minecraft/world/item/Item$Properties
+       4: dup
+       5: invokespecial #42                 // Method net/minecraft/world/item/Item$Properties."<init>":()V
+       8: invokespecial #45                 // Method net/minecraft/world/item/Item."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+      11: aload_0
+      12: aload_1
+      13: putfield      #47                 // Field entityType:Ljava/util/function/Supplier;
+      16: return
+
+  public net.minecraft.world.InteractionResultHolder<net.minecraft.world.item.ItemStack> m_7203_(net.minecraft.world.level.Level, net.minecraft.world.entity.player.Player, net.minecraft.world.InteractionHand);
+    Code:
+       0: aload_2
+       1: aload_3
+       2: invokevirtual #59                 // Method net/minecraft/world/entity/player/Player.m_21120_:(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;
+       5: astore        4
+       7: aload_1
+       8: aload_2
+       9: getstatic     #63                 // Field net/minecraft/world/level/ClipContext$Fluid.ANY:Lnet/minecraft/world/level/ClipContext$Fluid;
+      12: invokestatic  #67                 // Method m_41435_:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/ClipContext$Fluid;)Lnet/minecraft/world/phys/BlockHitResult;
+      15: astore        5
+      17: aload         5
+      19: invokevirtual #71                 // Method net/minecraft/world/phys/HitResult.m_6662_:()Lnet/minecraft/world/phys/HitResult$Type;
+      22: getstatic     #75                 // Field net/minecraft/world/phys/HitResult$Type.MISS:Lnet/minecraft/world/phys/HitResult$Type;
+      25: if_acmpne     34
+      28: aload         4
+      30: invokestatic  #81                 // Method net/minecraft/world/InteractionResultHolder.m_19098_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      33: areturn
+      34: aload_2
+      35: fconst_1
+      36: invokevirtual #87                 // Method net/minecraft/world/entity/player/Player.m_20252_:(F)Lnet/minecraft/world/phys/Vec3;
+      39: astore        6
+      41: ldc2_w        #88                 // double 5.0d
+      44: dstore        7
+      46: aload_1
+      47: aload_2
+      48: aload_2
+      49: invokevirtual #93                 // Method net/minecraft/world/entity/player/Player.m_20191_:()Lnet/minecraft/world/phys/AABB;
+      52: aload         6
+      54: dload         7
+      56: invokevirtual #99                 // Method net/minecraft/world/phys/Vec3.m_82490_:(D)Lnet/minecraft/world/phys/Vec3;
+      59: invokevirtual #105                // Method net/minecraft/world/phys/AABB.m_82369_:(Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/AABB;
+      62: dconst_1
+      63: invokevirtual #109                // Method net/minecraft/world/phys/AABB.m_82400_:(D)Lnet/minecraft/world/phys/AABB;
+      66: getstatic     #111                // Field PLACEMENT_TESTER:Ljava/util/function/Predicate;
+      69: invokevirtual #117                // Method net/minecraft/world/level/Level.m_6249_:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;Ljava/util/function/Predicate;)Ljava/util/List;
+      72: astore        9
+      74: aload         9
+      76: invokeinterface #123,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+      81: ifne          157
+      84: aload_2
+      85: fconst_1
+      86: invokevirtual #126                // Method net/minecraft/world/entity/player/Player.m_20299_:(F)Lnet/minecraft/world/phys/Vec3;
+      89: astore        10
+      91: aload         9
+      93: invokeinterface #130,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      98: astore        11
+     100: aload         11
+     102: invokeinterface #137,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+     107: ifeq          157
+     110: aload         11
+     112: invokeinterface #141,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     117: checkcast     #143                // class net/minecraft/world/entity/Entity
+     120: astore        12
+     122: aload         12
+     124: invokevirtual #144                // Method net/minecraft/world/entity/Entity.m_20191_:()Lnet/minecraft/world/phys/AABB;
+     127: aload         12
+     129: invokevirtual #148                // Method net/minecraft/world/entity/Entity.m_6143_:()F
+     132: f2d
+     133: invokevirtual #109                // Method net/minecraft/world/phys/AABB.m_82400_:(D)Lnet/minecraft/world/phys/AABB;
+     136: astore        13
+     138: aload         13
+     140: aload         10
+     142: invokevirtual #152                // Method net/minecraft/world/phys/AABB.m_82390_:(Lnet/minecraft/world/phys/Vec3;)Z
+     145: ifeq          154
+     148: aload         4
+     150: invokestatic  #81                 // Method net/minecraft/world/InteractionResultHolder.m_19098_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+     153: areturn
+     154: goto          100
+     157: aload         5
+     159: invokevirtual #71                 // Method net/minecraft/world/phys/HitResult.m_6662_:()Lnet/minecraft/world/phys/HitResult$Type;
+     162: getstatic     #155                // Field net/minecraft/world/phys/HitResult$Type.BLOCK:Lnet/minecraft/world/phys/HitResult$Type;
+     165: if_acmpne     328
+     168: new           #25                 // class org/zawamod/zawa/world/entity/item/IceTreat
+     171: dup
+     172: aload_0
+     173: getfield      #47                 // Field entityType:Ljava/util/function/Supplier;
+     176: invokeinterface #160,  1          // InterfaceMethod java/util/function/Supplier.get:()Ljava/lang/Object;
+     181: checkcast     #162                // class net/minecraft/world/entity/EntityType
+     184: aload_1
+     185: aload         5
+     187: invokevirtual #166                // Method net/minecraft/world/phys/HitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     190: getfield      #170                // Field net/minecraft/world/phys/Vec3.f_82479_:D
+     193: aload         5
+     195: invokevirtual #166                // Method net/minecraft/world/phys/HitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     198: getfield      #173                // Field net/minecraft/world/phys/Vec3.f_82480_:D
+     201: aload         5
+     203: invokevirtual #166                // Method net/minecraft/world/phys/HitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     206: getfield      #176                // Field net/minecraft/world/phys/Vec3.f_82481_:D
+     209: invokespecial #179                // Method org/zawamod/zawa/world/entity/item/IceTreat."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;DDD)V
+     212: astore        10
+     214: aload         10
+     216: aload         4
+     218: invokevirtual #183                // Method net/minecraft/world/item/ItemStack.m_41720_:()Lnet/minecraft/world/item/Item;
+     221: getstatic     #189                // Field org/zawamod/zawa/world/item/ZawaItems.APPLE_ICE_TREAT:Lnet/minecraftforge/registries/RegistryObject;
+     224: invokevirtual #192                // Method net/minecraftforge/registries/RegistryObject.get:()Ljava/lang/Object;
+     227: if_acmpne     236
+     230: getstatic     #196                // Field org/zawamod/zawa/world/entity/item/IceTreat$Type.APPLE:Lorg/zawamod/zawa/world/entity/item/IceTreat$Type;
+     233: goto          239
+     236: getstatic     #199                // Field org/zawamod/zawa/world/entity/item/IceTreat$Type.BEEF:Lorg/zawamod/zawa/world/entity/item/IceTreat$Type;
+     239: invokevirtual #203                // Method org/zawamod/zawa/world/entity/item/IceTreat.setType:(Lorg/zawamod/zawa/world/entity/item/IceTreat$Type;)V
+     242: aload         10
+     244: aload_2
+     245: invokevirtual #206                // Method net/minecraft/world/entity/player/Player.m_146908_:()F
+     248: invokevirtual #210                // Method org/zawamod/zawa/world/entity/item/IceTreat.m_146922_:(F)V
+     251: aload_1
+     252: aload         10
+     254: aload         10
+     256: invokevirtual #211                // Method org/zawamod/zawa/world/entity/item/IceTreat.m_20191_:()Lnet/minecraft/world/phys/AABB;
+     259: ldc2_w        #212                // double -0.1d
+     262: invokevirtual #109                // Method net/minecraft/world/phys/AABB.m_82400_:(D)Lnet/minecraft/world/phys/AABB;
+     265: invokevirtual #217                // Method net/minecraft/world/level/Level.m_45756_:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Z
+     268: ifne          277
+     271: aload         4
+     273: invokestatic  #220                // Method net/minecraft/world/InteractionResultHolder.m_19100_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+     276: areturn
+     277: aload_1
+     278: getfield      #224                // Field net/minecraft/world/level/Level.f_46443_:Z
+     281: ifne          307
+     284: aload_1
+     285: aload         10
+     287: invokevirtual #228                // Method net/minecraft/world/level/Level.m_7967_:(Lnet/minecraft/world/entity/Entity;)Z
+     290: pop
+     291: aload_2
+     292: invokevirtual #232                // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+     295: getfield      #237                // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+     298: ifne          307
+     301: aload         4
+     303: iconst_1
+     304: invokevirtual #241                // Method net/minecraft/world/item/ItemStack.m_41774_:(I)V
+     307: aload_2
+     308: getstatic     #247                // Field net/minecraft/stats/Stats.f_12982_:Lnet/minecraft/stats/StatType;
+     311: aload_0
+     312: invokevirtual #253                // Method net/minecraft/stats/StatType.m_12902_:(Ljava/lang/Object;)Lnet/minecraft/stats/Stat;
+     315: invokevirtual #257                // Method net/minecraft/world/entity/player/Player.m_36246_:(Lnet/minecraft/stats/Stat;)V
+     318: aload         4
+     320: aload_1
+     321: invokevirtual #260                // Method net/minecraft/world/level/Level.m_5776_:()Z
+     324: invokestatic  #264                // Method net/minecraft/world/InteractionResultHolder.m_19092_:(Ljava/lang/Object;Z)Lnet/minecraft/world/InteractionResultHolder;
+     327: areturn
+     328: aload         4
+     330: invokestatic  #81                 // Method net/minecraft/world/InteractionResultHolder.m_19098_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+     333: areturn
+
+  public net.minecraft.world.entity.EntityType<org.zawamod.zawa.world.entity.item.IceTreat> getType();
+    Code:
+       0: aload_0
+       1: getfield      #47                 // Field entityType:Ljava/util/function/Supplier;
+       4: invokeinterface #160,  1          // InterfaceMethod java/util/function/Supplier.get:()Ljava/lang/Object;
+       9: checkcast     #162                // class net/minecraft/world/entity/EntityType
+      12: areturn
+
+  static {};
+    Code:
+       0: getstatic     #295                // Field net/minecraft/world/entity/EntitySelector.f_20408_:Ljava/util/function/Predicate;
+       3: invokedynamic #313,  0            // InvokeDynamic #0:test:()Ljava/util/function/Predicate;
+       8: invokeinterface #319,  2          // InterfaceMethod java/util/function/Predicate.and:(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
+      13: putstatic     #111                // Field PLACEMENT_TESTER:Ljava/util/function/Predicate;
+      16: return
+}
+==== BabyFormulaItem
+Compiled from "BabyFormulaItem.java"
+public class org.zawamod.zawa.world.item.BabyFormulaItem extends net.minecraft.world.item.Item {
+  public org.zawamod.zawa.world.item.BabyFormulaItem(net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #12                 // Method net/minecraft/world/item/Item."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: return
+
+  public net.minecraft.world.InteractionResult m_6880_(net.minecraft.world.item.ItemStack, net.minecraft.world.entity.player.Player, net.minecraft.world.entity.LivingEntity, net.minecraft.world.InteractionHand);
+    Code:
+       0: aload_3
+       1: invokevirtual #24                 // Method net/minecraft/world/entity/LivingEntity.m_6162_:()Z
+       4: ifeq          177
+       7: aload_3
+       8: invokestatic  #28                 // Method isForeverBaby:(Lnet/minecraft/world/entity/LivingEntity;)Z
+      11: ifne          177
+      14: aload_3
+      15: invokevirtual #32                 // Method net/minecraft/world/entity/LivingEntity.m_9236_:()Lnet/minecraft/world/level/Level;
+      18: getfield      #38                 // Field net/minecraft/world/level/Level.f_46443_:Z
+      21: ifne          166
+      24: aload_3
+      25: getstatic     #44                 // Field net/minecraft/sounds/SoundEvents.f_11970_:Lnet/minecraft/sounds/SoundEvent;
+      28: fconst_1
+      29: fconst_1
+      30: invokevirtual #48                 // Method net/minecraft/world/entity/LivingEntity.m_5496_:(Lnet/minecraft/sounds/SoundEvent;FF)V
+      33: aload_3
+      34: invokevirtual #52                 // Method net/minecraft/world/entity/LivingEntity.m_217043_:()Lnet/minecraft/util/RandomSource;
+      37: iconst_3
+      38: invokeinterface #58,  2           // InterfaceMethod net/minecraft/util/RandomSource.m_188503_:(I)I
+      43: ifne          97
+      46: aload_3
+      47: invokevirtual #32                 // Method net/minecraft/world/entity/LivingEntity.m_9236_:()Lnet/minecraft/world/level/Level;
+      50: checkcast     #60                 // class net/minecraft/server/level/ServerLevel
+      53: getstatic     #66                 // Field net/minecraft/core/particles/ParticleTypes.f_123748_:Lnet/minecraft/core/particles/SimpleParticleType;
+      56: aload_3
+      57: dconst_1
+      58: invokevirtual #70                 // Method net/minecraft/world/entity/LivingEntity.m_20208_:(D)D
+      61: aload_3
+      62: invokevirtual #74                 // Method net/minecraft/world/entity/LivingEntity.m_20187_:()D
+      65: ldc2_w        #75                 // double 0.5d
+      68: dadd
+      69: aload_3
+      70: dconst_1
+      71: invokevirtual #79                 // Method net/minecraft/world/entity/LivingEntity.m_20262_:(D)D
+      74: iconst_4
+      75: ldc2_w        #80                 // double 0.2d
+      78: ldc2_w        #80                 // double 0.2d
+      81: ldc2_w        #80                 // double 0.2d
+      84: dconst_0
+      85: invokevirtual #85                 // Method net/minecraft/server/level/ServerLevel.m_8767_:(Lnet/minecraft/core/particles/ParticleOptions;DDDIDDDD)I
+      88: pop
+      89: aload_0
+      90: aload_3
+      91: invokevirtual #89                 // Method setForeverBaby:(Lnet/minecraft/world/entity/LivingEntity;)V
+      94: goto          140
+      97: aload_3
+      98: invokevirtual #32                 // Method net/minecraft/world/entity/LivingEntity.m_9236_:()Lnet/minecraft/world/level/Level;
+     101: checkcast     #60                 // class net/minecraft/server/level/ServerLevel
+     104: getstatic     #92                 // Field net/minecraft/core/particles/ParticleTypes.f_123762_:Lnet/minecraft/core/particles/SimpleParticleType;
+     107: aload_3
+     108: dconst_1
+     109: invokevirtual #70                 // Method net/minecraft/world/entity/LivingEntity.m_20208_:(D)D
+     112: aload_3
+     113: invokevirtual #74                 // Method net/minecraft/world/entity/LivingEntity.m_20187_:()D
+     116: ldc2_w        #75                 // double 0.5d
+     119: dadd
+     120: aload_3
+     121: dconst_1
+     122: invokevirtual #79                 // Method net/minecraft/world/entity/LivingEntity.m_20262_:(D)D
+     125: iconst_4
+     126: ldc2_w        #80                 // double 0.2d
+     129: ldc2_w        #80                 // double 0.2d
+     132: ldc2_w        #80                 // double 0.2d
+     135: dconst_0
+     136: invokevirtual #85                 // Method net/minecraft/server/level/ServerLevel.m_8767_:(Lnet/minecraft/core/particles/ParticleOptions;DDDIDDDD)I
+     139: pop
+     140: aload_2
+     141: getstatic     #98                 // Field net/minecraft/stats/Stats.f_12982_:Lnet/minecraft/stats/StatType;
+     144: aload_0
+     145: invokevirtual #104                // Method net/minecraft/stats/StatType.m_12902_:(Ljava/lang/Object;)Lnet/minecraft/stats/Stat;
+     148: invokevirtual #110                // Method net/minecraft/world/entity/player/Player.m_36246_:(Lnet/minecraft/stats/Stat;)V
+     151: aload_2
+     152: invokevirtual #114                // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+     155: getfield      #119                // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+     158: ifne          166
+     161: aload_1
+     162: iconst_1
+     163: invokevirtual #125                // Method net/minecraft/world/item/ItemStack.m_41774_:(I)V
+     166: aload_3
+     167: invokevirtual #32                 // Method net/minecraft/world/entity/LivingEntity.m_9236_:()Lnet/minecraft/world/level/Level;
+     170: getfield      #38                 // Field net/minecraft/world/level/Level.f_46443_:Z
+     173: invokestatic  #131                // Method net/minecraft/world/InteractionResult.m_19078_:(Z)Lnet/minecraft/world/InteractionResult;
+     176: areturn
+     177: getstatic     #135                // Field net/minecraft/world/InteractionResult.PASS:Lnet/minecraft/world/InteractionResult;
+     180: areturn
+
+  public static boolean isForeverBaby(net.minecraft.world.entity.LivingEntity);
+    Code:
+       0: aload_0
+       1: invokevirtual #147                // Method net/minecraft/world/entity/LivingEntity.getPersistentData:()Lnet/minecraft/nbt/CompoundTag;
+       4: ldc           #149                // String ZawaForeverBaby
+       6: invokevirtual #155                // Method net/minecraft/nbt/CompoundTag.m_128471_:(Ljava/lang/String;)Z
+       9: ireturn
+
+  private void setForeverBaby(net.minecraft.world.entity.LivingEntity);
+    Code:
+       0: aload_1
+       1: invokevirtual #147                // Method net/minecraft/world/entity/LivingEntity.getPersistentData:()Lnet/minecraft/nbt/CompoundTag;
+       4: ldc           #149                // String ZawaForeverBaby
+       6: iconst_1
+       7: invokevirtual #159                // Method net/minecraft/nbt/CompoundTag.m_128379_:(Ljava/lang/String;Z)V
+      10: return
+
+  public void m_7373_(net.minecraft.world.item.ItemStack, net.minecraft.world.level.Level, java.util.List<net.minecraft.network.chat.Component>, net.minecraft.world.item.TooltipFlag);
+    Code:
+       0: aload_3
+       1: ldc           #169                // String tooltip.zawa.baby_formula
+       3: invokestatic  #175                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+       6: getstatic     #181                // Field net/minecraft/ChatFormatting.DARK_PURPLE:Lnet/minecraft/ChatFormatting;
+       9: invokevirtual #187                // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+      12: invokeinterface #193,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      17: pop
+      18: aload_3
+      19: ldc           #195                // String tooltip.zawa.permanent_warning
+      21: invokestatic  #175                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+      24: getstatic     #198                // Field net/minecraft/ChatFormatting.RED:Lnet/minecraft/ChatFormatting;
+      27: invokevirtual #187                // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+      30: invokeinterface #193,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      35: pop
+      36: return
+}
+==== ReleaseFormItem
+Compiled from "ReleaseFormItem.java"
+public class org.zawamod.zawa.world.item.ReleaseFormItem extends net.minecraft.world.item.Item {
+  public org.zawamod.zawa.world.item.ReleaseFormItem(net.minecraft.world.item.Item$Properties);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #12                 // Method net/minecraft/world/item/Item."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+       5: return
+
+  public void m_7373_(net.minecraft.world.item.ItemStack, net.minecraft.world.level.Level, java.util.List<net.minecraft.network.chat.Component>, net.minecraft.world.item.TooltipFlag);
+    Code:
+       0: aload_3
+       1: ldc           #26                 // String tooltip.zawa.release_form
+       3: invokestatic  #32                 // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+       6: getstatic     #38                 // Field net/minecraft/ChatFormatting.DARK_PURPLE:Lnet/minecraft/ChatFormatting;
+       9: invokevirtual #44                 // Method net/minecraft/network/chat/MutableComponent.m_130940_:(Lnet/minecraft/ChatFormatting;)Lnet/minecraft/network/chat/MutableComponent;
+      12: invokeinterface #50,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      17: pop
+      18: return
+}
+==== BallItem
+Compiled from "BallItem.java"
+public class org.zawamod.zawa.world.item.BallItem extends net.minecraft.world.item.Item implements org.zawamod.zawa.world.item.EnrichmentItem<org.zawamod.zawa.world.entity.item.Ball> {
+  private static final java.util.function.Predicate<net.minecraft.world.entity.Entity> PLACEMENT_TESTER;
+
+  private final java.util.function.Supplier<net.minecraft.world.entity.EntityType<org.zawamod.zawa.world.entity.item.Ball>> entityType;
+
+  public org.zawamod.zawa.world.item.BallItem(java.util.function.Supplier<net.minecraft.world.entity.EntityType<org.zawamod.zawa.world.entity.item.Ball>>);
+    Code:
+       0: aload_0
+       1: new           #10                 // class net/minecraft/world/item/Item$Properties
+       4: dup
+       5: invokespecial #42                 // Method net/minecraft/world/item/Item$Properties."<init>":()V
+       8: invokespecial #45                 // Method net/minecraft/world/item/Item."<init>":(Lnet/minecraft/world/item/Item$Properties;)V
+      11: aload_0
+      12: aload_1
+      13: putfield      #47                 // Field entityType:Ljava/util/function/Supplier;
+      16: return
+
+  public net.minecraft.world.InteractionResultHolder<net.minecraft.world.item.ItemStack> m_7203_(net.minecraft.world.level.Level, net.minecraft.world.entity.player.Player, net.minecraft.world.InteractionHand);
+    Code:
+       0: aload_2
+       1: aload_3
+       2: invokevirtual #59                 // Method net/minecraft/world/entity/player/Player.m_21120_:(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;
+       5: astore        4
+       7: aload_1
+       8: aload_2
+       9: getstatic     #63                 // Field net/minecraft/world/level/ClipContext$Fluid.ANY:Lnet/minecraft/world/level/ClipContext$Fluid;
+      12: invokestatic  #67                 // Method m_41435_:(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/level/ClipContext$Fluid;)Lnet/minecraft/world/phys/BlockHitResult;
+      15: astore        5
+      17: aload         5
+      19: invokevirtual #71                 // Method net/minecraft/world/phys/HitResult.m_6662_:()Lnet/minecraft/world/phys/HitResult$Type;
+      22: getstatic     #75                 // Field net/minecraft/world/phys/HitResult$Type.MISS:Lnet/minecraft/world/phys/HitResult$Type;
+      25: if_acmpne     34
+      28: aload         4
+      30: invokestatic  #81                 // Method net/minecraft/world/InteractionResultHolder.m_19098_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+      33: areturn
+      34: aload_2
+      35: fconst_1
+      36: invokevirtual #87                 // Method net/minecraft/world/entity/player/Player.m_20252_:(F)Lnet/minecraft/world/phys/Vec3;
+      39: astore        6
+      41: ldc2_w        #88                 // double 5.0d
+      44: dstore        7
+      46: aload_1
+      47: aload_2
+      48: aload_2
+      49: invokevirtual #93                 // Method net/minecraft/world/entity/player/Player.m_20191_:()Lnet/minecraft/world/phys/AABB;
+      52: aload         6
+      54: dload         7
+      56: invokevirtual #99                 // Method net/minecraft/world/phys/Vec3.m_82490_:(D)Lnet/minecraft/world/phys/Vec3;
+      59: invokevirtual #105                // Method net/minecraft/world/phys/AABB.m_82369_:(Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/AABB;
+      62: dconst_1
+      63: invokevirtual #109                // Method net/minecraft/world/phys/AABB.m_82400_:(D)Lnet/minecraft/world/phys/AABB;
+      66: getstatic     #111                // Field PLACEMENT_TESTER:Ljava/util/function/Predicate;
+      69: invokevirtual #117                // Method net/minecraft/world/level/Level.m_6249_:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;Ljava/util/function/Predicate;)Ljava/util/List;
+      72: astore        9
+      74: aload         9
+      76: invokeinterface #123,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+      81: ifne          157
+      84: aload_2
+      85: fconst_1
+      86: invokevirtual #126                // Method net/minecraft/world/entity/player/Player.m_20299_:(F)Lnet/minecraft/world/phys/Vec3;
+      89: astore        10
+      91: aload         9
+      93: invokeinterface #130,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      98: astore        11
+     100: aload         11
+     102: invokeinterface #137,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+     107: ifeq          157
+     110: aload         11
+     112: invokeinterface #141,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     117: checkcast     #143                // class net/minecraft/world/entity/Entity
+     120: astore        12
+     122: aload         12
+     124: invokevirtual #144                // Method net/minecraft/world/entity/Entity.m_20191_:()Lnet/minecraft/world/phys/AABB;
+     127: aload         12
+     129: invokevirtual #148                // Method net/minecraft/world/entity/Entity.m_6143_:()F
+     132: f2d
+     133: invokevirtual #109                // Method net/minecraft/world/phys/AABB.m_82400_:(D)Lnet/minecraft/world/phys/AABB;
+     136: astore        13
+     138: aload         13
+     140: aload         10
+     142: invokevirtual #152                // Method net/minecraft/world/phys/AABB.m_82390_:(Lnet/minecraft/world/phys/Vec3;)Z
+     145: ifeq          154
+     148: aload         4
+     150: invokestatic  #81                 // Method net/minecraft/world/InteractionResultHolder.m_19098_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+     153: areturn
+     154: goto          100
+     157: aload         5
+     159: invokevirtual #71                 // Method net/minecraft/world/phys/HitResult.m_6662_:()Lnet/minecraft/world/phys/HitResult$Type;
+     162: getstatic     #155                // Field net/minecraft/world/phys/HitResult$Type.BLOCK:Lnet/minecraft/world/phys/HitResult$Type;
+     165: if_acmpne     328
+     168: new           #25                 // class org/zawamod/zawa/world/entity/item/Ball
+     171: dup
+     172: aload_0
+     173: getfield      #47                 // Field entityType:Ljava/util/function/Supplier;
+     176: invokeinterface #160,  1          // InterfaceMethod java/util/function/Supplier.get:()Ljava/lang/Object;
+     181: checkcast     #162                // class net/minecraft/world/entity/EntityType
+     184: aload_1
+     185: aload         5
+     187: invokevirtual #166                // Method net/minecraft/world/phys/HitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     190: getfield      #170                // Field net/minecraft/world/phys/Vec3.f_82479_:D
+     193: aload         5
+     195: invokevirtual #166                // Method net/minecraft/world/phys/HitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     198: getfield      #173                // Field net/minecraft/world/phys/Vec3.f_82480_:D
+     201: aload         5
+     203: invokevirtual #166                // Method net/minecraft/world/phys/HitResult.m_82450_:()Lnet/minecraft/world/phys/Vec3;
+     206: getfield      #176                // Field net/minecraft/world/phys/Vec3.f_82481_:D
+     209: invokespecial #179                // Method org/zawamod/zawa/world/entity/item/Ball."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;DDD)V
+     212: astore        10
+     214: aload         10
+     216: aload         4
+     218: invokevirtual #183                // Method net/minecraft/world/item/ItemStack.m_41720_:()Lnet/minecraft/world/item/Item;
+     221: getstatic     #189                // Field org/zawamod/zawa/world/item/ZawaItems.BOOMER_BALL:Lnet/minecraftforge/registries/RegistryObject;
+     224: invokevirtual #192                // Method net/minecraftforge/registries/RegistryObject.get:()Ljava/lang/Object;
+     227: if_acmpne     236
+     230: getstatic     #196                // Field org/zawamod/zawa/world/entity/item/Ball$Type.BOOMER:Lorg/zawamod/zawa/world/entity/item/Ball$Type;
+     233: goto          239
+     236: getstatic     #199                // Field org/zawamod/zawa/world/entity/item/Ball$Type.SCENTED:Lorg/zawamod/zawa/world/entity/item/Ball$Type;
+     239: invokevirtual #203                // Method org/zawamod/zawa/world/entity/item/Ball.setType:(Lorg/zawamod/zawa/world/entity/item/Ball$Type;)V
+     242: aload         10
+     244: aload_2
+     245: invokevirtual #206                // Method net/minecraft/world/entity/player/Player.m_146908_:()F
+     248: invokevirtual #210                // Method org/zawamod/zawa/world/entity/item/Ball.m_146922_:(F)V
+     251: aload_1
+     252: aload         10
+     254: aload         10
+     256: invokevirtual #211                // Method org/zawamod/zawa/world/entity/item/Ball.m_20191_:()Lnet/minecraft/world/phys/AABB;
+     259: ldc2_w        #212                // double -0.1d
+     262: invokevirtual #109                // Method net/minecraft/world/phys/AABB.m_82400_:(D)Lnet/minecraft/world/phys/AABB;
+     265: invokevirtual #217                // Method net/minecraft/world/level/Level.m_45756_:(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Z
+     268: ifne          277
+     271: aload         4
+     273: invokestatic  #220                // Method net/minecraft/world/InteractionResultHolder.m_19100_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+     276: areturn
+     277: aload_1
+     278: getfield      #224                // Field net/minecraft/world/level/Level.f_46443_:Z
+     281: ifne          307
+     284: aload_1
+     285: aload         10
+     287: invokevirtual #228                // Method net/minecraft/world/level/Level.m_7967_:(Lnet/minecraft/world/entity/Entity;)Z
+     290: pop
+     291: aload_2
+     292: invokevirtual #232                // Method net/minecraft/world/entity/player/Player.m_150110_:()Lnet/minecraft/world/entity/player/Abilities;
+     295: getfield      #237                // Field net/minecraft/world/entity/player/Abilities.f_35937_:Z
+     298: ifne          307
+     301: aload         4
+     303: iconst_1
+     304: invokevirtual #241                // Method net/minecraft/world/item/ItemStack.m_41774_:(I)V
+     307: aload_2
+     308: getstatic     #247                // Field net/minecraft/stats/Stats.f_12982_:Lnet/minecraft/stats/StatType;
+     311: aload_0
+     312: invokevirtual #253                // Method net/minecraft/stats/StatType.m_12902_:(Ljava/lang/Object;)Lnet/minecraft/stats/Stat;
+     315: invokevirtual #257                // Method net/minecraft/world/entity/player/Player.m_36246_:(Lnet/minecraft/stats/Stat;)V
+     318: aload         4
+     320: aload_1
+     321: invokevirtual #260                // Method net/minecraft/world/level/Level.m_5776_:()Z
+     324: invokestatic  #264                // Method net/minecraft/world/InteractionResultHolder.m_19092_:(Ljava/lang/Object;Z)Lnet/minecraft/world/InteractionResultHolder;
+     327: areturn
+     328: aload         4
+     330: invokestatic  #81                 // Method net/minecraft/world/InteractionResultHolder.m_19098_:(Ljava/lang/Object;)Lnet/minecraft/world/InteractionResultHolder;
+     333: areturn
+
+  public net.minecraft.world.entity.EntityType<org.zawamod.zawa.world.entity.item.Ball> getType();
+    Code:
+       0: aload_0
+       1: getfield      #47                 // Field entityType:Ljava/util/function/Supplier;
+       4: invokeinterface #160,  1          // InterfaceMethod java/util/function/Supplier.get:()Ljava/lang/Object;
+       9: checkcast     #162                // class net/minecraft/world/entity/EntityType
+      12: areturn
+
+  static {};
+    Code:
+       0: getstatic     #295                // Field net/minecraft/world/entity/EntitySelector.f_20408_:Ljava/util/function/Predicate;
+       3: invokedynamic #313,  0            // InvokeDynamic #0:test:()Ljava/util/function/Predicate;
+       8: invokeinterface #319,  2          // InterfaceMethod java/util/function/Predicate.and:(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
+      13: putstatic     #111                // Field PLACEMENT_TESTER:Ljava/util/function/Predicate;
+      16: return
+}

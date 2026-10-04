@@ -1,0 +1,25 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "zawa:block/pedestal_feeder"
+      }
+    },
+    {
+      "when": {
+        "fruit": "true"
+      },
+      "apply": {
+        "model": "zawa:block/pedestal_feeder_food"
+      }
+    },
+    {
+      "when": {
+        "level": "3|2|1"
+      },
+      "apply": {
+        "model": "zawa:block/pedestal_feeder_water"
+      }
+    }
+  ]
+}

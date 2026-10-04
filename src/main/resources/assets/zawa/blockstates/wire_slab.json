@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "zawa:block/wire_slab"
+    },
+    "type=double": {
+      "model": "zawa:block/wire_bars"
+    },
+    "type=top": {
+      "model": "zawa:block/wire_slab_top"
+    }
+  }
+}

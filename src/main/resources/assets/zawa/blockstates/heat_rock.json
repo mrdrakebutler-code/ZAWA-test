@@ -1,0 +1,19 @@
+{
+  "multipart": [
+    { "when": { "facing": "north" },
+      "apply": { "model": "zawa:block/heat_rock" }
+    },
+
+    { "when": { "facing": "south" },
+      "apply": { "model": "zawa:block/heat_rock", "y": 180 }
+    },
+
+    { "when": { "facing": "east" },
+      "apply": { "model": "zawa:block/heat_rock", "y": 90 }
+    },
+
+    { "when": { "facing": "west" },
+      "apply": { "model": "zawa:block/heat_rock", "y": 270 }
+    }
+  ]
+}

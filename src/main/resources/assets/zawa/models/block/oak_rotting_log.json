@@ -1,0 +1,79 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "minecraft:block/stripped_oak_log",
+		"2": "minecraft:block/oak_log",
+		"3": "minecraft:block/stripped_oak_log_top",
+		"4": "minecraft:block/dirt",
+		"5": "minecraft:block/dirt",
+		"particle": "#2"
+	},
+	"elements": [
+		{
+			"name": "sidee",
+			"from": [0, 0, 0],
+			"to": [2, 16, 16],
+			"faces": {
+				"north": {"uv": [14, 0, 16, 16], "texture": "#3"},
+				"east": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#1"},
+				"south": {"uv": [0, 0, 2, 16], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#2"},
+				"up": {"uv": [0, 0, 2, 16], "texture": "#2"},
+				"down": {"uv": [14, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"name": "sidew",
+			"from": [14, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 16], "texture": "#3"},
+				"east": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#2"},
+				"south": {"uv": [14, 0, 16, 16], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#1"},
+				"up": {"uv": [14, 0, 16, 16], "rotation": 180, "texture": "#2"},
+				"down": {"uv": [0, 0, 2, 16], "rotation": 180, "texture": "#2"}
+			}
+		},
+		{
+			"name": "bottom",
+			"from": [2, 0, 0],
+			"to": [14, 2, 16],
+			"faces": {
+				"north": {"uv": [2, 14, 14, 16], "texture": "#3"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#2"},
+				"south": {"uv": [2, 14, 14, 16], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#2"},
+				"up": {"uv": [0, 0, 12, 16], "texture": "#1"},
+				"down": {"uv": [2, 0, 14, 16], "texture": "#2"}
+			}
+		},
+		{
+			"name": "top",
+			"from": [2, 14, 0],
+			"to": [14, 16, 16],
+			"faces": {
+				"north": {"uv": [2, 0, 14, 2], "texture": "#3"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#2"},
+				"south": {"uv": [2, 0, 14, 2], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#2"},
+				"up": {"uv": [2, 0, 14, 16], "texture": "#2"},
+				"down": {"uv": [2, 0, 14, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "moss",
+			"from": [2, 2, 0],
+			"to": [14, 4, 16],
+			"faces": {
+				"north": {"uv": [2, 0, 14, 2], "texture": "#5"},
+				"east": {"uv": [0, 0, 15, 2], "texture": "#2"},
+				"south": {"uv": [2, 0, 14, 2], "texture": "#5"},
+				"west": {"uv": [0, 0, 15, 2], "texture": "#2"},
+				"up": {"uv": [2, 0, 14, 16], "texture": "#4", "tintindex": 0},
+				"down": {"uv": [0, 0, 12, 15], "texture": "#2"}
+			}
+		}
+	]
+}

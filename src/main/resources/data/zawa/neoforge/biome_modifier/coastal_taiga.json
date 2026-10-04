@@ -1,0 +1,50 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:or",
+    "values": [
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#neoforge:is_coniferous",
+          {
+            "type": "neoforge:not",
+            "value": "#neoforge:is_snowy"
+          },
+          {
+            "type": "neoforge:not",
+            "value": "#minecraft:is_mountain"
+          },
+          {
+            "type": "neoforge:not",
+            "value": "#minecraft:is_hill"
+          }
+        ]
+      },
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#minecraft:is_beach",
+          {
+            "type": "neoforge:not",
+            "value": "#neoforge:is_hot"
+          },
+          {
+            "type": "neoforge:not",
+            "value": "#neoforge:is_rare"
+          }
+        ]
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:bald_eagle",
+      "weight": 8,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

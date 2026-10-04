@@ -1,0 +1,35 @@
+{
+  "temperament": "neutral",
+  "kibble": "zawa:herbivore_kibble",
+  "size": "small",
+  "fertility": "low",
+  "breeding_item": "minecraft:melon_seeds",
+  "litter_size": {
+    "min": 1,
+    "max": 3
+  },
+  "diet": "zawa:frugivore",
+  "speed": "fast",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:perching_stand",
+      "zawa:tire_swing",
+      "zawa:hay_browse",
+      "zawa:leaf_browse",
+      "zawa:sprinkler",
+      "zawa:puzzle_feeder",
+      "zawa:pineapple_pinata",
+      "zawa:bamboo_feeder",
+      "zawa:black_bamboo_feeder",
+      "zawa:yellow_bamboo_feeder",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ],
+    "zawa:entities": [
+      "zawa:scented_ball",
+      "zawa:apple_ice_treat"
+    ]
+  },
+  "variant_count": 9
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "zawa:block/plushies/zebra_plush",
+  "textures": {
+    "0": "zawa:block/plush/rainbow_zebra"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "zawa:block/java_moss_1"
+      },
+      {
+        "model": "zawa:block/java_moss_2"
+      }
+    ]
+  }
+}

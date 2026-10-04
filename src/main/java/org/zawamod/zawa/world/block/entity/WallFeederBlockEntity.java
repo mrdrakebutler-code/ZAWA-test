@@ -1,0 +1,3 @@
+package org.zawamod.zawa.world.block.entity;
+import net.minecraft.core.BlockPos; import net.minecraft.world.entity.player.Inventory; import net.minecraft.world.inventory.AbstractContainerMenu; import net.minecraft.world.level.block.state.BlockState; import org.zawamod.zawa.world.inventory.FeederBlockContainer;
+public class WallFeederBlockEntity extends ZawaContainerBlockEntity { public WallFeederBlockEntity(BlockPos p,BlockState s){super(ZawaBlockEntities.WALL_FEEDER.get(),p,s,1);} @Override protected AbstractContainerMenu createMenu(int id,Inventory inv){return new FeederBlockContainer(id,inv,this);} }

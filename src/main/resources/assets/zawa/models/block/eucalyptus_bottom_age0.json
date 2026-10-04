@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "zawa:block/eucalyptus_unripe_bottom"
+  }
+}

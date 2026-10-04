@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "zawa:item/black_footed_ferret_spawn_egg"
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"parent": "zawa:block/metal_trough",
+	"textures": {
+		"3": "zawa:block/food_type/meat"
+	},
+	"elements": [
+		{
+			"name": "fill",
+			"from": [1, 1, 1],
+			"to": [15, 14, 15],
+			"faces": {
+				"north": {"uv": [1, 1, 15, 14], "texture": "#3"},
+				"east": {"uv": [1, 1, 15, 14], "texture": "#3"},
+				"south": {"uv": [1, 1, 15, 14], "texture": "#3"},
+				"west": {"uv": [1, 1, 15, 14], "texture": "#3"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#3"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#3"}
+			}
+		}
+	]
+}

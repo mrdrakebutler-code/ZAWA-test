@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "segment=bottom": { "model": "zawa:block/bird_of_paradise_tall_1" },
+    "segment=middle": { "model": "zawa:block/bird_of_paradise_tall_2" },
+    "segment=top": { "model": "zawa:block/bird_of_paradise_tall_3" }
+  }
+}

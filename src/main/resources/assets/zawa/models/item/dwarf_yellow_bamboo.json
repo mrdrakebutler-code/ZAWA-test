@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "zawa:block/dwarf_yellow_bamboo_top"
+  }
+}
+

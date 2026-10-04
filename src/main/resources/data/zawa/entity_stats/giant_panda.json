@@ -1,0 +1,36 @@
+{
+  "temperament": "defensive",
+  "kibble": "zawa:herbivore_kibble",
+  "size": "medium",
+  "fertility": "low",
+  "breeding_item": "zawa:yellow_bamboo",
+  "litter_size": {
+    "min": 1,
+    "max": 2
+  },
+  "diet": "zawa:bamboo",
+  "speed": "slow",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:scratching_post",
+      "zawa:puzzle_feeder",
+      "zawa:ball_pit",
+      "zawa:snow_pit",
+      "zawa:bamboo_feeder",
+      "zawa:black_bamboo_feeder",
+      "zawa:yellow_bamboo_feeder",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ],
+    "zawa:entities": [
+      "zawa:boomer_ball",
+      "zawa:scented_ball",
+      "zawa:apple_ice_treat"
+    ]
+  },
+  "variant_count": 3,
+  "captive_variants": [
+    "tang_dynasty"
+  ]
+}

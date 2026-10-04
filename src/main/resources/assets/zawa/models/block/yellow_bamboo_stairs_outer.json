@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "zawa:block/yellow_bamboo",
+    "top": "zawa:block/yellow_bamboo",
+    "side": "zawa:block/yellow_bamboo"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#neoforge:is_overworld",
+      "#neoforge:is_plateau",
+      {
+        "type": "neoforge:not",
+        "value": "#neoforge:is_wet"
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:coquerels_sifaka",
+      "weight": 8,
+      "minCount": 1,
+      "maxCount": 3
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "#up",
+    "north": "zawa:block/underwater_feeder_2",
+    "south": "zawa:block/underwater_feeder_2",
+    "east": "zawa:block/underwater_feeder_2",
+    "west": "zawa:block/underwater_feeder_2",
+    "up": "zawa:block/underwater_feeder_1",
+    "down": "zawa:block/underwater_feeder_3"
+  }
+}

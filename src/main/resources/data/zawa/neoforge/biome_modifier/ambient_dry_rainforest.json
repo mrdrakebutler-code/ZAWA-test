@@ -1,0 +1,28 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#neoforge:is_overworld",
+      "#minecraft:is_jungle",
+      {
+        "type": "neoforge:not",
+        "value": "#neoforge:is_wet"
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:praying_mantis",
+      "weight": 4,
+      "minCount": 1,
+      "maxCount": 1
+    },
+    {
+      "type": "zawa:tarantula",
+      "weight": 4,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

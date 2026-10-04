@@ -1,0 +1,25 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#neoforge:is_overworld",
+      "#minecraft:is_jungle",
+      "#neoforge:is_wet"
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:leafcutter_ant",
+      "weight": 4,
+      "minCount": 4,
+      "maxCount": 6
+    },
+    {
+      "type": "zawa:tarantula",
+      "weight": 4,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

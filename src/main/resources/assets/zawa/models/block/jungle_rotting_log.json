@@ -1,0 +1,10 @@
+{
+	"parent": "zawa:block/oak_rotting_log",
+	"textures": {
+		"1": "minecraft:block/stripped_jungle_log",
+		"2": "minecraft:block/jungle_log",
+		"3": "minecraft:block/stripped_jungle_log",
+		"4": "minecraft:block/grass_block_top",
+		"5": "minecraft:block/grass_block_side"
+	}
+}

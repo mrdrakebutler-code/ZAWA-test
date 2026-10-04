@@ -1,0 +1,7 @@
+{
+	"parent": "zawa:block/picnic_table_top",
+	"textures": {
+		"1": "block/stripped_spruce_log"
+	}
+}
+

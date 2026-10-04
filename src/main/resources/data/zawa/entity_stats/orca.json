@@ -1,0 +1,19 @@
+{
+  "temperament": "defensive",
+  "kibble": "zawa:piscivore_kibble",
+  "size": "giant",
+  "fertility": "medium",
+  "breeding_item": "zawa:large_meat",
+  "litter_size": 1,
+  "diet": "zawa:piscivore",
+  "speed": "fast",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:sprinkler"
+    ],
+    "zawa:entities": [
+      "zawa:boomer_ball"
+    ]
+  },
+  "variant_count": 4
+}

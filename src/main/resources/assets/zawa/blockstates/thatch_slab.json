@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "zawa:block/thatch_slab"
+    },
+    "type=double": {
+      "model": "zawa:block/thatch"
+    },
+    "type=top": {
+      "model": "zawa:block/thatch_slab_top"
+    }
+  }
+}
+

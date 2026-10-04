@@ -1,0 +1,490 @@
+class,unique_forge_reference_count,forge_references
+org.zawamod.zawa.Zawa,30,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.client.event.EntityRenderersEvent; net.minecraftforge.client.event.EntityRenderersEvent$RegisterLayerDefinitions; net.minecraftforge.client.event.RegisterColorHandlersEvent; net.minecraftforge.client.event.RegisterColorHandlersEvent$Block; net.minecraftforge.client.event.RegisterColorHandlersEvent$Item; net.minecraftforge.common.ForgeConfigSpec; net.minecraftforge.common.MinecraftForge; net.minecraftforge.common.data.BlockTagsProvider; net.minecraftforge.common.data.ExistingFileHelper; net.minecraftforge.data.event.GatherDataEvent; net.minecraftforge.event.AddReloadListenerEvent; net.minecraftforge.event.BuildCreativeModeTabContentsEvent; net.minecraftforge.event.OnDatapackSyncEvent; net.minecraftforge.event.village.VillagerTradesEvent; net.minecraftforge.eventbus.api.IEventBus; net.minecraftforge.fml.ModLoadingContext; net.minecraftforge.fml.common.Mod; net.minecraftforge.fml.config.IConfigSpec; net.minecraftforge.fml.config.ModConfig; net.minecraftforge.fml.config.ModConfig$Type; net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent; net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent; net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext; net.minecraftforge.fml.loading.FMLEnvironment; net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.NewRegistryEvent; net.minecraftforge.registries.RegistryBuilder; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.ZawaBaseEntity,13,net.minecraftforge.common.ForgeConfigSpec; net.minecraftforge.common.ForgeConfigSpec$BooleanValue; net.minecraftforge.common.ForgeConfigSpec$ConfigValue; net.minecraftforge.common.MinecraftForge; net.minecraftforge.common.Tags; net.minecraftforge.common.Tags$Blocks; net.minecraftforge.event.ForgeEventFactory; net.minecraftforge.event.entity.living.BabyEntitySpawnEvent; net.minecraftforge.eventbus.api.Event; net.minecraftforge.eventbus.api.IEventBus; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.data.ZawaBlockStates,11,net.minecraftforge.client.model.generators.BlockModelProvider; net.minecraftforge.client.model.generators.BlockStateProvider; net.minecraftforge.client.model.generators.ConfiguredModel; net.minecraftforge.client.model.generators.ConfiguredModel$Builder; net.minecraftforge.client.model.generators.ModelFile; net.minecraftforge.client.model.generators.ModelFile$ExistingModelFile; net.minecraftforge.client.model.generators.VariantBlockStateBuilder; net.minecraftforge.common.data.ExistingFileHelper; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.event.ZawaEvents,11,net.minecraftforge.event.TickEvent; net.minecraftforge.event.TickEvent$ServerTickEvent; net.minecraftforge.event.entity.living.LivingChangeTargetEvent; net.minecraftforge.event.entity.living.LivingEvent; net.minecraftforge.event.entity.living.LivingEvent$LivingTickEvent; net.minecraftforge.event.server.ServerStartingEvent; net.minecraftforge.eventbus.api.SubscribeEvent; net.minecraftforge.fml.common.Mod; net.minecraftforge.fml.common.Mod$EventBusSubscriber; net.minecraftforge.fml.common.Mod$EventBusSubscriber$Bus; net.minecraftforge.server.ServerLifecycleHooks
+org.zawamod.zawa.network.ZawaNetworkManager,10,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.fml.LogicalSide; net.minecraftforge.network.NetworkDirection; net.minecraftforge.network.NetworkEvent; net.minecraftforge.network.NetworkEvent$Context; net.minecraftforge.network.NetworkRegistry; net.minecraftforge.network.simple.IndexedMessageCodec; net.minecraftforge.network.simple.IndexedMessageCodec$MessageHandler; net.minecraftforge.network.simple.SimpleChannel
+org.zawamod.zawa.data.ZawaRecipeProvider,9,net.minecraftforge.common.Tags; net.minecraftforge.common.Tags$Items; net.minecraftforge.common.crafting.ConditionalRecipe; net.minecraftforge.common.crafting.ConditionalRecipe$Builder; net.minecraftforge.common.crafting.conditions.ICondition; net.minecraftforge.common.crafting.conditions.ModLoadedCondition; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.compat.BuddycardsCompat,8,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.eventbus.api.IEventBus; net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent; net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.entity.BugBoxBlockEntity,8,net.minecraftforge.common.capabilities.Capability; net.minecraftforge.common.capabilities.ForgeCapabilities; net.minecraftforge.common.util.LazyOptional; net.minecraftforge.items.IItemHandlerModifiable; net.minecraftforge.items.wrapper.SidedInvWrapper; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.entity.HydroponicsTableBlockEntity,8,net.minecraftforge.common.capabilities.Capability; net.minecraftforge.common.capabilities.ForgeCapabilities; net.minecraftforge.common.util.LazyOptional; net.minecraftforge.items.IItemHandlerModifiable; net.minecraftforge.items.wrapper.SidedInvWrapper; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity,7,net.minecraftforge.common.ForgeConfigSpec; net.minecraftforge.common.ForgeConfigSpec$BooleanValue; net.minecraftforge.common.MinecraftForge; net.minecraftforge.event.entity.living.BabyEntitySpawnEvent; net.minecraftforge.eventbus.api.Event; net.minecraftforge.eventbus.api.IEventBus; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.data.ZawaItemModels,6,net.minecraftforge.client.model.generators.ItemModelBuilder; net.minecraftforge.client.model.generators.ItemModelBuilder$OverrideBuilder; net.minecraftforge.client.model.generators.ItemModelProvider; net.minecraftforge.client.model.generators.ModelBuilder; net.minecraftforge.client.model.generators.ModelFile; net.minecraftforge.common.data.ExistingFileHelper
+org.zawamod.zawa.data.ZawaTagsProviders$ZawaItemTagsProvider,6,net.minecraftforge.common.Tags; net.minecraftforge.common.Tags$Blocks; net.minecraftforge.common.Tags$Items; net.minecraftforge.common.data.BlockTagsProvider; net.minecraftforge.common.data.ExistingFileHelper; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.resources.EntityStatsManager,6,net.minecraftforge.network.NetworkDirection; net.minecraftforge.network.PacketDistributor; net.minecraftforge.network.PacketDistributor$PacketTarget; net.minecraftforge.network.simple.SimpleChannel; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry
+org.zawamod.zawa.resources.ZawaReference,6,net.minecraftforge.common.data.ExistingFileHelper; net.minecraftforge.fml.ModList; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.tags.ITag; net.minecraftforge.registries.tags.ITagManager
+org.zawamod.zawa.world.block.ZawaBlocks,6,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.entity.GroundFeederBlockEntity,6,net.minecraftforge.common.capabilities.Capability; net.minecraftforge.common.capabilities.ForgeCapabilities; net.minecraftforge.common.util.LazyOptional; net.minecraftforge.common.util.NonNullSupplier; net.minecraftforge.items.wrapper.SidedInvWrapper; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.entity.IncubatorBlockEntity,6,net.minecraftforge.common.capabilities.Capability; net.minecraftforge.common.capabilities.ForgeCapabilities; net.minecraftforge.common.util.LazyOptional; net.minecraftforge.items.IItemHandlerModifiable; net.minecraftforge.items.wrapper.SidedInvWrapper; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.entity.WallFeederBlockEntity,6,net.minecraftforge.common.capabilities.Capability; net.minecraftforge.common.capabilities.ForgeCapabilities; net.minecraftforge.common.util.LazyOptional; net.minecraftforge.common.util.NonNullSupplier; net.minecraftforge.items.wrapper.SidedInvWrapper; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ZawaEntityRegistry,6,net.minecraftforge.event.entity.EntityAttributeCreationEvent; net.minecraftforge.eventbus.api.IEventBus; net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext; net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry
+org.zawamod.zawa.world.entity.item.ZooCart,6,net.minecraftforge.common.capabilities.Capability; net.minecraftforge.common.capabilities.ForgeCapabilities; net.minecraftforge.common.util.LazyOptional; net.minecraftforge.common.util.NonNullSupplier; net.minecraftforge.items.wrapper.InvWrapper; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.inventory.ZawaMenuTypes,6,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.item.CaptureNetItem,6,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.tags.ITag; net.minecraftforge.registries.tags.ITagManager
+org.zawamod.zawa.data.ZawaTagsProviders$ZawaBlockTagsProvider,5,net.minecraftforge.common.Tags; net.minecraftforge.common.Tags$Blocks; net.minecraftforge.common.data.BlockTagsProvider; net.minecraftforge.common.data.ExistingFileHelper; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.projectile.SlingshotNet,5,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject; net.minecraftforge.registries.tags.ITag; net.minecraftforge.registries.tags.ITagManager
+org.zawamod.zawa.client.color.ColorEvents,4,net.minecraftforge.client.event.RegisterColorHandlersEvent; net.minecraftforge.client.event.RegisterColorHandlersEvent$Block; net.minecraftforge.client.event.RegisterColorHandlersEvent$Item; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.client.resources.FoodTypeManager,4,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.tags.ITag; net.minecraftforge.registries.tags.ITagManager
+org.zawamod.zawa.client.screens.DataBookScreen,4,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.tags.ITag; net.minecraftforge.registries.tags.ITagManager
+org.zawamod.zawa.config.ZawaMainConfig,4,net.minecraftforge.common.ForgeConfigSpec; net.minecraftforge.common.ForgeConfigSpec$BooleanValue; net.minecraftforge.common.ForgeConfigSpec$Builder; net.minecraftforge.common.ForgeConfigSpec$ConfigValue
+org.zawamod.zawa.data.ZawaBlockModels,4,net.minecraftforge.client.model.generators.BlockModelBuilder; net.minecraftforge.client.model.generators.BlockModelProvider; net.minecraftforge.client.model.generators.ModelBuilder; net.minecraftforge.common.data.ExistingFileHelper
+org.zawamod.zawa.resources.EntityDietManager,4,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.tags.ITag; net.minecraftforge.registries.tags.ITagManager
+org.zawamod.zawa.sounds.ZawaSounds,4,net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.entity.ZawaBlockEntities,4,net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.SpawnInfo,4,net.minecraftforge.common.ForgeConfigSpec; net.minecraftforge.common.ForgeConfigSpec$BooleanValue; net.minecraftforge.common.ForgeConfigSpec$Builder; net.minecraftforge.common.ForgeConfigSpec$ConfigValue
+org.zawamod.zawa.world.entity.enrichment.ZawaEnrichmentTypes,4,net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.npc.ZawaVillagers,4,net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.feature.ZawaFeature,4,net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.item.ZawaItems,4,net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.data.ZawaBlockLoot,3,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.data.ZawaEntityLoot,3,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.network.protocol.SyncEntityStatsPacket,3,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.ForgeRegistry; net.minecraftforge.registries.IForgeRegistry
+org.zawamod.zawa.world.block.BirdOfParadiseBlock,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.common.PlantType
+org.zawamod.zawa.world.block.CaptureCageBlock,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.EucalyptusTreeBlock,3,net.minecraftforge.common.ForgeHooks; net.minecraftforge.common.PlantType; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.SeineNetBlock,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.MountableEntity,3,net.minecraftforge.common.ForgeHooks; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry
+org.zawamod.zawa.world.entity.VenomousEntity,3,net.minecraftforge.common.ForgeConfigSpec; net.minecraftforge.common.ForgeConfigSpec$ConfigValue; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.CommonChimpanzee,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.CoquerelsSifaka,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.GiantAnteater,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.GiantPanda,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.GrevysZebra,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.Koala,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.Mandrill,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.RedPanda,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.RingTailedLemur,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.SumatranOrangutan,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.TreeFrog,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.WesternLowlandGorilla,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.ZawaPolarBear,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.npc.Zookeeper,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.npc.ZookeeperSpawner,3,net.minecraftforge.common.ForgeConfigSpec; net.minecraftforge.common.ForgeConfigSpec$BooleanValue; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.inventory.IncubatorMenu,3,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.item.ZawaSpawnEggItem,3,net.minecraftforge.common.ForgeSpawnEggItem; net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry
+org.zawamod.zawa.client.model.ZawaModelLayers,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.client.screens.DataBookScreen$EntityEggButton,2,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry
+org.zawamod.zawa.client.screens.DataBookScreen$SpeciesVariantButton,2,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry
+org.zawamod.zawa.data.ZawaTagsProviders$ZawaEntityTypeTagsProvider,2,net.minecraftforge.common.data.ExistingFileHelper; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.data.ZawaTagsProviders$ZawaPoiTypeTags,2,net.minecraftforge.common.data.ExistingFileHelper; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.resources.EntityEnrichmentManager,2,net.minecraftforge.registries.ForgeRegistry; net.minecraftforge.registries.RegistryManager
+org.zawamod.zawa.world.block.ExhibitGlassPaneBlock,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.world.block.HollowHideBlock,2,net.minecraftforge.common.IPlantable; net.minecraftforge.common.PlantType
+org.zawamod.zawa.world.block.PricklyPearCactusBlock,2,net.minecraftforge.common.PlantType; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.entity.AbstractFeederBlockEntity,2,net.minecraftforge.registries.ForgeRegistries; net.minecraftforge.registries.IForgeRegistry
+org.zawamod.zawa.world.entity.JumpingEntity,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.world.entity.SittingEntity,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.world.entity.ThreatenStandEntity,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.world.entity.ZawaEntityRegistry$EntityBuilder,2,net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ZawaEntityRegistry$MobBuilder,2,net.minecraftforge.registries.DeferredRegister; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.enrichment.EnrichmentType,2,net.minecraftforge.registries.ForgeRegistry; net.minecraftforge.registries.IForgeRegistry
+org.zawamod.zawa.world.entity.npc.ZawaVillagerTrades,2,net.minecraftforge.event.village.VillagerTradesEvent; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.projectile.ThrownEgg,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.world.entity.stats.EntityEnrichment,2,net.minecraftforge.registries.ForgeRegistry; net.minecraftforge.registries.RegistryManager
+org.zawamod.zawa.world.item.BabyFormulaItem,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.world.item.DataBookItem,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.world.item.ReleaseFormItem,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.world.item.SlingshotNetItem,2,net.minecraftforge.api.distmarker.Dist; net.minecraftforge.api.distmarker.OnlyIn
+org.zawamod.zawa.world.item.ZookeeperUniformItem,2,net.minecraftforge.client.extensions.common.IClientItemExtensions; net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.network.protocol.UpdateAnimalNamePacket,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.BlackBambooBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.BlackBambooSaplingBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.BugBoxBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.DesertDoublePlantBlock,1,net.minecraftforge.common.PlantType
+org.zawamod.zawa.world.block.DesertPlantBlock,1,net.minecraftforge.common.PlantType
+org.zawamod.zawa.world.block.FloatingWaterPlantBlock,1,net.minecraftforge.common.PlantType
+org.zawamod.zawa.world.block.HydroponicsTableBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.IncubatorBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.MusselBoxBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.TropicalDoublePlantBlock,1,net.minecraftforge.common.PlantType
+org.zawamod.zawa.world.block.TropicalPlantBlock,1,net.minecraftforge.common.PlantType
+org.zawamod.zawa.world.block.UnderwaterFeederBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.WallBowlBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.WallForageBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.YellowBambooBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.YellowBambooSaplingBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.ZawaFeederBlock,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.entity.CaptureBlockEntity,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.block.entity.MusselBoxBlockEntity,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ClimbingEntity,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ZawaEntities,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.AfricanLakeCichlid,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.Angelfish,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.Betta,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.BrownRat,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.Butterfly,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.Clownfish,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.Corydoras,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.Gramma,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.HoneyBee,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.LeafcutterAnt,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.Plecostomus,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.PrayingMantis,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.Scorpion,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.Tarantula,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.ZawaCod,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.ambient.ZawaSalmon,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.AfricanLion,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.AfricanWildDog,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.AsianElephant,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.BaldEagle,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.BlackFootedFerret,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.EmperorPenguin,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.Flamingo,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.Giraffe,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.Hornbill,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.IndianGharial,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.Kakapo,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.Macaw,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.Orca,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.RedKangaroo,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.Sloth,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.SnowLeopard,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.animal.SpiderMonkey,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.item.Ball,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.item.IceTreat,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.item.MotorBoat,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.item.ZawaItemEntities,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.entity.projectile.TranquilizerDart,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.feature.AmazonSwordFeature,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.feature.HornwortFeature,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.feature.JavaMossFeature,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.feature.RedMyrioFeature,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.feature.ZawaBambooFeature,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.feature.ZawaBambooFeature$Yellow,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.inventory.BugBoxMenu,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.inventory.FeederBlockContainer,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.inventory.HydroponicsTableMenu,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.inventory.MusselBoxMenu,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.item.BallItem,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.item.IceTreatItem,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.item.NetLauncherItem,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.item.TranquilizerGunItem,1,net.minecraftforge.registries.RegistryObject
+org.zawamod.zawa.world.item.ZookeeperUniformItem$1,1,net.minecraftforge.client.extensions.common.IClientItemExtensions
+org.zawamod.zawa.client.model.AfricanLakeCichlidModel,0,
+org.zawamod.zawa.client.model.AfricanLionModel,0,
+org.zawamod.zawa.client.model.AfricanLionModel$Adult,0,
+org.zawamod.zawa.client.model.AfricanLionModel$Child,0,
+org.zawamod.zawa.client.model.AfricanWildDogModel,0,
+org.zawamod.zawa.client.model.AfricanWildDogModel$Adult,0,
+org.zawamod.zawa.client.model.AfricanWildDogModel$Child,0,
+org.zawamod.zawa.client.model.AngelfishModel,0,
+org.zawamod.zawa.client.model.AsianElephantModel,0,
+org.zawamod.zawa.client.model.AsianElephantModel$Adult,0,
+org.zawamod.zawa.client.model.AsianElephantModel$Child,0,
+org.zawamod.zawa.client.model.BaldEagleModel,0,
+org.zawamod.zawa.client.model.BaldEagleModel$Adult,0,
+org.zawamod.zawa.client.model.BaldEagleModel$Child,0,
+org.zawamod.zawa.client.model.BaldEagleModel$Flying,0,
+org.zawamod.zawa.client.model.BettaModel,0,
+org.zawamod.zawa.client.model.BlackFootedFerretModel,0,
+org.zawamod.zawa.client.model.BlackFootedFerretModel$Adult,0,
+org.zawamod.zawa.client.model.BlackFootedFerretModel$Child,0,
+org.zawamod.zawa.client.model.BoomerBallModel,0,
+org.zawamod.zawa.client.model.BrownRatModel,0,
+org.zawamod.zawa.client.model.ButterflyModel,0,
+org.zawamod.zawa.client.model.ClownfishModel,0,
+org.zawamod.zawa.client.model.CommonChimpanzeeModel,0,
+org.zawamod.zawa.client.model.CommonChimpanzeeModel$Adult,0,
+org.zawamod.zawa.client.model.CommonChimpanzeeModel$Adult$Sitting,0,
+org.zawamod.zawa.client.model.CommonChimpanzeeModel$Child,0,
+org.zawamod.zawa.client.model.CoquerelsSifakaModel,0,
+org.zawamod.zawa.client.model.CoquerelsSifakaModel$Adult,0,
+org.zawamod.zawa.client.model.CoquerelsSifakaModel$Adult$Sitting,0,
+org.zawamod.zawa.client.model.CoquerelsSifakaModel$Child,0,
+org.zawamod.zawa.client.model.CorydorasModel,0,
+org.zawamod.zawa.client.model.EmperorPenguinModel,0,
+org.zawamod.zawa.client.model.EmperorPenguinModel$Adult,0,
+org.zawamod.zawa.client.model.EmperorPenguinModel$Child,0,
+org.zawamod.zawa.client.model.FlamingoModel,0,
+org.zawamod.zawa.client.model.FlamingoModel$Adult,0,
+org.zawamod.zawa.client.model.FlamingoModel$Child,0,
+org.zawamod.zawa.client.model.FlamingoModel$Flying,0,
+org.zawamod.zawa.client.model.GiantAnteaterModel,0,
+org.zawamod.zawa.client.model.GiantAnteaterModel$Adult,0,
+org.zawamod.zawa.client.model.GiantAnteaterModel$Adult$Standing,0,
+org.zawamod.zawa.client.model.GiantAnteaterModel$Child,0,
+org.zawamod.zawa.client.model.GiantPandaModel,0,
+org.zawamod.zawa.client.model.GiantPandaModel$Adult,0,
+org.zawamod.zawa.client.model.GiantPandaModel$Adult$Sitting,0,
+org.zawamod.zawa.client.model.GiantPandaModel$Child,0,
+org.zawamod.zawa.client.model.GiraffeModel,0,
+org.zawamod.zawa.client.model.GiraffeModel$Adult,0,
+org.zawamod.zawa.client.model.GiraffeModel$Child,0,
+org.zawamod.zawa.client.model.GrammaModel,0,
+org.zawamod.zawa.client.model.GrevysZebraModel,0,
+org.zawamod.zawa.client.model.GrevysZebraModel$Adult,0,
+org.zawamod.zawa.client.model.GrevysZebraModel$Child,0,
+org.zawamod.zawa.client.model.HoneyBeeModel,0,
+org.zawamod.zawa.client.model.HornbillModel,0,
+org.zawamod.zawa.client.model.HornbillModel$AfricanAdult,0,
+org.zawamod.zawa.client.model.HornbillModel$AfricanFlying,0,
+org.zawamod.zawa.client.model.HornbillModel$AsianAdult,0,
+org.zawamod.zawa.client.model.HornbillModel$AsianFlying,0,
+org.zawamod.zawa.client.model.HornbillModel$Child,0,
+org.zawamod.zawa.client.model.IceTreatModel,0,
+org.zawamod.zawa.client.model.IceTreatModel$Apple,0,
+org.zawamod.zawa.client.model.IceTreatModel$Beef,0,
+org.zawamod.zawa.client.model.IndianGharialModel,0,
+org.zawamod.zawa.client.model.IndianGharialModel$Adult,0,
+org.zawamod.zawa.client.model.IndianGharialModel$Child,0,
+org.zawamod.zawa.client.model.KakapoModel,0,
+org.zawamod.zawa.client.model.KakapoModel$Adult,0,
+org.zawamod.zawa.client.model.KakapoModel$Child,0,
+org.zawamod.zawa.client.model.KoalaModel,0,
+org.zawamod.zawa.client.model.KoalaModel$Adult,0,
+org.zawamod.zawa.client.model.KoalaModel$Adult$Sitting,0,
+org.zawamod.zawa.client.model.KoalaModel$Child,0,
+org.zawamod.zawa.client.model.LeafcutterAntModel,0,
+org.zawamod.zawa.client.model.MacawModel,0,
+org.zawamod.zawa.client.model.MacawModel$Adult,0,
+org.zawamod.zawa.client.model.MacawModel$Child,0,
+org.zawamod.zawa.client.model.MacawModel$Flying,0,
+org.zawamod.zawa.client.model.MandrillModel,0,
+org.zawamod.zawa.client.model.MandrillModel$AdultFemale,0,
+org.zawamod.zawa.client.model.MandrillModel$AdultFemale$Sitting,0,
+org.zawamod.zawa.client.model.MandrillModel$AdultMale,0,
+org.zawamod.zawa.client.model.MandrillModel$AdultMale$Sitting,0,
+org.zawamod.zawa.client.model.MandrillModel$Child,0,
+org.zawamod.zawa.client.model.MotorBoatModel,0,
+org.zawamod.zawa.client.model.OrcaModel,0,
+org.zawamod.zawa.client.model.OrcaModel$AdultFemale,0,
+org.zawamod.zawa.client.model.OrcaModel$AdultMale,0,
+org.zawamod.zawa.client.model.OrcaModel$Child,0,
+org.zawamod.zawa.client.model.PlecostomusModel,0,
+org.zawamod.zawa.client.model.PrayingMantisModel,0,
+org.zawamod.zawa.client.model.RedKangarooModel,0,
+org.zawamod.zawa.client.model.RedKangarooModel$Adult,0,
+org.zawamod.zawa.client.model.RedKangarooModel$Child,0,
+org.zawamod.zawa.client.model.RedPandaModel,0,
+org.zawamod.zawa.client.model.RedPandaModel$Adult,0,
+org.zawamod.zawa.client.model.RedPandaModel$Adult$Sitting,0,
+org.zawamod.zawa.client.model.RedPandaModel$Child,0,
+org.zawamod.zawa.client.model.RingTailedLemurModel,0,
+org.zawamod.zawa.client.model.RingTailedLemurModel$Adult,0,
+org.zawamod.zawa.client.model.RingTailedLemurModel$Adult$Sitting,0,
+org.zawamod.zawa.client.model.RingTailedLemurModel$Child,0,
+org.zawamod.zawa.client.model.ScentedBallModel,0,
+org.zawamod.zawa.client.model.ScorpionModel,0,
+org.zawamod.zawa.client.model.SlothModel,0,
+org.zawamod.zawa.client.model.SlothModel$Adult,0,
+org.zawamod.zawa.client.model.SlothModel$Child,0,
+org.zawamod.zawa.client.model.SnowLeopardModel,0,
+org.zawamod.zawa.client.model.SnowLeopardModel$Adult,0,
+org.zawamod.zawa.client.model.SnowLeopardModel$Child,0,
+org.zawamod.zawa.client.model.SpiderMonkeyModel,0,
+org.zawamod.zawa.client.model.SpiderMonkeyModel$Adult,0,
+org.zawamod.zawa.client.model.SpiderMonkeyModel$Child,0,
+org.zawamod.zawa.client.model.SumatranOrangutanModel,0,
+org.zawamod.zawa.client.model.SumatranOrangutanModel$AdultFemale,0,
+org.zawamod.zawa.client.model.SumatranOrangutanModel$AdultFemale$Sitting,0,
+org.zawamod.zawa.client.model.SumatranOrangutanModel$AdultMale,0,
+org.zawamod.zawa.client.model.SumatranOrangutanModel$AdultMale$Sitting,0,
+org.zawamod.zawa.client.model.SumatranOrangutanModel$Child,0,
+org.zawamod.zawa.client.model.TarantulaModel,0,
+org.zawamod.zawa.client.model.WesternLowlandGorillaModel,0,
+org.zawamod.zawa.client.model.WesternLowlandGorillaModel$AdultFemale,0,
+org.zawamod.zawa.client.model.WesternLowlandGorillaModel$AdultFemale$Sitting,0,
+org.zawamod.zawa.client.model.WesternLowlandGorillaModel$AdultMale,0,
+org.zawamod.zawa.client.model.WesternLowlandGorillaModel$AdultMale$Sitting,0,
+org.zawamod.zawa.client.model.WesternLowlandGorillaModel$Child,0,
+org.zawamod.zawa.client.model.ZawaBaseAmbientModel,0,
+org.zawamod.zawa.client.model.ZawaBaseModel,0,
+org.zawamod.zawa.client.model.ZawaCodModel,0,
+org.zawamod.zawa.client.model.ZawaFrogBaseModel,0,
+org.zawamod.zawa.client.model.ZawaFrogBaseModel$Tadpole,0,
+org.zawamod.zawa.client.model.ZawaFrogBaseModel$TreeFrogAdult,0,
+org.zawamod.zawa.client.model.ZawaPolarBearModel,0,
+org.zawamod.zawa.client.model.ZawaPolarBearModel$Adult,0,
+org.zawamod.zawa.client.model.ZawaPolarBearModel$Adult$Standing,0,
+org.zawamod.zawa.client.model.ZawaPolarBearModel$Child,0,
+org.zawamod.zawa.client.model.ZawaSalmonModel,0,
+org.zawamod.zawa.client.model.ZooCartModel,0,
+org.zawamod.zawa.client.model.armor.ZookeeperUniformModel,0,
+org.zawamod.zawa.client.renderer.entity.AfricanLakeCichlidRenderer,0,
+org.zawamod.zawa.client.renderer.entity.AfricanLionRenderer,0,
+org.zawamod.zawa.client.renderer.entity.AfricanWildDogRenderer,0,
+org.zawamod.zawa.client.renderer.entity.AngelfishRenderer,0,
+org.zawamod.zawa.client.renderer.entity.AsianElephantRenderer,0,
+org.zawamod.zawa.client.renderer.entity.BaldEagleRenderer,0,
+org.zawamod.zawa.client.renderer.entity.BettaRenderer,0,
+org.zawamod.zawa.client.renderer.entity.BlackFootedFerretRenderer,0,
+org.zawamod.zawa.client.renderer.entity.BoomerBallRenderer,0,
+org.zawamod.zawa.client.renderer.entity.BrownRatRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ButterflyRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ClownfishRenderer,0,
+org.zawamod.zawa.client.renderer.entity.CommonChimpanzeeRenderer,0,
+org.zawamod.zawa.client.renderer.entity.CoquerelsSifakaRenderer,0,
+org.zawamod.zawa.client.renderer.entity.CorydorasRenderer,0,
+org.zawamod.zawa.client.renderer.entity.EmperorPenguinRenderer,0,
+org.zawamod.zawa.client.renderer.entity.FlamingoRenderer,0,
+org.zawamod.zawa.client.renderer.entity.GiantAnteaterRenderer,0,
+org.zawamod.zawa.client.renderer.entity.GiantPandaRenderer,0,
+org.zawamod.zawa.client.renderer.entity.GiantPandaRenderer$HeldItemLayer,0,
+org.zawamod.zawa.client.renderer.entity.GiraffeRenderer,0,
+org.zawamod.zawa.client.renderer.entity.GrammaRenderer,0,
+org.zawamod.zawa.client.renderer.entity.GrevysZebraRenderer,0,
+org.zawamod.zawa.client.renderer.entity.HoneyBeeRenderer,0,
+org.zawamod.zawa.client.renderer.entity.HornbillRenderer,0,
+org.zawamod.zawa.client.renderer.entity.IceTreatRenderer,0,
+org.zawamod.zawa.client.renderer.entity.IndianGharialRenderer,0,
+org.zawamod.zawa.client.renderer.entity.KakapoRenderer,0,
+org.zawamod.zawa.client.renderer.entity.KoalaRenderer,0,
+org.zawamod.zawa.client.renderer.entity.KoalaRenderer$HeldItemLayer,0,
+org.zawamod.zawa.client.renderer.entity.LeafcutterAntRenderer,0,
+org.zawamod.zawa.client.renderer.entity.MacawRenderer,0,
+org.zawamod.zawa.client.renderer.entity.MandrillRenderer,0,
+org.zawamod.zawa.client.renderer.entity.MotorBoatRenderer,0,
+org.zawamod.zawa.client.renderer.entity.OrcaRenderer,0,
+org.zawamod.zawa.client.renderer.entity.PlecostomusRenderer,0,
+org.zawamod.zawa.client.renderer.entity.PrayingMantisRenderer,0,
+org.zawamod.zawa.client.renderer.entity.RedKangarooRenderer,0,
+org.zawamod.zawa.client.renderer.entity.RedPandaRenderer,0,
+org.zawamod.zawa.client.renderer.entity.RedPandaRenderer$HeldItemLayer,0,
+org.zawamod.zawa.client.renderer.entity.RingTailedLemurRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ScentedBallRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ScorpionRenderer,0,
+org.zawamod.zawa.client.renderer.entity.SlingshotNetRenderer,0,
+org.zawamod.zawa.client.renderer.entity.SlothRenderer,0,
+org.zawamod.zawa.client.renderer.entity.SnowLeopardRenderer,0,
+org.zawamod.zawa.client.renderer.entity.SpiderMonkeyRenderer,0,
+org.zawamod.zawa.client.renderer.entity.SumatranOrangutanRenderer,0,
+org.zawamod.zawa.client.renderer.entity.TarantulaRenderer,0,
+org.zawamod.zawa.client.renderer.entity.TranquilizerDartRenderer,0,
+org.zawamod.zawa.client.renderer.entity.TreeFrogRenderer,0,
+org.zawamod.zawa.client.renderer.entity.WesternLowlandGorillaRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ZawaCodRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ZawaPolarBearRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ZawaSalmonRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ZooCartRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ZookeeperRenderer,0,
+org.zawamod.zawa.client.renderer.entity.ZookeeperRenderer$ZookeeperUniformLayer,0,
+org.zawamod.zawa.client.renderer.entity.layers.RenderTypeOrderer,0,
+org.zawamod.zawa.client.resources.FoodType,0,
+org.zawamod.zawa.client.resources.FoodType$Variant,0,
+org.zawamod.zawa.client.screens.DataBookScreen$ChangePageButton,0,
+org.zawamod.zawa.client.screens.DataBookScreen$EntityInfoPageButton,0,
+org.zawamod.zawa.client.screens.inventory.BugBoxScreen,0,
+org.zawamod.zawa.client.screens.inventory.FeederBlockScreen,0,
+org.zawamod.zawa.client.screens.inventory.HydroponicsTableScreen,0,
+org.zawamod.zawa.client.screens.inventory.IncubatorScreen,0,
+org.zawamod.zawa.client.screens.inventory.ViewAnimalPlaqueScreen,0,
+org.zawamod.zawa.compat.BuddycardsCompat$ZawaMedalTypes,0,
+org.zawamod.zawa.compat.BuddycardsCompat$ZawaMedalTypes$MedalEffect,0,
+org.zawamod.zawa.config.ZawaSpawnCategory,0,
+org.zawamod.zawa.data.ZawaRecipeProvider$1,0,
+org.zawamod.zawa.data.ZawaRecipeProvider$2,0,
+org.zawamod.zawa.data.ZawaTagsProviders,0,
+org.zawamod.zawa.dispenser.PlantDispenseBehavior,0,
+org.zawamod.zawa.mixin.GraphTranslucencyRenderOrderManagerMixin,0,
+org.zawamod.zawa.network.protocol.ZawaPacket,0,
+org.zawamod.zawa.resources.ZawaDamageSource,0,
+org.zawamod.zawa.tags.ZawaBlockTags,0,
+org.zawamod.zawa.tags.ZawaEntityTypeTags,0,
+org.zawamod.zawa.tags.ZawaItemTags,0,
+org.zawamod.zawa.world.block.AnimalPlaqueBlock,0,
+org.zawamod.zawa.world.block.BenchBlock,0,
+org.zawamod.zawa.world.block.BenchBlock$1,0,
+org.zawamod.zawa.world.block.BirdOfParadiseBlock$TripleBlockSegment,0,
+org.zawamod.zawa.world.block.CaptureCageBlock$1,0,
+org.zawamod.zawa.world.block.DecoratedRopeBlock,0,
+org.zawamod.zawa.world.block.EnrichmentBlock,0,
+org.zawamod.zawa.world.block.FoodBowlBlock,0,
+org.zawamod.zawa.world.block.HeatLampBlock,0,
+org.zawamod.zawa.world.block.HeatRockBlock,0,
+org.zawamod.zawa.world.block.HollowHideBlock$1,0,
+org.zawamod.zawa.world.block.PedestalFeederBlock,0,
+org.zawamod.zawa.world.block.PerchingStandBlock,0,
+org.zawamod.zawa.world.block.PerchingStandBlock$1,0,
+org.zawamod.zawa.world.block.PicnicTableBlock,0,
+org.zawamod.zawa.world.block.PlantBlock,0,
+org.zawamod.zawa.world.block.PlushBlock,0,
+org.zawamod.zawa.world.block.PlushBlock$Big,0,
+org.zawamod.zawa.world.block.PlushBlock$Hanging,0,
+org.zawamod.zawa.world.block.PuzzleFeederBlock,0,
+org.zawamod.zawa.world.block.PuzzleFeederBlock$1,0,
+org.zawamod.zawa.world.block.RockHideBlock,0,
+org.zawamod.zawa.world.block.RopeBlock,0,
+org.zawamod.zawa.world.block.SaltLickBlock,0,
+org.zawamod.zawa.world.block.ScratchingPostBlock,0,
+org.zawamod.zawa.world.block.SprinklerBlock,0,
+org.zawamod.zawa.world.block.SprinklerBlock$1,0,
+org.zawamod.zawa.world.block.StoneBowlBlock,0,
+org.zawamod.zawa.world.block.TallWaterPlantBlock,0,
+org.zawamod.zawa.world.block.TireSwingBlock,0,
+org.zawamod.zawa.world.block.TireSwingBlock$1,0,
+org.zawamod.zawa.world.block.TroughBlock,0,
+org.zawamod.zawa.world.block.WallBowlBlock$1,0,
+org.zawamod.zawa.world.block.WallForageBlock$1,0,
+org.zawamod.zawa.world.block.WasteBinBlock,0,
+org.zawamod.zawa.world.block.WaterPlantBlock,0,
+org.zawamod.zawa.world.block.ZawaEnrichmentBlock,0,
+org.zawamod.zawa.world.block.ZawaEnrichmentBlock$Directional,0,
+org.zawamod.zawa.world.block.ZawaFenceBlock,0,
+org.zawamod.zawa.world.block.ZawaFenceGateBlock,0,
+org.zawamod.zawa.world.block.entity.AnimalPlaqueBlockEntity,0,
+org.zawamod.zawa.world.block.entity.BugBoxBlockEntity$1,0,
+org.zawamod.zawa.world.block.entity.CaptureBlockEntity$Animal,0,
+org.zawamod.zawa.world.block.entity.HydroponicsTableBlockEntity$1,0,
+org.zawamod.zawa.world.block.entity.IncubatorBlockEntity$1,0,
+org.zawamod.zawa.world.block.entity.IncubatorBlockEntity$2,0,
+org.zawamod.zawa.world.entity.EatsItemsEntity,0,
+org.zawamod.zawa.world.entity.GroupEntity,0,
+org.zawamod.zawa.world.entity.GroupEntity$GroupData,0,
+org.zawamod.zawa.world.entity.JumpingEntity$JumpersJumpControl,0,
+org.zawamod.zawa.world.entity.JumpingEntity$JumpingMoveControl,0,
+org.zawamod.zawa.world.entity.OviparousEntity,0,
+org.zawamod.zawa.world.entity.SittingEntity$SitGoal,0,
+org.zawamod.zawa.world.entity.SpeciesVariantsEntity,0,
+org.zawamod.zawa.world.entity.SpeciesVariantsEntity$SpeciesVariantData,0,
+org.zawamod.zawa.world.entity.ThreatenStandEntity$ThreatenPlayersGoal,0,
+org.zawamod.zawa.world.entity.ai.goal.BreachGoal,0,
+org.zawamod.zawa.world.entity.ai.goal.FollowGroupGoal,0,
+org.zawamod.zawa.world.entity.ai.goal.GroupPanicGoal,0,
+org.zawamod.zawa.world.entity.ai.goal.MoveToItemGoal,0,
+org.zawamod.zawa.world.entity.ai.goal.ZawaBirthGoal,0,
+org.zawamod.zawa.world.entity.ai.goal.ZawaBreedGoal,0,
+org.zawamod.zawa.world.entity.ai.goal.ZawaFollowParentGoal,0,
+org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal,0,
+org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity,0,
+org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity$SwimGoal,0,
+org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity$ZawaFishMoveControl,0,
+org.zawamod.zawa.world.entity.ambient.ZawaAmbientFlyingEntity,0,
+org.zawamod.zawa.world.entity.ambient.ZawaAmbientLandEntity,0,
+org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity$EatFoodGoal,0,
+org.zawamod.zawa.world.entity.animal.TreeFrog$FrogMovementControl,0,
+org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity,0,
+org.zawamod.zawa.world.entity.animal.ZawaBaseEntity$Gender,0,
+org.zawamod.zawa.world.entity.animal.ZawaEntityStat,0,
+org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity,0,
+org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity$ZawaFlyingGoal,0,
+org.zawamod.zawa.world.entity.animal.ZawaLandEntity,0,
+org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity,0,
+org.zawamod.zawa.world.entity.item.Ball$Type,0,
+org.zawamod.zawa.world.entity.item.EnrichmentEntity,0,
+org.zawamod.zawa.world.entity.item.IceTreat$Type,0,
+org.zawamod.zawa.world.entity.item.ZooCart$1,0,
+org.zawamod.zawa.world.entity.npc.ZawaVillagerTrades$ItemForItemTrade,0,
+org.zawamod.zawa.world.entity.stats.EntityDiet,0,
+org.zawamod.zawa.world.entity.stats.EntityFertilityCategory,0,
+org.zawamod.zawa.world.entity.stats.EntitySizeCategory,0,
+org.zawamod.zawa.world.entity.stats.EntitySpeedCategory,0,
+org.zawamod.zawa.world.entity.stats.EntityStats,0,
+org.zawamod.zawa.world.entity.stats.EntityTemperamentCategory,0,
+org.zawamod.zawa.world.feature.ZawaWaterPlantFeature,0,
+org.zawamod.zawa.world.inventory.BugBoxFeedSlot,0,
+org.zawamod.zawa.world.inventory.FuelSlot,0,
+org.zawamod.zawa.world.inventory.HydroponicsPlantSlot,0,
+org.zawamod.zawa.world.inventory.IncubatorEggSlot,0,
+org.zawamod.zawa.world.inventory.ResultSlot,0,
+org.zawamod.zawa.world.item.EnrichmentItem,0,
+org.zawamod.zawa.world.item.MotorBoatItem,0,
+org.zawamod.zawa.world.item.PlushBlockItem,0,
+org.zawamod.zawa.world.item.SeineNetItem,0,
+org.zawamod.zawa.world.item.TranquilizerDartItem,0,
+org.zawamod.zawa.world.item.ZawaAquaticEggItem,0,
+org.zawamod.zawa.world.item.ZawaBucketItem,0,
+org.zawamod.zawa.world.item.ZawaEggItem,0,
+org.zawamod.zawa.world.item.ZawaFoods,0,
+org.zawamod.zawa.world.item.ZooCartItem,0,

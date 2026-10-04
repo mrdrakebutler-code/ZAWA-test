@@ -1,0 +1,7 @@
+{
+  "parent": "zawa:block/_water_plant",
+  "textures": {
+    "base": "zawa:block/water_lettuce_base",
+    "roots": "zawa:block/water_lettuce_roots_2"
+  }
+}

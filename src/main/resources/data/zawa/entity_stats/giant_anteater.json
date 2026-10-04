@@ -1,0 +1,27 @@
+{
+  "temperament": "defensive",
+  "kibble": "zawa:insectivore_kibble",
+  "size": "medium",
+  "fertility": "low",
+  "breeding_item": "zawa:leafcutter_ant",
+  "litter_size": 1,
+  "diet": "zawa:insectivore",
+  "speed": "slow",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:scratching_post",
+      "zawa:sprinkler",
+      "zawa:puzzle_feeder",
+      "zawa:bamboo_feeder",
+      "zawa:black_bamboo_feeder",
+      "zawa:yellow_bamboo_feeder",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ],
+    "zawa:entities": [
+      "zawa:scented_ball"
+    ]
+  },
+  "variant_count": 4
+}

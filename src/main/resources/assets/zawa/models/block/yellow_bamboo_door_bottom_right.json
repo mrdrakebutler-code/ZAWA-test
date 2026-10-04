@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "top": "zawa:block/yellow_bamboo_door_top",
+    "bottom": "zawa:block/yellow_bamboo_door_bottom"
+  }
+}

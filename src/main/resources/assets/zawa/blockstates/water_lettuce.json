@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "zawa:block/water_lettuce_1"
+      },
+      {
+        "model": "zawa:block/water_lettuce_2"
+      }
+    ]
+  }
+}

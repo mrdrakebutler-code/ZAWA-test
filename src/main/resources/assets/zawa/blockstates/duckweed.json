@@ -1,0 +1,53 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "zawa:block/duckweed_1"
+      },
+      {
+        "model": "zawa:block/duckweed_1",
+        "y": 90
+      },
+      {
+        "model": "zawa:block/duckweed_1",
+        "y": 180
+      },
+      {
+        "model": "zawa:block/duckweed_1",
+        "y": 270
+      },
+
+      {
+        "model": "zawa:block/duckweed_2"
+      },
+      {
+        "model": "zawa:block/duckweed_2",
+        "y": 90
+      },
+      {
+        "model": "zawa:block/duckweed_2",
+        "y": 180
+      },
+      {
+        "model": "zawa:block/duckweed_2",
+        "y": 270
+      },
+
+      {
+        "model": "zawa:block/duckweed_3"
+      },
+      {
+        "model": "zawa:block/duckweed_3",
+        "y": 90
+      },
+      {
+        "model": "zawa:block/duckweed_3",
+        "y": 180
+      },
+      {
+        "model": "zawa:block/duckweed_3",
+        "y": 270
+      }
+    ]
+  }
+}

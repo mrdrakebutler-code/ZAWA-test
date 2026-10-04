@@ -1,0 +1,22 @@
+{
+  "multipart": [
+    { "when": { "face": "floor" },
+      "apply": { "model": "zawa:block/sprinkler" }
+    },
+    { "when": { "face": "ceiling" },
+      "apply": { "model": "zawa:block/sprinkler", "x": 180 }
+    },
+    { "when": { "face": "wall", "facing": "north" },
+      "apply": { "model": "zawa:block/sprinkler", "x": 90, "y": 0 }
+    },
+    { "when": { "face": "wall", "facing": "east" },
+      "apply": { "model": "zawa:block/sprinkler", "x": 90, "y": 90 }
+    },
+    { "when": { "face": "wall", "facing": "south" },
+      "apply": { "model": "zawa:block/sprinkler", "x": 90, "y": 180 }
+    },
+    { "when": { "face": "wall", "facing": "west" },
+      "apply": { "model": "zawa:block/sprinkler", "x": 90, "y": 270 }
+    }
+  ]
+}

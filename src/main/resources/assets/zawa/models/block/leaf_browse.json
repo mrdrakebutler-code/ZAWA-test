@@ -1,0 +1,7 @@
+{
+	"parent": "zawa:block/hay_browse",
+	"textures": {
+		"0": "zawa:block/leaf_browse",
+		"particle": "zawa:block/leaf_browse"
+	}
+}

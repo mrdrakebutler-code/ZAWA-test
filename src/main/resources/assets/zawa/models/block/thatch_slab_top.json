@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "zawa:block/thatch",
+    "top": "zawa:block/thatch",
+    "side": "zawa:block/thatch"
+  }
+}

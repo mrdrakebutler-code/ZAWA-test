@@ -1,0 +1,6 @@
+{
+  "parent": "zawa:block/plushies/panda_plush",
+  "textures": {
+    "0": "zawa:block/plush/pink_panda"
+  }
+}

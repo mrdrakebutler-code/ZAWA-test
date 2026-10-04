@@ -1,0 +1,163 @@
+Compiled from "Butterfly.java"
+public class org.zawamod.zawa.world.entity.ambient.Butterfly extends org.zawamod.zawa.world.entity.ambient.ZawaAmbientFlyingEntity implements org.zawamod.zawa.world.entity.SpeciesVariantsEntity {
+  public org.zawamod.zawa.world.entity.ambient.Butterfly(net.minecraft.world.entity.EntityType<? extends org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity>, net.minecraft.world.level.Level);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokespecial #22                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientFlyingEntity."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;)V
+       6: return
+
+  public static net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder registerButterflyAttributes();
+    Code:
+       0: invokestatic  #34                 // Method m_21552_:()Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+       3: getstatic     #40                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22280_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+       6: ldc2_w        #41                 // double 0.699999988079071d
+       9: invokevirtual #46                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      12: getstatic     #49                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22279_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      15: ldc2_w        #50                 // double 0.22499999403953552d
+      18: invokevirtual #46                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      21: getstatic     #54                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22276_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      24: ldc2_w        #55                 // double 2.0d
+      27: invokevirtual #46                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      30: areturn
+
+  protected void m_8099_();
+    Code:
+       0: aload_0
+       1: invokespecial #60                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientFlyingEntity.m_8099_:()V
+       4: aload_0
+       5: getfield      #64                 // Field f_21345_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+       8: iconst_1
+       9: new           #66                 // class net/minecraft/world/entity/ai/goal/PanicGoal
+      12: dup
+      13: aload_0
+      14: ldc2_w        #67                 // double 1.33d
+      17: invokespecial #71                 // Method net/minecraft/world/entity/ai/goal/PanicGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;D)V
+      20: invokevirtual #77                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      23: aload_0
+      24: getfield      #64                 // Field f_21345_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+      27: iconst_4
+      28: new           #79                 // class net/minecraft/world/entity/ai/goal/AvoidEntityGoal
+      31: dup
+      32: aload_0
+      33: ldc           #81                 // class net/minecraft/world/entity/player/Player
+      35: ldc           #82                 // float 8.0f
+      37: ldc2_w        #83                 // double 0.8d
+      40: ldc2_w        #67                 // double 1.33d
+      43: getstatic     #88                 // Field AVOID_PLAYERS:Ljava/util/function/Predicate;
+      46: dup
+      47: invokestatic  #94                 // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+      50: pop
+      51: invokedynamic #114,  0            // InvokeDynamic #0:test:(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
+      56: invokespecial #117                // Method net/minecraft/world/entity/ai/goal/AvoidEntityGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;Ljava/lang/Class;FDDLjava/util/function/Predicate;)V
+      59: invokevirtual #77                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      62: return
+
+  public net.minecraft.world.entity.AgeableMob m_142606_(net.minecraft.server.level.ServerLevel, net.minecraft.world.entity.AgeableMob);
+    Code:
+       0: getstatic     #126                // Field org/zawamod/zawa/world/entity/ZawaEntities.BUTTERFLY:Lnet/minecraftforge/registries/RegistryObject;
+       3: invokevirtual #132                // Method net/minecraftforge/registries/RegistryObject.get:()Ljava/lang/Object;
+       6: checkcast     #134                // class net/minecraft/world/entity/EntityType
+       9: aload_1
+      10: invokevirtual #138                // Method net/minecraft/world/entity/EntityType.m_20615_:(Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/entity/Entity;
+      13: checkcast     #140                // class net/minecraft/world/entity/AgeableMob
+      16: areturn
+
+  public int getVariantByBiome(net.minecraft.world.level.LevelAccessor);
+    Code:
+       0: aload_0
+       1: getfield      #149                // Field f_19796_:Lnet/minecraft/util/RandomSource;
+       4: aload_0
+       5: invokevirtual #153                // Method getWildVariants:()I
+       8: invokeinterface #159,  2          // InterfaceMethod net/minecraft/util/RandomSource.m_188503_:(I)I
+      13: ireturn
+
+  protected net.minecraft.resources.ResourceLocation m_7582_();
+    Code:
+       0: aload_0
+       1: invokevirtual #166                // Method getVariant:()I
+       4: tableswitch   { // 0 to 10
+                     0: 64
+                     1: 76
+                     2: 88
+                     3: 100
+                     4: 112
+                     5: 124
+                     6: 136
+                     7: 148
+                     8: 160
+                     9: 172
+                    10: 184
+               default: 196
+          }
+      64: new           #168                // class net/minecraft/resources/ResourceLocation
+      67: dup
+      68: ldc           #170                // String zawa
+      70: ldc           #172                // String entities/butterfly/monarch
+      72: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      75: areturn
+      76: new           #168                // class net/minecraft/resources/ResourceLocation
+      79: dup
+      80: ldc           #170                // String zawa
+      82: ldc           #177                // String entities/butterfly/green_hairstreak
+      84: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      87: areturn
+      88: new           #168                // class net/minecraft/resources/ResourceLocation
+      91: dup
+      92: ldc           #170                // String zawa
+      94: ldc           #179                // String entities/butterfly/red_admiral
+      96: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      99: areturn
+     100: new           #168                // class net/minecraft/resources/ResourceLocation
+     103: dup
+     104: ldc           #170                // String zawa
+     106: ldc           #181                // String entities/butterfly/cabbage_white
+     108: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     111: areturn
+     112: new           #168                // class net/minecraft/resources/ResourceLocation
+     115: dup
+     116: ldc           #170                // String zawa
+     118: ldc           #183                // String entities/butterfly/eastern_tiger_swallowtail
+     120: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     123: areturn
+     124: new           #168                // class net/minecraft/resources/ResourceLocation
+     127: dup
+     128: ldc           #170                // String zawa
+     130: ldc           #185                // String entities/butterfly/black_swallowtail
+     132: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     135: areturn
+     136: new           #168                // class net/minecraft/resources/ResourceLocation
+     139: dup
+     140: ldc           #170                // String zawa
+     142: ldc           #187                // String entities/butterfly/cloudless_sulphur
+     144: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     147: areturn
+     148: new           #168                // class net/minecraft/resources/ResourceLocation
+     151: dup
+     152: ldc           #170                // String zawa
+     154: ldc           #189                // String entities/butterfly/blue_morpho
+     156: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     159: areturn
+     160: new           #168                // class net/minecraft/resources/ResourceLocation
+     163: dup
+     164: ldc           #170                // String zawa
+     166: ldc           #191                // String entities/butterfly/zebra_swallowtail
+     168: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     171: areturn
+     172: new           #168                // class net/minecraft/resources/ResourceLocation
+     175: dup
+     176: ldc           #170                // String zawa
+     178: ldc           #193                // String entities/butterfly/tawny_emperor
+     180: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     183: areturn
+     184: new           #168                // class net/minecraft/resources/ResourceLocation
+     187: dup
+     188: ldc           #170                // String zawa
+     190: ldc           #195                // String entities/butterfly/checkered_white
+     192: invokespecial #175                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     195: areturn
+     196: aload_0
+     197: invokespecial #197                // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientFlyingEntity.m_7582_:()Lnet/minecraft/resources/ResourceLocation;
+     200: areturn
+}

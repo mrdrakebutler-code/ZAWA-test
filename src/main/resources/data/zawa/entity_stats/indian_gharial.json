@@ -1,0 +1,27 @@
+{
+  "temperament": "defensive",
+  "kibble": "zawa:piscivore_kibble",
+  "size": "large",
+  "fertility": "low",
+  "breeding_item": "minecraft:tropical_fish",
+  "litter_size": {
+    "min": 4,
+    "max": 5
+  },
+  "diet": "zawa:piscivore",
+  "speed": "slow",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:heat_lamp",
+      "zawa:heat_rock",
+      "zawa:sprinkler",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ],
+    "zawa:entities": [
+      "zawa:beef_ice_treat"
+    ]
+  },
+  "variant_count": 5
+}

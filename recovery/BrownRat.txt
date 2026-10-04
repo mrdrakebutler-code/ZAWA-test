@@ -1,0 +1,66 @@
+Compiled from "BrownRat.java"
+public class org.zawamod.zawa.world.entity.ambient.BrownRat extends org.zawamod.zawa.world.entity.ambient.ZawaAmbientLandEntity {
+  public org.zawamod.zawa.world.entity.ambient.BrownRat(net.minecraft.world.entity.EntityType<? extends org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity>, net.minecraft.world.level.Level);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokespecial #20                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;)V
+       6: return
+
+  public static net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder registerBrownRatAttributes();
+    Code:
+       0: invokestatic  #32                 // Method m_21552_:()Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+       3: getstatic     #38                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22279_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+       6: ldc2_w        #39                 // double 0.30000001192092896d
+       9: invokevirtual #44                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      12: getstatic     #47                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22276_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      15: ldc2_w        #48                 // double 6.0d
+      18: invokevirtual #44                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      21: getstatic     #52                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22281_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      24: dconst_1
+      25: invokevirtual #44                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      28: areturn
+
+  protected void m_8099_();
+    Code:
+       0: aload_0
+       1: invokespecial #56                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_8099_:()V
+       4: aload_0
+       5: getfield      #60                 // Field f_21345_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+       8: iconst_1
+       9: new           #62                 // class net/minecraft/world/entity/ai/goal/PanicGoal
+      12: dup
+      13: aload_0
+      14: ldc2_w        #63                 // double 1.33d
+      17: invokespecial #67                 // Method net/minecraft/world/entity/ai/goal/PanicGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;D)V
+      20: invokevirtual #73                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      23: aload_0
+      24: getfield      #60                 // Field f_21345_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+      27: iconst_4
+      28: new           #75                 // class net/minecraft/world/entity/ai/goal/AvoidEntityGoal
+      31: dup
+      32: aload_0
+      33: ldc           #77                 // class net/minecraft/world/entity/player/Player
+      35: ldc           #78                 // float 8.0f
+      37: ldc2_w        #79                 // double 0.8d
+      40: ldc2_w        #63                 // double 1.33d
+      43: getstatic     #84                 // Field AVOID_PLAYERS:Ljava/util/function/Predicate;
+      46: dup
+      47: invokestatic  #90                 // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+      50: pop
+      51: invokedynamic #110,  0            // InvokeDynamic #0:test:(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
+      56: invokespecial #113                // Method net/minecraft/world/entity/ai/goal/AvoidEntityGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;Ljava/lang/Class;FDDLjava/util/function/Predicate;)V
+      59: invokevirtual #73                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      62: return
+
+  public net.minecraft.world.entity.AgeableMob m_142606_(net.minecraft.server.level.ServerLevel, net.minecraft.world.entity.AgeableMob);
+    Code:
+       0: getstatic     #122                // Field org/zawamod/zawa/world/entity/ZawaEntities.BROWN_RAT:Lnet/minecraftforge/registries/RegistryObject;
+       3: invokevirtual #128                // Method net/minecraftforge/registries/RegistryObject.get:()Ljava/lang/Object;
+       6: checkcast     #130                // class net/minecraft/world/entity/EntityType
+       9: aload_1
+      10: invokevirtual #134                // Method net/minecraft/world/entity/EntityType.m_20615_:(Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/entity/Entity;
+      13: checkcast     #136                // class net/minecraft/world/entity/AgeableMob
+      16: areturn
+}

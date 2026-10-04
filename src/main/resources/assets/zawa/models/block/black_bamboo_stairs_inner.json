@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "zawa:block/black_bamboo",
+    "top": "zawa:block/black_bamboo",
+    "side": "zawa:block/black_bamboo"
+  }
+}

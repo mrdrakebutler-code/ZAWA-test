@@ -1,0 +1,7 @@
+{
+	"parent": "zawa:block/bench",
+	"textures": {
+		"0": "block/gray_concrete_powder",
+		"1": "block/stripped_crimson_stem"
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "zawa:block/_water_plant",
+  "textures": {
+    "base": "zawa:block/red_root_floater",
+    "roots": "zawa:block/red_root_floater_roots"
+  }
+}

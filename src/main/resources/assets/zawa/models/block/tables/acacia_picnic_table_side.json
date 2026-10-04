@@ -1,0 +1,6 @@
+{
+	"parent": "zawa:block/picnic_table_side",
+	"textures": {
+		"0": "block/gray_concrete_powder"
+	}
+}

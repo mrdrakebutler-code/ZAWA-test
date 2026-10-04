@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "zawa:block/turtle_grass_bottom"
+    },
+    "half=upper": {
+      "model": "zawa:block/turtle_grass_top"
+    }
+  }
+}

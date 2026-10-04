@@ -1,0 +1,30 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#neoforge:is_overworld",
+      "#neoforge:is_hot",
+      {
+        "type": "neoforge:not",
+        "value": "#minecraft:is_jungle"
+      },
+      {
+        "type": "neoforge:not",
+        "value": "#neoforge:is_dry"
+      },
+      {
+        "type": "neoforge:not",
+        "value": "#minecraft:is_ocean"
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:african_wild_dog",
+      "weight": 8,
+      "minCount": 4,
+      "maxCount": 6
+    }
+  ]
+}

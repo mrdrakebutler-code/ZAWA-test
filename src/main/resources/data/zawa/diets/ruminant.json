@@ -1,0 +1,22 @@
+{
+  "#forge:carbs": 2,
+  "minecraft:sugar_cane": 1,
+
+  "#forge:fiber": 2,
+
+  "#forge:grain": 2,
+  "minecraft:hay_block": 16,
+
+  "#forge:vegetables": 2,
+  "minecraft:pumpkin": 8,
+  "minecraft:carved_pumpkin": 4,
+
+  "#forge:bushes": 5,
+  "#forge:grass": 2,
+  "#minecraft:leaves": 5,
+  "#minecraft:saplings": 1,
+
+  "minecraft:bamboo": 1,
+  "zawa:black_bamboo": 1,
+  "zawa:yellow_bamboo": 1
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "zawa:block/mixed_stone",
+    "top": "zawa:block/mixed_stone",
+    "side": "zawa:block/mixed_stone"
+  }
+}

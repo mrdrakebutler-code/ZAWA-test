@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "zawa:block/yellow_bamboo_door_bottom",
+    "top": "zawa:block/yellow_bamboo_door_top"
+  }
+}

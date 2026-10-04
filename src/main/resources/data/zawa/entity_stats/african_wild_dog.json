@@ -1,0 +1,32 @@
+{
+  "temperament": "defensive",
+  "kibble": "zawa:carnivore_kibble",
+  "size": "medium",
+  "fertility": "high",
+  "breeding_item": "zawa:large_meat",
+  "litter_size": {
+    "min": 4,
+    "max": 5
+  },
+  "diet": "zawa:large_carnivore",
+  "speed": "fast",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:scratching_post",
+      "zawa:heat_rock",
+      "zawa:sprinkler",
+      "zawa:ball_pit",
+      "zawa:bamboo_chimes",
+      "zawa:black_bamboo_chimes",
+      "zawa:yellow_bamboo_chimes"
+    ],
+    "zawa:entities": [
+      "zawa:scented_ball",
+      "zawa:beef_ice_treat"
+    ]
+  },
+  "variant_count": 5,
+  "captive_variants": [
+    "melanistic"
+  ]
+}

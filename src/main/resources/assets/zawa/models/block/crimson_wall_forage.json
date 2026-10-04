@@ -1,0 +1,6 @@
+{
+	"parent": "zawa:block/acacia_wall_forage",
+	"textures": {
+		"3": "block/stripped_crimson_stem"
+	}
+}

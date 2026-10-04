@@ -1,0 +1,15 @@
+{
+  "variant": "veggie",
+  "items": [
+    "minecraft:beetroot",
+    "minecraft:carrot",
+    "minecraft:potato",
+    "minecraft:pumpkin",
+    "minecraft:carved_pumpkin",
+    "hotchicks:garlic",
+    "hotchicks:okra",
+    "hotchicks:peas",
+    "hotchicks:peppers",
+    "hotchicks:tomato"
+  ]
+}

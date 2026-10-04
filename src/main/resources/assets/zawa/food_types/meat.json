@@ -1,0 +1,26 @@
+{
+  "variant": "meat",
+  "items": [
+    "minecraft:beef",
+    "minecraft:cooked_beef",
+    "minecraft:bone",
+    "minecraft:chicken",
+    "minecraft:cooked_chicken",
+    "minecraft:mutton",
+    "minecraft:cooked_mutton",
+    "minecraft:porkchop",
+    "minecraft:cooked_porkchop",
+    "minecraft:rabbit",
+    "minecraft:rabbit_foot",
+    "minecraft:cooked_rabbit",
+    "minecraft:rotten_flesh",
+    "zawa:large_meat",
+    "zawa:cooked_large_meat",
+    "zawa:medium_meat",
+    "zawa:cooked_medium_meat",
+    "zawa:brown_rat",
+    "zawa:cooked_brown_rat",
+    "zawa:small_meat",
+    "zawa:cooked_small_meat"
+  ]
+}

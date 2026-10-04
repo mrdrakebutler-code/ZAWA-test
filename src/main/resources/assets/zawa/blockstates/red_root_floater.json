@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "zawa:block/red_root_floater"
+      },
+      {
+        "model": "zawa:block/red_root_floater",
+        "y": 90
+      },
+      {
+        "model": "zawa:block/red_root_floater",
+        "y": 180
+      },
+      {
+        "model": "zawa:block/red_root_floater",
+        "y": 270
+      }
+    ]
+  }
+}

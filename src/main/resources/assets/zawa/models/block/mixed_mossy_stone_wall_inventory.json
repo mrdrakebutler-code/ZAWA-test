@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "zawa:block/mixed_mossy_stone"
+  }
+}

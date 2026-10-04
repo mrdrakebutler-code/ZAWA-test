@@ -1,0 +1,7 @@
+{
+  "parent": "zawa:block/_large_plant",
+  "textures": {
+    "e": "zawa:block/bird_of_paradise_short_2_1",
+    "w": "zawa:block/bird_of_paradise_short_1_1"
+  }
+}

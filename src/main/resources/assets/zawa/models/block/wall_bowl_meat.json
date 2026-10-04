@@ -1,0 +1,21 @@
+{
+	"parent": "zawa:block/wall_bowl",
+	"textures": {
+		"6": "zawa:block/food_type/meat"
+	},
+	"elements": [
+		{
+			"name": "fill",
+			"from": [5, 6, 6],
+			"to": [11, 9.25, 12],
+			"faces": {
+				"north": {"uv": [4, 6, 10, 9.25], "texture": "#6"},
+				"east": {"uv": [0, 0, 6, 3.25], "texture": "#6"},
+				"south": {"uv": [5, 5, 11, 8.25], "texture": "#6"},
+				"west": {"uv": [0, 0, 6, 3.25], "texture": "#6"},
+				"up": {"uv": [5, 4, 11, 10], "texture": "#6"},
+				"down": {"uv": [5, 4, 11, 10], "texture": "#6"}
+			}
+		}
+	]
+}

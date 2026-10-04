@@ -1,0 +1,29 @@
+{
+  "multipart": [
+    { "when": { "facing": "north", "open": "false" },
+      "apply": { "model": "zawa:block/capture_cage_closed" }
+    },
+    { "when": { "facing": "south", "open": "false"  },
+      "apply": { "model": "zawa:block/capture_cage_closed", "y": 180 }
+    },
+    { "when": { "facing": "east", "open": "false"  },
+      "apply": { "model": "zawa:block/capture_cage_closed", "y": 90 }
+    },
+    { "when": { "facing": "west", "open": "false"  },
+      "apply": { "model": "zawa:block/capture_cage_closed", "y": 270 }
+    },
+
+    { "when": { "facing": "north", "open": "true" },
+      "apply": { "model": "zawa:block/capture_cage_open" }
+    },
+    { "when": { "facing": "south", "open": "true"  },
+      "apply": { "model": "zawa:block/capture_cage_open", "y": 180 }
+    },
+    { "when": { "facing": "east", "open": "true"  },
+      "apply": { "model": "zawa:block/capture_cage_open", "y": 90 }
+    },
+    { "when": { "facing": "west", "open": "true"  },
+      "apply": { "model": "zawa:block/capture_cage_open", "y": 270 }
+    }
+  ]
+}

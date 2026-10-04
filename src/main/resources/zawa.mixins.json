@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "org.zawamod.zawa.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "zawa.refmap.json",
+  "client": [
+    "GraphTranslucencyRenderOrderManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

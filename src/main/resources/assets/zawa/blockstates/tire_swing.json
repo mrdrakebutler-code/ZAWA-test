@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zawa:block/tire_swing"
+    },
+    "facing=south": {
+      "model": "zawa:block/tire_swing", "y": 180
+    },
+    "facing=east": {
+      "model": "zawa:block/tire_swing", "y": 90
+    },
+    "facing=west": {
+      "model": "zawa:block/tire_swing", "y": 270
+    },
+    "facing=up": {
+      "model": "zawa:block/tire_swing_horizontal"
+    },
+    "facing=down": {
+      "model": "zawa:block/tire_swing_horizontal"
+    }
+  }
+}

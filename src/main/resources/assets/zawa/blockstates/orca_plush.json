@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zawa:block/plushies/orca_plush", "y": 180
+    },
+    "facing=east": {
+      "model": "zawa:block/plushies/orca_plush", "y": 270
+    },
+    "facing=south": {
+      "model": "zawa:block/plushies/orca_plush"
+    },
+    "facing=west": {
+      "model": "zawa:block/plushies/orca_plush", "y": 90
+    }
+  }
+}

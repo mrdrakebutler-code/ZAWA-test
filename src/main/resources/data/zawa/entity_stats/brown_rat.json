@@ -1,0 +1,11 @@
+{
+  "temperament": "timid",
+  "size": "ambient",
+  "breeding_item": "minecraft:wheat_seeds",
+  "speed": "fast",
+  "variant_count": 5,
+  "captive_variants": [
+    "swiss",
+    "romeo"
+  ]
+}

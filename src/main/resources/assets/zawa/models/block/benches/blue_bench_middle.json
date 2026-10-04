@@ -1,0 +1,6 @@
+{
+	"parent": "zawa:block/bench_middle",
+	"textures": {
+		"1": "block/blue_concrete"
+	}
+}

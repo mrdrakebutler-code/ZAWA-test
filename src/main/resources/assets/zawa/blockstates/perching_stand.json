@@ -1,0 +1,19 @@
+{
+  "multipart": [
+    { "when": { "facing": "north" },
+      "apply": { "model": "zawa:block/perching_stand" }
+    },
+
+    { "when": { "facing": "south" },
+      "apply": { "model": "zawa:block/perching_stand", "y": 180 }
+    },
+
+    { "when": { "facing": "east" },
+      "apply": { "model": "zawa:block/perching_stand", "y": 90 }
+    },
+
+    { "when": { "facing": "west" },
+      "apply": { "model": "zawa:block/perching_stand", "y": 270 }
+    }
+  ]
+}

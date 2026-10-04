@@ -1,0 +1,38 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:or",
+    "values": [
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#neoforge:is_swamp"
+        ]
+      },
+      {
+        "type": "neoforge:and",
+        "values": [
+          "#neoforge:is_overworld",
+          "#neoforge:is_water",
+          {
+            "type": "neoforge:not",
+            "value": "#minecraft:is_river"
+          },
+          {
+            "type": "neoforge:not",
+            "value": "#minecraft:is_ocean"
+          }
+        ]
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:flamingo",
+      "weight": 15,
+      "minCount": 4,
+      "maxCount": 6
+    }
+  ]
+}

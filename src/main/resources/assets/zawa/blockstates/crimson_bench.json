@@ -1,0 +1,136 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north",
+        "left": "true|false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_middle"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "left": "false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_left"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "left": "true|false",
+        "right": "false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_right"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "left": "true|false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_middle",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "left": "false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_left",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "left": "true|false",
+        "right": "false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_right",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "left": "true|false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_middle",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "left": "false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_left",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "left": "true|false",
+        "right": "false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_right",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "left": "true|false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_middle",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "left": "false",
+        "right": "true|false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_left",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "left": "true|false",
+        "right": "false"
+      },
+      "apply": {
+        "model": "zawa:block/benches/crimson_bench_right",
+        "y": 270
+      }
+    }
+  ]
+}

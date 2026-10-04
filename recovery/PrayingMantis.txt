@@ -1,0 +1,266 @@
+Compiled from "PrayingMantis.java"
+public class org.zawamod.zawa.world.entity.ambient.PrayingMantis extends org.zawamod.zawa.world.entity.ambient.ZawaAmbientLandEntity implements org.zawamod.zawa.world.entity.SpeciesVariantsEntity,org.zawamod.zawa.world.entity.ClimbingEntity {
+  public static final net.minecraft.network.syncher.EntityDataAccessor<java.lang.Boolean> CLIMBING;
+
+  public static final java.util.List<net.minecraft.util.Tuple<java.lang.String, org.zawamod.zawa.config.ZawaSpawnCategory>> VARIANT_SPAWNS;
+
+  public org.zawamod.zawa.world.entity.ambient.PrayingMantis(net.minecraft.world.entity.EntityType<? extends org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity>, net.minecraft.world.level.Level);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokespecial #25                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;)V
+       6: return
+
+  public static net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder registerPrayingMantisAttributes();
+    Code:
+       0: invokestatic  #37                 // Method m_21552_:()Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+       3: getstatic     #43                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22279_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+       6: ldc2_w        #44                 // double 0.10000000149011612d
+       9: invokevirtual #49                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      12: getstatic     #52                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22276_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      15: ldc2_w        #53                 // double 2.0d
+      18: invokevirtual #49                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      21: getstatic     #57                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22281_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      24: dconst_1
+      25: invokevirtual #49                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      28: areturn
+
+  protected void m_8099_();
+    Code:
+       0: aload_0
+       1: invokespecial #61                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_8099_:()V
+       4: aload_0
+       5: getfield      #65                 // Field f_21345_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+       8: iconst_5
+       9: new           #67                 // class org/zawamod/zawa/world/entity/ai/goal/ZawaMeleeAttackGoal
+      12: dup
+      13: aload_0
+      14: dconst_1
+      15: ldc2_w        #53                 // double 2.0d
+      18: iconst_1
+      19: invokespecial #70                 // Method org/zawamod/zawa/world/entity/ai/goal/ZawaMeleeAttackGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;DDZ)V
+      22: invokevirtual #76                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      25: aload_0
+      26: getfield      #79                 // Field f_21346_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+      29: iconst_3
+      30: new           #81                 // class net/minecraft/world/entity/ai/goal/target/HurtByTargetGoal
+      33: dup
+      34: aload_0
+      35: iconst_0
+      36: anewarray     #83                 // class java/lang/Class
+      39: invokespecial #86                 // Method net/minecraft/world/entity/ai/goal/target/HurtByTargetGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;[Ljava/lang/Class;)V
+      42: invokevirtual #76                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      45: return
+
+  protected void m_8097_();
+    Code:
+       0: aload_0
+       1: invokespecial #89                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_8097_:()V
+       4: aload_0
+       5: getfield      #93                 // Field f_19804_:Lnet/minecraft/network/syncher/SynchedEntityData;
+       8: getstatic     #95                 // Field CLIMBING:Lnet/minecraft/network/syncher/EntityDataAccessor;
+      11: iconst_0
+      12: invokestatic  #101                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+      15: invokevirtual #107                // Method net/minecraft/network/syncher/SynchedEntityData.m_135372_:(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;)V
+      18: return
+
+  public net.minecraft.world.entity.AgeableMob m_142606_(net.minecraft.server.level.ServerLevel, net.minecraft.world.entity.AgeableMob);
+    Code:
+       0: getstatic     #116                // Field org/zawamod/zawa/world/entity/ZawaEntities.PRAYING_MANTIS:Lnet/minecraftforge/registries/RegistryObject;
+       3: invokevirtual #122                // Method net/minecraftforge/registries/RegistryObject.get:()Ljava/lang/Object;
+       6: checkcast     #124                // class net/minecraft/world/entity/EntityType
+       9: aload_1
+      10: invokevirtual #128                // Method net/minecraft/world/entity/EntityType.m_20615_:(Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/entity/Entity;
+      13: checkcast     #130                // class net/minecraft/world/entity/AgeableMob
+      16: areturn
+
+  protected net.minecraft.world.entity.ai.navigation.PathNavigation m_6037_(net.minecraft.world.level.Level);
+    Code:
+       0: new           #137                // class net/minecraft/world/entity/ai/navigation/WallClimberNavigation
+       3: dup
+       4: aload_0
+       5: aload_1
+       6: invokespecial #140                // Method net/minecraft/world/entity/ai/navigation/WallClimberNavigation."<init>":(Lnet/minecraft/world/entity/Mob;Lnet/minecraft/world/level/Level;)V
+       9: areturn
+
+  public void m_8119_();
+    Code:
+       0: aload_0
+       1: invokespecial #143                // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_8119_:()V
+       4: aload_0
+       5: invokevirtual #147                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+       8: getfield      #153                // Field net/minecraft/world/level/Level.f_46443_:Z
+      11: ifne          44
+      14: aload_0
+      15: getfield      #156                // Field f_19862_:Z
+      18: ifeq          44
+      21: aload_0
+      22: aload_0
+      23: aload_0
+      24: invokevirtual #147                // Method m_9236_:()Lnet/minecraft/world/level/Level;
+      27: aload_0
+      28: invokevirtual #160                // Method m_20183_:()Lnet/minecraft/core/BlockPos;
+      31: aload_0
+      32: invokevirtual #164                // Method m_6350_:()Lnet/minecraft/core/Direction;
+      35: invokevirtual #170                // Method net/minecraft/core/BlockPos.m_121945_:(Lnet/minecraft/core/Direction;)Lnet/minecraft/core/BlockPos;
+      38: invokevirtual #174                // Method isClimbableBlock:(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Z
+      41: invokevirtual #178                // Method setClimbing:(Z)V
+      44: return
+
+  public boolean m_6147_();
+    Code:
+       0: aload_0
+       1: invokevirtual #183                // Method isClimbing:()Z
+       4: ireturn
+
+  public boolean m_142535_(float, float, net.minecraft.world.damagesource.DamageSource);
+    Code:
+       0: iconst_0
+       1: ireturn
+
+  public int getVariantByBiome(net.minecraft.world.level.LevelAccessor);
+    Code:
+       0: aload_0
+       1: getfield      #196                // Field f_19796_:Lnet/minecraft/util/RandomSource;
+       4: aload_0
+       5: invokevirtual #200                // Method getWildVariants:()I
+       8: invokeinterface #206,  2          // InterfaceMethod net/minecraft/util/RandomSource.m_188503_:(I)I
+      13: ireturn
+
+  protected net.minecraft.resources.ResourceLocation m_7582_();
+    Code:
+       0: aload_0
+       1: invokevirtual #213                // Method getVariant:()I
+       4: tableswitch   { // 0 to 5
+                     0: 44
+                     1: 56
+                     2: 68
+                     3: 80
+                     4: 92
+                     5: 104
+               default: 116
+          }
+      44: new           #215                // class net/minecraft/resources/ResourceLocation
+      47: dup
+      48: ldc           #217                // String zawa
+      50: ldc           #219                // String entities/praying_mantis/chinese
+      52: invokespecial #222                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      55: areturn
+      56: new           #215                // class net/minecraft/resources/ResourceLocation
+      59: dup
+      60: ldc           #217                // String zawa
+      62: ldc           #224                // String entities/praying_mantis/orchid
+      64: invokespecial #222                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      67: areturn
+      68: new           #215                // class net/minecraft/resources/ResourceLocation
+      71: dup
+      72: ldc           #217                // String zawa
+      74: ldc           #226                // String entities/praying_mantis/european
+      76: invokespecial #222                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      79: areturn
+      80: new           #215                // class net/minecraft/resources/ResourceLocation
+      83: dup
+      84: ldc           #217                // String zawa
+      86: ldc           #228                // String entities/praying_mantis/african
+      88: invokespecial #222                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+      91: areturn
+      92: new           #215                // class net/minecraft/resources/ResourceLocation
+      95: dup
+      96: ldc           #217                // String zawa
+      98: ldc           #230                // String entities/praying_mantis/devils_flower
+     100: invokespecial #222                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     103: areturn
+     104: new           #215                // class net/minecraft/resources/ResourceLocation
+     107: dup
+     108: ldc           #217                // String zawa
+     110: ldc           #232                // String entities/praying_mantis/ghost
+     112: invokespecial #222                // Method net/minecraft/resources/ResourceLocation."<init>":(Ljava/lang/String;Ljava/lang/String;)V
+     115: areturn
+     116: aload_0
+     117: invokespecial #234                // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientLandEntity.m_7582_:()Lnet/minecraft/resources/ResourceLocation;
+     120: areturn
+
+  public boolean isClimbing();
+    Code:
+       0: aload_0
+       1: getfield      #93                 // Field f_19804_:Lnet/minecraft/network/syncher/SynchedEntityData;
+       4: getstatic     #95                 // Field CLIMBING:Lnet/minecraft/network/syncher/EntityDataAccessor;
+       7: invokevirtual #238                // Method net/minecraft/network/syncher/SynchedEntityData.m_135370_:(Lnet/minecraft/network/syncher/EntityDataAccessor;)Ljava/lang/Object;
+      10: checkcast     #97                 // class java/lang/Boolean
+      13: invokevirtual #241                // Method java/lang/Boolean.booleanValue:()Z
+      16: ireturn
+
+  public void setClimbing(boolean);
+    Code:
+       0: aload_0
+       1: getfield      #93                 // Field f_19804_:Lnet/minecraft/network/syncher/SynchedEntityData;
+       4: getstatic     #95                 // Field CLIMBING:Lnet/minecraft/network/syncher/EntityDataAccessor;
+       7: iload_1
+       8: invokestatic  #101                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+      11: invokevirtual #244                // Method net/minecraft/network/syncher/SynchedEntityData.m_135381_:(Lnet/minecraft/network/syncher/EntityDataAccessor;Ljava/lang/Object;)V
+      14: return
+
+  static {};
+    Code:
+       0: ldc           #2                  // class org/zawamod/zawa/world/entity/ambient/PrayingMantis
+       2: getstatic     #252                // Field net/minecraft/network/syncher/EntityDataSerializers.f_135035_:Lnet/minecraft/network/syncher/EntityDataSerializer;
+       5: invokestatic  #256                // Method net/minecraft/network/syncher/SynchedEntityData.m_135353_:(Ljava/lang/Class;Lnet/minecraft/network/syncher/EntityDataSerializer;)Lnet/minecraft/network/syncher/EntityDataAccessor;
+       8: putstatic     #95                 // Field CLIMBING:Lnet/minecraft/network/syncher/EntityDataAccessor;
+      11: new           #258                // class java/util/ArrayList
+      14: dup
+      15: bipush        6
+      17: anewarray     #260                // class net/minecraft/util/Tuple
+      20: dup
+      21: iconst_0
+      22: new           #260                // class net/minecraft/util/Tuple
+      25: dup
+      26: ldc_w         #262                // String chinese
+      29: getstatic     #268                // Field org/zawamod/zawa/config/ZawaSpawnCategory.TEMPERATE_FOREST:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      32: invokespecial #271                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      35: aastore
+      36: dup
+      37: iconst_1
+      38: new           #260                // class net/minecraft/util/Tuple
+      41: dup
+      42: ldc_w         #273                // String orchid
+      45: getstatic     #276                // Field org/zawamod/zawa/config/ZawaSpawnCategory.DEEP_RAINFOREST:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      48: invokespecial #271                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      51: aastore
+      52: dup
+      53: iconst_2
+      54: new           #260                // class net/minecraft/util/Tuple
+      57: dup
+      58: ldc_w         #278                // String european
+      61: getstatic     #268                // Field org/zawamod/zawa/config/ZawaSpawnCategory.TEMPERATE_FOREST:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      64: invokespecial #271                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      67: aastore
+      68: dup
+      69: iconst_3
+      70: new           #260                // class net/minecraft/util/Tuple
+      73: dup
+      74: ldc_w         #280                // String african
+      77: getstatic     #283                // Field org/zawamod/zawa/config/ZawaSpawnCategory.DRY_GRASSLAND:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      80: invokespecial #271                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      83: aastore
+      84: dup
+      85: iconst_4
+      86: new           #260                // class net/minecraft/util/Tuple
+      89: dup
+      90: ldc_w         #285                // String devils_flower
+      93: getstatic     #283                // Field org/zawamod/zawa/config/ZawaSpawnCategory.DRY_GRASSLAND:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+      96: invokespecial #271                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      99: aastore
+     100: dup
+     101: iconst_5
+     102: new           #260                // class net/minecraft/util/Tuple
+     105: dup
+     106: ldc_w         #287                // String ghost
+     109: getstatic     #290                // Field org/zawamod/zawa/config/ZawaSpawnCategory.DRY_RAINFOREST:Lorg/zawamod/zawa/config/ZawaSpawnCategory;
+     112: invokespecial #271                // Method net/minecraft/util/Tuple."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+     115: aastore
+     116: invokestatic  #296                // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+     119: invokespecial #299                // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+     122: putstatic     #301                // Field VARIANT_SPAWNS:Ljava/util/List;
+     125: return
+}

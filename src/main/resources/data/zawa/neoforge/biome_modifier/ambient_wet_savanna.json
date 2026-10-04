@@ -1,0 +1,19 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#neoforge:is_overworld",
+      "#minecraft:is_savanna",
+      "#neoforge:is_wet"
+    ]
+  },
+  "spawners": [
+    {
+      "type": "zawa:tarantula",
+      "weight": 4,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

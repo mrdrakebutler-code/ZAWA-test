@@ -1,0 +1,64 @@
+Compiled from "HoneyBee.java"
+public class org.zawamod.zawa.world.entity.ambient.HoneyBee extends org.zawamod.zawa.world.entity.ambient.ZawaAmbientFlyingEntity {
+  public org.zawamod.zawa.world.entity.ambient.HoneyBee(net.minecraft.world.entity.EntityType<? extends org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity>, net.minecraft.world.level.Level);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokespecial #15                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientFlyingEntity."<init>":(Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/level/Level;)V
+       6: return
+
+  public static net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder registerHoneyBeeAttributes();
+    Code:
+       0: invokestatic  #27                 // Method m_21552_:()Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+       3: getstatic     #33                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22280_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+       6: ldc2_w        #34                 // double 1.2000000476837158d
+       9: invokevirtual #39                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      12: getstatic     #42                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22279_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      15: ldc2_w        #43                 // double 0.30000001192092896d
+      18: invokevirtual #39                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      21: getstatic     #47                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22276_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      24: ldc2_w        #48                 // double 2.0d
+      27: invokevirtual #39                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      30: getstatic     #52                 // Field net/minecraft/world/entity/ai/attributes/Attributes.f_22281_:Lnet/minecraft/world/entity/ai/attributes/Attribute;
+      33: ldc2_w        #48                 // double 2.0d
+      36: invokevirtual #39                 // Method net/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder.m_22268_:(Lnet/minecraft/world/entity/ai/attributes/Attribute;D)Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;
+      39: areturn
+
+  protected void m_8099_();
+    Code:
+       0: aload_0
+       1: invokespecial #56                 // Method org/zawamod/zawa/world/entity/ambient/ZawaAmbientFlyingEntity.m_8099_:()V
+       4: aload_0
+       5: getfield      #60                 // Field f_21345_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+       8: iconst_5
+       9: new           #62                 // class org/zawamod/zawa/world/entity/ai/goal/ZawaMeleeAttackGoal
+      12: dup
+      13: aload_0
+      14: dconst_1
+      15: ldc2_w        #48                 // double 2.0d
+      18: iconst_1
+      19: invokespecial #65                 // Method org/zawamod/zawa/world/entity/ai/goal/ZawaMeleeAttackGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;DDZ)V
+      22: invokevirtual #71                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      25: aload_0
+      26: getfield      #74                 // Field f_21346_:Lnet/minecraft/world/entity/ai/goal/GoalSelector;
+      29: iconst_3
+      30: new           #76                 // class net/minecraft/world/entity/ai/goal/target/HurtByTargetGoal
+      33: dup
+      34: aload_0
+      35: iconst_0
+      36: anewarray     #78                 // class java/lang/Class
+      39: invokespecial #81                 // Method net/minecraft/world/entity/ai/goal/target/HurtByTargetGoal."<init>":(Lnet/minecraft/world/entity/PathfinderMob;[Ljava/lang/Class;)V
+      42: invokevirtual #71                 // Method net/minecraft/world/entity/ai/goal/GoalSelector.m_25352_:(ILnet/minecraft/world/entity/ai/goal/Goal;)V
+      45: return
+
+  public net.minecraft.world.entity.AgeableMob m_142606_(net.minecraft.server.level.ServerLevel, net.minecraft.world.entity.AgeableMob);
+    Code:
+       0: getstatic     #90                 // Field org/zawamod/zawa/world/entity/ZawaEntities.HONEY_BEE:Lnet/minecraftforge/registries/RegistryObject;
+       3: invokevirtual #96                 // Method net/minecraftforge/registries/RegistryObject.get:()Ljava/lang/Object;
+       6: checkcast     #98                 // class net/minecraft/world/entity/EntityType
+       9: aload_1
+      10: invokevirtual #102                // Method net/minecraft/world/entity/EntityType.m_20615_:(Lnet/minecraft/world/level/Level;)Lnet/minecraft/world/entity/Entity;
+      13: checkcast     #104                // class net/minecraft/world/entity/AgeableMob
+      16: areturn
+}

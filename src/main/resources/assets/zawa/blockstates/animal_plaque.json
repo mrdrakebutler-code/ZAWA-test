@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zawa:block/animal_plaque"
+    },
+    "facing=east": {
+      "model": "zawa:block/animal_plaque",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "zawa:block/animal_plaque",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "zawa:block/animal_plaque",
+      "y": 270
+    }
+  }
+}

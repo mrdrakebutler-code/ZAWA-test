@@ -1,0 +1,6 @@
+{
+	"parent": "zawa:block/bench_right",
+	"textures": {
+		"0": "block/gray_concrete_powder"
+	}
+}

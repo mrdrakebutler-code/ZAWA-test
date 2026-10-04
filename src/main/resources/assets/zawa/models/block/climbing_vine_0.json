@@ -1,0 +1,21 @@
+{
+	"textures": {
+		"0": "zawa:block/climbing_vine",
+		"particle": "zawa:block/climbing_vine"
+	},
+	"elements": [
+		{
+			"name": "vinehalf",
+			"from": [7, 8, 7],
+			"to": [9, 16, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 8], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 8], "texture": "#0"},
+				"south": {"uv": [0, 0, 2, 8], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 8], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

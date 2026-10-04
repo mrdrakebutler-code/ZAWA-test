@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "zawa:block/bamboo_slab"
+    },
+    "type=double": {
+      "model": "zawa:block/bamboo_block"
+    },
+    "type=top": {
+      "model": "zawa:block/bamboo_slab_top"
+    }
+  }
+}
+

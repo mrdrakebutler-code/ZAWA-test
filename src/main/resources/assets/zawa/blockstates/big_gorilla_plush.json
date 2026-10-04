@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "zawa:block/plushies/big_gorilla_plush"
+    },
+    "facing=east": {
+      "model": "zawa:block/plushies/big_gorilla_plush", "y": 90
+    },
+    "facing=south": {
+      "model": "zawa:block/plushies/big_gorilla_plush", "y": 180
+    },
+    "facing=west": {
+      "model": "zawa:block/plushies/big_gorilla_plush", "y": 270
+    }
+  }
+}

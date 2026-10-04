@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "#up",
+    "north": "zawa:block/bug_box_1",
+    "south": "zawa:block/bug_box_1",
+    "east": "zawa:block/bug_box_1",
+    "west": "zawa:block/bug_box_1",
+    "up": "zawa:block/bug_box_3",
+    "down": "zawa:block/bug_box_2"
+  }
+}
