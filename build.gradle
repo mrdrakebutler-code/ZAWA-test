@@ -1,0 +1,53 @@
+plugins {
+    id 'net.neoforged.moddev' version '2.0.107'
+}
+
+version = mod_version
+
+group = mod_group_id
+
+base {
+    archivesName = 'zawa-neoforge-1.21.1'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = neoforge_version
+
+    parchment {
+        minecraftVersion = '1.21.1'
+        mappingsVersion = '2024.11.17'
+    }
+
+    runs {
+        client { client() }
+        server { server() }
+        data { data() }
+    }
+
+    mods {
+        zawa {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets.main.resources.srcDir('src/main/generated')
+
+jar {
+    manifest {
+        attributes([
+            'Specification-Title': mod_name,
+            'Specification-Vendor': 'ZAWA-Evolved',
+            'Specification-Version': '1',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version,
+            'Implementation-Vendor': 'ZAWA-Evolved Port'
+        ])
+    }
+}
