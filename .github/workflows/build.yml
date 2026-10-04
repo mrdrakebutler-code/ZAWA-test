@@ -1,5 +1,7 @@
 name: NeoForge 1.21.1 Build
 on:
+  push:
+    branches: [ neoforge-1.21.1-stage37 ]
   workflow_dispatch:
 jobs:
   build:
