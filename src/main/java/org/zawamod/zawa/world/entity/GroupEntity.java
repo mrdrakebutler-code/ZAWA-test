@@ -9,6 +9,8 @@ public interface GroupEntity<T extends Mob> {
     int getMaxGroupSize();
     int getGroupSize();
     void setGroupSize(int size);
-    default void setGroupLeader(Mob leader) { setGroupLeader((T) leader); }
-    default Mob getGroupLeaderMob() { return getGroupLeader(); }
+
+    default Mob getGroupLeaderMob() {
+        return getGroupLeader();
+    }
 }
