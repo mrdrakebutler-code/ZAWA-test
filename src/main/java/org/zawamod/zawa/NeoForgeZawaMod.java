@@ -3,6 +3,7 @@ package org.zawamod.zawa;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.zawamod.zawa.resources.EntityDietManager;
 import org.zawamod.zawa.resources.EntityStatsManager;
 import net.neoforged.fml.common.Mod;
@@ -17,13 +18,6 @@ import org.zawamod.zawa.world.block.entity.ZawaBlockEntities;
 import org.zawamod.zawa.world.entity.ZawaSpawnPlacements;
 import org.zawamod.zawa.world.entity.animal.ZawaEntities;
 
-/**
- * NeoForge 1.21.1 entrypoint for the ZAWA port.
- *
- * Registration is deliberately staged: the original 1.20.1 bytecode contains
- * 489 classes, so individual registries are being reconstructed and migrated
- * rather than replacing gameplay systems with empty placeholders.
- */
 @Mod(Zawa.MOD_ID)
 public final class NeoForgeZawaMod {
     public NeoForgeZawaMod(IEventBus modBus, ModContainer container) {
@@ -40,7 +34,7 @@ public final class NeoForgeZawaMod {
         ZawaEntities.register(modBus);
         org.zawamod.zawa.world.entity.item.ZawaEnrichmentEntities.register(modBus);
         ZawaSpawnPlacements.attach(modBus);
-        modBus.addListener(event -> {
+        modBus.addListener((EntityAttributeCreationEvent event) -> {
             event.put(ZawaEntities.AFRICAN_LION.get(), org.zawamod.zawa.world.entity.animal.AfricanLion.registerAfricanLionAttributes().build());
             event.put(ZawaEntities.AFRICAN_WILD_DOG.get(), org.zawamod.zawa.world.entity.animal.AfricanWildDog.registerAfricanWildDogAttributes().build());
             event.put(ZawaEntities.ASIAN_ELEPHANT.get(), org.zawamod.zawa.world.entity.animal.AsianElephant.registerAsianElephantAttributes().build());
@@ -88,7 +82,6 @@ public final class NeoForgeZawaMod {
     }
 
     private static void addReloadListeners(AddReloadListenerEvent event) {
-        // Diets must load before entity_stats, because species definitions reference them.
         event.addListener(EntityDietManager.INSTANCE);
         event.addListener(EntityStatsManager.INSTANCE);
     }
