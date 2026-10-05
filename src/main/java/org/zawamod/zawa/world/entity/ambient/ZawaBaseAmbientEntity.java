@@ -5,7 +5,9 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -55,6 +57,17 @@ public abstract class ZawaBaseAmbientEntity extends Animal implements SpeciesVar
         return super.finalizeSpawn(level, difficulty, reason, data);
     }
 
+    @Override
+    @Nullable
+    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob partner) {
+        ZawaBaseAmbientEntity child = (ZawaBaseAmbientEntity) getType().create(level);
+        if (child != null) {
+            child.setVariant(getRandom().nextBoolean() ? getVariant()
+                    : partner instanceof ZawaBaseAmbientEntity ambient ? ambient.getVariant() : getVariant());
+        }
+        return child;
+    }
+
     @Override public int getVariant() { return entityData.get(VARIANT); }
     @Override public void setVariant(int variant) { entityData.set(VARIANT, Math.max(0, variant)); }
 
@@ -99,13 +112,6 @@ public abstract class ZawaBaseAmbientEntity extends Animal implements SpeciesVar
                                                          BlockPos pos, RandomSource random) {
         return level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), net.minecraft.core.Direction.UP)
                 && level.getBlockState(pos).isAir();
-    }
-
-    public static boolean checkAquaticSpawnRules(EntityType<? extends ZawaBaseAmbientEntity> type,
-                                                  ServerLevelAccessor level, MobSpawnType reason,
-                                                  BlockPos pos, RandomSource random) {
-        return level.getFluidState(pos).is(net.minecraft.tags.FluidTags.WATER)
-                && level.getBlockState(pos.above()).isAir();
     }
 
     public static boolean checkFlyingSpawnRules(EntityType<? extends ZawaBaseAmbientEntity> type,
