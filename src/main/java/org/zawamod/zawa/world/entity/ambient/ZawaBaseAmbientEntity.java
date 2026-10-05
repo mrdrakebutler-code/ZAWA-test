@@ -6,8 +6,6 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -19,13 +17,13 @@ import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Nullable;
+import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 
 /** Common foundation for ZAWA's lightweight ambient animals. */
-public abstract class ZawaBaseAmbientEntity extends Animal {
+public abstract class ZawaBaseAmbientEntity extends Animal implements SpeciesVariantsEntity {
     public static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(ZawaBaseAmbientEntity.class, EntityDataSerializers.INT);
 
@@ -50,16 +48,31 @@ public abstract class ZawaBaseAmbientEntity extends Animal {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, net.minecraft.world.DifficultyInstance difficulty,
                                          MobSpawnType reason, @Nullable SpawnGroupData data) {
+        int variant = getVariantByBiome(level);
+        if (data instanceof SpeciesVariantData variantData) variant = variantData.variant;
+        else data = new SpeciesVariantData(variant, 0.2F);
+        setVariant(variant);
         return super.finalizeSpawn(level, difficulty, reason, data);
     }
 
-    public int getVariant() { return entityData.get(VARIANT); }
-    public void setVariant(int variant) { entityData.set(VARIANT, Math.max(0, variant)); }
+    @Override public int getVariant() { return entityData.get(VARIANT); }
+    @Override public void setVariant(int variant) { entityData.set(VARIANT, Math.max(0, variant)); }
+
+    @Override
+    public int getVariantByBiome(LevelAccessor level) {
+        int variants = Math.max(1, getWildVariants());
+        return getRandom().nextInt(variants);
+    }
 
     public int getTotalVariants() { return getWildVariants() + getCaptiveVariants(); }
     public int getWildVariants() { return 1; }
     public int getCaptiveVariants() { return 0; }
     public int getSpeciesSize() { return 0; }
+
+    @Override
+    public boolean isFood(ItemStack stack) {
+        return false;
+    }
 
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
