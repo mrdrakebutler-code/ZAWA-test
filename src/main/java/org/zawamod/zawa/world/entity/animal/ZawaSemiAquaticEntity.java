@@ -1,7 +1,6 @@
 package org.zawamod.zawa.world.entity.animal;
 
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.control.LookControl;
 import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
@@ -80,8 +79,6 @@ public abstract class ZawaSemiAquaticEntity extends ZawaBaseEntity {
     public int getWaterBreathingTime() { return 4800; }
     protected int decreaseAirSupply(int currentAir) { return getWaterBreathingTime(); }
 
-    @Override
-    public MobType getMobType() { return MobType.WATER; }
 
     @Override
     public boolean checkSpawnObstruction(LevelReader level) { return level.noCollision(this); }
