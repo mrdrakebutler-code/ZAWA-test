@@ -5,8 +5,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ai.FlyingMoveControl;
-import net.minecraft.world.entity.FlyingAnimal;
+import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
@@ -16,7 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 /** Shared flying-animal movement layer recovered from the original bytecode. */
-public abstract class ZawaFlyingEntity extends ZawaBaseEntity implements FlyingAnimal {
+public abstract class ZawaFlyingEntity extends ZawaBaseEntity {
     public float flap;
     public float flapSpeed;
     public float oFlapSpeed;
@@ -29,7 +28,7 @@ public abstract class ZawaFlyingEntity extends ZawaBaseEntity implements FlyingA
         this.flapping = 1.0F;
         this.nextFlap = 1.0F;
         this.moveControl = new FlyingMoveControl(this, 10, false);
-        this.setPathfindingMalus(net.minecraft.world.level.pathfinder.BlockPathTypes.WATER, -1.0F);
+        this.setPathfindingMalus(net.minecraft.world.level.pathfinder.PathType.WATER, -1.0F);
     }
 
     @Override
@@ -48,7 +47,6 @@ public abstract class ZawaFlyingEntity extends ZawaBaseEntity implements FlyingA
         return navigation;
     }
 
-    @Override
     public boolean isFlying() {
         return !this.onGround() && !this.isInWater() && !this.isBaby() && !this.isPassenger();
     }
