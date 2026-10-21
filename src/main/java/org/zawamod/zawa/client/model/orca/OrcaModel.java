@@ -6,57 +6,80 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
 import org.zawamod.zawa.world.entity.animal.Orca;
+import org.zawamod.zawa.world.entity.animal.ZawaBaseEntity;
 
 /**
- * Orca-specific animated model. Expects the original ZAWA layer hierarchy
- * (root/Body/Tail1/...). The original precise animation bytecode is still
- * being translated; current tail motion is an interim swimming animation.
+ * ZAWA 1.20.1 orca swimming animation reconstructed from the original
+ * OrcaModel$AdultMale, $AdultFemale, $Child and ZawaBaseModel bytecode.
+ * Geometry is supplied by the original sex/age-specific layer definitions.
  */
 public final class OrcaModel extends EntityModel<Orca> {
     private final ModelPart root;
     private final ModelPart body;
+    private final ModelPart chest;
+    private final ModelPart head;
     private final ModelPart tail1;
     private final ModelPart tail2;
     private final ModelPart tail3;
     private final ModelPart tail4;
-    private final ModelPart tail5;
     private final ModelPart leftPectoral;
     private final ModelPart rightPectoral;
 
     public OrcaModel(ModelPart root) {
         this.root = root;
-        this.body = root.getChild("Body");
-        this.tail1 = body.getChild("Tail1");
-        this.tail2 = tail1.getChild("Tail2");
-        this.tail3 = tail2.getChild("Tail3");
-        this.tail4 = tail3.getChild("Tail4");
-        // Adult orcas have five tail segments; the calf has four.
-        this.tail5 = tail4.hasChild("Tail5") ? tail4.getChild("Tail5") : null;
-        ModelPart chest = body.getChild("Chest");
-        this.leftPectoral = chest.getChild("PectoralFinLeft1");
-        this.rightPectoral = chest.getChild("PectoralFinRight1");
+        body = root.getChild("Body");
+        tail1 = body.getChild("Tail1");
+        tail2 = tail1.getChild("Tail2");
+        tail3 = tail2.getChild("Tail3");
+        tail4 = tail3.getChild("Tail4");
+        chest = body.getChild("Chest");
+        head = chest.getChild("Head");
+        leftPectoral = chest.getChild("PectoralFinLeft1");
+        rightPectoral = chest.getChild("PectoralFinRight1");
     }
 
     @Override
     public void setupAnim(Orca entity, float limbSwing, float limbSwingAmount,
                           float ageInTicks, float netHeadYaw, float headPitch) {
         root.getAllParts().forEach(ModelPart::resetPose);
-        // Keep the tail moving at rest; increase both rate and stroke as
-        // the animal swims. Clamp spikes caused by movement interpolation.
-        float movement = Mth.clamp(limbSwingAmount, 0.0F, 1.0F);
-        float phase = ageInTicks * (0.12F + movement * 0.18F);
-        float amplitude = 0.025F + movement * 0.16F;
-        tail1.xRot += Mth.sin(phase) * amplitude;
-        tail2.xRot += Mth.sin(phase - 0.45F) * amplitude * 1.4F;
-        tail3.xRot += Mth.sin(phase - 0.9F) * amplitude * 1.7F;
-        tail4.xRot += Mth.sin(phase - 1.35F) * amplitude * 1.9F;
-        if (tail5 != null) {
-            tail5.xRot += Mth.sin(phase - 1.8F) * amplitude * 2.1F;
+
+        // The original base-model movement pass runs while the animal swims.
+        if (entity.isInWater()) {
+            float wave = Mth.cos(limbSwing * 0.3F + Mth.PI);
+            float strength = limbSwingAmount * 0.5F;
+            body.xRot = wave * 0.5F * strength;
+            tail1.xRot = Mth.cos(1.0F + limbSwing * 0.3F + Mth.PI) * -0.9F * strength - 0.1F;
+            tail2.xRot = wave * -0.5F * strength;
+            chest.xRot = Mth.cos(6.0F + limbSwing * 0.3F + Mth.PI) * -0.5F * strength + 0.15F;
+            tail3.xRot = wave * -1.0F * strength - 0.2F;
+            tail4.xRot = Mth.cos(5.0F + limbSwing * 0.3F + Mth.PI) * -2.0F * strength;
+            rightPectoral.yRot = wave * 0.05F * strength + 0.1F;
+            leftPectoral.yRot = wave * 0.05F * strength - 0.1F;
+
+            if (entity.isPassenger() && entity.getVehicle() instanceof net.minecraft.world.entity.player.Player) {
+                root.getAllParts().forEach(ModelPart::resetPose);
+                float idlePhase = entity.tickCount * 0.2F + Mth.PI;
+                float idleStrength = 0.3F * 0.5F;
+                body.xRot = Mth.cos(idlePhase) * 0.1F * idleStrength;
+                tail1.xRot = Mth.cos(1.0F + idlePhase) * -0.2F * idleStrength - 0.1F;
+                tail2.xRot = Mth.cos(idlePhase) * -0.1F * idleStrength;
+                chest.xRot = Mth.cos(1.0F + idlePhase) * -0.1F * idleStrength + 0.15F;
+                tail3.xRot = Mth.cos(idlePhase) * -0.6F * idleStrength - 0.2F;
+                tail4.xRot = Mth.cos(5.0F + idlePhase) * -0.4F * idleStrength;
+            }
         }
-        // Subtle alternating pectoral fin adjustments; provisional until
-        // the original animation bytecode is translated.
-        leftPectoral.zRot += Mth.sin(phase * 0.5F) * amplitude * 0.4F;
-        rightPectoral.zRot -= Mth.sin(phase * 0.5F) * amplitude * 0.4F;
+
+        // Subclass look rotations override the base body's swim pitch.
+        body.yRot = netHeadYaw * Mth.DEG_TO_RAD * 0.25F;
+        body.xRot = headPitch * Mth.DEG_TO_RAD;
+        head.yRot = netHeadYaw * Mth.DEG_TO_RAD * 0.25F;
+        float headOffset = !entity.isBaby() && entity.getGender() == ZawaBaseEntity.Gender.MALE
+                ? 0.1F : 0.03F;
+        head.xRot = headPitch * Mth.DEG_TO_RAD * 0.25F - headOffset;
+        if (entity.getDeltaMovement().lengthSqr() > 1.0E-7D) {
+            body.xRot += Mth.cos(limbSwing * 0.3F + Mth.PI) * 0.5F * limbSwingAmount * 0.5F;
+        }
+        // Tail5 is not directly animated in the recovered original formulas.
     }
 
     @Override
