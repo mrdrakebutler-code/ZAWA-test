@@ -18,7 +18,7 @@ public final class ZawaEnrichmentEntities {
         return ENTITIES.register(name, () -> EntityType.Builder
                 .<EnrichmentObjectEntity>of(EnrichmentObjectEntity::new, MobCategory.MISC)
                 .sized(.65F, .65F).clientTrackingRange(10).updateInterval(3)
-                .build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Zawa.MOD_ID, name))));
+                .build(Zawa.MOD_ID + ":" + name));
     }
 
     public static final DeferredHolder<EntityType<?>, EntityType<EnrichmentObjectEntity>> BOOMER_BALL = register("boomer_ball");
