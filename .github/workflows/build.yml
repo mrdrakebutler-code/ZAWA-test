@@ -1,7 +1,7 @@
 name: NeoForge 1.21.1 Build
 on:
   push:
-    branches: [ neoforge-1.21.1-stage37 ]
+    branches: [ neoforge-1.21.1-stage37, experiment/standalone-orca-1.21.1 ]
   workflow_dispatch:
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: zawa-stage38-build
+          name: zawa-neoforge-build
           path: |
             build/libs/*.jar
             build/reports/**
