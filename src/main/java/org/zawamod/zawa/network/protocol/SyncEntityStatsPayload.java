@@ -32,7 +32,7 @@ public record SyncEntityStatsPayload(Map<EntityType<?>, EntityStats> stats) impl
             buf.writeVarInt(s.getSizeCategory().ordinal());
             writeOptionalEnum(buf, s.getFertility());
             writeItem(buf, s.getBreedingItem());
-            writeOptional(buf, s.getLitterSize(), (b, v) -> { b.writeVarInt(v.minInclusive()); b.writeVarInt(v.maxInclusive()); });
+            writeOptional(buf, s.getLitterSize(), (b, v) -> { b.writeVarInt(v.getMinValue()); b.writeVarInt(v.getMaxValue()); });
             writeOptional(buf, s.getDiet(), EntityDiet::write);
             writeOptional(buf, s.getSpeed(), (b, v) -> b.writeVarInt(v.ordinal()));
             writeOptional(buf, s.getEnrichment(), EntityEnrichment::write);
