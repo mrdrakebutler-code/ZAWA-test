@@ -31,7 +31,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathType;
 import org.zawamod.zawa.config.ZawaMainConfig;
 import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 import org.zawamod.zawa.world.entity.stats.EntityFertilityCategory;
@@ -78,8 +78,8 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
 
     protected ZawaBaseEntity(EntityType<? extends ZawaBaseEntity> type, Level level) {
         super(type, level);
-        this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, -1.0F);
-        this.setPathfindingMalus(BlockPathTypes.FENCE, -1.0F);
+        this.setPathfindingMalus(PathType.DANGER_FIRE, -1.0F);
+        this.setPathfindingMalus(PathType.FENCE, -1.0F);
         int size = getSpeciesSizeOrdinal();
         int multiplier = size * 4;
         this.hunger = new ZawaEntityStat(this, HUNGER, multiplier, ZawaMainConfig.hungerDepletion.get() / Math.max(1, size));
