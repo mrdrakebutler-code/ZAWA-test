@@ -21,10 +21,10 @@ public class ZawaMeleeAttackGoal extends MeleeAttackGoal {
 
     @Override
     protected boolean canPerformAttack(LivingEntity target) {
-        double vanillaReach = this.mob.getMeleeAttackRangeSqr(target);
+        double vanillaReach = this.mob.getBbWidth() * this.mob.getBbWidth() * 4.0D + target.getBbWidth();
         double extraReach = Math.max(0.0D, this.attackReach);
         double reach = vanillaReach + extraReach * extraReach;
-        return this.mob.getPerceivedTargetDistanceSquareForMeleeAttack(target) <= reach
+        return this.mob.distanceToSqr(target) <= reach
                 && this.isTimeToAttack()
                 && this.mob.getSensing().hasLineOfSight(target);
     }
