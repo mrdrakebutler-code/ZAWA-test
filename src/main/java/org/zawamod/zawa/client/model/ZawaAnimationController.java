@@ -2,7 +2,9 @@ package org.zawamod.zawa.client.model;
 
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.FlyingAnimal;
+import net.minecraft.world.entity.TamableAnimal;
+import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
+import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFlyingEntity;
 import net.minecraft.world.entity.LivingEntity;
 import org.zawamod.zawa.world.entity.ClimbingEntity;
 
@@ -53,8 +55,8 @@ public final class ZawaAnimationController {
         neck.xRot = pitch * 0.35F;
 
         boolean aquatic = entity.isInWaterOrBubble();
-        boolean flying = entity instanceof FlyingAnimal && !entity.onGround();
-        boolean sitting = entity.isInSittingPose();
+        boolean flying = (entity instanceof ZawaFlyingEntity || entity instanceof ZawaAmbientFlyingEntity) && !entity.onGround();
+        boolean sitting = entity instanceof TamableAnimal tameable && tameable.isInSittingPose();
         boolean climbing = entity instanceof ClimbingEntity c && c.isClimbing();
         boolean baby = entity.isBaby();
 
