@@ -19,6 +19,7 @@ public final class OrcaModel extends EntityModel<Orca> {
     private final ModelPart tail2;
     private final ModelPart tail3;
     private final ModelPart tail4;
+    private final ModelPart tail5;
     private final ModelPart leftPectoral;
     private final ModelPart rightPectoral;
 
@@ -29,6 +30,8 @@ public final class OrcaModel extends EntityModel<Orca> {
         this.tail2 = tail1.getChild("Tail2");
         this.tail3 = tail2.getChild("Tail3");
         this.tail4 = tail3.getChild("Tail4");
+        // Adult orcas have five tail segments; the calf has four.
+        this.tail5 = tail4.hasChild("Tail5") ? tail4.getChild("Tail5") : null;
         ModelPart chest = body.getChild("Chest");
         this.leftPectoral = chest.getChild("PectoralFinLeft1");
         this.rightPectoral = chest.getChild("PectoralFinRight1");
@@ -44,6 +47,9 @@ public final class OrcaModel extends EntityModel<Orca> {
         tail2.xRot += Mth.sin(phase - 0.45F) * amplitude * 1.4F;
         tail3.xRot += Mth.sin(phase - 0.9F) * amplitude * 1.7F;
         tail4.xRot += Mth.sin(phase - 1.35F) * amplitude * 1.9F;
+        if (tail5 != null) {
+            tail5.xRot += Mth.sin(phase - 1.8F) * amplitude * 2.1F;
+        }
         // Subtle alternating pectoral fin adjustments; provisional until
         // the original animation bytecode is translated.
         leftPectoral.zRot += Mth.sin(phase * 0.5F) * amplitude * 0.4F;
