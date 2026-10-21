@@ -27,7 +27,7 @@ public class DataBookScreen extends Screen {
         graphics.drawString(this.font, this.title, left + 12, top + 10, 0xFFFFFF);
         if (entity instanceof ZawaBaseEntity zawa) {
             graphics.drawString(this.font, Component.literal("Variant: " + zawa.getVariant()), left + 12, top + 42, 0xE0E0E0);
-            graphics.drawString(this.font, Component.literal("Gender: " + zawa.getGender().getLocalizedName().getString()), left + 12, top + 58, 0xE0E0E0);
+            graphics.drawString(this.font, Component.literal("Gender: " + zawa.getGender().name()), left + 12, top + 58, 0xE0E0E0);
             graphics.drawString(this.font, Component.literal("Hunger: " + zawa.getHunger().getValue()), left + 12, top + 74, 0xE0E0E0);
             graphics.drawString(this.font, Component.literal("Thirst: " + zawa.getThirst().getValue()), left + 12, top + 90, 0xE0E0E0);
             graphics.drawString(this.font, Component.literal("Enrichment: " + zawa.getEnrichment().getValue()), left + 12, top + 106, 0xE0E0E0);
