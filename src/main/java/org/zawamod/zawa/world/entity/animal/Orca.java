@@ -5,17 +5,34 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.level.Level;
+import org.zawamod.zawa.world.entity.ai.goal.BreachGoal;
+import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 
-/** Stage 23 NeoForge reconstruction of the original ZAWA species. */
+/**
+ * Orca values and goals recovered from the original ZAWA 1.20.1
+ * IntelligentAnimals3-alpha5 Orca.class bytecode.
+ * Experimental standalone extraction branch; not yet a standalone mod.
+ */
 public class Orca extends ZawaAquaticEntity {
-    public Orca(EntityType<? extends ZawaAquaticEntity> type, Level level) { super(type, level); }
+    public Orca(EntityType<? extends ZawaAquaticEntity> type, Level level) {
+        super(type, level);
+    }
 
     public static AttributeSupplier.Builder registerOrcaAttributes() {
         return createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 40)
-                .add(Attributes.MOVEMENT_SPEED, 0.3)
-                .add(Attributes.ATTACK_DAMAGE, 10);
+                .add(Attributes.MOVEMENT_SPEED, 0.3D)
+                .add(Attributes.MAX_HEALTH, 120.0D)
+                .add(Attributes.ATTACK_DAMAGE, 20.0D);
+    }
+
+    @Override
+    protected void registerGoals() {
+        super.registerGoals();
+        this.goalSelector.addGoal(4, new BreachGoal(this, 5));
+        this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 4.0D, 1.33D, true));
+        this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
     }
 
     @Override
