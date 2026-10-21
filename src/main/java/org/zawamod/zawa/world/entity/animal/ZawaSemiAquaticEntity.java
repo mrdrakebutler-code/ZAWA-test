@@ -58,8 +58,11 @@ public abstract class ZawaSemiAquaticEntity extends ZawaBaseEntity {
         }
     }
 
-    public abstract float swimSpeedMultiplier();
-    public abstract boolean canBabySwim();
+    /** Default amphibious swimming speed; species may override for specialized locomotion. */
+    public float swimSpeedMultiplier() { return 1.0F; }
+
+    /** Young semi-aquatic animals can swim unless their species specifies otherwise. */
+    public boolean canBabySwim() { return true; }
 
     @Override
     public void travel(Vec3 travelVector) {
