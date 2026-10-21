@@ -27,6 +27,7 @@ public final class NeoForgeZawaMod {
         ZawaEntityRegistry entities = new ZawaEntityRegistry(Zawa.MOD_ID);
         entities.register(modBus);
         ZawaItems.register(modBus);
+        org.zawamod.zawa.world.entity.animal.OrcaSounds.register(modBus);
         ZawaMenuTypes.register(modBus);
         ZawaBlocks.BLOCKS.register(modBus);
         ZawaBlockEntities.BLOCK_ENTITIES.register(modBus);
