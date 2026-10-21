@@ -121,7 +121,7 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, net.minecraft.world.DifficultyInstance difficulty,
-                                         MobSpawnType reason, SpawnGroupData groupData, CompoundTag tag) {
+                                         MobSpawnType reason, SpawnGroupData groupData) {
         setFertility(getSpeciesFertility().getRandomInRange(getRandom()));
         setGender(Gender.fromBool(getRandom().nextFloat() <= getMaleRatio()));
         setFavoriteFood(setupFavoriteFood());
@@ -132,10 +132,9 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
             if (groupData instanceof SpeciesVariantsEntity.SpeciesVariantData data) variant = data.variant;
             else groupData = new SpeciesVariantsEntity.SpeciesVariantData(variant, 0.2F);
         }
-        if (tag != null && tag.contains("Variant")) variant = tag.getInt("Variant");
         setVariant(variant);
         if (groupData == null) groupData = new AgeableMob.AgeableMobGroupData(0.2F);
-        return super.finalizeSpawn(level, difficulty, reason, groupData, tag);
+        return super.finalizeSpawn(level, difficulty, reason, groupData);
     }
 
     public float getMaleRatio() { return 0.5F; }
@@ -232,7 +231,6 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         }
     }
 
-    @Override
     public void breed(net.minecraft.server.level.ServerLevel level, Animal other) {
         if (!(other instanceof ZawaBaseEntity partner) || !canMate(partner)) return;
         ZawaBaseEntity mother = getGender() == Gender.FEMALE ? this : partner;
@@ -251,8 +249,8 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
             mother.children.add(childTag);
             child.discard();
         }
-        mother.setInLove(false);
-        father.setInLove(false);
+        mother.resetLove();
+        father.resetLove();
     }
 
     public void createChild(net.minecraft.server.level.ServerLevel level, ZawaBaseEntity partner) {
@@ -263,7 +261,7 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         if (!isPregnant()) return;
         for (int i = 0; i < children.size(); i++) {
             CompoundTag childTag = children.getCompound(i);
-            Entity entity = EntityType.create(childTag, level);
+            Entity entity = EntityType.create(childTag, level).orElse(null);
             if (entity instanceof ZawaBaseEntity child) {
                 child.moveTo(getX(), getY(), getZ(), getYRot(), 0);
                 child.setAge(-24000);
@@ -292,9 +290,9 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
     }
 
     @Override
-    public void setInLove(boolean value) {
-        super.setInLove(value);
-        if (value) setFertility(getSpeciesFertility().getRandomInRange(getRandom()));
+    public void setInLove(net.minecraft.world.entity.player.Player player) {
+        super.setInLove(player);
+        setFertility(getSpeciesFertility().getRandomInRange(getRandom()));
     }
 
     @Override
