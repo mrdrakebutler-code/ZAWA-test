@@ -2,6 +2,8 @@ package org.zawamod.zawa.world.item;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
@@ -38,9 +40,11 @@ public class CaptureNetItem extends Item {
         captured.putString("id", id.toString());
         captured.putBoolean("CapturedEntity", true);
         if (target instanceof TamableAnimal tame && tame.isTame()) {
-            captured.putString("OwnerName", player.getGameProfile().name());
+            captured.putString("OwnerName", player.getGameProfile().getName());
         }
-        stack.getOrCreateTag().put("CapturedEntity", captured);
+        CompoundTag itemData = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+        itemData.put("CapturedEntity", captured);
+        stack.set(DataComponents.CUSTOM_DATA, CustomData.of(itemData));
         target.discard();
         player.setItemInHand(hand, stack);
         return InteractionResult.SUCCESS;
@@ -54,14 +58,16 @@ public class CaptureNetItem extends Item {
         if (!hasCaptured(stack) || player == null) return InteractionResult.PASS;
         if (level.isClientSide) return InteractionResult.SUCCESS;
 
-        CompoundTag captured = stack.getOrCreateTag().getCompound("CapturedEntity").copy();
+        CompoundTag captured = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getCompound("CapturedEntity").copy();
         Entity entity = createCaptured(captured, level);
         if (entity == null) return InteractionResult.FAIL;
 
         BlockPos pos = context.getClickedPos().relative(context.getClickedFace());
         entity.moveTo(pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, player.getYRot(), 0.0F);
         level.addFreshEntity(entity);
-        stack.getOrCreateTag().remove("CapturedEntity");
+        CompoundTag itemData = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+        itemData.remove("CapturedEntity");
+        stack.set(DataComponents.CUSTOM_DATA, CustomData.of(itemData));
         player.displayClientMessage(Component.translatable("chat.zawa.capture_net.release"), true);
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
@@ -85,7 +91,7 @@ public class CaptureNetItem extends Item {
     }
 
     private static boolean hasCaptured(ItemStack stack) {
-        return stack.hasTag() && stack.getTag().contains("CapturedEntity", 10);
+        return stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().contains("CapturedEntity", 10);
     }
 
     /** Isolated helper keeps entity construction out of the interaction methods. */
