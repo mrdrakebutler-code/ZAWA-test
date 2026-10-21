@@ -12,8 +12,7 @@ import org.zawamod.zawa.world.entity.animal.ZawaBaseEntity;
 
 /**
  * Selects original sex- and age-specific geometry for each rendered orca.
- * Registration must wait until all three reconstructed layer definitions
- * are committed and registered with the NeoForge client.
+ * All three reconstructed layer definitions are registered by ZawaClient.
  */
 public final class OrcaRenderer extends MobRenderer<Orca, OrcaModel> {
     private final OrcaModel male;
