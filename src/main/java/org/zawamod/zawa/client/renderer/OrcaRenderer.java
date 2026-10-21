@@ -36,6 +36,9 @@ public final class OrcaRenderer extends MobRenderer<Orca, OrcaModel> {
 
     @Override
     public ResourceLocation getTextureLocation(Orca entity) {
-        return ZawaTextureResolver.resolveForSpecies(entity, "orca");
+        if (entity.isBaby()) return ResourceLocation.fromNamespaceAndPath("zawa", "textures/entity/orca/orca_baby.png");
+        int variant = Math.floorMod(entity.getVariant(), 4) + 1;
+        String sex = entity.getGender() == ZawaBaseEntity.Gender.FEMALE ? "female" : "male";
+        return ResourceLocation.fromNamespaceAndPath("zawa", "textures/entity/orca/orca_" + variant + "_" + sex + ".png");
     }
 }
