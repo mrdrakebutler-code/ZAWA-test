@@ -56,7 +56,7 @@ public final class ZawaAnimationController {
 
         boolean aquatic = entity.isInWaterOrBubble();
         boolean flying = (entity instanceof ZawaFlyingEntity || entity instanceof ZawaAmbientFlyingEntity) && !entity.onGround();
-        boolean sitting = entity instanceof TamableAnimal tameable && tameable.isInSittingPose();
+        boolean sitting = entity instanceof TamableAnimal tameable && tameable.isOrderedToSit();
         boolean climbing = entity instanceof ClimbingEntity c && c.isClimbing();
         boolean baby = entity.isBaby();
 
