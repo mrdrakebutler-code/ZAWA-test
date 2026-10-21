@@ -19,11 +19,12 @@ public class HeatRockBlock extends EnrichmentBlock implements SimpleWaterloggedB
     @Override public BlockState getStateForPlacement(BlockPlaceContext c){
         return defaultBlockState().setValue(WATERLOGGED,c.getLevel().getFluidState(c.getClickedPos()).getType()==Fluids.WATER);
     }
-    @Override protected BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader level,
-            net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction,
-            BlockPos neighborPos, BlockState neighborState, net.minecraft.util.RandomSource random){
-        if(state.getValue(WATERLOGGED)) ticks.scheduleTick(pos,Fluids.WATER,Fluids.WATER.getTickDelay(level));
-        return state;
+    @Override protected BlockState updateShape(BlockState state, Direction direction,
+            BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        if (state.getValue(WATERLOGGED)) {
+            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+        }
+        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
     @Override public FluidState getFluidState(BlockState s){ return s.getValue(WATERLOGGED)?Fluids.WATER.getSource(false):super.getFluidState(s); }
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<net.minecraft.world.level.block.Block,BlockState> b){b.add(WATERLOGGED);}
