@@ -82,11 +82,6 @@ public abstract class ZawaFlyingEntity extends ZawaBaseEntity {
     }
 
     @Override
-    protected boolean onClimbable() {
-        return this.fallDistance > this.nextFlap;
-    }
-
-    @Override
     protected void playStepSound(BlockPos pos, net.minecraft.world.level.block.state.BlockState state) {
         this.playSound(SoundEvents.CHICKEN_STEP, 0.15F, 1.0F);
         this.nextFlap = this.fallDistance + this.flapSpeed / 2.0F;
@@ -133,7 +128,8 @@ public abstract class ZawaFlyingEntity extends ZawaBaseEntity {
                 var belowState = this.mob.level().getBlockState(below.setWithOffset(pos, net.minecraft.core.Direction.DOWN));
                 boolean leaves = belowState.getBlock() instanceof net.minecraft.world.level.block.LeavesBlock
                         || belowState.is(BlockTags.LEAVES);
-                if (leaves && this.mob.level().noCollision(pos) && this.mob.level().noCollision(above.setWithOffset(pos, net.minecraft.core.Direction.UP))) {
+                if (leaves && this.mob.level().getBlockState(pos).getCollisionShape(this.mob.level(), pos).isEmpty()
+                        && this.mob.level().getBlockState(above.setWithOffset(pos, net.minecraft.core.Direction.UP)).getCollisionShape(this.mob.level(), above).isEmpty()) {
                     return Vec3.atBottomCenterOf(pos);
                 }
             }
