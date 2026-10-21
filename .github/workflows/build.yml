@@ -15,7 +15,29 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.10.2'
-      - run: gradle build --stacktrace
+      - name: Compile and package NeoForge mod
+        run: gradle build --stacktrace
+      - name: Verify packaged orca audio assets
+        if: success()
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from zipfile import ZipFile
+          jars = sorted(Path('build/libs').glob('*.jar'))
+          assert jars, 'No built mod JAR found'
+          with ZipFile(jars[0]) as jar:
+              paths = set(jar.namelist())
+              definitions = json.loads(jar.read('assets/zawa/sounds.json'))
+              for event in ('orca_ambient', 'orca_hurt', 'orca_attacking', 'orca_broadcast'):
+                  assert event in definitions, f'Missing sound event: {event}'
+                  for entry in definitions[event]['sounds']:
+                      name = entry if isinstance(entry, str) else entry['name']
+                      namespace, sound = name.split(':', 1)
+                      asset = f'assets/{namespace}/sounds/{sound}.ogg'
+                      assert asset in paths, f'Missing audio asset: {asset}'
+              print('Orca sound events and packaged OGG assets verified')
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
