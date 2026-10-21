@@ -41,8 +41,11 @@ public final class OrcaModel extends EntityModel<Orca> {
     public void setupAnim(Orca entity, float limbSwing, float limbSwingAmount,
                           float ageInTicks, float netHeadYaw, float headPitch) {
         root.getAllParts().forEach(ModelPart::resetPose);
-        float phase = ageInTicks * 0.22F;
-        float amplitude = 0.06F + Mth.clamp(limbSwingAmount, 0.0F, 1.0F) * 0.12F;
+        // Keep the tail moving at rest; increase both rate and stroke as
+        // the animal swims. Clamp spikes caused by movement interpolation.
+        float movement = Mth.clamp(limbSwingAmount, 0.0F, 1.0F);
+        float phase = ageInTicks * (0.12F + movement * 0.18F);
+        float amplitude = 0.025F + movement * 0.16F;
         tail1.xRot += Mth.sin(phase) * amplitude;
         tail2.xRot += Mth.sin(phase - 0.45F) * amplitude * 1.4F;
         tail3.xRot += Mth.sin(phase - 0.9F) * amplitude * 1.7F;
