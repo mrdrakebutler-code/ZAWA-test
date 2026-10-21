@@ -1,6 +1,7 @@
 package org.zawamod.zawa.world.entity.animal;
 
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -33,6 +34,21 @@ public class Orca extends ZawaAquaticEntity {
         this.goalSelector.addGoal(4, new BreachGoal(this, 5));
         this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 4.0D, 1.33D, true));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return OrcaSounds.AMBIENT.get();
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) {
+        return OrcaSounds.HURT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return OrcaSounds.HURT.get();
     }
 
     @Override
