@@ -3,12 +3,12 @@ package org.zawamod.zawa.client.renderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import org.zawamod.zawa.client.model.ZawaAnimalModel;
 import org.zawamod.zawa.client.model.ZawaModelLayers;
 
 /** Species-aware renderer using the reconstructed ZAWA animal model. */
-public class ZawaAnimalRenderer<T extends LivingEntity> extends MobRenderer<T, ZawaAnimalModel<T>> {
+public class ZawaAnimalRenderer<T extends Mob> extends MobRenderer<T, ZawaAnimalModel<T>> {
     private final String species;
     private final float shadow;
 
