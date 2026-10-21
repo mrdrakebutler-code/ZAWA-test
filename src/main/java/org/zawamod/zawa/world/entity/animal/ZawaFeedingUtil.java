@@ -21,7 +21,7 @@ public final class ZawaFeedingUtil {
     }
     public static void feedTreat(ZawaBaseEntity animal, boolean plantTreat) {
         int hunger = Math.max(1, animal.getHunger().getMax() / 8);
-        animal.getHunger().add(hunger);
+        animal.getHunger().increment(hunger);
         animal.heal(plantTreat ? 1.0F : 2.0F);
     }
 
