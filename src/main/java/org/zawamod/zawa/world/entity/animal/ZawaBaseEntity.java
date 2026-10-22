@@ -181,9 +181,11 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
     public void tick() {
         super.tick();
         if (!level().isClientSide) {
-            hunger.tick();
-            thirst.tick();
-            enrichment.tick();
+            if (!(this instanceof Orca)) {
+                hunger.tick();
+                thirst.tick();
+                enrichment.tick();
+            }
             if (!enrichmentCooldowns.isEmpty() && tickCount % 20 == 0) {
                 enrichmentCooldowns.replaceAll((key, value) -> value - 20);
                 enrichmentCooldowns.values().removeIf(value -> value <= 0);
@@ -233,6 +235,22 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
 
     public void breed(net.minecraft.server.level.ServerLevel level, Animal other) {
         if (!(other instanceof ZawaBaseEntity partner) || !canMate(partner)) return;
+        if (this instanceof Orca && partner instanceof Orca) {
+            AgeableMob baby = getBreedOffspring(level, partner);
+            if (baby != null) {
+                baby.setBaby(true);
+                baby.moveTo((getX() + partner.getX()) / 2.0D, (getY() + partner.getY()) / 2.0D,
+                        (getZ() + partner.getZ()) / 2.0D, getYRot(), 0.0F);
+                if (level.addFreshEntity(baby)) {
+                    setAge(6000);
+                    partner.setAge(6000);
+                    resetLove();
+                    partner.resetLove();
+                    level.broadcastEntityEvent(this, (byte) 18);
+                }
+            }
+            return;
+        }
         ZawaBaseEntity mother = getGender() == Gender.FEMALE ? this : partner;
         ZawaBaseEntity father = getGender() == Gender.MALE ? this : partner;
         if (mother.getGender() != Gender.FEMALE || mother.isPregnant() || !mother.canBreed() || !father.canBreed()) return;
@@ -288,6 +306,11 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
 
     @Override
     public boolean canMate(Animal other) {
+        if (this instanceof Orca && other instanceof Orca) {
+            return other != this && other.getType() == getType()
+                    && ((ZawaBaseEntity) other).getGender() != getGender()
+                    && super.canMate(other);
+        }
         if (!isTame() || other.getType() != getType() || !(other instanceof ZawaBaseEntity mate)) return false;
         if (mate.getGender() == getGender() || mate.isPregnant() || isPregnant()) return false;
         return mate.isTame() && super.canMate(other);
@@ -295,6 +318,7 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
 
     @Override
     public boolean canBreed() {
+        if (this instanceof Orca) return super.canBreed();
         boolean lowHealth = getHealth() < getMaxHealth();
         boolean lowHunger = hunger.getValue() < hunger.getMax();
         boolean lowThirst = thirst.getValue() < thirst.getMax();
@@ -330,7 +354,8 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
-        if (isDietFood(stack) && hunger.getValue() < hunger.getMax()) {
+        if (this instanceof Orca && isFood(stack)) return super.mobInteract(player, hand);
+        if (!(this instanceof Orca) && isDietFood(stack) && hunger.getValue() < hunger.getMax()) {
             if (!level().isClientSide) {
                 int foodValue = Byte.toUnsignedInt(EntityStatsManager.INSTANCE.getStats(this)
                         .getDiet().getItemValues().getByte(stack.getItem()));
@@ -342,7 +367,7 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
             return InteractionResult.sidedSuccess(level().isClientSide);
         }
 
-        if (isKibble(stack)) {
+        if (!(this instanceof Orca) && isKibble(stack)) {
             if (!level().isClientSide) {
                 hunger.increment(Math.max(2, hunger.getMax() / 2));
                 if (!isTame()) tame(player);
@@ -361,7 +386,7 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
             return InteractionResult.sidedSuccess(level().isClientSide);
         }
 
-        if (stack.is(ZawaItems.TARGET_STICK.get()) && enrichment.getValue() < enrichment.getMax()) {
+        if (!(this instanceof Orca) && stack.is(ZawaItems.TARGET_STICK.get()) && enrichment.getValue() < enrichment.getMax()) {
             if (!level().isClientSide) enrichment.increment(2);
             return InteractionResult.sidedSuccess(level().isClientSide);
         }
