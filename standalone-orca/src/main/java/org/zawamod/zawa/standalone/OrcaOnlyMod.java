@@ -3,9 +3,8 @@ package org.zawamod.zawa.standalone;
 import net.neoforged.bus.api.IEventBus;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.entity.SpawnPlacementTypes;
-import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.tags.FluidTags;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.fml.common.Mod;
@@ -60,7 +59,7 @@ public final class OrcaOnlyMod {
     private static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
         event.register(OrcaOnlyEntities.ORCA.get(), SpawnPlacementTypes.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                WaterAnimal::checkSurfaceWaterAnimalSpawnRules,
+                (type, level, reason, pos, random) -> level.getFluidState(pos).is(FluidTags.WATER),
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
