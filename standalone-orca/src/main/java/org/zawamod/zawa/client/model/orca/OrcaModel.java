@@ -45,14 +45,17 @@ public final class OrcaModel extends EntityModel<Orca> {
 
         // The original base-model movement pass runs while the animal swims.
         if (entity.isInWater()) {
-            float wave = Mth.cos(limbSwing * 0.3F + Mth.PI);
-            float strength = limbSwingAmount * 0.5F;
+            // Water navigation does not reliably advance vanilla walkAnimation.
+            // Drive the swim cycle from entity age so it continues at render distance.
+            float swimPhase = ageInTicks * 0.3F;
+            float wave = Mth.cos(swimPhase + Mth.PI);
+            float strength = 0.25F + Mth.clamp(limbSwingAmount, 0.0F, 1.0F) * 0.25F;
             body.xRot = wave * 0.5F * strength;
-            tail1.xRot = Mth.cos(1.0F + limbSwing * 0.3F + Mth.PI) * -0.9F * strength - 0.1F;
+            tail1.xRot = Mth.cos(1.0F + ageInTicks * 0.3F + Mth.PI) * -0.9F * strength - 0.1F;
             tail2.xRot = wave * -0.5F * strength;
-            chest.xRot = Mth.cos(6.0F + limbSwing * 0.3F + Mth.PI) * -0.5F * strength + 0.15F;
+            chest.xRot = Mth.cos(6.0F + ageInTicks * 0.3F + Mth.PI) * -0.5F * strength + 0.15F;
             tail3.xRot = wave * -1.0F * strength - 0.2F;
-            tail4.xRot = Mth.cos(5.0F + limbSwing * 0.3F + Mth.PI) * -2.0F * strength;
+            tail4.xRot = Mth.cos(5.0F + ageInTicks * 0.3F + Mth.PI) * -2.0F * strength;
             rightPectoral.yRot = wave * 0.05F * strength + 0.1F;
             leftPectoral.yRot = wave * 0.05F * strength - 0.1F;
 
@@ -77,7 +80,7 @@ public final class OrcaModel extends EntityModel<Orca> {
                 ? 0.1F : 0.03F;
         head.xRot = headPitch * Mth.DEG_TO_RAD * 0.25F - headOffset;
         if (entity.getDeltaMovement().lengthSqr() > 1.0E-7D) {
-            body.xRot += Mth.cos(limbSwing * 0.3F + Mth.PI) * 0.5F * limbSwingAmount * 0.5F;
+            body.xRot += Mth.cos(ageInTicks * 0.3F + Mth.PI) * 0.1F;
         }
         // Tail5 is not directly animated in the recovered original formulas.
     }
