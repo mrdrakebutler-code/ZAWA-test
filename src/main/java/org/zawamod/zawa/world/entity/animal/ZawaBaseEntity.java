@@ -94,9 +94,11 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         goalSelector.addGoal(2, new ZawaBreedGoal(this, 1.0D));
         goalSelector.addGoal(4, new ZawaFollowParentGoal(this, 1.25D));
         goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 10.0F));
-        goalSelector.addGoal(5, new SeekFeederGoal(this, 1.1D, 12));
-        goalSelector.addGoal(5, new SeekWaterGoal(this, 1.1D, 12));
-        goalSelector.addGoal(5, new SeekEnrichmentGoal(this, 1.0D, 12));
+        if (!(this instanceof Orca)) {
+            goalSelector.addGoal(5, new SeekFeederGoal(this, 1.1D, 12));
+            goalSelector.addGoal(5, new SeekWaterGoal(this, 1.1D, 12));
+            goalSelector.addGoal(5, new SeekEnrichmentGoal(this, 1.0D, 12));
+        }
         goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
 
@@ -201,9 +203,11 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         tag.putBoolean("Gender", getGender().toBool());
         tag.putInt("Fertility", getFertility());
         tag.putString("FavoriteFood", net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(getFavoriteFood()).toString());
-        tag.put("Hunger", hunger.toTag());
-        tag.put("Thirst", thirst.toTag());
-        tag.put("Enrichment", enrichment.toTag());
+        if (!(this instanceof Orca)) {
+            tag.put("Hunger", hunger.toTag());
+            tag.put("Thirst", thirst.toTag());
+            tag.put("Enrichment", enrichment.toTag());
+        }
         if (getGender() == Gender.FEMALE && !(this instanceof Orca)) {
             tag.putBoolean("Pregnant", isPregnant());
             tag.putInt("Gestation", getGestationTimer());
@@ -221,9 +225,11 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
             Item item = net.minecraft.core.registries.BuiltInRegistries.ITEM.get(ResourceLocation.parse(tag.getString("FavoriteFood")));
             setFavoriteFood(item);
         }
-        if (tag.contains("Hunger")) hunger.fromTag(tag.getCompound("Hunger"));
-        if (tag.contains("Thirst")) thirst.fromTag(tag.getCompound("Thirst"));
-        if (tag.contains("Enrichment")) enrichment.fromTag(tag.getCompound("Enrichment"));
+        if (!(this instanceof Orca)) {
+            if (tag.contains("Hunger")) hunger.fromTag(tag.getCompound("Hunger"));
+            if (tag.contains("Thirst")) thirst.fromTag(tag.getCompound("Thirst"));
+            if (tag.contains("Enrichment")) enrichment.fromTag(tag.getCompound("Enrichment"));
+        }
         if (getGender() == Gender.FEMALE && !(this instanceof Orca)) {
             setPregnant(tag.getBoolean("Pregnant"));
             setGestationTimer(tag.getInt("Gestation"));
