@@ -42,15 +42,14 @@ public abstract class ZawaAquaticEntity extends ZawaBaseEntity {
     @Override
     public void tick() {
         super.tick();
+        // Out of water, use ordinary gravity. The previous implementation added
+        // +0.5 vertical velocity every tick, launching aquatic mobs into the sky.
         if (!isInWaterOrBubble() && !onGround() && !isNoGravity()) {
             Vec3 motion = getDeltaMovement();
-            setDeltaMovement(motion.add(
-                    (getRandom().nextFloat() * 2.0F - 1.0F) * 0.2D,
-                    0.5D,
-                    (getRandom().nextFloat() * 2.0F - 1.0F) * 0.2D));
-            setYRot(getRandom().nextFloat() * 360.0F);
-            setNoGravity(false);
-            hasImpulse = true;
+            if (motion.y > 0.0D) {
+                // Preserve a short breach, but do not accelerate upwards indefinitely.
+                setDeltaMovement(motion.x, Math.max(0.0D, motion.y - 0.08D), motion.z);
+            }
         }
     }
 
