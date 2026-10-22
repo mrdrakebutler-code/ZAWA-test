@@ -27,6 +27,8 @@ REQUIRED = {
         "protected SoundEvent getDeathSound()",
         "protected SoundEvent getHurtSound(",
         "protected SoundEvent getAmbientSound()",
+        "protected float getStandingEyeHeight(Pose pose, EntityDimensions dimensions)",
+        "return dimensions.height() * 0.5F;",
     ],
 }
 
