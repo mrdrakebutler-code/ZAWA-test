@@ -33,7 +33,8 @@ public class Orca extends ZawaAquaticEntity {
     }
 
     public static AttributeSupplier.Builder registerOrcaAttributes() {
-        return createLivingAttributes()
+        return net.minecraft.world.entity.Mob.createMobAttributes()
+                .add(Attributes.FOLLOW_RANGE, 32.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.3D)
                 .add(Attributes.MAX_HEALTH, 120.0D)
                 .add(Attributes.ATTACK_DAMAGE, 20.0D);
