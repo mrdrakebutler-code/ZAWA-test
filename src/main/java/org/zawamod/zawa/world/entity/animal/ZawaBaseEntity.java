@@ -341,7 +341,10 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
     @Override
     public void setInLove(net.minecraft.world.entity.player.Player player) {
         super.setInLove(player);
-        setFertility(getSpeciesFertility().getRandomInRange(getRandom()));
+        // Vanilla-style orca breeding does not roll ZAWA fertility values.
+        if (!(this instanceof Orca)) {
+            setFertility(getSpeciesFertility().getRandomInRange(getRandom()));
+        }
     }
 
     @Override
