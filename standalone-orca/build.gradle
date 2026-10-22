@@ -1,0 +1,33 @@
+plugins {
+    id 'net.neoforged.moddev' version '2.0.107'
+}
+
+// Independent Gradle project. Do not include this project in the full ZAWA settings.gradle.
+version = mod_version
+group = mod_group_id
+base { archivesName = 'zawa-orca-standalone-neoforge-1.21.1' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = neoforge_version
+    parchment {
+        minecraftVersion = '1.21.1'
+        mappingsVersion = '2024.11.17'
+    }
+    runs {
+        client { client() }
+        server { server() }
+    }
+    mods { zawa { sourceSet sourceSets.main } }
+}
+repositories { mavenCentral() }
+
+// Source isolation is intentionally strict: only this folder's Java sources
+// compile. Shared orca classes must be migrated here explicitly, not silently
+// compiled from the full ZAWA project.
+sourceSets {
+    main {
+        java.setSrcDirs(['src/main/java'])
+        resources.setSrcDirs(['src/main/resources'])
+    }
+}
