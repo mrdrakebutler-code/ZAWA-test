@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +18,10 @@ parser = argparse.ArgumentParser(description="Verify preserved original orca ass
 parser.add_argument("--standalone", action="store_true",
                     help="verify the isolated standalone-orca module instead of the full port")
 args = parser.parse_args()
-PREFIX = "standalone-orca/" if args.standalone else ""
+# The standalone workflow calls this script without flags. Select its own
+# isolated model sources there; retain the full-port default everywhere else.
+standalone = args.standalone or os.environ.get("GITHUB_WORKFLOW") == "Standalone Orca NeoForge Build"
+PREFIX = "standalone-orca/" if standalone else ""
 MODEL = PREFIX + "src/main/java/org/zawamod/zawa/client/model/orca"
 TEXTURE = PREFIX + "src/main/resources/assets/zawa/textures/entity/orca"
 AUDIO = PREFIX + "src/main/resources/assets/zawa/sounds"
