@@ -11,6 +11,9 @@ import org.zawamod.zawa.Zawa;
 import org.zawamod.zawa.world.entity.animal.Orca;
 import org.zawamod.zawa.world.entity.animal.OrcaSounds;
 import org.zawamod.zawa.world.item.ZawaItems;
+import org.zawamod.zawa.world.block.ZawaBlocks;
+import org.zawamod.zawa.world.block.entity.ZawaBlockEntities;
+import org.zawamod.zawa.world.inventory.ZawaMenuTypes;
 
 /**
  * Standalone extraction entrypoint. Only the orca entity, its attributes and
@@ -23,6 +26,9 @@ public final class OrcaOnlyMod {
     public OrcaOnlyMod(IEventBus modBus) {
         OrcaOnlyEntities.register(modBus);
         ZawaItems.ITEMS.register(modBus);
+        ZawaBlocks.BLOCKS.register(modBus);
+        ZawaBlockEntities.BLOCK_ENTITIES.register(modBus);
+        ZawaMenuTypes.register(modBus);
         OrcaSounds.register(modBus);
         modBus.addListener(OrcaOnlyMod::registerAttributes);
         NeoForge.EVENT_BUS.addListener(OrcaOnlyMod::registerDataReloadListeners);
