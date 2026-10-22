@@ -2,6 +2,10 @@ package org.zawamod.zawa.standalone;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import org.zawamod.zawa.resources.EntityDietManager;
+import org.zawamod.zawa.resources.EntityStatsManager;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.zawamod.zawa.Zawa;
 import org.zawamod.zawa.world.entity.animal.Orca;
@@ -19,6 +23,12 @@ public final class OrcaOnlyMod {
         OrcaOnlyEntities.register(modBus);
         OrcaSounds.register(modBus);
         modBus.addListener(OrcaOnlyMod::registerAttributes);
+        NeoForge.EVENT_BUS.addListener(OrcaOnlyMod::registerDataReloadListeners);
+    }
+
+    private static void registerDataReloadListeners(AddReloadListenerEvent event) {
+        event.addListener(EntityDietManager.INSTANCE);
+        event.addListener(EntityStatsManager.INSTANCE);
     }
 
     private static void registerAttributes(EntityAttributeCreationEvent event) {
