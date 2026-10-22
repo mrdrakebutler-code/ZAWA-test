@@ -112,11 +112,19 @@ public class Orca extends ZawaAquaticEntity {
     @Override
     public boolean canMate(Animal other) {
         return other instanceof Orca mate && mate != this &&
+                getGender() != mate.getGender() &&
                 isInLove() && mate.isInLove() && canBreed() && mate.canBreed();
     }
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob other) {
-        return org.zawamod.zawa.standalone.OrcaOnlyEntities.ORCA.get().create(level);
+        Orca calf = org.zawamod.zawa.standalone.OrcaOnlyEntities.ORCA.get().create(level);
+        if (calf != null) {
+            calf.setGender(Gender.fromBool(getRandom().nextFloat() < calf.getMaleRatio()));
+            calf.setVariant(getRandom().nextInt(Math.max(1, calf.getWildVariants())));
+            calf.setFertility(calf.getSpeciesFertility().getRandomInRange(getRandom()));
+            calf.setFavoriteFood(calf.setupFavoriteFood());
+        }
+        return calf;
     }
 }
