@@ -1,0 +1,35 @@
+{
+  "orca_ambient": {
+    "subtitle": "subtitle.zawa.orca_ambient",
+    "sounds": [
+      {
+        "name": "zawa:orca_ambient",
+        "volume": 0.5
+      }
+    ]
+  },
+  "orca_hurt": {
+    "subtitle": "subtitle.zawa.orca_hurt",
+    "sounds": [
+      {
+        "name": "zawa:orca_attacked",
+        "volume": 0.5
+      }
+    ]
+  },
+  "orca_attacking": {
+    "subtitle": "subtitle.zawa.orca_attacking",
+    "sounds": [
+      {
+        "name": "zawa:orca_attacking",
+        "volume": 0.5
+      }
+    ]
+  },
+  "orca_broadcast": {
+    "subtitle": "subtitle.zawa.orca_broadcast",
+    "sounds": [
+      "zawa:orca_broadcast"
+    ]
+  }
+}
