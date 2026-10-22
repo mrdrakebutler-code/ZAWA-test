@@ -10,6 +10,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.BreedGoal;
+import net.minecraft.world.entity.ai.goal.FollowParentGoal;
+import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
+import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.ai.goal.BreachGoal;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
@@ -34,7 +41,11 @@ public class Orca extends ZawaAquaticEntity {
 
     @Override
     protected void registerGoals() {
-        super.registerGoals();
+        // Standalone breeding uses Minecraft's immediate baby spawning, not ZAWA pregnancy.
+        this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
+        this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(3, new FollowParentGoal(this, 1.25D));
+        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.0D, 10));
         this.goalSelector.addGoal(4, new BreachGoal(this, 5));
         this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 4.0D, 1.33D, true));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
@@ -70,6 +81,22 @@ public class Orca extends ZawaAquaticEntity {
     protected EntityDimensions getDefaultDimensions(Pose pose) {
         EntityDimensions dimensions = super.getDefaultDimensions(pose);
         return dimensions.withEyeHeight(dimensions.height() * 0.5F);
+    }
+
+    @Override
+    public boolean isFood(ItemStack stack) {
+        return stack.is(Items.SALMON);
+    }
+
+    @Override
+    public boolean canBreed() {
+        return !isBaby() && !isPregnant() && super.isAlive() && getAge() == 0;
+    }
+
+    @Override
+    public boolean canMate(Animal other) {
+        return other instanceof Orca mate && mate != this &&
+                isInLove() && mate.isInLove() && canBreed() && mate.canBreed();
     }
 
     @Override
