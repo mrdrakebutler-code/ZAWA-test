@@ -3,7 +3,7 @@
   "kibble": "zawa:piscivore_kibble",
   "size": "giant",
   "fertility": "medium",
-  "breeding_item": "zawa:large_meat",
+  "breeding_item": "minecraft:salmon",
   "litter_size": 1,
   "diet": "zawa:piscivore",
   "speed": "fast",
