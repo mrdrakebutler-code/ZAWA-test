@@ -4,6 +4,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -62,9 +64,12 @@ public class Orca extends ZawaAquaticEntity {
         return OrcaSounds.HURT.get();
     }
 
-    // NeoForge 1.21.1 no longer exposes the legacy getStandingEyeHeight
-    // override used by this port. Use the inherited eye-height behaviour
-    // until the equivalent current API is verified in-game.
+    /** Original orca eye position: half the height of the current entity dimensions. */
+    @Override
+    protected EntityDimensions getDefaultDimensions(Pose pose) {
+        EntityDimensions dimensions = super.getDefaultDimensions(pose);
+        return dimensions.withEyeHeight(dimensions.height() * 0.5F);
+    }
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob other) {
