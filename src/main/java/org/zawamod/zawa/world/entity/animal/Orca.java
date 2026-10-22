@@ -42,13 +42,15 @@ public class Orca extends ZawaAquaticEntity {
     }
 
     /**
-     * Original ZAWA 1.20.1 Orca#getStandingEyeHeight (obfuscated m_6431_):
-     * the eye is centered vertically, rather than using the land-animal default.
-     * Keep this tied to the supplied dimensions so baby/adult scaling works.
+     * ZAWA 1.20.1 placed the eye at half the entity height (m_6431_).
+     * Minecraft 1.21.1 stores eye height on EntityDimensions instead of
+     * exposing LivingEntity#getStandingEyeHeight(Pose, EntityDimensions).
+     * Preserve all other dimensions and attachment positions.
      */
     @Override
-    protected float getStandingEyeHeight(Pose pose, EntityDimensions dimensions) {
-        return dimensions.height() * 0.5F;
+    protected EntityDimensions getDefaultDimensions(Pose pose) {
+        EntityDimensions dimensions = super.getDefaultDimensions(pose);
+        return dimensions.withEyeHeight(dimensions.height() * 0.5F);
     }
 
     @Override
