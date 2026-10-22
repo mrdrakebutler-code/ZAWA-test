@@ -1,6 +1,8 @@
 package org.zawamod.zawa.standalone;
 
 import net.neoforged.bus.api.IEventBus;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
@@ -30,8 +32,15 @@ public final class OrcaOnlyMod {
         ZawaBlockEntities.BLOCK_ENTITIES.register(modBus);
         ZawaMenuTypes.register(modBus);
         OrcaSounds.register(modBus);
+        modBus.addListener(OrcaOnlyMod::addOrcaCreativeItems);
         modBus.addListener(OrcaOnlyMod::registerAttributes);
         NeoForge.EVENT_BUS.addListener(OrcaOnlyMod::registerDataReloadListeners);
+    }
+
+    private static void addOrcaCreativeItems(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(ZawaItems.ORCA_SPAWN_EGG.get());
+        }
     }
 
     private static void registerDataReloadListeners(AddReloadListenerEvent event) {

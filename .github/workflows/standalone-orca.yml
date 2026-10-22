@@ -20,6 +20,10 @@ jobs:
           gradle-version: '8.10.2'
       - name: Copy original orca textures and sounds
         run: python3 standalone-orca/scripts/copy_orca_assets.py
+      - name: Verify recovered orca geometry, textures and sounds
+        run: python3 scripts/check_orca_fidelity.py
+      - name: Copy original ZAWA feeding item artwork
+        run: python3 standalone-orca/scripts/copy_orca_item_assets.py
       - name: Build standalone NeoForge mod and capture compiler diagnostics
         working-directory: standalone-orca
         shell: bash
@@ -43,6 +47,10 @@ jobs:
               expected += [f'assets/zawa/sounds/orca_{name}.ogg'
                            for name in ('ambient', 'attacked', 'attacking', 'broadcast', 'communicating')]
               expected += ['assets/zawa/sounds.json', 'data/zawa/entity_stats/orca.json']
+              for item in ('baby_formula', 'target_stick', 'large_meat', 'piscivore_kibble'):
+                  expected += [f'assets/zawa/models/item/{item}.json',
+                               f'assets/zawa/textures/item/{item}.png']
+              expected += ['assets/zawa/models/item/orca_spawn_egg.json']
               missing = sorted(set(expected) - names)
               assert not missing, f'Missing packaged orca assets: {missing}'
               print('Standalone orca assets packaged successfully')

@@ -3,6 +3,9 @@ package org.zawamod.zawa.world.entity.ai.goal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.JumpGoal;
 
@@ -11,6 +14,7 @@ public class BreachGoal extends JumpGoal {
     private static final int[] STEPS_TO_CHECK = {0, 1, 4, 5, 6, 7};
     private final PathfinderMob entity;
     private final int interval;
+    private boolean breached;
 
     public BreachGoal(PathfinderMob entity, int interval) {
         this.entity = entity;
@@ -39,6 +43,7 @@ public class BreachGoal extends JumpGoal {
         entity.setDeltaMovement(entity.getDeltaMovement().add(
                 direction.getStepX() * 0.6D, 0.7D, direction.getStepZ() * 0.6D));
         entity.getNavigation().stop();
+        breached = false;
     }
 
     @Override
@@ -54,4 +59,27 @@ public class BreachGoal extends JumpGoal {
 
     @Override
     public void stop() { entity.setXRot(0.0F); }
+
+    @Override
+    public void tick() {
+        boolean previouslyBreached = breached;
+        if (!breached) {
+            breached = entity.level().getFluidState(entity.blockPosition()).is(FluidTags.WATER);
+        }
+        if (breached && !previouslyBreached) {
+            entity.playSound(SoundEvents.DOLPHIN_JUMP, 1.0F, 1.0F);
+        }
+
+        Vec3 velocity = entity.getDeltaMovement();
+        if (velocity.y * velocity.y < 0.029999999329447746D && entity.getXRot() != 0.0F) {
+            entity.setXRot(Mth.clamp(entity.getXRot(), 0.0F, 0.2F));
+        } else {
+            double speed = velocity.length();
+            if (speed > 1.0E-7D) {
+                double cosine = Mth.clamp(velocity.y / speed, -1.0D, 1.0D);
+                double pitch = Math.signum(-velocity.y) * Math.acos(cosine) * (180.0D / Math.PI);
+                entity.setXRot((float) pitch);
+            }
+        }
+    }
 }

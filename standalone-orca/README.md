@@ -10,17 +10,27 @@ is deliberately kept separate.
 - Gradle 8.10.2
 - Network access to NeoForge's Maven repository
 
-From the repository root:
+From the repository root, use the checked-in Gradle 8.10.2 wrapper:
 
-```bash
-cd standalone-orca
-gradle build --stacktrace
+```powershell
+.\\gradlew.bat -p standalone-orca build
 ```
 
-**Expected at this stage:** compilation cannot succeed until the referenced
-ZAWA orca classes and their transitive dependencies are moved or adapted into
-this isolated source tree. Do not distribute the resulting artifact as a
-working orca mod without successful compilation and Minecraft testing.
+On Linux/macOS: `./gradlew -p standalone-orca build`.
+Before a local build, copy the original binary assets into the isolated
+source tree:
+
+```powershell
+python standalone-orca/scripts/copy_orca_assets.py
+python standalone-orca/scripts/copy_orca_item_assets.py
+```
+
+The CI workflow performs these copy steps automatically.
+
+A prior standalone GitHub Actions build succeeded on 2026-10-22 (commit
+`22a0737582352b6e353eff6d27356d02b4f4e07c`). Later changes need their
+own build verification. Compilation alone does not prove in-game rendering,
+breeding, or behavior fidelity.
 
 ## Implemented scaffolding
 
@@ -29,18 +39,19 @@ working orca mod without successful compilation and Minecraft testing.
 - `OrcaOnlyClient`: male, female and calf layer/renderer registration
 - Independent Gradle configuration and NeoForge metadata
 
-## Outstanding extraction
+## Remaining validation
 
-1. Bring over `Zawa`, `Orca`, `OrcaSounds`, `OrcaRenderer`, the three layer
-   definitions, `OrcaModel`, and `ZawaModelLayers`.
-2. Identify and migrate/adapt `ZawaAquaticEntity`, `ZawaBaseEntity`, their AI
-   goals, and the shared diet/stats, gestation and breeding dependencies.
-3. Replace `Orca#getBreedOffspring`'s dependency on the full
-   `ZawaEntities.ORCA` registry with the standalone registry.
-4. Copy only the required orca textures, sound definitions, and OGG files,
-   preserving the recorded asset hashes. Verify resource paths.
-5. Compile, fix API errors, and test spawning, movement, attacks, breeding,
-   calves, rendering and audio in a NeoForge 1.21.1 client and server.
+The isolated module now contains the orca entity, its standalone offspring
+registry, three age/sex model layers, renderer, recovered animation, breeding
+goals, and required feeding data. The jump goal was reconstructed from the
+original `BreachGoal.class` bytecode, including forward clearance checks,
+jump momentum, and pitch animation. Its creative spawn egg is exposed in the
+Spawn Eggs tab. CI copies original textures, audio and feeding item artwork.
+
+Remaining work: test the resulting JAR in clean NeoForge 1.21.1 client/server
+instances, verify adult/calf geometry and animation, pregnancy and saved
+offspring, aquatic movement and air logic, feeding, sounds and persistence.
+Do not infer in-game parity from a successful compiler run.
 
 ## Compatibility
 
@@ -71,7 +82,7 @@ items; simply loading the JSON is not sufficient until their registry IDs are
 available. The piscivore diet also includes optional ZAWA fish that are not
 registered in the standalone build.
 
-The workflow in `.github/workflows/standalone-orca.yml` attempts a build and
-copies original binary assets, but **no successful standalone JAR is verified**.
-Keep these dependencies explicit rather than claiming the extracted orca is
-playable.
+The workflow in `.github/workflows/standalone-orca.yml` compiles and verifies
+packaged assets. A prior standalone CI build completed successfully, but
+Minecraft runtime testing has not been demonstrated. Do not describe the
+standalone orca as gameplay-verified.
