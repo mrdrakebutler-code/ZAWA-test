@@ -21,6 +21,19 @@ jobs:
           python3 scripts/check_orca_source_readiness.py
       - name: Compile and package NeoForge mod
         run: gradle build --stacktrace
+      - name: Verify packaged NeoForge mod metadata
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          jars = [p for p in Path('build/libs').glob('*.jar') if not p.name.endswith(('-sources.jar', '-javadoc.jar'))]
+          assert jars, 'No compiled mod JAR found'
+          with ZipFile(jars[0]) as archive:
+              metadata = archive.read('META-INF/neoforge.mods.toml').decode('utf-8')
+          assert 'modId="zawa"' in metadata, f'Incorrect mod ID in metadata: {metadata}'
+          assert '${' not in metadata, 'Unexpanded Gradle placeholders remain in mod metadata'
+          print('PASS: NeoForge mod metadata is fully expanded')
+          PY
       - name: Verify packaged orca audio assets
         if: success()
         run: |
