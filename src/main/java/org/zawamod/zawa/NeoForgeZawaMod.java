@@ -38,7 +38,7 @@ public final class NeoForgeZawaMod {
 
     private static void addOrcaEgg(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey().equals(CreativeModeTabs.SPAWN_EGGS)
-                && event.getEntries().keySet().stream().noneMatch(stack -> stack.is(ZawaItems.ORCA_SPAWN_EGG.get()))) {
+                ) {
             event.accept(ZawaItems.ORCA_SPAWN_EGG.get());
         }
     }
