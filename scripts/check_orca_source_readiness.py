@@ -85,6 +85,27 @@ def main():
         data = json.loads(biome.read_text(encoding="utf-8"))
         if data.get("type") != "neoforge:add_spawns" or data.get("spawners", {}).get("type") != "zawa:orca":
             problems.append("INVALID orca ocean biome modifier")
+    # Ensure the egg's creative icon and English names are packaged as resources.
+    import json
+    resources = ROOT.parents[3] / "resources/assets/zawa"
+    model = resources / "models/item/orca_spawn_egg.json"
+    texture = resources / "textures/item/orca_spawn_egg.png"
+    language = resources / "lang/en_us.json"
+    if not model.is_file():
+        problems.append("MISSING orca spawn egg item model")
+    else:
+        definition = json.loads(model.read_text(encoding="utf-8"))
+        if definition.get("textures", {}).get("layer0") != "zawa:item/orca_spawn_egg":
+            problems.append("INVALID orca spawn egg model texture reference")
+    if not texture.is_file():
+        problems.append("MISSING orca spawn egg texture")
+    if not language.is_file():
+        problems.append("MISSING English localization")
+    else:
+        translations = json.loads(language.read_text(encoding="utf-8"))
+        for key in ("item.zawa.orca_spawn_egg", "entity.zawa.orca"):
+            if not translations.get(key):
+                problems.append(f"MISSING localization: {key}")
     if problems:
         raise SystemExit("\n".join(problems))
     print("PASS: existing calf, gestation, rendering and sound corrections detected.")
