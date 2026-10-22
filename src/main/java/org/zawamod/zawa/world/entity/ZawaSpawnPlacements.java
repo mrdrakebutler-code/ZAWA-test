@@ -15,6 +15,10 @@ public final class ZawaSpawnPlacements {
     private ZawaSpawnPlacements() {}
 
     public static void register(RegisterSpawnPlacementsEvent event) {
+        event.register(ZawaEntities.ORCA.get(), SpawnPlacementTypes.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                ZawaBaseEntity::checkAquaticSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(ZawaEntities.AFRICAN_LION.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaBaseEntity::checkLandSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(ZawaEntities.AFRICAN_WILD_DOG.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaBaseEntity::checkLandSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(ZawaEntities.ASIAN_ELEPHANT.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaBaseEntity::checkLandSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
