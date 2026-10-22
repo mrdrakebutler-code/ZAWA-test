@@ -20,12 +20,6 @@ public final class ZawaItems {
     public static final DeferredItem<Item> DATA_BOOK = ITEMS.registerItem("data_book", p -> new DataBookItem(p));
     public static final DeferredItem<Item> MOTOR_BOAT = simple("motor_boat");
     public static final DeferredItem<Item> ZOO_CART = simple("zoo_cart");
-    public static final DeferredItem<Item> CARNIVORE_KIBBLE = simple("carnivore_kibble");
-    public static final DeferredItem<Item> HERBIVORE_KIBBLE = simple("herbivore_kibble");
-    public static final DeferredItem<Item> INSECTIVORE_KIBBLE = simple("insectivore_kibble");
-    public static final DeferredItem<Item> OMNIVORE_KIBBLE = simple("omnivore_kibble");
-    public static final DeferredItem<Item> PISCIVORE_KIBBLE = simple("piscivore_kibble");
-    public static final DeferredItem<Item> SHELLFISH_KIBBLE = simple("shellfish_kibble");
     public static final DeferredItem<Item> CAPTURE_CAGE = simple("capture_cage");
     public static final DeferredItem<Item> CAPTURE_NET = ITEMS.registerItem("capture_net", p -> new CaptureNetItem(p));
     public static final DeferredItem<Item> HANDLING_GLOVE = simple("handling_glove");
@@ -90,12 +84,6 @@ public final class ZawaItems {
     public static final DeferredItem<Item> HONEY_BEE = simple("honey_bee");
     public static final DeferredItem<Item> LEAFCUTTER_ANT = simple("leafcutter_ant");
     public static final DeferredItem<Item> MEALWORMS = simple("mealworms");
-    public static final DeferredItem<Item> LARGE_MEAT = simple("large_meat");
-    public static final DeferredItem<Item> COOKED_LARGE_MEAT = simple("cooked_large_meat");
-    public static final DeferredItem<Item> MEDIUM_MEAT = simple("medium_meat");
-    public static final DeferredItem<Item> COOKED_MEDIUM_MEAT = simple("cooked_medium_meat");
-    public static final DeferredItem<Item> SMALL_MEAT = simple("small_meat");
-    public static final DeferredItem<Item> COOKED_SMALL_MEAT = simple("cooked_small_meat");
     public static final DeferredItem<Item> MUSSELS = simple("mussels");
     public static final DeferredItem<Item> COOKED_MUSSELS = simple("cooked_mussels");
     public static final DeferredItem<Item> PRICKLY_PEAR = simple("prickly_pear");
