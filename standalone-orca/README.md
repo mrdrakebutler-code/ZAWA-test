@@ -53,3 +53,25 @@ because they share the same mod ID and entity registry name.
 The source files and asset fidelity baseline are held in the parent project.
 Preserving their behavior is the goal; fidelity to the original 1.20.1 JAR
 has not been independently revalidated in this standalone project.
+
+
+## Known standalone dependency blockers (audit)
+
+The copied feeder block entities are **not** independent: `GroundFeederBlockEntity`
+and `WallFeederBlockEntity` extend `ZawaContainerBlockEntity` and refer to
+`ZawaBlockEntities` and `FeederBlockContainer`. Those classes and their
+registrations must be migrated or the standalone feeder goals refactored before
+compilation can succeed. Copying only the two feeder classes does not close
+this dependency chain.
+
+`ZawaBaseEntity` also references `ZawaItems` for baby formula and target
+stick; those item registrations are not yet provided by the standalone module.
+The original orca stats JSON references ZAWA-specific breeding food and kibble
+items; simply loading the JSON is not sufficient until their registry IDs are
+available. The piscivore diet also includes optional ZAWA fish that are not
+registered in the standalone build.
+
+The workflow in `.github/workflows/standalone-orca.yml` attempts a build and
+copies original binary assets, but **no successful standalone JAR is verified**.
+Keep these dependencies explicit rather than claiming the extracted orca is
+playable.
