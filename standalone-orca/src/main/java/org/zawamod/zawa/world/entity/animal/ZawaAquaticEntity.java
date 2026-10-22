@@ -39,21 +39,8 @@ public abstract class ZawaAquaticEntity extends ZawaBaseEntity {
         return new WaterBoundPathNavigation(this, level);
     }
 
-    @Override
-    public void tick() {
-        super.tick();
-        if (!isInWaterOrBubble() && !onGround() && !isNoGravity()) {
-            Vec3 motion = getDeltaMovement();
-            setDeltaMovement(motion.add(
-                    (getRandom().nextFloat() * 2.0F - 1.0F) * 0.2D,
-                    0.5D,
-                    (getRandom().nextFloat() * 2.0F - 1.0F) * 0.2D));
-            setYRot(getRandom().nextFloat() * 360.0F);
-            setNoGravity(false);
-            hasImpulse = true;
-        }
-    }
-
+    // Out of water, use normal gravity. The recovered airborne +0.5Y impulse
+    // accumulated every tick and could launch breaching orcas into the sky.
     @Override
     public void baseTick() {
         int air = getAirSupply();
