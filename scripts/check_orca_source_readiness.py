@@ -55,6 +55,36 @@ def main():
               f"{len(other_registrations)} non-orca species registry entries.")
         if other_species or other_registrations:
             print("NOT STANDALONE: current mod entrypoint and registry still include other animals.")
+    # Confirm that the user-facing spawn egg and natural spawning are wired.
+    wiring = {
+        "NeoForgeZawaMod.java": [
+            "ZawaItems.register(modBus);",
+            "modBus.addListener(NeoForgeZawaMod::addOrcaCreativeItems);",
+            "event.accept(ZawaItems.ORCA_SPAWN_EGG.get());",
+            "ZawaSpawnPlacements.attach(modBus);",
+        ],
+        "world/item/ZawaItems.java": ['registerItem("orca_spawn_egg"'],
+        "world/entity/animal/ZawaEntities.java": ['REGISTRAR.register("orca"'],
+        "world/entity/ZawaSpawnPlacements.java": [
+            "ZawaEntities.ORCA.get()", "Orca::checkOrcaSpawnRules",
+        ],
+    }
+    for name, needles in wiring.items():
+        path = ROOT / name
+        if not path.is_file():
+            problems.append(f"MISSING {name}")
+            continue
+        source = path.read_text(encoding="utf-8")
+        problems.extend(f"MISSING ORCA WIRING {name}: {needle}"
+                        for needle in needles if needle not in source)
+    biome = ROOT.parents[4] / "resources/data/zawa/neoforge/biome_modifier/orca_ocean_spawns.json"
+    if not biome.is_file():
+        problems.append("MISSING orca ocean biome modifier")
+    else:
+        import json
+        data = json.loads(biome.read_text(encoding="utf-8"))
+        if data.get("type") != "neoforge:add_spawns" or data.get("spawners", {}).get("type") != "zawa:orca":
+            problems.append("INVALID orca ocean biome modifier")
     if problems:
         raise SystemExit("\n".join(problems))
     print("PASS: existing calf, gestation, rendering and sound corrections detected.")
