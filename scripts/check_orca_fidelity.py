@@ -58,7 +58,7 @@ def verify(root: Path = ROOT) -> None:
         if expected_names != found_names:
             failures.append(f"UNEXPECTED INVENTORY {folder}: missing={sorted(expected_names - found_names)}, extra={sorted(found_names - expected_names)}")
     if failures:
-        raise SystemExit("Orca fidelity check FAILED:\\n" + "\\n".join(failures))
+        raise SystemExit("Orca fidelity check FAILED:\n" + "\n".join(failures))
     print(f"Orca fidelity check passed: {len(BASELINE)} original branch files unchanged "
           "(4 model sources, 9 textures, 5 sound files).")
 
