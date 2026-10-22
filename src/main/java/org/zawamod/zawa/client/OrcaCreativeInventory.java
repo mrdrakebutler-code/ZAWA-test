@@ -17,9 +17,6 @@ public final class OrcaCreativeInventory {
 
     @SubscribeEvent
     public static void addCreativeItems(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-            event.accept(ZawaItems.ORCA_SPAWN_EGG);
-        }
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ZawaItems.PISCIVORE_KIBBLE);
             event.accept(ZawaItems.LARGE_MEAT);
