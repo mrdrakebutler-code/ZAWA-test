@@ -72,12 +72,6 @@ public class Orca extends ZawaAquaticEntity {
         return OrcaSounds.HURT.get();
     }
 
-    /** Match the original ZAWA orca's eye-height offset for adults and calves. */
-    @Override
-    protected float getStandingEyeHeight(net.minecraft.world.entity.Pose pose, net.minecraft.world.entity.EntityDimensions dimensions) {
-        return dimensions.height * 0.5F;
-    }
-
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob other) {
         return ZawaEntities.ORCA.get().create(level);
