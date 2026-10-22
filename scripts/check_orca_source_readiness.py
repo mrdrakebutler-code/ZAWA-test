@@ -49,8 +49,8 @@ def main():
     if entrypoint.is_file() and registry.is_file():
         entry_source = entrypoint.read_text(encoding="utf-8")
         registry_source = registry.read_text(encoding="utf-8")
-        other_species = sorted(set(re.findall(r"ZawaEntities\\.([A-Z_]+)\\.get\\(\\)", entry_source)) - {"ORCA"})
-        other_registrations = sorted(set(re.findall(r'REGISTRAR\\.register\\("([^"]+)"', registry_source)) - {"orca"})
+        other_species = sorted(set(re.findall(r"ZawaEntities\.([A-Z_]+)\.get\(\)", entry_source)) - {"ORCA"})
+        other_registrations = sorted(set(re.findall(r'REGISTRAR\.register\("([^"]+)"', registry_source)) - {"orca"})
         print(f"Standalone dependency audit: {len(other_species)} non-orca attribute registrations; "
               f"{len(other_registrations)} non-orca species registry entries.")
         if other_species or other_registrations:
