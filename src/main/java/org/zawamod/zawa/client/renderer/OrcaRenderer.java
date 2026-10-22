@@ -35,6 +35,13 @@ public final class OrcaRenderer extends MobRenderer<Orca, OrcaModel> {
     }
 
     @Override
+    protected void scale(Orca entity, PoseStack poseStack, float partialTick) {
+        float size = entity.isBaby() ? 0.6F : 0.8F;
+        poseStack.scale(size, size, size);
+        poseStack.translate(0.0D, -0.3D, -0.3D);
+    }
+
+    @Override
     public ResourceLocation getTextureLocation(Orca entity) {
         if (entity.isBaby()) return ResourceLocation.fromNamespaceAndPath("zawa", "textures/entity/orca/orca_baby.png");
         int variant = Math.floorMod(entity.getVariant(), 4) + 1;
