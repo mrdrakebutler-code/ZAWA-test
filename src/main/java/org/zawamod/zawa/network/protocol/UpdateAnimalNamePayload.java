@@ -34,7 +34,7 @@ public record UpdateAnimalNamePayload(int entityId, String name) implements Cust
             Player player = context.player();
             ItemStack main = player.getMainHandItem();
             ItemStack off = player.getOffhandItem();
-            if (main.is(ZawaItems.DATA_BOOK.get()) || off.is(ZawaItems.DATA_BOOK.get())) {
+            if (main.is(net.minecraft.world.item.Items.NAME_TAG) || off.is(net.minecraft.world.item.Items.NAME_TAG)) {
                 Entity entity = player.level().getEntity(entityId);
                 if (entity instanceof ZawaBaseEntity animal && entity.distanceToSqr(player) <= 64.0D) {
                     String sanitized = name.trim();
