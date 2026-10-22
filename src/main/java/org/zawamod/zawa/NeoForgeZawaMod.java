@@ -12,11 +12,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig;
 import org.zawamod.zawa.config.ZawaMainConfig;
-import org.zawamod.zawa.world.entity.ZawaEntityRegistry;
 import org.zawamod.zawa.world.item.ZawaItems;
-import org.zawamod.zawa.world.inventory.ZawaMenuTypes;
-import org.zawamod.zawa.world.block.ZawaBlocks;
-import org.zawamod.zawa.world.block.entity.ZawaBlockEntities;
 import org.zawamod.zawa.world.entity.ZawaSpawnPlacements;
 import org.zawamod.zawa.world.entity.animal.ZawaEntities;
 
@@ -37,8 +33,7 @@ public final class NeoForgeZawaMod {
     }
 
     private static void addOrcaEgg(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey().equals(CreativeModeTabs.SPAWN_EGGS)
-                ) {
+        if (event.getTabKey().equals(CreativeModeTabs.SPAWN_EGGS)) {
             event.accept(ZawaItems.ORCA_SPAWN_EGG.get());
         }
     }
