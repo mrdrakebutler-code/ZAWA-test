@@ -39,7 +39,7 @@ BASELINE = {
 
 
 def git_blob_id(data: bytes) -> str:
-    return hashlib.sha1(b"blob " + str(len(data)).encode("ascii") + b"\\0" + data).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(data)).encode("ascii") + bytes((0,)) + data).hexdigest()
 
 
 def verify(root: Path = ROOT) -> None:
