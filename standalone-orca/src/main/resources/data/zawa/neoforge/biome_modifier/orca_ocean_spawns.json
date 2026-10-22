@@ -1,13 +1,10 @@
 {
   "type": "neoforge:add_spawns",
-  "biomes": [
-    "minecraft:ocean",
-    "minecraft:deep_ocean"
-  ],
+  "biomes": "#minecraft:is_ocean",
   "spawners": {
     "type": "zawa:orca",
     "weight": 8,
     "minCount": 3,
-    "maxCount": 4
+    "maxCount": 5
   }
 }
