@@ -69,13 +69,13 @@ public final class OrcaModel extends EntityModel<Orca> {
             }
         }
 
-        // Subclass look rotations override the base body's swim pitch.
-        body.yRot = netHeadYaw * Mth.DEG_TO_RAD * 0.25F;
-        body.xRot = headPitch * Mth.DEG_TO_RAD;
-        head.yRot = netHeadYaw * Mth.DEG_TO_RAD * 0.25F;
+        // A whale's torso does not track the camera/look pitch like a humanoid.
+        // Preserve the swimming body animation rather than replacing it with
+        // headPitch (which made the entire articulated model rotate unnaturally).
+        head.yRot = Mth.clamp(netHeadYaw, -35.0F, 35.0F) * Mth.DEG_TO_RAD * 0.1F;
         float headOffset = !entity.isBaby() && entity.getGender() == ZawaBaseEntity.Gender.MALE
                 ? 0.1F : 0.03F;
-        head.xRot = headPitch * Mth.DEG_TO_RAD * 0.25F - headOffset;
+        head.xRot = Mth.clamp(headPitch, -25.0F, 25.0F) * Mth.DEG_TO_RAD * 0.1F - headOffset;
         if (entity.getDeltaMovement().lengthSqr() > 1.0E-7D) {
             body.xRot += Mth.cos(limbSwing * 0.3F + Mth.PI) * 0.5F * limbSwingAmount * 0.5F;
         }
