@@ -44,7 +44,6 @@ import org.zawamod.zawa.world.entity.ai.goal.SeekEnrichmentGoal;
 import java.util.HashMap;
 import java.util.Map;
 import org.zawamod.zawa.resources.EntityStatsManager;
-import org.zawamod.zawa.world.item.ZawaItems;
 
 import java.util.function.Predicate;
 
@@ -389,20 +388,6 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
                 heal(2.0F);
                 if (!player.getAbilities().instabuild) stack.shrink(1);
             }
-            return InteractionResult.sidedSuccess(level().isClientSide);
-        }
-
-        if (!(this instanceof Orca) && stack.is(ZawaItems.BABY_FORMULA.get()) && isBaby()) {
-            if (!level().isClientSide) {
-                hunger.increment(Math.max(2, hunger.getMax() / 2));
-                heal(2.0F);
-                if (!player.getAbilities().instabuild) stack.shrink(1);
-            }
-            return InteractionResult.sidedSuccess(level().isClientSide);
-        }
-
-        if (!(this instanceof Orca) && stack.is(ZawaItems.TARGET_STICK.get()) && enrichment.getValue() < enrichment.getMax()) {
-            if (!level().isClientSide) enrichment.increment(2);
             return InteractionResult.sidedSuccess(level().isClientSide);
         }
 
