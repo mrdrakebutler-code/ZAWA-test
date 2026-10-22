@@ -27,12 +27,20 @@ public final class NeoForgeZawaMod {
         NeoForge.EVENT_BUS.addListener(NeoForgeZawaMod::addReloadListeners);
 
         ZawaItems.register(modBus);
+        modBus.addListener(NeoForgeZawaMod::addOrcaEgg);
         org.zawamod.zawa.world.entity.animal.OrcaSounds.register(modBus);
         ZawaEntities.register(modBus);
         ZawaSpawnPlacements.attach(modBus);
         modBus.addListener((EntityAttributeCreationEvent event) -> {
             event.put(ZawaEntities.ORCA.get(), org.zawamod.zawa.world.entity.animal.Orca.registerOrcaAttributes().build());
         });
+    }
+
+    private static void addOrcaEgg(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey().equals(CreativeModeTabs.SPAWN_EGGS)
+                && event.getEntries().keySet().stream().noneMatch(stack -> stack.is(ZawaItems.ORCA_SPAWN_EGG.get()))) {
+            event.accept(ZawaItems.ORCA_SPAWN_EGG.get());
+        }
     }
 
     private static void addReloadListeners(AddReloadListenerEvent event) {
