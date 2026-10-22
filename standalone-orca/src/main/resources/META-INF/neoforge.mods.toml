@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="zawa"
+version="${file.jarVersion}"
+displayName="ZAWA Orca Standalone"
+authors="ZAWA original authors; experimental port contributors"
+description='''Experimental orca-only extraction of ZAWA for NeoForge 1.21.1.'''
+
+[[dependencies.zawa]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.zawa]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.22)"
+ordering="NONE"
+side="BOTH"
