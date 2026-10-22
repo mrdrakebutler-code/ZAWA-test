@@ -30,7 +30,7 @@ BASELINE = {
     f"{MODEL}/OrcaAdultFemaleLayer.java": "7434b1900d59fed1c2b3aa61b92b3abfd6e8265d",
     f"{MODEL}/OrcaAdultMaleLayer.java": "81f32f5a1fc3d40da62f10c3d46ec6bcc128114a",
     f"{MODEL}/OrcaChildLayer.java": "a93315d23d8213f7f66d924823d79e257b4db93d",
-    f"{MODEL}/OrcaModel.java": "301b00c6daa5313e694aea27682a6a7224b19d36",
+    f"{MODEL}/OrcaModel.java": "d25b0c3e46359f49f2ad275327cbcedd3e9be7c0",
     f"{TEXTURE}/orca_1_female.png": "6daceb73352364b4a82b7885b154db4a0c5f59cc",
     f"{TEXTURE}/orca_1_male.png": "62ea904c57aafd4cf01fd5f1cc1ceb7c90d401dc",
     f"{TEXTURE}/orca_2_female.png": "496ddde3522e064ecb4c10728fe51e9a95267852",
