@@ -236,8 +236,6 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         ZawaBaseEntity mother = getGender() == Gender.FEMALE ? this : partner;
         ZawaBaseEntity father = getGender() == Gender.MALE ? this : partner;
         if (mother.getGender() != Gender.FEMALE || !mother.canBreed() || !father.canBreed()) return;
-        mother.setPregnant(true);
-        mother.setGestationTimer(ZawaMainConfig.gestationTime.get());
         mother.children.clear();
         int litter = EntityStatsManager.INSTANCE.getStats(mother).getLitterSize().sample(mother.getRandom());
         litter = Math.max(1, litter);
@@ -246,9 +244,13 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
             if (child == null) continue;
             CompoundTag childTag = new CompoundTag();
             child.saveWithoutId(childTag);
+            childTag.putString("id", net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.getKey(child.getType()).toString());
             mother.children.add(childTag);
             child.discard();
         }
+        if (mother.children.isEmpty()) return;
+        mother.setPregnant(true);
+        mother.setGestationTimer(ZawaMainConfig.gestationTime.get());
         mother.resetLove();
         father.resetLove();
     }
@@ -259,18 +261,29 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
 
     public void spawnChildrenFromPregnancy(net.minecraft.server.level.ServerLevel level) {
         if (!isPregnant()) return;
+        if (children.isEmpty()) {
+            setPregnant(false);
+            setGestationTimer(0);
+            return;
+        }
+        net.minecraft.nbt.ListTag remaining = new net.minecraft.nbt.ListTag();
         for (int i = 0; i < children.size(); i++) {
             CompoundTag childTag = children.getCompound(i);
             Entity entity = EntityType.create(childTag, level).orElse(null);
             if (entity instanceof ZawaBaseEntity child) {
                 child.moveTo(getX(), getY(), getZ(), getYRot(), 0);
                 child.setAge(-24000);
-                level.addFreshEntity(child);
+                if (!level.addFreshEntity(child)) remaining.add(childTag.copy());
+            } else {
+                remaining.add(childTag.copy());
             }
         }
         children.clear();
-        setPregnant(false);
-        setGestationTimer(0);
+        children.addAll(remaining);
+        if (children.isEmpty()) {
+            setPregnant(false);
+            setGestationTimer(0);
+        }
     }
 
     @Override
