@@ -10,10 +10,9 @@ import org.zawamod.zawa.Zawa;
 import org.zawamod.zawa.world.entity.animal.Orca;
 
 /**
- * Dedicated orca-only entity registration for the future isolated build.
- * This class is not wired into the existing full-ZAWA entrypoint.
- * The original Orca#getBreedOffspring still refers to ZawaEntities.ORCA;
- * that dependency must be isolated before standalone compilation.
+ * Dedicated orca-only entity registration for the isolated NeoForge build.
+ * The orca offspring factory resolves through this registry rather than
+ * depending on the full ZAWA entity registry.
  */
 public final class OrcaOnlyEntities {
     private static final DeferredRegister<EntityType<?>> TYPES =
