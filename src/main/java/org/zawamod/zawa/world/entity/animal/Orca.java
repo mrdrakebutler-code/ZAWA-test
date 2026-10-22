@@ -1,6 +1,8 @@
 package org.zawamod.zawa.world.entity.animal;
 
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -84,6 +86,12 @@ public class Orca extends ZawaAquaticEntity {
     @Override
     protected SoundEvent getDeathSound() {
         return OrcaSounds.HURT.get();
+    }
+
+    /** Standalone orcas use vanilla raw salmon, independent of ZAWA food stats. */
+    @Override
+    public boolean isFood(ItemStack stack) {
+        return stack.is(Items.SALMON);
     }
 
     @Override
