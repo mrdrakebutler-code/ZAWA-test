@@ -20,9 +20,13 @@ jobs:
           gradle-version: '8.10.2'
       - name: Copy original orca textures and sounds
         run: python3 standalone-orca/scripts/copy_orca_assets.py
-      - name: Build standalone NeoForge mod
+      - name: Build standalone NeoForge mod and capture compiler diagnostics
         working-directory: standalone-orca
-        run: gradle build --stacktrace
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p build/diagnostics
+          gradle build --stacktrace --console=plain 2>&1 | tee build/diagnostics/gradle-build.log
       - name: Verify packaged orca assets
         if: success()
         run: |
@@ -50,3 +54,4 @@ jobs:
           path: |
             standalone-orca/build/libs/*.jar
             standalone-orca/build/reports/**
+            standalone-orca/build/diagnostics/gradle-build.log
