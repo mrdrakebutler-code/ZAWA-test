@@ -1,26 +1,9 @@
 package org.zawamod.zawa.client;
 
-import net.minecraft.world.item.CreativeModeTabs;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import org.zawamod.zawa.Zawa;
-import org.zawamod.zawa.world.item.ZawaItems;
-
 /**
- * Exposes the standalone orca's registered supplies in vanilla creative tabs.
- * This uses the NeoForge MOD event bus, not the game event bus.
+ * The orca spawn egg is already placed in the vanilla spawn-egg tab by Minecraft.
+ * No ZAWA foods or supplies are added to creative tabs.
  */
-@EventBusSubscriber(modid = Zawa.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public final class OrcaCreativeInventory {
     private OrcaCreativeInventory() {}
-
-    @SubscribeEvent
-    public static void addCreativeItems(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ZawaItems.PISCIVORE_KIBBLE);
-            event.accept(ZawaItems.LARGE_MEAT);
-            event.accept(ZawaItems.COOKED_LARGE_MEAT);
-        }
-    }
 }
