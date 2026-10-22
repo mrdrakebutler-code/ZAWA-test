@@ -22,6 +22,16 @@ public class Orca extends ZawaAquaticEntity {
         super(type, level);
     }
 
+    /** Allow orcas throughout the ocean water column, including deep oceans. */
+    public static boolean checkOrcaSpawnRules(EntityType<? extends Orca> type,
+            net.minecraft.world.level.ServerLevelAccessor level,
+            net.minecraft.world.entity.MobSpawnType reason,
+            net.minecraft.core.BlockPos pos,
+            net.minecraft.util.RandomSource random) {
+        return level.getFluidState(pos).is(net.minecraft.tags.FluidTags.WATER)
+                && pos.getY() < level.getSeaLevel();
+    }
+
     public static AttributeSupplier.Builder registerOrcaAttributes() {
         return createLivingAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.3D)
