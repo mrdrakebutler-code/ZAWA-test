@@ -59,6 +59,6 @@ public final class OrcaAdultFemaleLayer {
   PartDefinition p_BackFin3 = p_BackFin2.addOrReplaceChild("BackFin3", CubeListBuilder.create().texOffs(18, 0).addBox(-1.00000000F, -6.00000000F, 0.00000000F, 2.00000000F, 6.00000000F, 3.00000000F), PartPose.offsetAndRotation(0.00000000F, -6.00000000F, 0.00000000F, -0.26179940F, 0.00000000F, 0.00000000F));
   PartDefinition p_BackFin4 = p_BackFin3.addOrReplaceChild("BackFin4", CubeListBuilder.create().texOffs(144, 0).addBox(-0.99000000F, 0.00000000F, -3.00000000F, 2.00000000F, 9.00000000F, 3.00000000F), PartPose.offsetAndRotation(0.00000000F, -6.00000000F, 3.00000000F, 0.50614550F, 0.00000000F, 0.00000000F));
   PartDefinition p_BackFin5 = p_BackFin4.addOrReplaceChild("BackFin5", CubeListBuilder.create().texOffs(0, 0).addBox(-1.01000000F, -0.50000000F, -6.00000000F, 2.00000000F, 8.00000000F, 6.00000000F), PartPose.offsetAndRotation(0.00000000F, 8.00000000F, 0.00000000F, 0.52359880F, 0.00000000F, 0.00000000F));
-  return LayerDefinition.create(mesh, 1024, 512);
+  return LayerDefinition.create(mesh, 512, 256);
  }
 }
