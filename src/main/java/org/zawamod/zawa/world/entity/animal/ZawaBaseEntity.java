@@ -235,13 +235,13 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         if (!(other instanceof ZawaBaseEntity partner) || !canMate(partner)) return;
         ZawaBaseEntity mother = getGender() == Gender.FEMALE ? this : partner;
         ZawaBaseEntity father = getGender() == Gender.MALE ? this : partner;
-        if (mother.getGender() != Gender.FEMALE || !mother.canBreed() || !father.canBreed()) return;
+        if (mother.getGender() != Gender.FEMALE || mother.isPregnant() || !mother.canBreed() || !father.canBreed()) return;
         mother.children.clear();
         int litter = EntityStatsManager.INSTANCE.getStats(mother).getLitterSize().sample(mother.getRandom());
         litter = Math.max(1, litter);
         for (int i = 0; i < litter; i++) {
-            ZawaBaseEntity child = (ZawaBaseEntity) mother.getBreedOffspring(level, father);
-            if (child == null) continue;
+            AgeableMob offspring = mother.getBreedOffspring(level, father);
+            if (!(offspring instanceof ZawaBaseEntity child)) continue;
             CompoundTag childTag = new CompoundTag();
             child.saveWithoutId(childTag);
             childTag.putString("id", net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.getKey(child.getType()).toString());
