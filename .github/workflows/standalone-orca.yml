@@ -4,6 +4,7 @@ on:
     branches: [experiment/standalone-orca-1.21.1]
     paths:
       - 'standalone-orca/**'
+      - 'scripts/check_orca_fidelity.py'
       - '.github/workflows/standalone-orca.yml'
   workflow_dispatch:
 jobs:
