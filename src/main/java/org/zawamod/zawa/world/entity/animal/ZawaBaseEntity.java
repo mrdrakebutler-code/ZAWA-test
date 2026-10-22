@@ -384,7 +384,7 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
             return InteractionResult.sidedSuccess(level().isClientSide);
         }
 
-        if (stack.is(ZawaItems.BABY_FORMULA.get()) && isBaby()) {
+        if (!(this instanceof Orca) && stack.is(ZawaItems.BABY_FORMULA.get()) && isBaby()) {
             if (!level().isClientSide) {
                 hunger.increment(Math.max(2, hunger.getMax() / 2));
                 heal(2.0F);
