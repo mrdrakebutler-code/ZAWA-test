@@ -1,0 +1,33 @@
+name: Install Gradle Wrapper
+on:
+  push:
+    branches: [ experiment/standalone-orca-1.21.1 ]
+    paths: [ '.github/workflows/install-gradle-wrapper.yml' ]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  wrapper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+      - name: Generate official Gradle wrapper
+        run: gradle wrapper --gradle-version 8.10.2 --distribution-type bin
+      - name: Commit wrapper scripts and binary
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f gradlew gradlew.bat gradle/wrapper/gradle-wrapper.properties gradle/wrapper/gradle-wrapper.jar
+          if ! git diff --cached --quiet; then
+            git commit -m "Add official Gradle 8.10.2 wrapper"
+            git push origin HEAD:experiment/standalone-orca-1.21.1
+          fi
