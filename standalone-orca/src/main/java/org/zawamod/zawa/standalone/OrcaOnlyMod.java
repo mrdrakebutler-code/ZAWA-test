@@ -21,10 +21,9 @@ import org.zawamod.zawa.world.block.entity.ZawaBlockEntities;
 import org.zawamod.zawa.world.inventory.ZawaMenuTypes;
 
 /**
- * Standalone extraction entrypoint. Only the orca entity, its attributes and
- * original sounds are registered here. Not used by the full-ZAWA build.
- *
- * The isolated Gradle source set and dependency closure remain pending.
+ * Standalone extraction entrypoint. Registers the orca and its supporting
+ * resources without activating the full-ZAWA mod entrypoint.
+ * The isolated build retains supporting feeding and configuration registries.
  */
 @Mod(Zawa.MOD_ID)
 public final class OrcaOnlyMod {
