@@ -1,0 +1,19 @@
+{
+  "entity.zawa.orca": "Orca",
+  "item.zawa.orca_spawn_egg": "Orca Spawn Egg",
+  "item.zawa.piscivore_kibble": "Piscivore Kibble",
+  "item.zawa.large_meat": "Large Meat",
+  "item.zawa.target_stick": "Target Stick",
+  "item.zawa.baby_formula": "Baby Formula",
+  "block.zawa.bamboo_feeder": "Bamboo Feeder",
+  "block.zawa.bamboo_wall_forage": "Bamboo Wall Forage",
+  "container.zawa.bamboo_wall_forage": "Bamboo Wall Forage",
+  "subtitle.zawa.orca_ambient": "Orca clicks",
+  "subtitle.zawa.orca_hurt": "Orca whistles",
+  "subtitle.zawa.orca_attacking": "Orca squeaks",
+  "subtitle.zawa.orca_broadcast": "Orca calls",
+  "variant.zawa.orca_0": "Type A",
+  "variant.zawa.orca_1": "Type B",
+  "variant.zawa.orca_2": "Type C",
+  "variant.zawa.orca_3": "Type D"
+}
