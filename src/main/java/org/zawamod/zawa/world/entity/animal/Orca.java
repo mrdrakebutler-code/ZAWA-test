@@ -4,6 +4,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -34,10 +36,19 @@ public class Orca extends ZawaAquaticEntity {
 
     public static AttributeSupplier.Builder registerOrcaAttributes() {
         return net.minecraft.world.entity.Mob.createMobAttributes()
-                .add(Attributes.FOLLOW_RANGE, 32.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.3D)
                 .add(Attributes.MAX_HEALTH, 120.0D)
                 .add(Attributes.ATTACK_DAMAGE, 20.0D);
+    }
+
+    /**
+     * Original ZAWA 1.20.1 Orca#getStandingEyeHeight (obfuscated m_6431_):
+     * the eye is centered vertically, rather than using the land-animal default.
+     * Keep this tied to the supplied dimensions so baby/adult scaling works.
+     */
+    @Override
+    protected float getStandingEyeHeight(Pose pose, EntityDimensions dimensions) {
+        return dimensions.height() * 0.5F;
     }
 
     @Override
