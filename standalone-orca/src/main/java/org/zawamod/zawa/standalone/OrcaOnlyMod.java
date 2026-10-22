@@ -2,6 +2,11 @@ package org.zawamod.zawa.standalone;
 
 import net.neoforged.bus.api.IEventBus;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.WaterAnimal;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.ModContainer;
@@ -37,6 +42,7 @@ public final class OrcaOnlyMod {
         OrcaSounds.register(modBus);
         modBus.addListener(OrcaOnlyMod::addOrcaCreativeItems);
         modBus.addListener(OrcaOnlyMod::registerAttributes);
+        modBus.addListener(OrcaOnlyMod::registerSpawnPlacements);
         NeoForge.EVENT_BUS.addListener(OrcaOnlyMod::registerDataReloadListeners);
     }
 
@@ -49,6 +55,13 @@ public final class OrcaOnlyMod {
     private static void registerDataReloadListeners(AddReloadListenerEvent event) {
         event.addListener(EntityDietManager.INSTANCE);
         event.addListener(EntityStatsManager.INSTANCE);
+    }
+
+    private static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+        event.register(OrcaOnlyEntities.ORCA.get(), SpawnPlacementTypes.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                WaterAnimal::checkSurfaceWaterAnimalSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
     private static void registerAttributes(EntityAttributeCreationEvent event) {
