@@ -125,9 +125,11 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, net.minecraft.world.DifficultyInstance difficulty,
                                          MobSpawnType reason, SpawnGroupData groupData) {
-        setFertility(getSpeciesFertility().getRandomInRange(getRandom()));
+        if (!(this instanceof Orca)) {
+            setFertility(getSpeciesFertility().getRandomInRange(getRandom()));
+            setFavoriteFood(setupFavoriteFood());
+        }
         setGender(Gender.fromBool(getRandom().nextFloat() <= getMaleRatio()));
-        setFavoriteFood(setupFavoriteFood());
 
         int variant = getWildVariants() > 0 ? getRandom().nextInt(getWildVariants()) : 0;
         if (this instanceof SpeciesVariantsEntity variants && reason != MobSpawnType.SPAWN_EGG) {
@@ -201,8 +203,10 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         super.addAdditionalSaveData(tag);
         tag.putInt("Variant", getVariant());
         tag.putBoolean("Gender", getGender().toBool());
-        tag.putInt("Fertility", getFertility());
-        tag.putString("FavoriteFood", net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(getFavoriteFood()).toString());
+        if (!(this instanceof Orca)) {
+            tag.putInt("Fertility", getFertility());
+            tag.putString("FavoriteFood", net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(getFavoriteFood()).toString());
+        }
         if (!(this instanceof Orca)) {
             tag.put("Hunger", hunger.toTag());
             tag.put("Thirst", thirst.toTag());
