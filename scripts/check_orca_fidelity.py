@@ -2,8 +2,8 @@
 """Guard the recovered ZAWA orca's original geometry, texture and sound bytes.
 
 SHA-1 values are Git blob IDs recorded from the experimental branch on
-2026-10-22. This establishes branch fidelity, not independent verification
-against the unavailable original 1.20.1 JAR.
+2026-10-22. UV atlas dimensions for the three model layers were independently checked
+against the original ZAWA 1.20.1 JAR; remaining files use branch baselines.
 Run from any directory: python3 scripts/check_orca_fidelity.py
 """
 from __future__ import annotations
