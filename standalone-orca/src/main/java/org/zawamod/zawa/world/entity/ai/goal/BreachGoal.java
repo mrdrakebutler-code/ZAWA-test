@@ -15,6 +15,8 @@ public class BreachGoal extends JumpGoal {
     private final PathfinderMob entity;
     private final int interval;
     private boolean breached;
+    private int breachTicks;
+    private boolean leftWater;
 
     public BreachGoal(PathfinderMob entity, int interval) {
         this.entity = entity;
@@ -23,7 +25,7 @@ public class BreachGoal extends JumpGoal {
 
     @Override
     public boolean canUse() {
-        if (entity.getRandom().nextInt(interval) != 0) return false;
+        if (!entity.isInWater() || entity.getRandom().nextInt(interval) != 0) return false;
         Direction direction = entity.getMotionDirection();
         int dx = direction.getStepX(), dz = direction.getStepZ();
         BlockPos origin = entity.blockPosition();
@@ -44,24 +46,33 @@ public class BreachGoal extends JumpGoal {
                 direction.getStepX() * 0.6D, 0.7D, direction.getStepZ() * 0.6D));
         entity.getNavigation().stop();
         breached = false;
+        breachTicks = 0;
+        leftWater = false;
     }
 
     @Override
     public boolean canContinueToUse() {
-        double dy = entity.getDeltaMovement().y;
-        return (dy * dy >= 0.03D || entity.getXRot() == 0.0F
-                || Math.abs(entity.getXRot()) >= 10.0F || entity.isInWater())
-                && !entity.onGround();
+        // The original pitch-based condition could stay true indefinitely after
+        // a landing, leaving the orca locked in its jump pose underwater.
+        if (breachTicks >= 45 || entity.onGround()) return false;
+        return !leftWater || !entity.isInWater();
     }
 
     @Override
     public boolean isInterruptable() { return false; }
 
     @Override
-    public void stop() { entity.setXRot(0.0F); }
+    public void stop() {
+        entity.setXRot(0.0F);
+        breached = false;
+        leftWater = false;
+        breachTicks = 0;
+    }
 
     @Override
     public void tick() {
+        breachTicks++;
+        if (!entity.isInWater()) leftWater = true;
         boolean previouslyBreached = breached;
         if (!breached) {
             breached = entity.level().getFluidState(entity.blockPosition()).is(FluidTags.WATER);
