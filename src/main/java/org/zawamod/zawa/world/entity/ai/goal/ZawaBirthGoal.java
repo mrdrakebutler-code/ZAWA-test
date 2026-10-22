@@ -27,6 +27,16 @@ public class ZawaBirthGoal extends Goal {
     }
 
     @Override
+    public boolean requiresUpdateEveryTick() {
+        return true;
+    }
+
+    @Override
+    public void start() {
+        retryCooldown = 0;
+    }
+
+    @Override
     public void tick() {
         if (!(mother.level() instanceof ServerLevel server) || !mother.isPregnant()) {
             return;
