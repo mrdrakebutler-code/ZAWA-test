@@ -1,19 +1,12 @@
 {
   "temperament": "defensive",
-  "kibble": "zawa:piscivore_kibble",
+  "kibble": "minecraft:salmon",
   "size": "giant",
   "fertility": "medium",
-  "breeding_item": "zawa:large_meat",
+  "breeding_item": "minecraft:salmon",
   "litter_size": 1,
   "diet": "zawa:piscivore",
   "speed": "fast",
-  "enrichment": {
-    "zawa:blocks": [
-      "zawa:sprinkler"
-    ],
-    "zawa:entities": [
-      "zawa:boomer_ball"
-    ]
-  },
+  "enrichment": {},
   "variant_count": 4
 }
