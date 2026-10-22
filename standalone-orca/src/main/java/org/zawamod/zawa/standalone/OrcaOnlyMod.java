@@ -4,6 +4,9 @@ import net.neoforged.bus.api.IEventBus;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.config.ModConfig;
+import org.zawamod.zawa.config.ZawaMainConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import org.zawamod.zawa.resources.EntityDietManager;
@@ -25,7 +28,8 @@ import org.zawamod.zawa.world.inventory.ZawaMenuTypes;
  */
 @Mod(Zawa.MOD_ID)
 public final class OrcaOnlyMod {
-    public OrcaOnlyMod(IEventBus modBus) {
+    public OrcaOnlyMod(IEventBus modBus, ModContainer container) {
+        container.registerConfig(ModConfig.Type.COMMON, ZawaMainConfig.CONFIG_SPEC);
         OrcaOnlyEntities.register(modBus);
         ZawaItems.ITEMS.register(modBus);
         ZawaBlocks.BLOCKS.register(modBus);
