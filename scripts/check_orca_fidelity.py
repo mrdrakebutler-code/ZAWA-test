@@ -8,13 +8,19 @@ Run from any directory: python3 scripts/check_orca_fidelity.py
 """
 from __future__ import annotations
 
+import argparse
 import hashlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MODEL = "src/main/java/org/zawamod/zawa/client/model/orca"
-TEXTURE = "src/main/resources/assets/zawa/textures/entity/orca"
-AUDIO = "src/main/resources/assets/zawa/sounds"
+parser = argparse.ArgumentParser(description="Verify preserved original orca assets")
+parser.add_argument("--standalone", action="store_true",
+                    help="verify the isolated standalone-orca module instead of the full port")
+args = parser.parse_args()
+PREFIX = "standalone-orca/" if args.standalone else ""
+MODEL = PREFIX + "src/main/java/org/zawamod/zawa/client/model/orca"
+TEXTURE = PREFIX + "src/main/resources/assets/zawa/textures/entity/orca"
+AUDIO = PREFIX + "src/main/resources/assets/zawa/sounds"
 
 BASELINE = {
     f"{MODEL}/OrcaAdultFemaleLayer.java": "f3dad5d9d1a6fc528a360fd62ec7cbd14fc79e75",
