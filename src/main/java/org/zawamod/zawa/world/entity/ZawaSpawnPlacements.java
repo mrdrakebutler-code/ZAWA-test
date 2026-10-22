@@ -17,7 +17,7 @@ public final class ZawaSpawnPlacements {
     public static void register(RegisterSpawnPlacementsEvent event) {
         event.register(ZawaEntities.ORCA.get(), SpawnPlacementTypes.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                ZawaBaseEntity::checkAquaticSpawnRules,
+                org.zawamod.zawa.world.entity.animal.Orca::checkOrcaSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(ZawaEntities.AFRICAN_LION.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaBaseEntity::checkLandSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(ZawaEntities.AFRICAN_WILD_DOG.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaBaseEntity::checkLandSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
