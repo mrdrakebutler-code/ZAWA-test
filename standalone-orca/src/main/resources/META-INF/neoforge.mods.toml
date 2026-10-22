@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="zawa"
-version="${file.jarVersion}"
+version="0.1.0-alpha"
 displayName="ZAWA Orca Standalone"
 authors="ZAWA original authors; experimental port contributors"
 description='''Experimental orca-only extraction of ZAWA for NeoForge 1.21.1.'''
