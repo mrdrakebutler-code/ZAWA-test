@@ -1,6 +1,8 @@
 package org.zawamod.zawa.world.item;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
+import org.zawamod.zawa.standalone.OrcaOnlyEntities;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.zawamod.zawa.Zawa;
@@ -21,6 +23,10 @@ public final class ZawaItems {
             ITEMS.registerItem("large_meat", Item::new);
     public static final DeferredItem<Item> PISCIVORE_KIBBLE =
             ITEMS.registerItem("piscivore_kibble", Item::new);
+
+    public static final DeferredItem<SpawnEggItem> ORCA_SPAWN_EGG =
+            ITEMS.registerItem("orca_spawn_egg", properties ->
+                    new SpawnEggItem(OrcaOnlyEntities.ORCA.get(), 0x141B20, 0xE8E9E8, properties));
 
     private ZawaItems() {}
 }
