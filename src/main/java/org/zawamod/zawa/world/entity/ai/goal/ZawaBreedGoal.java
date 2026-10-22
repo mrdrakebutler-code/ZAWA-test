@@ -23,7 +23,18 @@ public class ZawaBreedGoal extends Goal {
     @Override public void tick() {
         animal.getLookControl().setLookAt(partner, 10.0F, animal.getMaxHeadXRot());
         animal.getNavigation().moveTo(partner, speedModifier); loveTime++;
-        if (loveTime >= 60 && animal.distanceToSqr(partner) < 9.0D) breed();
+        if (loveTime >= 60 && closeEnoughToMate()) breed();
+    }
+    // Measure distance between collision boxes rather than entity centres.
+    // Orcas can be adjacent without their centre points getting within 3 blocks.
+    private boolean closeEnoughToMate() {
+        if (partner == null) return false;
+        var a = animal.getBoundingBox();
+        var b = partner.getBoundingBox();
+        double dx = Math.max(0.0D, Math.max(a.minX - b.maxX, b.minX - a.maxX));
+        double dy = Math.max(0.0D, Math.max(a.minY - b.maxY, b.minY - a.maxY));
+        double dz = Math.max(0.0D, Math.max(a.minZ - b.maxZ, b.minZ - a.maxZ));
+        return dx * dx + dy * dy + dz * dz <= 2.25D;
     }
     private ZawaBaseEntity getFreePartner() {
         List<? extends ZawaBaseEntity> list = animal.level().getEntitiesOfClass(partnerClass, animal.getBoundingBox().inflate(8), e -> e != animal && e.isAlive() && animal.canMate(e));
