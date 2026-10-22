@@ -15,6 +15,10 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.10.2'
+      - name: Verify recovered orca assets and source readiness
+        run: |
+          python3 scripts/check_orca_fidelity.py
+          python3 scripts/check_orca_source_readiness.py
       - name: Compile and package NeoForge mod
         run: gradle build --stacktrace
       - name: Verify packaged orca audio assets
