@@ -80,7 +80,8 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         super(type, level);
         this.setPathfindingMalus(PathType.DANGER_FIRE, -1.0F);
         this.setPathfindingMalus(PathType.FENCE, -1.0F);
-        int size = getSpeciesSizeOrdinal();
+        // Orcas do not use ZAWA survival stats; avoid loading species size data at construction.
+        int size = this instanceof Orca ? 1 : getSpeciesSizeOrdinal();
         int multiplier = size * 4;
         this.hunger = new ZawaEntityStat(this, HUNGER, multiplier, ZawaMainConfig.hungerDepletion.get() / Math.max(1, size));
         this.thirst = new ZawaEntityStat(this, THIRST, multiplier, ZawaMainConfig.thirstDepletion.get() / Math.max(1, size));
