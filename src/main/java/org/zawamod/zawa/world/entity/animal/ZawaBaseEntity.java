@@ -89,7 +89,8 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
 
     @Override
     protected void registerGoals() {
-        goalSelector.addGoal(0, new ZawaBirthGoal(this));
+        // Orcas reproduce immediately and never need the gestation/birth AI.
+        if (!(this instanceof Orca)) goalSelector.addGoal(0, new ZawaBirthGoal(this));
         goalSelector.addGoal(2, new ZawaBreedGoal(this, 1.0D));
         goalSelector.addGoal(4, new ZawaFollowParentGoal(this, 1.25D));
         goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 10.0F));
