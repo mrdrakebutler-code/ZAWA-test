@@ -77,7 +77,7 @@ def main():
         source = path.read_text(encoding="utf-8")
         problems.extend(f"MISSING ORCA WIRING {name}: {needle}"
                         for needle in needles if needle not in source)
-    biome = ROOT.parents[4] / "resources/data/zawa/neoforge/biome_modifier/orca_ocean_spawns.json"
+    biome = ROOT.parents[3] / "resources/data/zawa/neoforge/biome_modifier/orca_ocean_spawns.json"
     if not biome.is_file():
         problems.append("MISSING orca ocean biome modifier")
     else:
