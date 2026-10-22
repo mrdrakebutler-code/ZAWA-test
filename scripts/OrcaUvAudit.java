@@ -13,7 +13,7 @@ public class OrcaUvAudit {
             int width = Integer.parseInt(m.group(1)), height = Integer.parseInt(m.group(2));
             System.out.printf("%s expects %dx%d%n", name, width, height);
             // Validate every cuboid's six-face UV footprint, not just the PNG size.
-            Pattern cuboid = Pattern.compile("texOffs\\\\((\\\\d+),\\\\s*(\\\\d+)\\\\)\\\\.addBox\\\\(([^)]*)\\\\)");
+            Pattern cuboid = Pattern.compile("texOffs\\((\\d+),\\s*(\\d+)\\)\\.addBox\\(([^)]*)\\)");
             Matcher cubes = cuboid.matcher(source);
             int cuboidCount = 0;
             while (cubes.find()) {
