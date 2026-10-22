@@ -204,7 +204,7 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         tag.put("Hunger", hunger.toTag());
         tag.put("Thirst", thirst.toTag());
         tag.put("Enrichment", enrichment.toTag());
-        if (getGender() == Gender.FEMALE) {
+        if (getGender() == Gender.FEMALE && !(this instanceof Orca)) {
             tag.putBoolean("Pregnant", isPregnant());
             tag.putInt("Gestation", getGestationTimer());
             if (isPregnant()) tag.put("Children", children.copy());
@@ -224,7 +224,7 @@ public abstract class ZawaBaseEntity extends TamableAnimal {
         if (tag.contains("Hunger")) hunger.fromTag(tag.getCompound("Hunger"));
         if (tag.contains("Thirst")) thirst.fromTag(tag.getCompound("Thirst"));
         if (tag.contains("Enrichment")) enrichment.fromTag(tag.getCompound("Enrichment"));
-        if (getGender() == Gender.FEMALE) {
+        if (getGender() == Gender.FEMALE && !(this instanceof Orca)) {
             setPregnant(tag.getBoolean("Pregnant"));
             setGestationTimer(tag.getInt("Gestation"));
             if (tag.contains("Children", 9)) {
