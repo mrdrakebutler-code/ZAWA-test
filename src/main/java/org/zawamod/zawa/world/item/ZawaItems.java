@@ -85,26 +85,6 @@ public final class ZawaItems {
     public static final DeferredItem<Item> BABY_FORMULA = simple("baby_formula");
 
     // Stage 35 enrichment objects.
-    public static final DeferredItem<Item> BLACK_BAMBOO_FEEDER = blockItem("black_bamboo_feeder", ZawaBlocks.BLACK_BAMBOO_FEEDER);
-    public static final DeferredItem<Item> YELLOW_BAMBOO_FEEDER = blockItem("yellow_bamboo_feeder", ZawaBlocks.YELLOW_BAMBOO_FEEDER);
-    public static final DeferredItem<Item> BAMBOO_CHIMES = blockItem("bamboo_chimes", ZawaBlocks.BAMBOO_CHIMES);
-    public static final DeferredItem<Item> BLACK_BAMBOO_CHIMES = blockItem("black_bamboo_chimes", ZawaBlocks.BLACK_BAMBOO_CHIMES);
-    public static final DeferredItem<Item> YELLOW_BAMBOO_CHIMES = blockItem("yellow_bamboo_chimes", ZawaBlocks.YELLOW_BAMBOO_CHIMES);
-    public static final DeferredItem<Item> SCRATCHING_POST = blockItem("scratching_post", ZawaBlocks.SCRATCHING_POST);
-    public static final DeferredItem<Item> LEAF_BROWSE = blockItem("leaf_browse", ZawaBlocks.LEAF_BROWSE);
-    public static final DeferredItem<Item> HAY_BROWSE = blockItem("hay_browse", ZawaBlocks.HAY_BROWSE);
-    public static final DeferredItem<Item> SPRINKLER = blockItem("sprinkler", ZawaBlocks.SPRINKLER);
-    public static final DeferredItem<Item> PINEAPPLE_PINATA = blockItem("pineapple_pinata", ZawaBlocks.PINEAPPLE_PINATA);
-    public static final DeferredItem<Item> PUZZLE_FEEDER = blockItem("puzzle_feeder", ZawaBlocks.PUZZLE_FEEDER);
-    public static final DeferredItem<Item> BALL_PIT = blockItem("ball_pit", ZawaBlocks.BALL_PIT);
-    public static final DeferredItem<Item> TIRE_SWING = blockItem("tire_swing", ZawaBlocks.TIRE_SWING);
-    public static final DeferredItem<Item> CLIMBING_VINE = blockItem("climbing_vine", ZawaBlocks.CLIMBING_VINE);
-    public static final DeferredItem<Item> ROPE = blockItem("rope", ZawaBlocks.ROPE);
-    public static final DeferredItem<Item> SNOW_PIT = blockItem("snow_pit", ZawaBlocks.SNOW_PIT);
-    public static final DeferredItem<Item> SALT_LICK = blockItem("salt_lick", ZawaBlocks.SALT_LICK);
-    public static final DeferredItem<Item> PERCHING_STAND = blockItem("perching_stand", ZawaBlocks.PERCHING_STAND);
-    public static final DeferredItem<Item> HEAT_LAMP = blockItem("heat_lamp", ZawaBlocks.HEAT_LAMP);
-    public static final DeferredItem<Item> HEAT_ROCK = blockItem("heat_rock", ZawaBlocks.HEAT_ROCK);
 
     public static final DeferredItem<Item> SCENTED_BALL = ITEMS.registerItem("scented_ball", p ->
             new PlaceableEnrichmentItem(p, org.zawamod.zawa.world.entity.item.ZawaEnrichmentEntities.SCENTED_BALL,
