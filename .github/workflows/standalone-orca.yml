@@ -1,0 +1,52 @@
+name: Standalone Orca NeoForge Build
+on:
+  push:
+    branches: [experiment/standalone-orca-1.21.1]
+    paths:
+      - 'standalone-orca/**'
+      - '.github/workflows/standalone-orca.yml'
+  workflow_dispatch:
+jobs:
+  build-standalone-orca:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+      - name: Copy original orca textures and sounds
+        run: python3 standalone-orca/scripts/copy_orca_assets.py
+      - name: Build standalone NeoForge mod
+        working-directory: standalone-orca
+        run: gradle build --stacktrace
+      - name: Verify packaged orca assets
+        if: success()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          jars = list(Path('standalone-orca/build/libs').glob('*.jar'))
+          assert jars, 'Standalone JAR not produced'
+          with ZipFile(jars[0]) as z:
+              names = set(z.namelist())
+              expected = [f'assets/zawa/textures/entity/orca/orca_{i}_{sex}.png'
+                          for i in range(1, 5) for sex in ('male', 'female')]
+              expected += ['assets/zawa/textures/entity/orca/orca_baby.png']
+              expected += [f'assets/zawa/sounds/orca_{name}.ogg'
+                           for name in ('ambient', 'attacked', 'attacking', 'broadcast', 'communicating')]
+              expected += ['assets/zawa/sounds.json', 'data/zawa/entity_stats/orca.json']
+              missing = sorted(set(expected) - names)
+              assert not missing, f'Missing packaged orca assets: {missing}'
+              print('Standalone orca assets packaged successfully')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: standalone-orca-neoforge-build
+          path: |
+            standalone-orca/build/libs/*.jar
+            standalone-orca/build/reports/**
