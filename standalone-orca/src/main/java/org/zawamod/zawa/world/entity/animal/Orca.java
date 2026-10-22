@@ -70,6 +70,6 @@ public class Orca extends ZawaAquaticEntity {
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob other) {
-        return ZawaEntities.ORCA.get().create(level);
+        return org.zawamod.zawa.standalone.OrcaOnlyEntities.ORCA.get().create(level);
     }
 }
