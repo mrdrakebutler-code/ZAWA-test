@@ -3,6 +3,7 @@ package org.zawamod.zawa.world.entity.ai.goal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import org.zawamod.zawa.world.entity.animal.ZawaBaseEntity;
+import org.zawamod.zawa.world.entity.animal.Orca;
 import java.util.EnumSet;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class ZawaBreedGoal extends Goal {
     public ZawaBreedGoal(ZawaBaseEntity animal, double speed, Class<? extends ZawaBaseEntity> partnerClass) {
         this.animal=animal; this.speedModifier=speed; this.partnerClass=partnerClass; setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
     }
-    @Override public boolean canUse() { return animal.isInLove() && !animal.isPregnant() && (partner=getFreePartner()) != null; }
+    @Override public boolean canUse() { return animal.isInLove() && (animal instanceof Orca || !animal.isPregnant()) && (partner=getFreePartner()) != null; }
     @Override public boolean canContinueToUse() { return partner != null && partner.isAlive() && partner.isInLove() && loveTime < 60; }
     @Override public void stop() { partner=null; loveTime=0; }
     @Override public void tick() {
