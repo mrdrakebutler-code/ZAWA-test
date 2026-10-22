@@ -11,11 +11,7 @@ import org.zawamod.zawa.client.model.orca.OrcaAdultMaleLayer;
 import org.zawamod.zawa.client.model.orca.OrcaAdultFemaleLayer;
 import org.zawamod.zawa.client.model.orca.OrcaChildLayer;
 import org.zawamod.zawa.client.renderer.OrcaRenderer;
-import org.zawamod.zawa.client.renderer.ZawaAnimalRenderer;
 import org.zawamod.zawa.world.entity.animal.ZawaEntities;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import org.zawamod.zawa.world.inventory.ZawaMenuTypes;
-import org.zawamod.zawa.client.screen.ZawaMachineScreen;
 
 @EventBusSubscriber(modid = Zawa.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public final class ZawaClient {
@@ -33,7 +29,4 @@ public final class ZawaClient {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ZawaEntities.ORCA.get(), OrcaRenderer::new);
     }
-
-
-    private static <T extends net.minecraft.world.entity.Mob> void register(EntityRenderersEvent.RegisterRenderers event, net.neoforged.neoforge.registries.DeferredHolder<net.minecraft.world.entity.EntityType<?>, net.minecraft.world.entity.EntityType<T>> holder, String species, float shadow) { event.registerEntityRenderer(holder.get(), ctx -> new ZawaAnimalRenderer<>(ctx, species, shadow)); }
 }
