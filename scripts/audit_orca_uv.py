@@ -26,7 +26,10 @@ for filename in LAYERS:
         dx, dy, dz = map(float, match.group(3, 4, 5))
         if u + 2 * (dx + dz) > w + 1 or v + dy + dz > h + 1:
             print(f"  WARN: UV cuboid near ({u},{v}) dimensions ({dx},{dy},{dz}) may exceed atlas")
-    for png in sorted(TEXTURES.glob("*.png")):
+    selected = ([p for p in TEXTURES.glob("orca_*_male.png")] if "Male" in filename
+                else [p for p in TEXTURES.glob("orca_*_female.png")] if "Female" in filename
+                else [TEXTURES / "orca_baby.png"])
+    for png in sorted(selected):
         data = png.read_bytes()[:24]
         if data[:8] != b"\x89PNG\r\n\x1a\n":
             print(f"FAIL invalid PNG: {png.name}")
