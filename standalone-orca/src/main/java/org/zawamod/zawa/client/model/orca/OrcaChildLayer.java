@@ -34,6 +34,6 @@ public final class OrcaChildLayer {
   PartDefinition p_PectoralFinRight1 = p_Chest.addOrReplaceChild("PectoralFinRight1", CubeListBuilder.create().texOffs(86, 44).mirror().addBox(-10.00000000F, -1.50000000F, -5.00000000F, 14.00000000F, 3.00000000F, 12.00000000F).mirror(false), PartPose.offsetAndRotation(8.00000000F, 5.00000000F, -4.00000000F, -0.08726646F, -0.17453292F, 0.87266463F));
   PartDefinition p_PectoralFinRight2 = p_PectoralFinRight1.addOrReplaceChild("PectoralFinRight2", CubeListBuilder.create().texOffs(76, 59).mirror().addBox(0.00000000F, -1.00000000F, 0.00000000F, 14.00000000F, 2.00000000F, 10.00000000F).mirror(false), PartPose.offsetAndRotation(4.00000000F, 0.00000000F, -4.00000000F, 0.00000000F, -0.17453292F, 0.00000000F));
   PartDefinition p_BackFin = p_Body.addOrReplaceChild("BackFin", CubeListBuilder.create().texOffs(0, 0).addBox(-1.00000000F, -12.00000000F, 0.00000000F, 2.00000000F, 12.00000000F, 8.00000000F), PartPose.offsetAndRotation(0.00000000F, -9.00000000F, 0.00000000F, -0.38397244F, 0.00000000F, 0.00000000F));
-  return LayerDefinition.create(mesh, 512, 256);
+  return LayerDefinition.create(mesh, 256, 128);
  }
 }
